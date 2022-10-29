@@ -1,5 +1,9 @@
-.category_cform
-{
+.category_cform {
+    width: 240px;
     margin-top: 20px;
-    width: 400px;
+}
+
+.category-forminput {
+    width: 100%;
+    margin-top: 5px;
 }

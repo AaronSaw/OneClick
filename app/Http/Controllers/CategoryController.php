@@ -16,6 +16,7 @@ class CategoryController extends Controller
     {
         $this->categoryInterface = $categoryServiceInterface;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +47,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         $category = $this->categoryInterface->getStore($request);
-        return redirect()->route('category.index')->with('status',' is added Successfully');
+        return redirect()->route('category.index')->with('status'," Category is created Successfully");
     }
 
     /**
@@ -81,7 +82,7 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $this->categoryInterface->getUpdate($request,$category);
-        return redirect()->route('category.index')->with('status', $category->ctitle .' is updated Successfully');
+        return redirect()->route('category.index')->with('status',  'Category is updated Successfully');
     }
 
     /**
@@ -93,6 +94,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $this->categoryInterface->getDelete($category);
-        return redirect()->route('category.index')->with('status',"$category->title is deleted");
+        return redirect()->route('category.index')->with('status',"Category is deleted successfully");
     }
 }

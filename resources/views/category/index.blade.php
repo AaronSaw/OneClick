@@ -3,6 +3,11 @@
     <div class="card">
         <h2>Category Lists</h2>
         <hr>
+        @if(session('status'))
+                <div class="alert ">
+                    {{ session('status') }}
+                </div>
+            @endif
         <table id="table">
             <thead>
                 <tr>
@@ -58,15 +63,3 @@
     </div>
 @endsection
 
-@push('script')
-    <script>
-        $(function() {
-    $('a[data-modal]').on('click', function() {
-      $($(this).data('modal')).modal({
-    fadeDuration: 250
-  });
-      return false;
-    });
-  });
-    </script>
-@endpush

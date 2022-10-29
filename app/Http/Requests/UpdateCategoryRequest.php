@@ -24,7 +24,14 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'ctitle'=>'required|unique:categories,ctitle,'.$this->route('category')->id
+            'ctitle' => 'required|unique:categories,ctitle,' . $this->route('category')->id
+        ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'ctitle.required' => 'The title field is required.'
         ];
     }
 }

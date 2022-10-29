@@ -24,7 +24,14 @@ class StoreCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'ctitle'=>'required|unique:categories,ctitle'
+            'ctitle' => 'required|unique:categories,ctitle',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'ctitle.required' => 'The title field is required.'
         ];
     }
 }
