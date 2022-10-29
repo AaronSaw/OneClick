@@ -21,7 +21,7 @@
                         <td>
                             <div class="action-btngroup">
                                 <a href="{{ route('category.edit', $category->id) }}" class="button success">
-                                    edit
+                                    Edit
                                 </a>
 
                                 <div id="ex1" class="modal">
@@ -42,7 +42,7 @@
                                   </div>
 
                                   <!-- Link to open the modal -->
-                                  <p><a href="#ex1" rel="modal:open" class="button danger">delete</a></p>
+                                  <p><a href="#ex1" rel="modal:open" class="button danger">Delete</a></p>
                             </div>
                         </td>
                         <td>
