@@ -72,6 +72,7 @@
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="{{ asset('js/admin_common.js') }}"></script>
+    <script src="{{ asset('js/product.js') }}"></script>
     @stack('script')
 </body>
 

@@ -21,4 +21,5 @@ Route::get('/admin-dashboard', function () {
 
 //category
 Route::resource('/category',CategoryController::class);
+Route::resource('/product',ProductController::class);
 

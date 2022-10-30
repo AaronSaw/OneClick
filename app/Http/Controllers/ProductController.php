@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\Services\Product\ProductServiceInterface;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {
+
+    private $productInterface;
+
+    public function __construct(ProductServiceInterface $productServiceInterface)
+    {
+        $this->productInterface = $productServiceInterface;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-
+        $products = $this->productInterface->getIndex();
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -25,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-
+        return view('product.create');
     }
 
     /**
@@ -36,7 +46,8 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-
+        $this->productInterface->getStore($request);
+        return redirect()->route('product.index')->with('status', "Product is add successfully.");
     }
 
     /**
@@ -47,7 +58,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-
+        return   abort('404');
     }
 
     /**
@@ -58,7 +69,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -70,7 +81,8 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-
+        $this->productInterface->getUpdate($request, $product);
+        return redirect()->route('product.index')->with('status', "Product is updated successfully.");
     }
 
     /**
@@ -81,6 +93,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-
+        //$this->productInterface->getDelete($product);
+        return redirect()->route('product.index')->with('status', "Product is deleted successfully");
     }
 }
