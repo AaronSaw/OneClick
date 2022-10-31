@@ -266,7 +266,7 @@
     text-align: left;
 }
 
-.card {
+.ccard {
     width: 100%;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -276,12 +276,12 @@
     margin-top: 67px;
 }
 
-.card:hover {
+.ccard:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button {
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: none;
     box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
     border-radius: 5px;
@@ -297,7 +297,7 @@ label {
 .button-primary {
     display: inline-flex;
     margin-left: 5px;
-    padding: 5px 30px;
+    padding: 10px 30px;
     box-shadow: rgb(0 0 0 / 20%) 0 3px 1px -2px, rgb(0 0 0 / 14%) 0 2px 2px 0, rgb(0 0 0 / 12%) 0 1px 5px 0;
     background-color: #6200ee;
     color: rgb(255, 255, 255);
@@ -367,10 +367,12 @@ h2 {
 
 .modal {
     max-width: 350px !important;
+    height: auto;
+    overflow: visible;
 }
 
 .modal-text {
-    font-size: 32px;
+    font-size: 29px;
 }
 
 .modal-footer {
@@ -394,6 +396,14 @@ h2 {
     border-radius: 5px;
 }
 
+.empty {
+    text-align: center;
+    color: #e90000;
+    font-size: 25px;
+}
+.paginate{
+    margin-top: 10px;
+}
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
     .side-nav {

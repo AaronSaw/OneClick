@@ -1,13 +1,13 @@
 @extends('layouts.admin_common')
 @section('content')
     <div class="category_cform">
-        <div class="card ">
+        <div class="ccard ">
             <h2>Edit Category</h2>
             <hr>
             <form action="{{ route('category.update', $category->id) }}" method="post">
                 @csrf
                 @method('put')
-                <div class="d-flex">
+                <div class="">
                     <label for="">Title</label>
                     <input type="text" name="ctitle" value="{{ old('ctitle', $category->ctitle) }}"
                         class="category-forminput">

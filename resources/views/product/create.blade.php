@@ -1,12 +1,11 @@
 @extends('layouts.admin_common')
 @section('content')
     <div class="product_pform">
-        <div class="card">
+        <div class="ccard">
             <h2 class="ptitle">Create product</h2>
             <hr>
             <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-
                 <div class="pinput">
                     <label for="">product Title</label><br>
                     <input type="text" value="{{ old('title') }}" class="product-forminput" name="title">

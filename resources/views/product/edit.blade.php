@@ -1,7 +1,7 @@
 @extends('layouts.admin_common')
 @section('content')
     <div class="product_pform">
-        <div class="card">
+        <div class="ccard">
             <h2>Edit product</h2>
             <hr>
             <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
@@ -32,7 +32,6 @@
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
-
                 <div class="pinput">
                     <label for="">product Description</label>
                     <textarea name="description" rows="10" cols="35" class="product-formTextarea">

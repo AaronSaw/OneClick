@@ -48,6 +48,7 @@ class ProductDao implements ProductDaoInterface
                 $description = request("description");
                 $e->where("description", "like", "%$description%");
             })
+            ->latest('id')
             ->paginate(5)->withQueryString();
         return $products;
     }
