@@ -2,9 +2,6 @@
 
 namespace App\Contracts\Services\Product;
 
-use App\Models\Product;
-use Illuminate\Http\Request;
-
 /**
  * Interface for product service
  */
@@ -17,18 +14,30 @@ interface ProductServiceInterface
     public function getIndex();
 
     /**
+     * To get products list
+     * @return array $categories
+     */
+    public function getCreate();
+
+    /**
      * To store $product data
      * @param Request $request request with inputs
      * @return  Store $product data
      */
-    public function getStore(Request $request);
+    public function getStore($request);
 
     /**
      * To delete $product data
      * @param product $product
      * @return   delete $product data
      */
-    public function getDelete(Product $product);
+    public function getDelete($product);
+
+    /**
+     * To get products list
+     * @return array $categories
+     */
+    public function getEdit();
 
     /**
      * To update $product data
@@ -36,5 +45,5 @@ interface ProductServiceInterface
      * @param product $product
      * @return Update $product data
      */
-    public function getUpdate(Request $request, Product $product);
+    public function getUpdate($request,$product);
 }

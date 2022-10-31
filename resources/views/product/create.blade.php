@@ -18,7 +18,7 @@
                     <label for="">Select Category</label><br>
                     <select name="category" class="product-formSelect">
                         <option value="0">Select Category</option>
-                        @foreach (\App\Models\Category::all() as $category)
+                        @foreach ($categories as $category)
                             <option value="{{ $category->id }}" {{ $category->id == old('category') ? 'selected' : ' ' }}>
                                 {{ $category->ctitle }}
                             </option>

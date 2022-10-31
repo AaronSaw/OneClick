@@ -35,7 +35,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        $categories = $this->productInterface->getCreate();
+        return view('product.create', compact('categories'));
     }
 
     /**
@@ -69,7 +70,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('product.edit', compact('product'));
+        $categories = $this->productInterface->getCreate();
+        return view('product.edit', compact(['product', 'categories']));
     }
 
     /**
@@ -93,7 +95,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //$this->productInterface->getDelete($product);
+        $this->productInterface->getDelete($product);
         return redirect()->route('product.index')->with('status', "Product is deleted successfully");
     }
 }

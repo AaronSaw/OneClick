@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Contracts\Services\product\ProductServiceInterface;
 use App\Contracts\Dao\Product\ProductDaoInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductService implements ProductServiceInterface
 {
@@ -25,13 +26,33 @@ class ProductService implements ProductServiceInterface
     }
 
     /**
+     * To get products list
+     * @return array $categories
+     */
+    public function getCreate()
+    {
+        return $this->productDao->getCreate();
+    }
+
+    /**
      * To store $product Data
      * @param Request $request request with inputs
      * @return Store $product data
      */
-    public function getStore(Request $request)
+    public function getStore($request)
     {
-        return  $this->productDao->getStore($request);
+        $newName = uniqid() . "_image." . $request->file('image')->extension();
+        $request->file('image')->storeAs("public", $newName);
+        return  $this->productDao->getStore($request, $newName);
+    }
+
+    /**
+     * To get products list
+     * @return array $categories
+     */
+    public function getEdit()
+    {
+        return $this->productDao->getEdit();
     }
 
     /**
@@ -39,7 +60,7 @@ class ProductService implements ProductServiceInterface
      * @param product $product
      * @return Delete $product data
      */
-    public function getDelete(Product $product)
+    public function getDelete($product)
     {
         return $this->productDao->getDelete($product);
     }
@@ -50,8 +71,16 @@ class ProductService implements ProductServiceInterface
      * @param product $product
      * @return updata $product data
      */
-    public function getUpdate(Request $request, Product $product)
+    public function getUpdate($request, $product)
     {
-        return $this->productDao->getUpdate($request, $product);
+        if ($request->hasFile('image')) {
+            //update photo
+            Storage::delete("public/" . $product->image);
+            $newName = uniqid() . "image." . $request->file('image')->extension();
+            $request->file('image')->storeAs("public", $newName);
+        } else {
+            $newName = $product->image;
+        }
+        return $this->productDao->getUpdate($request, $product, $newName);
     }
 }

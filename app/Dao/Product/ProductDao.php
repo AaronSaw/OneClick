@@ -4,6 +4,7 @@ namespace App\Dao\Product;
 
 use App\Models\Product;
 use App\Contracts\Dao\product\ProductDaoInterface;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 /**
  * Data accessing object for product
  */
-class productDao implements productDaoInterface
+class ProductDao implements ProductDaoInterface
 {
     /**
      * To get $products
@@ -52,21 +53,39 @@ class productDao implements productDaoInterface
     }
 
     /**
+     * To get products list
+     * @return array $cateogories
+     */
+    public function getCreate()
+    {
+        $categories = Category::all();
+        return $categories;
+    }
+
+    /**
      * To store $product data
      * @param Request $request request with inputs
      * @return store $product data
      */
-    public function getStore($request)
+    public function getStore($request, $newName)
     {
         $product = new Product();
-        $newName = uniqid() . "_image." . $request->file('image')->extension();
-        $request->file('image')->storeAs("public", $newName);
         $product->image = $newName;
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->category_id = $request->category;
         $product->save();
+    }
+
+    /**
+     * To get products list
+     * @return array $categories
+     */
+    public function getEdit()
+    {
+        $categories = Category::all();
+        return $categories;
     }
 
     /** To delete $product data
@@ -85,22 +104,13 @@ class productDao implements productDaoInterface
      * To updata $product data
      * @return update $product data
      */
-    public function getUpdate($request, $product)
+    public function getUpdate($request, $product, $newName)
     {
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->category_id = $request->category;
-        //delete old  photo
-        //Storage::delete("public/" . $product->image);
-        if ($request->hasFile('image')) {
-            //update photo
-            Storage::delete("public/" . $product->image);
-            $newName = uniqid() . "image." . $request->file('image')->extension();
-            $request->file('image')->storeAs("public", $newName);
-            $product->image = $newName;
-        }
-        //$request->file('image')->storeAs("public", $newName);
+        $product->image = $newName;
         $product->update();
     }
 }
