@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
@@ -23,3 +24,10 @@ Route::get('/register',[AuthController::class,'register'])->name('auth#register'
 Route::post('/register/store',[AuthController::class,'store'])->name('auth#store');
 Route::get('logout',[AuthController::class,'logout'])->name('auth#logout');
 Route::get('/shop',[ShopController::class,'index'])->name('shop#index');
+Route::get('/admin-dashboard', function () {
+    return view('layouts.admin_common');
+});
+
+//category
+Route::resource('/category',CategoryController::class);
+
