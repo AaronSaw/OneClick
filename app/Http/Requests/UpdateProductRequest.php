@@ -24,7 +24,10 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         return [
-        
+            "image"=>"nullable|mimes:png,jpg",
+            "title"=>"required|min:3|unique:products,title,". $this->route('product')->id,
+            "category"=>"required|exists:categories,id",
+            "description"=>"required|min:10",
         ];
     }
 }

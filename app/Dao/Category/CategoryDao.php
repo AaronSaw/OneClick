@@ -17,8 +17,7 @@ class CategoryDao implements CategoryDaoInterface
      */
     public function getIndex()
     {
-        $categories=Category::latest('id')
-        ->get();
+        $categories = Category::latest('id')->paginate(2)->withQueryString();
         return $categories;
     }
 
@@ -40,6 +39,7 @@ class CategoryDao implements CategoryDaoInterface
      */
     public function getDelete($category)
     {
+        $category->product()->delete();
         $category->delete();
     }
 

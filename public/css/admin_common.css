@@ -191,8 +191,8 @@
 }
 
 .side-nav {
-    float: left;
     position: fixed;
+    float: left;
     width: 15%;
     /*width: 200px;*/
     height: 100%;
@@ -201,17 +201,12 @@
 }
 
 .mv-section {
-    width: 85%;
+    display: flex;
     float: right;
+    justify-content: center;
+    width: 85%;
     height: 100vh;
-
     background-color: #fbf9f9;
-    /*background-size: cover;*/
-    /*margin-left: 200px;*/
-    /*background: url(img/pinterest-image-4-3.jpg);
-
-    background-repeat: no-repeat;
-    content: "";*/
 }
 
 .tableinfo {
@@ -220,16 +215,16 @@
 }
 
 .tblttl {
-    font-weight: bold;
-    font-size: 20px;
     margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
 }
 
 .deletebtn {
+    border: none;
 
     text-decoration: none;
-    border: none;
 }
 
 .deletebtn i {
@@ -244,9 +239,9 @@
 /*Table Design*/
 
 #table {
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 90%;
 }
 
 #table td,
@@ -271,21 +266,22 @@
     text-align: left;
 }
 
-.card {
+.ccard {
     width: 100%;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     transition: 0.3s;
     border-radius: 10px;
+    margin-top: 67px;
 }
 
-.card:hover {
+.ccard:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button {
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: none;
     box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
     border-radius: 5px;
@@ -301,7 +297,7 @@ label {
 .button-primary {
     display: inline-flex;
     margin-left: 5px;
-    padding: 5px 30px;
+    padding: 10px 30px;
     box-shadow: rgb(0 0 0 / 20%) 0 3px 1px -2px, rgb(0 0 0 / 14%) 0 2px 2px 0, rgb(0 0 0 / 12%) 0 1px 5px 0;
     background-color: #6200ee;
     color: rgb(255, 255, 255);
@@ -348,14 +344,15 @@ select {
 }
 
 .error {
-    color: red;
     margin-top: 5px;
+    color: red;
 }
 
 h2 {
     color: #2700ff;
     font-size: 25px;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .success {
@@ -370,10 +367,12 @@ h2 {
 
 .modal {
     max-width: 350px !important;
+    height: auto;
+    overflow: visible;
 }
 
 .modal-text {
-    font-size: 32px;
+    font-size: 29px;
 }
 
 .modal-footer {
@@ -393,13 +392,18 @@ h2 {
     padding: 10px;
     background: #bfffbf;
     color: #808080;
-    border-radius: 5px;
     text-align: left;
-    background-color: #757878;
-    color: white;
+    border-radius: 5px;
 }
 
-
+.empty {
+    text-align: center;
+    color: #e90000;
+    font-size: 25px;
+}
+.paginate{
+    margin-top: 10px;
+}
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
     .side-nav {
@@ -479,13 +483,13 @@ h2 {
     }
 
     .nav ul li {
-        padding: 0.8vw;
         margin-right: 3.1vw;
+        padding: 0.8vw;
     }
 
     .nav ul li a i {
-        font-size: 1.9vw;
         padding: 0.8vw;
+        font-size: 1.9vw;
     }
 
     .nav ul {
@@ -493,8 +497,8 @@ h2 {
     }
 
     .side-nav {
-        float: none;
         right: 100%;
+        float: none;
         width: 100%;
         height: 75%;
         background-color: rgba(21, 21, 21, 0.5);
@@ -525,8 +529,8 @@ h2 {
     /*Table Design*/
 
     #table {
-        font-size: 1.9vw;
         margin-left: 2.3vw;
+        font-size: 1.9vw;
     }
 
     #table td,
