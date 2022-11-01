@@ -3,10 +3,9 @@
 namespace App\Dao\Product;
 
 use App\Models\Product;
-use App\Contracts\Dao\product\ProductDaoInterface;
+use App\Contracts\Dao\Product\ProductDaoInterface;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 /**
