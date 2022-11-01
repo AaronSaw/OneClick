@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductApiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +22,4 @@ Route::get('/admin-dashboard', function () {
 //category
 Route::resource('/category',CategoryController::class);
 
+Route::apiResource('/api/products',ProductApiController::class);
