@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
+//Authentication
+Route::get('/login',[AuthController::class,'login'])->name('auth#login');
+Route::post('/login/create',[AuthController::class,'create'])->name('auth#create');
+Route::get('/register',[AuthController::class,'register'])->name('auth#register');
+Route::post('/register/store',[AuthController::class,'store'])->name('auth#store');
+Route::get('logout',[AuthController::class,'logout'])->name('auth#logout');
+Route::get('/shop',[ShopController::class,'index'])->name('shop#index');
+
 Route::get('/admin-dashboard', function () {
     return view('layouts.admin_common');
 });
@@ -24,4 +36,6 @@ Route::get('/user', [UserController::class, 'index'])->name('user.userlist');
 Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
 
 
+//category
+Route::resource('/category',CategoryController::class);
 

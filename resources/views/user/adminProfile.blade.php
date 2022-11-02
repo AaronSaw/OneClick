@@ -3,6 +3,7 @@
 @section('content')
 <div class="profile-container">
   <div class="profile-detail">
+    <button class="profile-edit"><a href="">Edit</a></button>
     <img src="{{ asset('img/user.png') }}" alt="profile pic"><br>
     <div>
       <p class="name">Name    - </p>

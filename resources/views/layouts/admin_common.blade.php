@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/admin_common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/category.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -65,46 +66,39 @@
                     <img src="{{ asset('img/oneclick_logo.png') }}" alt="One Click" width="250" height="250">
                 </a>
             </h1>
+
             <center>
                 <img src="{{ asset('img/user.png') }}" alt="profile pic"><br>
                 <h4 class="username">user name</h4>
             </center><br>
             <hr>
             <ul class="sidenav-item">
-                <li>
-                    <a href="{{ url('/admin-dashboard') }}" class="side-menu"><i class="fa fa-home"
+                <li class="side-list {{ Request::is('admin-dashboard') ? 'active' : '' }}">
+                    <a href="{{ url('admin-dashboard') }}" class="side-menu"><i class="fa fa-home"
                             aria-hidden="true"></i><span>Home</span></a>
                 </li>
                 <li class="sidenav-dropdown">
-                    <a href="#" class="pttl">Manage Product </a>
-                    <ul class="side-dropdown-content">
-                        <li>
-                            <a href="{{ url('/product') }}" class="side-menu"><i class="fa fa-eye"
-                                    aria-hidden="true"></i><span>Product List</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/product/create') }}" class="side-menu"><i class="fa fa-plus"
-                                    aria-hidden="true"></i><span>Add
-                                    Product</span></a>
-                        </li>
-                    </ul>
+                    <a href="#" class="pttl">Manage Product<i class="fa fa-angle-down drop-arrow" aria-hidden="true"></i> </a>
+                    <div class="side-dropdown-content {{ Request::is('product/create') || Request::is('product') ? 'show' : '' }}">
+                        <a href="{{ url('product') }}" class="dropdown-menu {{ Request::is('product') ? 'active' : '' }}"><i class="fa fa-eye"
+                            aria-hidden="true"></i><span>Product List</span></a><br>
+                        <a href="{{ url('product/create') }}" class="dropdown-menu {{ Request::is('product/create') ? 'active' : '' }}"><i class="fa fa-plus"
+                                aria-hidden="true"></i><span>Add
+                                Product</span></a>
+                    </div>
                 </li>
                 <li class="sidenav-dropdown">
-                    <a href="#" class="pttl">Manage Category </a>
-                    <ul class="side-dropdown-content">
-                        <li>
-                            <a href="{{ url('/category') }}" class="side-menu"><i class="fa fa-eye"
-                                    aria-hidden="true"></i><span>Category List</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/category/create') }}" class="side-menu"><i class="fa fa-plus"
-                                    aria-hidden="true"></i><span>Add
-                                    Category</span></a>
-                        </li>
-                    </ul>
+                    <a href="#" class="pttl">Manage Category<i class="fa fa-angle-down drop-arrow {{ Request::is('category/create') || Request::is('category') ? 'rotate' : '' }}" aria-hidden="true"></i> </a>
+                    <div class="side-dropdown-content {{ Request::is('category/create') || Request::is('category') ? 'show' : '' }}">
+                        <a href="{{ url('category') }}" class="dropdown-menu {{ Request::is('category') ? 'active' : '' }}"><i class="fa fa-eye"
+                            aria-hidden="true"></i><span>Category List</span></a><br>
+                        <a href="{{ url('category/create') }}" class="dropdown-menu {{ Request::is('category/create') ? 'active' : '' }}"><i class="fa fa-plus"
+                                aria-hidden="true"></i><span>Add
+                                Category</span></a>
+                    </div>
                 </li>
-                <li>
-                    <a href="{{ url('/user') }}" class="side-menu active"><i class="fa fa-eye"
+                <li class="side-list {{ Request::is('user') ? 'active' : '' }}">
+                    <a href="{{ url('user') }}" class="side-menu"><i class="fa fa-eye"
                             aria-hidden="true"></i><span>User List</span></a>
                 </li>
             </ul>
@@ -115,6 +109,6 @@
     </div>
     <script src="{{ asset('js/library/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/admin_common.js') }}"></script>
+    @stack('script')
 </body>
-
 </html>
