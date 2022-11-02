@@ -1,13 +1,13 @@
 @extends('layouts.admin_common')
 @section('content')
-    <div class="card">
+    <div class="ccard">
         <h2>Category Lists</h2>
         <hr>
-        @if(session('status'))
-                <div class="alert ">
-                    {{ session('status') }}
-                </div>
-            @endif
+        @if (session('status'))
+            <div class="alert ">
+                {{ session('status') }}
+            </div>
+        @endif
         <table id="table">
             <thead>
                 <tr>
@@ -17,37 +17,32 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($categories as $category)
+                @forelse ($categories as $category)
                     <tr>
                         <td>
                             {{ $category->ctitle }}
-
                         </td>
                         <td>
                             <div class="action-btngroup">
                                 <a href="{{ route('category.edit', $category->id) }}" class="button success">
                                     Edit
                                 </a>
-
-                                <div id="ex1" class="modal">
+                                <div id="ex{{ $category->id }}" class="modal" style="">
                                     <p class="modal-text">Are you sure to delete</p>
-                                    <hr>
                                     <div class="modal-footer">
                                         <a href="#" rel="modal:close" class="button cancel">No</a>
-                                      <form action="{{ route('category.destroy', $category->id) }}" class="d-inline-block"
-                                        method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button onclick="mydelete()" class="button  danger">
-                                            Yes
-                                        </button>
-                                    </form>
+                                        <form action="{{ route('category.destroy', $category->id) }}" class="d-inline-block"
+                                            method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="button  danger">
+                                                Yes
+                                            </button>
+                                        </form>
                                     </div>
-
-                                  </div>
-
-                                  <!-- Link to open the modal -->
-                                  <p><a href="#ex1" rel="modal:open" class="button danger">Delete</a></p>
+                                </div>
+                                <!-- Link to open the modal -->
+                                <p><a href="#ex{{ $category->id }}" rel="modal:open" class="button danger">Delete</a></p>
                             </div>
                         </td>
                         <td>
@@ -56,10 +51,16 @@
                             </p>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="7" class="empty">Empty Categories</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
+        <div class="paginate">
+            {{ $categories->onEachSide(1)->links() }}
+        </div>
     </div>
     </div>
 @endsection
-
