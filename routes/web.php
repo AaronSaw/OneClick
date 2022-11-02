@@ -38,4 +38,5 @@ Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user
 
 //category
 Route::resource('/category',CategoryController::class);
+Route::resource('/product',ProductController::class);
 

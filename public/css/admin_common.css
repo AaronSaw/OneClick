@@ -288,6 +288,7 @@
     font-size: 25px;
 }
 
+<<<<<<< HEAD
 /*Table Design*/
 
 #table {
@@ -296,6 +297,59 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
+=======
+.side-nav {
+    position: fixed;
+    float: left;
+    width: 15%;
+    /*width: 200px;*/
+    height: 100%;
+    margin-top: 63px;
+    background-color: rgb(15, 19, 21);
+}
+
+.mv-section {
+    display: flex;
+    float: right;
+    justify-content: center;
+    width: 85%;
+    height: 100vh;
+    background-color: #fbf9f9;
+}
+
+.tableinfo {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.tblttl {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.deletebtn {
+    border: none;
+
+    text-decoration: none;
+}
+
+.deletebtn i {
+    /*background-color: #8a0808;*/
+    /*border-radius: 5px;*/
+    /*padding: 2px 5px;*/
+    color: #8a0808;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*Table Design*/
+
+#table {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+>>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
     border-collapse: collapse;
 }
 
@@ -321,21 +375,22 @@
     text-align: left;
 }
 
-.card {
+.ccard {
     width: 100%;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     transition: 0.3s;
     border-radius: 10px;
+    margin-top: 67px;
 }
 
-.card:hover {
+.ccard:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button {
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: none;
     box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
     border-radius: 5px;
@@ -351,7 +406,7 @@ label {
 .button-primary {
     display: inline-flex;
     margin-left: 5px;
-    padding: 5px 30px;
+    padding: 10px 30px;
     box-shadow: rgb(0 0 0 / 20%) 0 3px 1px -2px, rgb(0 0 0 / 14%) 0 2px 2px 0, rgb(0 0 0 / 12%) 0 1px 5px 0;
     background-color: #6200ee;
     color: rgb(255, 255, 255);
@@ -406,6 +461,7 @@ h2 {
     color: #2700ff;
     font-size: 25px;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .success {
@@ -420,10 +476,12 @@ h2 {
 
 .modal {
     max-width: 350px !important;
+    height: auto;
+    overflow: visible;
 }
 
 .modal-text {
-    font-size: 32px;
+    font-size: 29px;
 }
 
 .modal-footer {
@@ -443,6 +501,7 @@ h2 {
     padding: 10px;
     background-color: #bfffbf;
     color: #808080;
+<<<<<<< HEAD
     text-align: center;
     border-radius: 5px;
 }
@@ -458,9 +517,20 @@ h2 {
     cursor: pointer;
     transition: all 400ms;
     -webkit-transition: all 400ms;
+=======
+    text-align: left;
+    border-radius: 5px;
+>>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
 }
 
-
+.empty {
+    text-align: center;
+    color: #e90000;
+    font-size: 25px;
+}
+.paginate{
+    margin-top: 10px;
+}
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
 
@@ -646,11 +716,34 @@ h2 {
         display: none;
     }
 
+<<<<<<< HEAD
     .side-nav hr {
         display: none;
     }
 
     .side-nav .sidenav-item li {
+=======
+    .nav ul li {
+        margin-right: 3.1vw;
+        padding: 0.8vw;
+    }
+
+    .nav ul li a i {
+        padding: 0.8vw;
+        font-size: 1.9vw;
+    }
+
+    .nav ul {
+        margin-right: 7.8vw;
+    }
+
+    .side-nav {
+        right: 100%;
+        float: none;
+        width: 100%;
+        height: 75%;
+        background-color: rgba(21, 21, 21, 0.5);
+>>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
         text-align: center;
     }
 
@@ -692,7 +785,17 @@ h2 {
     /*Table Design*/
 
     #table {
+<<<<<<< HEAD
         font-size: 11px;
+=======
+        margin-left: 2.3vw;
+        font-size: 1.9vw;
+    }
+
+    #table td,
+    #table th {
+        padding: 0.8vw;
+>>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
     }
 
     #table th {
