@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\Services\Category\CategoryServiceInterface;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
+
+    private $categoryInterface;
+
+    public function __construct(CategoryServiceInterface $categoryServiceInterface)
+    {
+        $this->categoryInterface = $categoryServiceInterface;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = $this->categoryInterface->getIndex();
+        return view('category.index',compact('categories'));
     }
 
     /**
@@ -25,7 +35,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.create');
     }
 
     /**
@@ -36,7 +46,8 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = $this->categoryInterface->getStore($request);
+        return redirect()->route('category.index')->with('status'," Category is created Successfully");
     }
 
     /**
@@ -47,7 +58,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+     return abort('404');
     }
 
     /**
@@ -58,7 +69,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('category.edit',compact('category'));
     }
 
     /**
@@ -70,7 +81,8 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $this->categoryInterface->getUpdate($request,$category);
+        return redirect()->route('category.index')->with('status',  'Category is updated Successfully');
     }
 
     /**
@@ -81,6 +93,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $this->categoryInterface->getDelete($category);
+        return redirect()->route('category.index')->with('status',"Category is deleted successfully");
     }
 }

@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->longText("description");
             $table->float("price");
-            $table->foreignId("category_id")->constrained()->cascadeOnDelete();
+            $table->foreignId("category_id")->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
