@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +27,14 @@ Route::post('/register/store',[AuthController::class,'store'])->name('auth#store
 Route::get('logout',[AuthController::class,'logout'])->name('auth#logout');
 Route::get('/shop',[ShopController::class,'index'])->name('shop#index');
 
+//user (dashboard)
 Route::get('/admin-dashboard', function () {
     return view('layouts.admin_common');
 });
-
-Route::resource('/user', UserController::class);
 Route::get('/user', [UserController::class, 'index'])->name('user.userlist');
-//Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
+Route::get('/adminEdit/{user}', [UserController::class, 'edit'])->name('user.adminEdit');
 
 
 //category

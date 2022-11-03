@@ -159,11 +159,62 @@
     border-radius: 50%;
 }
 
-.profile .cross {
-    margin-top: 0;
-    color: #333;
-    font-size: 25px;
-    font-weight: bold;
+/*Profile Edit*/
+
+/*edit btn*/
+.profile-edit {
+    position: absolute;
+    margin-top: 0.5%;
+    margin-left: 12.5%;
+    padding: 2px 5px;
+    border: 1px solid #888;
+    text-align: right;
+    border-radius: 3px;
+}
+
+.profile-edit a {
+    color: #000;
+}
+
+/*edit form*/
+.edit-container {
+    width: 50%;
+    margin: 7% 30%;
+}
+
+.edit-container .edit-ttl {
+    padding: 20px;
+    font-size: 18px;
+}
+
+.edit-container .edit-form {
+    padding: 30px 40px;
+    box-shadow: 12px 11px 21px 0px rgb(0 0 0);
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 52%;
+}
+
+.edit-container .edit-form label {
+    font-size: 15px;
+}
+
+.edit-container .edit-form input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+.edit-container .edit-form .update-btn {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border-color: #ccc6c0;
+    margin-top: 5px;
+}
+
+.edit-container .edit-form .update-btn a {
+    color: #000;
 }
 
 /*Tablet Size*/
@@ -175,6 +226,34 @@
     .profile-detail img {
         width: 71px;
         height: 57px;
+    }
+
+    /*edit form*/
+    .edit-container {
+        width: 50%;
+        margin: 5% 28%;
+    }
+
+    .edit-container .edit-ttl {
+        padding: 20px;
+        font-size: 17px;
+    }
+
+    .edit-container .edit-form {
+        padding: 25px 25px;
+        max-width: 70%;
+    }
+
+    .edit-container .edit-form label {
+        font-size: 13px;
+    }
+
+    .edit-container .edit-form input {
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px solid #888;
+        border-radius: 5px;
     }
 }
 
@@ -203,5 +282,34 @@
         font-size: 16px;
         font-weight: bold;
         text-align: center;
+    }
+
+
+    /*edit form*/
+    .edit-container {
+        width: 50%;
+        margin: 8% 28%;
+    }
+
+    .edit-container .edit-ttl {
+        padding: 30px;
+        font-size: 16px;
+    }
+
+    .edit-container .edit-form {
+        padding: 25px 25px;
+        max-width: 70%;
+    }
+
+    .edit-container .edit-form label {
+        font-size: 13px;
+    }
+
+    .edit-container .edit-form input {
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px solid #888;
+        border-radius: 5px;
     }
 }

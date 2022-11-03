@@ -21,7 +21,7 @@
     text-decoration: none;
 }
 
-/*Header Nav Bar*/
+ /*Header Nav Bar*/
 .nav {
     position: fixed;
     align-items: center;
@@ -73,9 +73,9 @@
 .nav ul li div.profile {
     display: inline-block;
     position: relative;
-    margin-right: 35px;
     border: none;
     text-decoration: none;
+    margin-right: 35px;
 }
 
 .nav ul li .dropbtn {
@@ -100,8 +100,8 @@
     display: block;
     padding: 5px;
     color: black;
-    font-weight: 100;
     text-decoration: none;
+    font-weight: 100;
     font-style: normal;
 }
 
@@ -145,8 +145,8 @@
 .side-nav .logo a img {
     width: 100%;
     height: auto;
-    margin-top: 5px;
     margin-left: 75%;
+    margin-top: 5px;
 }
 
 .mv-section {
@@ -177,15 +177,16 @@
     margin: 15px 0;
 }
 
+
 .side-nav .side-dropdown-content {
     display: block;
 }
 
 .sidenav-dropdown .pttl .drop-arrow {
-    position: absolute;
-    right: 0;
-    margin: 10px;
-    transition: 0.3s ease;
+   position: absolute;
+   right: 0;
+   margin: 10px;
+   transition: 0.3s ease;
 }
 
 .rotate {
@@ -224,7 +225,6 @@
     font-style: italic;
     /*border-radius: 20px 0 0 20px;*/
 }
-
 .side-nav .sidenav-item li.active {
     background-color: #fff;
     color: #000;
@@ -247,7 +247,6 @@
     font-style: italic;
     /*border-radius: 20px 0 0 20px;*/
 }
-
 .side-nav .sidenav-item li a:hover i {
     color: #000;
 }
@@ -288,7 +287,6 @@
     font-size: 25px;
 }
 
-<<<<<<< HEAD
 /*Table Design*/
 
 #table {
@@ -297,59 +295,6 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
-=======
-.side-nav {
-    position: fixed;
-    float: left;
-    width: 15%;
-    /*width: 200px;*/
-    height: 100%;
-    margin-top: 63px;
-    background-color: rgb(15, 19, 21);
-}
-
-.mv-section {
-    display: flex;
-    float: right;
-    justify-content: center;
-    width: 85%;
-    height: 100vh;
-    background-color: #fbf9f9;
-}
-
-.tableinfo {
-    margin-top: 100px;
-    margin-left: 50px;
-}
-
-.tblttl {
-    margin-bottom: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.deletebtn {
-    border: none;
-
-    text-decoration: none;
-}
-
-.deletebtn i {
-    /*background-color: #8a0808;*/
-    /*border-radius: 5px;*/
-    /*padding: 2px 5px;*/
-    color: #8a0808;
-    font-size: 20px;
-    text-align: center;
-}
-
-/*Table Design*/
-
-#table {
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
->>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
     border-collapse: collapse;
 }
 
@@ -375,22 +320,21 @@
     text-align: left;
 }
 
-.ccard {
+.card {
     width: 100%;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     transition: 0.3s;
     border-radius: 10px;
-    margin-top: 67px;
 }
 
-.ccard:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button {
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: none;
     box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
     border-radius: 5px;
@@ -406,7 +350,7 @@ label {
 .button-primary {
     display: inline-flex;
     margin-left: 5px;
-    padding: 10px 30px;
+    padding: 5px 30px;
     box-shadow: rgb(0 0 0 / 20%) 0 3px 1px -2px, rgb(0 0 0 / 14%) 0 2px 2px 0, rgb(0 0 0 / 12%) 0 1px 5px 0;
     background-color: #6200ee;
     color: rgb(255, 255, 255);
@@ -453,15 +397,14 @@ select {
 }
 
 .error {
-    margin-top: 5px;
     color: red;
+    margin-top: 5px;
 }
 
 h2 {
     color: #2700ff;
     font-size: 25px;
     text-align: center;
-    text-transform: capitalize;
 }
 
 .success {
@@ -476,12 +419,10 @@ h2 {
 
 .modal {
     max-width: 350px !important;
-    height: auto;
-    overflow: visible;
 }
 
 .modal-text {
-    font-size: 29px;
+    font-size: 32px;
 }
 
 .modal-footer {
@@ -501,9 +442,8 @@ h2 {
     padding: 10px;
     background-color: #bfffbf;
     color: #808080;
-<<<<<<< HEAD
-    text-align: center;
     border-radius: 5px;
+    text-align: center;
 }
 
 .nav .btn-gnavi {
@@ -517,20 +457,9 @@ h2 {
     cursor: pointer;
     transition: all 400ms;
     -webkit-transition: all 400ms;
-=======
-    text-align: left;
-    border-radius: 5px;
->>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
 }
 
-.empty {
-    text-align: center;
-    color: #e90000;
-    font-size: 25px;
-}
-.paginate{
-    margin-top: 10px;
-}
+
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
 
@@ -539,28 +468,26 @@ h2 {
     }
 
     .nav {
-        padding: 11px 30px;
+        padding: 1.4vw 3.9vw;
     }
-
     .nav ul li i {
-        margin-top: 10px;
+        margin-top: 1.3vw;
         color: #0c0c0c;
-        font-size: 17px;
+        font-size: 2.2vw;
     }
-
     /*Side Navigation Bar*/
 
     .side-nav center img {
-        width: 50px;
-        height: 45px;
+        width: 6.5vw;
+        height: 5.9vw;
     }
 
     .side-nav center .username {
-        font-size: 15px;
+        font-size: 2vw;
     }
 
     .side-nav .sidenav-item li {
-        margin: 15px 0;
+        margin: 2vw 0;
     }
 
     .side-nav .sidenav-item li a {
@@ -568,43 +495,47 @@ h2 {
     }
 
     .side-nav .sidenav-item li a i {
-        font-size: 10px;
+        font-size: 1.3vw;
     }
 
     .side-nav .sidenav-item li a:hover {
-        padding-left: 5px;
+        padding-left: 0.7vw;
     }
 
     .side-nav .sidenav-item li a span {
-        padding-left: 5px;
-        font-size: 14px;
+        padding-left: 0.7vw;
+        font-size: 1.8vw;
     }
 
     .side-nav .sidenav-dropdown a.pttl {
-        margin: 8px 0 7px 0px;
-        padding: 5px 5px;
-        font-size: 13px;
+        margin: 1vw 0 0.9vw 0vw;
+        padding: 0.7vw 0.7vw;
+        font-size: 1.7vw;
         /*border-radius: 5px;*/
     }
 
     .side-nav .sidenav-dropdown a.pttl a i {
-        margin-left: 5px;
+        margin-left: 0.7vw;
     }
 
     .sidenav-dropdown .side-dropdown-content li {
-        padding-left: 0px;
+        padding-left: 0vw;
     }
+
+    .sidenav-dropdown .pttl .drop-arrow {
+        margin-top: 0.7vw;
+     }
 
 
     /*Table Design*/
 
     #table {
-        font-size: 13px;
+        font-size: 1.7vw;
     }
 
     #table th {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 1.3vw;
+        padding-bottom: 1.3vw;
     }
 }
 
@@ -616,9 +547,8 @@ h2 {
     }
 
     .nav {
-        padding: 0 25px;
+        padding: 0 3.9vw;
     }
-
     .nav .logo {
         float: left;
         width: 13%;
@@ -631,16 +561,16 @@ h2 {
     .nav .logo a img {
         width: 100%;
         height: auto;
-        margin-top: 5px;
+        margin-top: 0.8vw;
         margin-left: 12%;
     }
 
     .nav ul li {
-        padding: 17px 20px;
+        padding: 2.7vw 3.1vw;
     }
 
     .nav ul li i {
-        font-size: 15px;
+        font-size: 2.3vw;
     }
 
     /*Toggle menu*/
@@ -649,23 +579,23 @@ h2 {
     }
 
     .content .side-nav {
-        top: 60px;
-        right: -768px;
+        top: 9.4vw;
+        right: -120vw;
         float: none;
         width: 100%;
-        background-color: rgba(39, 59, 69, 0.9);
+        background-color: #ab7f80;
         text-align: center;
-        max-height: 80%;
+        max-height: 75%;
     }
 
     .nav .btn-gnavi span {
         position: absolute;
-        width: 25px;
-        height: 4px;
+        width: 3.9vw;
+        height: 0.6vw;
         background: #000;
         -webkit-transition: all 400ms;
         transition: all 400ms;
-        border-radius: 10px;
+        border-radius: 1.6vw;
     }
 
     .nav .btn-gnavi span:nth-child(1) {
@@ -673,11 +603,11 @@ h2 {
     }
 
     .nav .btn-gnavi span:nth-child(2) {
-        top: 10px;
+        top: 1.6vw;
     }
 
     .nav .btn-gnavi span:nth-child(3) {
-        top: 20px;
+        top: 3.1vw;
     }
 
     .nav .btn-gnavi.hb-open {
@@ -690,7 +620,7 @@ h2 {
     }
 
     .nav .btn-gnavi.hb-open span:nth-child(1) {
-        top: 15px;
+        top: 2.3vw;
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
     }
@@ -700,7 +630,7 @@ h2 {
     }
 
     .nav .btn-gnavi.hb-open span:nth-child(3) {
-        top: 15px;
+        top: 2.3vw;
         transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
     }
@@ -712,38 +642,20 @@ h2 {
         margin-left: 0;
     }
 
+    /*Side Nav Bar*/
+
     .side-nav .logo {
         display: none;
     }
 
-<<<<<<< HEAD
     .side-nav hr {
+        display: none;
+    }
+    .side-nav center {
         display: none;
     }
 
     .side-nav .sidenav-item li {
-=======
-    .nav ul li {
-        margin-right: 3.1vw;
-        padding: 0.8vw;
-    }
-
-    .nav ul li a i {
-        padding: 0.8vw;
-        font-size: 1.9vw;
-    }
-
-    .nav ul {
-        margin-right: 7.8vw;
-    }
-
-    .side-nav {
-        right: 100%;
-        float: none;
-        width: 100%;
-        height: 75%;
-        background-color: rgba(21, 21, 21, 0.5);
->>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
         text-align: center;
     }
 
@@ -752,7 +664,7 @@ h2 {
     }
 
     .side-nav .sidenav-item li a {
-        font-size: 18px;
+        font-size: 2.8vw;
     }
 
     .side-nav .sidenav-item li a i {
@@ -760,46 +672,41 @@ h2 {
     }
 
     .side-nav .sidenav-dropdown a.pttl {
-        margin: 8px 0 7px 0px;
-        padding: 5px 2px;
-        font-size: 16px;
+        margin: 1.3vw 0 1.1vw 0vw;
+        padding: 0.8vw 0.3vw;
+        font-size: 2.5vw;
         text-align: center;
         /*border-radius: 5px;*/
     }
 
     .side-nav .sidenav-dropdown a.pttl:hover {
-        padding-left: 0px;
+        padding-left: 0vw;
         text-align: center;
         /*border-radius: 20px 0 0 20px;*/
     }
 
     .side-nav .sidenav-dropdown a.pttl a span {
-        font-size: 18px;
+        font-size: 2.8vw;
     }
 
     .sidenav-dropdown .side-dropdown-content li {
         text-align: center;
     }
 
+    .sidenav-dropdown .pttl .drop-arrow {
+        display: inline-block;
+        right: 15.6vw;
+     }
+
 
     /*Table Design*/
 
     #table {
-<<<<<<< HEAD
-        font-size: 11px;
-=======
-        margin-left: 2.3vw;
-        font-size: 1.9vw;
-    }
-
-    #table td,
-    #table th {
-        padding: 0.8vw;
->>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
+        font-size: 1.7vw;
     }
 
     #table th {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 1.3vw;
+        padding-bottom: 1.3vw;
     }
 }

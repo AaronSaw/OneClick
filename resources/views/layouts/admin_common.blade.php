@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-=======
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" >
-    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
->>>>>>> f819ac2bced6f0da3c969d0ff61b71d786de81fa
     <link rel="stylesheet" href="{{ asset('css/admin_common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
@@ -84,22 +79,31 @@
                             aria-hidden="true"></i><span>Home</span></a>
                 </li>
                 <li class="sidenav-dropdown">
-                    <a href="#" class="pttl">Manage Product<i class="fa fa-angle-down drop-arrow" aria-hidden="true"></i> </a>
-                    <div class="side-dropdown-content {{ Request::is('product/create') || Request::is('product') ? 'show' : '' }}">
-                        <a href="{{ url('product') }}" class="dropdown-menu {{ Request::is('product') ? 'active' : '' }}"><i class="fa fa-eye"
-                            aria-hidden="true"></i><span>Product List</span></a><br>
-                        <a href="{{ url('product/create') }}" class="dropdown-menu {{ Request::is('product/create') ? 'active' : '' }}"><i class="fa fa-plus"
-                                aria-hidden="true"></i><span>Add
+                    <a href="#" class="pttl">Manage Product<i class="fa fa-angle-down drop-arrow"
+                            aria-hidden="true"></i> </a>
+                    <div
+                        class="side-dropdown-content {{ Request::is('product/create') || Request::is('product') ? 'show' : '' }}">
+                        <a href="{{ url('product') }}"
+                            class="dropdown-menu {{ Request::is('product') ? 'active' : '' }}"><i class="fa fa-eye"
+                                aria-hidden="true"></i><span>Product List</span></a><br>
+                        <a href="{{ url('product/create') }}"
+                            class="dropdown-menu {{ Request::is('product/create') ? 'active' : '' }}"><i
+                                class="fa fa-plus" aria-hidden="true"></i><span>Add
                                 Product</span></a>
                     </div>
                 </li>
                 <li class="sidenav-dropdown">
-                    <a href="#" class="pttl">Manage Category<i class="fa fa-angle-down drop-arrow {{ Request::is('category/create') || Request::is('category') ? 'rotate' : '' }}" aria-hidden="true"></i> </a>
-                    <div class="side-dropdown-content {{ Request::is('category/create') || Request::is('category') ? 'show' : '' }}">
-                        <a href="{{ url('category') }}" class="dropdown-menu {{ Request::is('category') ? 'active' : '' }}"><i class="fa fa-eye"
-                            aria-hidden="true"></i><span>Category List</span></a><br>
-                        <a href="{{ url('category/create') }}" class="dropdown-menu {{ Request::is('category/create') ? 'active' : '' }}"><i class="fa fa-plus"
-                                aria-hidden="true"></i><span>Add
+                    <a href="#" class="pttl">Manage Category<i
+                            class="fa fa-angle-down drop-arrow {{ Request::is('category/create') || Request::is('category') ? 'rotate' : '' }}"
+                            aria-hidden="true"></i> </a>
+                    <div
+                        class="side-dropdown-content {{ Request::is('category/create') || Request::is('category') ? 'show' : '' }}">
+                        <a href="{{ url('category') }}"
+                            class="dropdown-menu {{ Request::is('category') ? 'active' : '' }}"><i class="fa fa-eye"
+                                aria-hidden="true"></i><span>Category List</span></a><br>
+                        <a href="{{ url('category/create') }}"
+                            class="dropdown-menu {{ Request::is('category/create') ? 'active' : '' }}"><i
+                                class="fa fa-plus" aria-hidden="true"></i><span>Add
                                 Category</span></a>
                     </div>
                 </li>
@@ -118,4 +122,5 @@
     <script src="{{ asset('js/product.js') }}"></script>
     @stack('script')
 </body>
+
 </html>

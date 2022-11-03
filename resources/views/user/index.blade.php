@@ -31,7 +31,7 @@
         <td>{{ $user->address }}</td>
         <td>{{ $user->created_at->format('d M Y') }}</td>
         <td>
-          <div id="ex1" class="modal clearfix">
+          <div id="ex{{ $user->id }}" class="modal clearfix">
             <p class="modal-text">Are you sure to delete?</p>
             <hr>
             <div class="modal-footer">
@@ -45,7 +45,7 @@
               </form>
             </div>
           </div>
-          <a href="#ex1" rel="modal:open" class="deletebtn"><i class="fa fa-trash"></i></a>
+          <a href="#ex{{ $user->id }}" rel="modal:open" class="deletebtn"><i class="fa fa-trash"></i></a>
         </td>
       </tbody>
       @endforeach
