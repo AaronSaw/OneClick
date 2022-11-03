@@ -20,6 +20,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $users=$this->userInterface->getIndex();
@@ -35,7 +36,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user.userEditForm');
+        return view('user.edit',compact('user'));
     }
 
     /**
@@ -56,10 +57,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-        return redirect('/user');
+        $users=$this->userInterface->deleteUser($id);
+        return redirect('/userlist');
     }
 
     public function adminProfile() {

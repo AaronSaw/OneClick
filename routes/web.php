@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ShopController;
-use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,14 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/', function () {
+//    return view('user.common');
+//});
 
+Route::get('/member', function () {
+    return view('user.member');
+});
 
 //Authentication
 Route::get('/login',[AuthController::class,'login'])->name('auth#login');
@@ -31,13 +41,15 @@ Route::get('/shop',[ShopController::class,'index'])->name('shop#index');
 Route::get('/admin-dashboard', function () {
     return view('layouts.admin_common');
 });
-Route::get('/user', [UserController::class, 'index'])->name('user.userlist');
-Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::get('/userlist', [UserController::class, 'index'])->name('user.userlist');
+Route::delete('/userlist/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
-Route::get('/adminEdit/{user}', [UserController::class, 'edit'])->name('user.adminEdit');
-
+Route::get('/adminProfile/edit', [UserController::class, 'edit'])->name('user.userEdit');
 
 //category
-Route::resource('/category',CategoryController::class);
-Route::resource('/product',ProductController::class);
+Route::resource('/category', CategoryController::class);
+Route::resource('/product', ProductController::class);
 
+//Api
+Route::apiResource('api/categories', CategoryApiController::class);
+Route::apiResource('/api/products',ProductApiController::class);
