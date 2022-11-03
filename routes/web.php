@@ -18,6 +18,23 @@ use App\Http\Controllers\ShopController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/', function () {
+//    return view('user.common');
+//});
+
+Route::get('/member', function () {
+    return view('user.member');
+});
+
+
+
+
+
+
+
+
+
 
 
 //Authentication
