@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryApiController;
@@ -36,3 +37,4 @@ Route::resource('/product', ProductController::class);
 
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
+Route::apiResource('/api/products',ProductApiController::class);

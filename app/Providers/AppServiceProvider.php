@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Contracts\Dao\Product\ProductDaoInterface', 'App\Dao\Product\ProductDao');
+
         //Dao Registeration
         $this->app->bind('App\Contracts\Dao\Auth\AuthDaoInterface', 'App\Dao\Auth\AuthDao');
 
@@ -23,9 +23,17 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Contracts\Dao\Category\CategoryDaoInterface', 'App\Dao\Category\CategoryDao');
         $this->app->bind('App\Contracts\Dao\CategoryApi\CategoryApiDaoInterface', 'App\Dao\CategoryApi\CategoryApiDao');
 
-        $this->app->bind('App\Contracts\Services\Product\ProductServiceInterface', 'App\Services\Product\ProductService');
+        //SKM Dao registeration
+        $this->app->bind('App\Contracts\Dao\Category\CategoryDaoInterface', 'App\Dao\Category\CategoryDao');
+        $this->app->bind('App\Contracts\Dao\ProductApi\ProductApiDaoInterface', 'App\Dao\ProductApi\ProductApiDao');
+        $this->app->bind('App\Contracts\Dao\Product\ProductDaoInterface', 'App\Dao\Product\ProductDao');
+
+        //Service Registeration
         $this->app->bind('App\Contracts\Services\Category\CategoryServiceInterface', 'App\Services\Category\CategoryService');
         $this->app->bind('App\Contracts\Services\CategoryApi\CategoryApiServiceInterface', 'App\Services\CategoryApi\CategoryApiService');
+        $this->app->bind('App\Contracts\Services\ProductApi\ProductApiServiceInterface', 'App\Services\ProductApi\ProductApiService');
+        $this->app->bind('App\Contracts\Services\Product\ProductServiceInterface', 'App\Services\Product\ProductService');
+
     }
 
     /**
