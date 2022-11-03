@@ -1,43 +1,33 @@
 /*Team Member*/
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    line-height: 1.5;
-    min-height: 100%;
-}
-
 .member {
     width: 100%;
-    margin-top: 10%;
-    max-width: 1200px;
-    margin-bottom: 10%;
+    height: 100vh;
+    margin-top: 5%;
+    max-width: 1920px;
 }
 
-.member-ttl{
-    text-align: center;
-    font-size: 40px;
+.member-ttl {
     margin-bottom: 50px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .member-card .cards {
     display: flex;
-    justify-content: space-between;
+    margin-left: 9%;
 }
 
 .member-card .cards .card {
-    width: calc(100% /4 - 10px);
-    padding: 0.1%;
-    background-color: #fff;
-    /*border-radius: 12px;*/
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    width: calc(100% /4 - 30px);
+    margin: 0 0.2%;
+    padding: 0.5%;
     border: 5px solid #DDEFBB;
+    background-color: #fff;
     transition: 0.5s ease;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
-.member-card .cards .card:hover{
+.member-card .cards .card:hover {
     transform: translateY(-25px);
 }
 
@@ -47,7 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 10% 0;
-    text-align: center;    
+    text-align: center;
 }
 
 .cards .card .content-card .img-member {
@@ -56,24 +46,25 @@ body {
     margin-bottom: 20px;
 }
 
-.rotate-bdr{
+.rotate-bdr {
+    padding: 1px;
     border-top: 2px solid transparent;
-    border-left:2px solid transparent;
+    border-left: 2px solid transparent;
     border-right: 2px solid #C9FFBF;
     border-bottom: 2px solid #C9FFBF;
     border-radius: 50%;
-    padding: 1px;
     animation: rotatecircle 1s ease infinite;
     animation-direction: alternate-reverse;
 }
 
-@keyframes rotatecircle{
+@keyframes rotatecircle {
     from {
         transform: rotate(0deg);
-}
+    }
+
     to {
         transform: rotate(90deg);
-}
+    }
 }
 
 .card .content-card .img-member img {
@@ -87,13 +78,14 @@ body {
     animation-direction: alternate-reverse;
 }
 
-@keyframes rotateimg{
-    from{
+@keyframes rotateimg {
+    from {
         transform: rotate(0deg);
-       } 
-   to{
-    transform: rotate(-90deg);
-   } 
+    }
+
+    to {
+        transform: rotate(-90deg);
+    }
 }
 
 .card .content-card .info .name {
@@ -121,7 +113,6 @@ body {
     margin: 0 4px;
     border: 2px solid transparent;
     background-color: #DDEFBB;
-    /*background: linear-gradient(to right, #FFEEEE, #DDEFBB);*/
     color: #FFAFBD;
     text-align: center;
     border-radius: 50%;
@@ -129,83 +120,95 @@ body {
 
 .content-card .social-media a:hover {
     background-color: #fff;
-    /*color: #DDEFBB;*/
     transition: 0.5s;
     border-color: #DDEFBB;
 }
 
 
 /* Ipad */
-@media screen and (min-width: 768px) and (max-width: 1100px) {
+@media screen and (min-width: 768px) and (max-width: 1280px) {
     .member {
-        width: 80%;
+        margin-top: 7%;
+        margin-bottom: 50%;
     }
-        
+
     .member-card .cards {
         flex-wrap: wrap;
+        margin-right: 8%;
     }
-    
-    .member-card .cards .card {
-       width: calc(100% / 2 - 10px);
-       margin: 0% 0 5%;
-    }
-    
-}
 
-
-@media all and (max-width: 768px) {
-    .member {
-        width: 80%;
-    }
-    
-    .member-card .cards {
-        display: block;
-    }
-    
     .member-card .cards .card {
-        width: 100%;
-        margin: 10% 0;
+        width: calc(100% / 2 - 10px);
+        margin-bottom: 10%;
     }
 
     .cards .card .content-card .img-member {
         margin-left: 5%;
     }
-    
+
     .cards .card .content-card {
-        display: block; 
-        width: 100%; 
+        display: block;
+        width: 100%;
         padding: 0 2%;
     }
 
     .card .content-card .info .name {
+        margin-left: 10%;
         text-align: left;
+    }
+
+    .card .content-card .info .detail {
+        text-align: justify;
+        max-width: 100%;
+    }
+
+    .card .content-card .social-media {
         margin-left: 10%;
     }
-    
-    .card .content-card .info .detail {
-      text-align: justify;
-      max-width: 100%;
-    }
-    
-    .card .content-card .social-media {
-        margin-left: 25%;
-    }
+
 }
 
+/* SP */
+@media screen and (max-width: 767.9px) {
+    .member {
+        margin-top: 15%;
+        margin-bottom: 60%;
+    }
 
+    .member-card .cards {
+        flex-wrap: wrap;
+        margin-left: 3%;
+    }
 
+    .member-card .cards .card {
+        width: calc(100%/2 - 10px);
+        margin-bottom: 10%;
+    }
 
+    .cards .card .content-card .img-member {
+        width: 100px;
+        height: 100px;
+        margin-left: 3%;
+    }
 
+    .cards .card .content-card {
+        display: block;
+        width: 100%;
+        padding: 0 2%;
+    }
 
+    .card .content-card .info .name {
+        margin-left: 10%;
+        text-align: left;
+    }
 
-/*Shop*/
+    .card .content-card .info .detail {
+        font-size: 12px;
+        text-align: justify;
+        max-width: 100%;
+    }
 
-
-
-
-
-
-
-
-
-
+    .card .content-card .social-media {
+        margin-left: 10%;
+    }
+}

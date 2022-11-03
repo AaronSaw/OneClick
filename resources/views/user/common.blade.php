@@ -65,7 +65,7 @@
     </header>
 
     @yield('content')
-    
+   
     <footer class="footer">
         <div class="footer-inner">
             <div class="logo-side">
@@ -117,9 +117,6 @@
         </div>
         
     </footer>
-
-
-    
 
     <script src="{{ asset('user/js/jquery-3.6.0.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/js/all.min.js"></script>
