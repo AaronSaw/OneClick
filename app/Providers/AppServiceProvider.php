@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Pagination\Paginator  as  PaginationPaginator;
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Pagination\Paginator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('App\Contracts\Dao\User\UserDaoInterface', 'App\Dao\User\UserDao');
+        $this->app->bind('App\Contracts\Services\User\UserServicesInterface', 'App\Services\User\UserServices');
 
         //Dao Registeration
         $this->app->bind('App\Contracts\Dao\Auth\AuthDaoInterface', 'App\Dao\Auth\AuthDao');
@@ -43,6 +45,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        PaginationPaginator::useBootstrap();
+        Paginator::defaultView('vendor.pagination.custom-pagi');
     }
 }

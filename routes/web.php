@@ -4,9 +4,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductApiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ShopController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,26 +29,22 @@ Route::get('/member', function () {
     return view('user.member');
 });
 
-
-
-
-
-
-
-
-
-
-
 //Authentication
-Route::get('/login', [AuthController::class, 'login'])->name('auth#login');
-Route::post('/login/create', [AuthController::class, 'create'])->name('auth#create');
-Route::get('/register', [AuthController::class, 'register'])->name('auth#register');
-Route::post('/register/store', [AuthController::class, 'store'])->name('auth#store');
-Route::get('logout', [AuthController::class, 'logout'])->name('auth#logout');
-Route::get('/shop', [ShopController::class, 'index'])->name('shop#index');
+Route::get('/login',[AuthController::class,'login'])->name('auth#login');
+Route::post('/login/create',[AuthController::class,'create'])->name('auth#create');
+Route::get('/register',[AuthController::class,'register'])->name('auth#register');
+Route::post('/register/store',[AuthController::class,'store'])->name('auth#store');
+Route::get('logout',[AuthController::class,'logout'])->name('auth#logout');
+Route::get('/shop',[ShopController::class,'index'])->name('shop#index');
+
+//user (dashboard)
 Route::get('/admin-dashboard', function () {
     return view('layouts.admin_common');
 });
+Route::get('/userlist', [UserController::class, 'index'])->name('user.userlist');
+Route::delete('/userlist/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
+Route::get('/adminProfile/edit', [UserController::class, 'edit'])->name('user.userEdit');
 
 //category
 Route::resource('/category', CategoryController::class);
