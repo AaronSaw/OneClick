@@ -13,9 +13,6 @@ class ShopController extends Controller
      */
     public function index()
     {
-        if (Auth::check()) {
-            return view('welcome');
-        }
-        return redirect()->route('auth#login');
+        return view('welcome');
     }
 }

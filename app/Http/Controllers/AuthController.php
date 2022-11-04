@@ -33,9 +33,6 @@ class AuthController extends Controller
      */
     public function login()
     {
-        if (Auth::check()) {
-            return redirect()->route('shop#index');
-        }
         return view('auth.login');
     }
 
@@ -66,7 +63,13 @@ class AuthController extends Controller
     {
         $input = $this->authInterface->createPost($request);
         if ($input) {
-            return redirect()->route('shop#index');
+            error_log('login user role is');
+            error_log(Auth::user()->role);
+            if (Auth::user()->role == 0) {
+                return redirect()->route('admin#dashboard');
+            } else if (Auth::user()->role == 1) {
+                return redirect()->route('shop#index');
+            }
         } else {
             return back()->with('error', 'Your email and password are incorrect!');
         }
