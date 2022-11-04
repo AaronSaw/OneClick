@@ -1,10 +1,15 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductApiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ForgotPasswordController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +21,14 @@ use App\Http\Controllers\ForgotPasswordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/', function () {
+//    return view('user.common');
+//});
 
+Route::get('/member', function () {
+    return view('user.member');
+});
 
 //Authentication
 Route::post('/login/create', [AuthController::class, 'create'])->name('auth#create');
@@ -44,6 +56,15 @@ Route::group(['middleware' => ['admin']], function () {
         return view('layouts.admin_common');
     })->name('admin#dashboard');
 });
+Route::get('/userlist', [UserController::class, 'index'])->name('user.userlist');
+Route::delete('/userlist/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
+Route::get('/adminProfile/edit', [UserController::class, 'edit'])->name('user.userEdit');
 
 //category
 Route::resource('/category', CategoryController::class);
+Route::resource('/product', ProductController::class);
+
+//Api
+Route::apiResource('api/categories', CategoryApiController::class);
+Route::apiResource('/api/products',ProductApiController::class);
