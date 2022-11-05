@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\OrderController;
 
 
 /*
@@ -53,3 +54,8 @@ Route::resource('/product', ProductController::class);
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products',ProductApiController::class);
+
+//Order
+Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+

@@ -2,7 +2,7 @@
 @section('content')
     <div class="product_pform">
         <div class="ccard">
-            <h2>Edit product</h2>
+            <h2 class="tblttl">Edit product</h2>
             <hr>
             <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -57,8 +57,8 @@
                 <label for="">preview image</label><br>
                 <img id="preview-image" src="{{ asset('storage/' . $product->image) }}"  alt="preview image" style="max-height: 250px;">
                 <div class="productform-footerBtn">
-                        <button class="button cancel" type="reset">CANCEL</button>
-                        <button class="button-primary" type="submit">Update</button>
+                    <button class="button cancel" type="reset"><a href="{{ url('product') }}">Cancel<a></button>
+                    <button class="button-primary" type="submit">Update</button>
                 </div>
             </form>
             {{-- run command to connect public folder ,storage/public

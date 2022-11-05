@@ -14,16 +14,16 @@ $(document).ready(function () {
 
     //Toggle Menu
     $('.btn-gnavi').click(function () {
-        var rightVal = 0;
+        var leftVal = 0;
         if ($(this).hasClass('hb-open')) {
-            rightVal = -768;
+            leftVal = -768;
             $(this).removeClass('hb-open');
         } else {
             $(this).addClass('hb-open');
         }
 
         $('.side-nav').stop().animate({
-            right: rightVal
+            left: leftVal
         }, 1000);
     });
 
