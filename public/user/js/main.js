@@ -9,10 +9,4 @@ $(document).ready(function () {
       $(".menu-section").slideDown();
     } else $(".menu-section").slideUp();
   });
-
-  // Toggle Menu Accordion
-  $(".js-accordion").click(function () {
-    $(this).toggleClass("active").next().slideToggle(300);
-  });
-
 });

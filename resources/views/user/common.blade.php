@@ -35,7 +35,7 @@
                     </li>
                     <li class="menu-items"><a href="{{ url('/') }}" class="link">SHOP</a></li>
                     <li class="menu-items">
-                        <span class="dropdown-icon link side-arrow">
+                        <span class="dropdown-items link side-arrow">
                             <select name="" id="list-category" class="menu-category link">
                                 <option value="">ALL CATEGORIES</option>
                             </select>
@@ -59,7 +59,7 @@
     </header>
 
     @yield('content')
-   
+
     <footer class="footer">
         <div class="footer-inner">
             <div class="logo-side">
@@ -119,9 +119,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/js/all.min.js"></script>
     <script src="{{ asset('user/js/slick.min.js') }}"></script>
     <script src="{{ asset('user/js/main.js') }}"></script>
+    <script src="{{ asset('user/js/shop.js') }}"></script>
 
-
- @stack('script')
 </body>
 
 </html>

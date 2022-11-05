@@ -71,7 +71,7 @@ img {
 
 .menu-list .menu-items {
   position: relative;
-  margin-right: 7%;
+  margin-right: 6%;
 }
 
 .menu-list .menu-items .link {
@@ -90,12 +90,22 @@ img {
   margin-left: -2.6%;
 }
 
-.dropdown-icon select {
+.dropdown-items select {
   -moz-appearance:none; /* Firefox */
   -webkit-appearance:none; /* Safari and Chrome */
   appearance:none;
   margin-top: -3%;
+  padding-left: 4px;
 }
+
+.menu-category option{
+  color: rgb(246, 250, 0);
+  background-color: rgb(5, 26, 1);
+}
+
+/*.menu-category option:hover{
+  background-color: #FFAFBD;
+}*/
 
 .menu-list .menu-items:hover .dropdown-menu {
   visibility: visible;
@@ -424,8 +434,9 @@ img {
     border-right: 2px solid #fff;
   }
 
-  .dropdown-icon select {
+  .dropdown-items select {
     margin-top: 0px;
+    margin-left: -18px;
   }
 
   .dropdown-menu {
@@ -777,86 +788,14 @@ img {
     border-right: 2px solid #fff;
   }
 
-  .dropdown-menu {
-    display: flex;
-    position: unset;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    visibility: visible;
-    padding: 0;
-    background-color: #fff;
-    transform: unset;
-    opacity: 1;
-    border-top: 1px solid #a6a6a6;
-  }
-
-  .dropdown-icon select {
+  .dropdown-items select {
     margin-top: 0px;
+    margin-left: -18px;
   }
 
-  .dropdown-menu .sub-menu-list {
-    padding-left: 0;
-    border-left: none;
-  }
 
-  .dropdown-menu .sub-menu-list .sub-item {
-    border-top: 1px solid #a6a6a6;
-  }
 
-  .dropdown-menu .sub-link {
-    display: block;
-    padding: 18px 20px;
-    color: #433f3f;
-    font-size: 14px;
-  }
-
-  .dropdown-menu .sub-link::before {
-    margin-right: 0.5em;
-    font-size: 30px;
-    content: ".";
-  }
-
-  .dropdown-menu .sub-link:hover {
-    background-color: transparent;
-    color: unset;
-  }
-
-  .sub-toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 56px;
-    background-color: #666666;
-    cursor: pointer;
-  }
-
-  .sub-toggle::before,
-  .sub-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: #fff;
-    content: "";
-    transform: translate(-50%, -50%);
-  }
-
-  .sub-toggle::before {
-    width: 16px;
-    height: 2px;
-  }
-
-  .sub-toggle::after {
-    width: 2px;
-    height: 16px;
-  }
-
-  .sub-toggle.active::after {
-    transition: opacity 0.36s;
-    opacity: 0;
-  }
+  
 
   .login-gap {
     display: none;
