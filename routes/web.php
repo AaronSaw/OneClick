@@ -29,7 +29,9 @@ Route::get('/member', function () {
 
 
 
-
+Route::get('/',function(){
+    return view('shop');
+});
 
 
 
