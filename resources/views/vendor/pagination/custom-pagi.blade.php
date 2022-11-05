@@ -11,8 +11,7 @@
         margin-top: 15px
         display: block;
         font-weight: bold;
-        font-size: 17px;
-        font-style: italic;
+        font-size: 15px;
     }
     .pagi-nav .pagination {
         display: block;
@@ -22,6 +21,13 @@
         float: left;
         padding: 3px 7px;
         cursor: pointer;
+        color: #fff;
+    }
+    .page-item.active {
+        border-bottom: 1px solid gray;
+        padding: 5px;
+        background-color: rgb(154 34 56 / 90%);
+
     }
 
 </style>

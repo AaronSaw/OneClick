@@ -7,8 +7,12 @@
     </div>
 @endif
 <div class="edit-container">
-    <h3 class="edit-ttl">Edit Your Information</h3>
+
     <form action="" method="POST" class="edit-form">
+        @csrf
+        @method('put')
+        <h3 class="edit-ttl">Edit Your Information</h3>
+        <hr>
         <label for="name">Name</label><br>
         <input type="text" name="name" value=""><br>
         <label for="email">Email</label><br>
@@ -16,8 +20,8 @@
         <label for="address">Address</label><br>
         <input type="text" name="address" value=""><br>
         <div>
-            <button class="update-btn"><a href="{{ url('adminProfile') }}">Cancel</a></button>
-            <button class="update-btn"><a href="">Update</a></button>
+            <button class="button cancel"><a href="{{ url('adminProfile') }}">Cancel</a></button>
+            <button class="button-primary" type="submit"><a href="">Update</a></button>
         </div>
 
     </form>

@@ -13,17 +13,11 @@
                         <p class="error">{{ $message }}</p>
                     @enderror
                     <div class="form-footerBtn">
-                        <div></div>
-                        <div>
-                            <button type="reset" class="button cancel">CANCEL</button>
-                            <button class="button-primary">
-                                Add
-                            </button>
-                        </div>
+                        <button class="button cancel" type="reset"><a href="{{ url('category') }}">Cancel<a></button>
+                        <button class="button-primary" type="submit">Create</button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
     </div>
 @endsection

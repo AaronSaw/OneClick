@@ -1,10 +1,57 @@
-.category_cform {
-    width: 300px;
-    margin-top: 165px;
+.ccard {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 30px 10px;
+    border-radius: 5px;
+    padding: 10px 10px 30px;
+}
 
+.category_cform {
+    width: 50%;
+    margin: 10% 30%;
+
+}
+
+.category_cform .ccard {
+    padding: 30px 40px;
+    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 52%;
+    border-radius: 10px;
+}
+
+.category_cform .ccard h2 {
+    color: #000000;
+    font-size: 18px;
 }
 
 .category-forminput {
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+.form-footerBtn {
+    text-align: center;
+}
+
+.form-footerBtn .button,
+.button-primary {
+    margin-top: 6px;
+    padding: 3px 10px;
+}
+
+.form-footerBtn button a {
+    color: #ffffff;
+}
+
+/*Mobile Size*/
+@media screen and (max-width: 767.9px) {
+    .category_cform {
+        margin-top: 10%;
+        width: 80%;
+    }
+    .category_cform .ccard {
+        margin-top: 10%;
+        width: 60%;
+    }
 }

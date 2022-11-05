@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ForgotPasswordController;
 
@@ -30,17 +31,9 @@ Route::get('/member', function () {
     return view('user.member');
 });
 
-
-
 Route::get('/',function(){
     return view('shop');
 });
-
-
-
-
-
-
 
 //Authentication
 Route::post('/login/create', [AuthController::class, 'create'])->name('auth#create');
@@ -80,3 +73,8 @@ Route::resource('/product', ProductController::class);
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products',ProductApiController::class);
+
+//Order
+Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+

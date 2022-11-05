@@ -1,10 +1,11 @@
 @extends('layouts.admin_common')
 
 @section('content')
-<div class="container">
+<div class="ccard">
   <div class="tableinfo">
     <div class="tblttl">
       <p>Users Information</p>
+      <hr>
     </div>
     <table id="table">
       <thead>
@@ -14,7 +15,7 @@
           <th>Email</th>
           <th>Address</th>
           <th>Created At</th>
-          <th>Delete</th>
+          <th>Action</th>
         </tr>
       </thead>
       @foreach ($users as $user)
@@ -38,14 +39,14 @@
               <form action="{{ route('user.destroy', $user->id) }}" class="d-inline-block" method="post">
                 @csrf
                 @method('delete')
-                <button class="button  danger">
-                  Yes
-                </button>
                 <button type="button" class="button cancel"><a href="#" rel="modal:close">No</a></button>
+                <button class="button  danger">
+                    Yes
+                </button>
               </form>
             </div>
           </div>
-          <a href="#ex{{ $user->id }}" rel="modal:open" class="deletebtn"><i class="fa fa-trash"></i></a>
+          <a href="#ex{{ $user->id }}" rel="modal:open" class="deletebtn"><i class="fa-regular fa-trash-can"></i></a>
         </td>
       </tbody>
       @endforeach

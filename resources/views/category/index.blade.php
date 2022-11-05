@@ -1,7 +1,7 @@
 @extends('layouts.admin_common')
 @section('content')
     <div class="ccard">
-        <h2>Category Lists</h2>
+        <h2 class="tblttl">Category Lists</h2>
         <hr>
         @if (session('status'))
             <div class="alert ">
@@ -12,8 +12,8 @@
             <thead>
                 <tr>
                     <th>Title</th>
+                    <th>Created At</th>
                     <th>Action</th>
-                    <th>Created</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,32 +23,33 @@
                             {{ $category->ctitle }}
                         </td>
                         <td>
-                            <div class="action-btngroup">
+                            <p>
+                                {{ $category->created_at->format('d M Y') }}
+                            </p>
+                        </td>
+                        <td>
+                            <div class="action-btngroup" style="margin-left: 40%">
                                 <a href="{{ route('category.edit', $category->id) }}" class="button success">
-                                    Edit
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                                 <div id="ex{{ $category->id }}" class="modal" style="">
                                     <p class="modal-text">Are you sure to delete</p>
+                                    <hr>
                                     <div class="modal-footer">
                                         <a href="#" rel="modal:close" class="button cancel">No</a>
                                         <form action="{{ route('category.destroy', $category->id) }}" class="d-inline-block"
                                             method="post">
                                             @csrf
                                             @method('delete')
-                                            <button class="button  danger">
+                                            <button class="button danger">
                                                 Yes
                                             </button>
                                         </form>
                                     </div>
                                 </div>
                                 <!-- Link to open the modal -->
-                                <p><a href="#ex{{ $category->id }}" rel="modal:open" class="button danger">Delete</a></p>
+                                <p><a href="#ex{{ $category->id }}" rel="modal:open" class="button danger"><i class="fa-regular fa-trash-can"></i></a></p>
                             </div>
-                        </td>
-                        <td>
-                            <p>
-                                {{ $category->created_at->format('d M Y') }}
-                            </p>
                         </td>
                     </tr>
                 @empty
