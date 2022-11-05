@@ -31,9 +31,12 @@ class AuthDao implements AuthDaoInterface
      */
     public function createPost($request)
     {
+        // check if it is email
+        $fieldType = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+
         $user_data = array(
-            'email' => $request->email,
-            'password' => $request->password,
+            $fieldType => $request->email,
+            'password'  => $request->password,
         );
         $input_data = Auth::attempt($user_data);
         return $input_data;
