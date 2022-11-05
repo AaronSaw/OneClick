@@ -30,6 +30,18 @@ Route::get('/member', function () {
     return view('user.member');
 });
 
+
+
+Route::get('/',function(){
+    return view('shop');
+});
+
+
+
+
+
+
+
 //Authentication
 Route::post('/login/create', [AuthController::class, 'create'])->name('auth#create');
 Route::get('/register', [AuthController::class, 'register'])->name('auth#register');
