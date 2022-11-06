@@ -7,37 +7,33 @@
                 <p>Users Information</p>
             </div>
             @if (session('status'))
-            <div class="alert ">
-                {{ session('status') }}
-            </div>
-        @endif
+                <div class="alert ">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="laravelExcel">
                 <button class="excelBtn"><i class="fa fa-download"></i> Download</button>
-
                 <div class="importExcel">
                     <div id="ex7" class="modal">
                         <form action="{{ route('user.import') }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <input type="file" class="excel-input" name="file" required>
-                          <button class="excelBtn uploadBtn"><i class="fa fa-upload"></i> upload</button>
+                            <input type="file" class="excel-input" name="file" accept="xlsx,xls,csv" required>
+                            <button class="excelBtn uploadBtn"><i class="fa fa-upload"></i> upload</button>
                         </form>
                     </div>
-
                     <!-- Link to open the modal -->
                     <p><a href="#ex7" rel="modal:open" class="excelBtn"><i class="fa fa-upload"></i> upload</a></p>
                 </div>
-
                 <!-- Modal HTML embedded directly into document -->
             </div>
-             @if($errors->any())
-        @foreach ($errors->all() as $item)
-
-        <li class="error">{{ $item }}</li>
-        @endforeach
-             @endif
-             @error('row2')
-             <div class="error">{{ $message }}</div>
-         @enderror
+            @if ($errors->any())
+                @foreach ($errors->all() as $item)
+                    <li class="error">{{ $item }}</li>
+                @endforeach
+            @endif
+            @error('row2')
+                <div class="error">{{ $message }}</div>
+            @enderror
             <table id="table">
                 <thead>
                     <tr>

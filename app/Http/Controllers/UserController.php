@@ -72,6 +72,9 @@ class UserController extends Controller
 
     public function import(Request $request)
     {
+        $request->validate([
+            'file' => 'required|mimes:xlsx, csv, xls'
+        ]);
         Excel::import(new UsersImport, $request->file);
         return redirect()->route('user.userlist')->with('status', 'User Imported Successfully');
     }

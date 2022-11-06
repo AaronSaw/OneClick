@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
 
-class UsersImport implements ToModel,WithValidation
+class UsersImport implements ToModel, WithValidation
 {
     /**
      * @param array $row
@@ -17,18 +17,18 @@ class UsersImport implements ToModel,WithValidation
      */
     public function model(array $row)
     {
-        if($row['4']=='admin'){
-     $kind='0';
-        }else{
-      $kind='1';
+        if ($row['4'] == 'admin') {
+            $kind = '0';
+        } else {
+            $kind = '1';
         }
         //dd($role);
         $data = User::create([
             "name" => $row['0'],
             "email" => $row['1'],
-            "address"=> $row['2'],
+            "address" => $row['2'],
             "password" => Hash::make($row['3']),
-            "role"=>$kind,
+            "role" => $kind,
         ]);
         //User::create($data);
     }
@@ -39,18 +39,16 @@ class UsersImport implements ToModel,WithValidation
             '1' => 'required|unique:users,email',
             '2' => 'required',
             '3' => 'required',
-            '4'=>'required',
         ];
     }
-        public function customValidationMessages()
+    public function customValidationMessages()
     {
         return [
             '0.required' => 'This name  is empty.',
             '1.required' => 'This email  is empty.',
-            '1.unique'=>'This email is already exit',
+            '1.unique' => 'This email is already exit',
             '2.required' => 'This address  is empty.',
             '3.required' => 'This password  is empty.',
         ];
     }
-
 }
