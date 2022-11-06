@@ -2,7 +2,7 @@
 @section('content')
     <div class="category_cform">
         <div class="ccard ">
-            <h2>Edit Category</h2>
+            <h2 class="tblttl">Edit Category</h2>
             <hr>
             <form action="{{ route('category.update', $category->id) }}" method="post">
                 @csrf
@@ -17,10 +17,8 @@
                     <div class="form-footerBtn">
                         <div></div>
                         <div>
-                            <button class="button cancel" type="reset">CANCEL</button>
-                            <button class="button-primary">
-                                update
-                            </button>
+                            <button class="button cancel" type="reset"><a href="{{ url('category') }}">Cancel<a></button>
+                            <button class="button-primary"> Update</button>
                         </div>
                     </div>
                 </div>

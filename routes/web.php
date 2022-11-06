@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ForgotPasswordController;
 
@@ -28,6 +29,10 @@ use App\Http\Controllers\ForgotPasswordController;
 
 Route::get('/member', function () {
     return view('user.member');
+});
+
+Route::get('/',function(){
+    return view('shop');
 });
 
 //Authentication
@@ -71,3 +76,7 @@ Route::apiResource('/api/products',ProductApiController::class);
 
 //import and export Excel
 Route::post('/import', [UserController::class, 'import'])->name('user.import');
+//Order
+Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+
