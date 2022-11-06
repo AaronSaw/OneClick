@@ -74,6 +74,8 @@ Route::resource('/product', ProductController::class);
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products',ProductApiController::class);
 
+//import and export Excel
+Route::post('/import', [UserController::class, 'import'])->name('user.import');
 //Order
 Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
 Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Contracts\Services\User\UserServicesInterface;
+use App\Imports\UsersImport;
 use Illuminate\Http\Request;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -23,8 +25,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users=$this->userInterface->getIndex();
-        return view('user.index',compact('users'));
+        $users = $this->userInterface->getIndex();
+        return view('user.index', compact('users'));
     }
 
 
@@ -36,7 +38,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user.edit',compact('user'));
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -59,12 +61,21 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $users=$this->userInterface->deleteUser($id);
+        $users = $this->userInterface->deleteUser($id);
         return redirect('/userlist');
     }
 
-    public function adminProfile() {
+    public function adminProfile()
+    {
         return view('user.adminProfile');
     }
-}
 
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx, csv, xls'
+        ]);
+        Excel::import(new UsersImport, $request->file);
+        return redirect()->route('user.userlist')->with('status', 'User Imported Successfully');
+    }
+}

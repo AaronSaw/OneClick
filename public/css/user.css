@@ -57,8 +57,8 @@
 }
 
 .profile-detail {
-    width: 32%;
     position: relative;
+    width: 32%;
     margin: 10% 30%;
     border: 1px dotted #333;
     box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
@@ -132,9 +132,9 @@
     position: absolute;
     top: 5px;
     right: 5px;
-    text-align: right;
-    text-decoration: none;
     border: none;
+    text-decoration: none;
+    text-align: right;
 }
 
 
@@ -179,6 +179,32 @@
     color: #fff;
 }
 
+.laravelExcel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.excelBtn {
+    padding: 5px 20px;
+    border: none;
+    box-shadow: 5px 0px 14px rgb(239 239 239);
+    background: #ff1983;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.excel-input {
+    margin-bottom: 5px;
+    padding: 4px;
+}
+
+.uploadBtn {
+    margin-left: 30%;
+    background: #2eef21;
+}
+
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
     .deletebtn i {
@@ -218,6 +244,7 @@
         border-radius: 0.7vw;
     }
 }
+
 
 @media screen and (max-width: 767.9px) {
     .deletebtn i {
