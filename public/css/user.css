@@ -207,10 +207,10 @@
 }
 
 .edit-container .edit-form .update-btn {
+    margin-top: 5px;
     padding: 2px 5px;
     border-radius: 5px;
     border-color: #ccc6c0;
-    margin-top: 5px;
 }
 
 .edit-container .edit-form .update-btn a {
@@ -255,6 +255,33 @@
         border: 1px solid #888;
         border-radius: 5px;
     }
+}
+
+.laravelExcel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.excelBtn {
+    padding: 5px 20px;
+    border: none;
+    box-shadow: 5px 0px 14px rgb(239 239 239);
+    background: #ff1983;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.excel-input {
+    margin-bottom: 5px;
+    padding: 4px;
+    border: 1px solid #383838;
+}
+
+.uploadBtn {
+    margin-left: 30%;
+    background: #2eef21;
 }
 
 @media screen and (max-width: 767.9px) {

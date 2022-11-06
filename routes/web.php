@@ -68,3 +68,6 @@ Route::resource('/product', ProductController::class);
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products',ProductApiController::class);
+
+//import and export Excel
+Route::post('/import', [UserController::class, 'import'])->name('user.import');
