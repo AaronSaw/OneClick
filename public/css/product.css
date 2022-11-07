@@ -1,7 +1,15 @@
 .product_pform {
-    width: 600px;
+    width: 70%;
     height: 135vh;
-    margin: 100px 0;
+    margin: 5% 0 0 26%;
+}
+
+.product_pform .ccard {
+    padding: 30px 40px;
+    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 65%;
+    border-radius: 10px;
 }
 
 .pinput {
@@ -10,6 +18,8 @@
 
 .ptitle {
     margin-bottom: 10px;
+    color: #000000;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -21,11 +31,19 @@
 .sbutton {
     margin-bottom: 10px;
     margin-left: 5px;
-    padding: 10px 20px;
+    padding: 2.5px 20px;
     border: 1px solid transparent;
     background: #eac4fd;
     outline: none;
     border-radius: 5px;
+}
+
+.search-btngp {
+    margin: 10px 0;
+}
+
+.action-btngroup {
+    text-align: center;
 }
 
 .pimg {
@@ -59,7 +77,18 @@
     margin-bottom: 5px;
 }
 
+.productform-footerBtn button a {
+    color: #ffffff;
+}
+
 .productform-footerBtn {
+    margin-top: 6px;
     text-align: center;
-    margin-top: 5px;
+}
+
+/*Mobile Size*/
+@media screen and (max-width: 767.9px) {
+    .ccard {
+        margin-top: 12%;
+    }
 }

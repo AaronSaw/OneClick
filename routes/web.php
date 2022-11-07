@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductApiController;
 use App\Http\Controllers\CategoryApiController;
@@ -25,6 +27,11 @@ use App\Http\Controllers\ForgotPasswordController;
 Route::group(['middleware' => ['not-login']], function () {
     Route::get('/login', [AuthController::class, 'login'])->name('auth#login');
 });
+
+Route::get('/',function(){
+    return view('shop');
+});
+
 //Authentication
 Route::post('/login/create', [AuthController::class, 'create'])->name('auth#create');
 Route::get('/register', [AuthController::class, 'register'])->name('auth#register');
@@ -41,6 +48,9 @@ Route::group(['middleware' => ['user']], function () {
     Route::get('/member', function () {
         return view('user.member');
     });
+    //Order
+    Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+    Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 });
 
 // Admin-side
@@ -63,4 +73,6 @@ Route::group(['middleware' => ['admin']], function () {
     //change password
     Route::get('/changePassword', [AuthController::class, 'changePassword'])->name('change#password');
     Route::post('/changePassword/update', [AuthController::class, 'updatePassword'])->name('update#password');
+    //import and export Excel
+    Route::post('/import', [UserController::class, 'import'])->name('user.import');
 });

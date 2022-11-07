@@ -2,7 +2,7 @@
 @section('content')
     <div class="product_pform">
         <div class="ccard">
-            <h2 class="ptitle">Create product</h2>
+            <h2 class="ptitle">Create New product</h2>
             <hr>
             <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -53,8 +53,8 @@
                 <label for="">preview image</label><br>
                 <img id="preview-image" src=""  style="max-height: 250px;">
                 <div class="productform-footerBtn">
-                        <button class="button cancel" type="reset">CANCEL</button>
-                        <button class="button-primary" type="submit">Create</button>
+                    <button class="button cancel" type="reset"><a href="{{ url('product') }}">Cancel<a></button>
+                    <button class="button-primary" type="submit">Create</button>
                 </div>
             </form>
         </div>

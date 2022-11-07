@@ -1,7 +1,7 @@
 @extends('layouts.admin_common')
 @section('content')
     <div class="ccard">
-        <h2>product Lists</h2>
+        <h2 class="tblttl">Product Lists</h2>
         <hr>
         @if (session('status'))
             <div class="alert ">
@@ -30,10 +30,10 @@
                         onfocus="(this.type='date')" name="sdate">
                     <input type="text" class="sinput" value="{{ request('edate') }}" placeholder="End date"
                         onfocus="(this.type='date')" name="edate">
-                        <div class="">
-                    <button class="sbutton" type="submit">Search</button>
-                    <a href="{{ route('product.index') }}" class="button cancel" type="">Cancel</a>
-                </div>
+                    <div class="search-btngp">
+                        <button class="sbutton" type="submit">Search</button>
+                        <a href="{{ route('product.index') }}" class="button cancel" type="">Cancel</a>
+                    </div>
                 </div>
             </form>
         </div>
@@ -45,8 +45,8 @@
                     <th>Category</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Created At</th>
                     <th>Action</th>
-                    <th>Created</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,12 +64,16 @@
                         </td>
                         <td>${{ $product->price }}</td>
                         <td>
+                            {{ $product->created_at->format('d M Y') }}
+                        </td>
+                        <td>
                             <div class="action-btngroup">
                                 <a href="{{ route('product.edit', $product->id) }}" class="button success">
-                                    edit
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                                 <div id="ex{{ $product->id }}" class="modal">
                                     <p class="modal-text">Are you sure to delete</p>
+                                    <hr>
                                     <div class="modal-footer">
                                         <a href="#" rel="modal:close" class="button cancel">No</a>
                                         <form action="{{ route('product.destroy', $product->id) }}" method="post">
@@ -82,12 +86,10 @@
                                     </div>
                                 </div>
                                 <!-- Link to open the modal -->
-                                <p><a href="#ex{{ $product->id }}" rel="modal:open" class="button danger">delete</a></p>
+                                <p><a href="#ex{{ $product->id }}" rel="modal:open" class="button danger"><i class="fa-regular fa-trash-can"></i></a></p>
                             </div>
                         </td>
-                        <td>
-                            {{ $product->created_at->format('d M Y') }}
-                        </td>
+
                     </tr>
                 @empty
                     <tr>

@@ -108,6 +108,10 @@
                                 Category</span></a>
                     </div>
                 </li>
+                <li class="side-list {{ Request::is('orderlist') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.orderlist') }}" class="side-menu"><i class="fa fa-eye"
+                            aria-hidden="true"></i><span>Order List</span></a>
+                </li>
                 <li class="side-list {{ Request::is('userlist') ? 'active' : '' }}">
                     <a href="{{ route('user.userlist') }}" class="side-menu"><i class="fa fa-eye"
                             aria-hidden="true"></i><span>User List</span></a>

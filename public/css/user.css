@@ -1,10 +1,4 @@
-.tableinfo {
-    margin-top: 40px;
-    margin-left: 50px;
-}
-
 .tblttl {
-    margin-bottom: 15px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -12,12 +6,11 @@
 
 .deletebtn {
     border: none;
-
     text-decoration: none;
 }
 
 .deletebtn i {
-    color: #8a0808;
+    color: #ff1b1b;
     font-size: 18px;
     text-align: center;
 }
@@ -56,46 +49,19 @@
     border-radius: 5px;
 }
 
-/*Delete Confirmation Box*/
-
-.modal {
-    width: 17%;
-}
-
-.modal .modal-footer {
-    float: left;
-    text-align: center;
-}
-
-.modal .modal-footer .button {
-    margin-right: 10px;
-    padding: 3px 5px;
-    border: 0.1px solid #333;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.modal .modal-footer .cancel {
-    background-color: #d6d6b1;
-}
-
-.modal .modal-footer .danger {
-    background-color: #fa0505;
-}
-
 /*Profile*/
 
 .profile-detail-container {
     width: 70%;
-
     margin: 10% 0 0 30%;
 }
 
 .profile-detail {
+    position: relative;
     width: 32%;
-    margin: 10% 25%;
+    margin: 10% 30%;
     border: 1px dotted #333;
-    box-shadow: 12px 11px 21px 0px rgb(0 0 0);
+    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     border-radius: 5px;
@@ -164,34 +130,31 @@
 /*edit btn*/
 .profile-edit {
     position: absolute;
-    margin-top: 0.5%;
-    margin-left: 12.5%;
-    padding: 2px 5px;
-    border: 1px solid #888;
+    top: 5px;
+    right: 5px;
+    border: none;
+    text-decoration: none;
     text-align: right;
-    border-radius: 3px;
 }
 
-.profile-edit a {
-    color: #000;
-}
 
 /*edit form*/
 .edit-container {
-    width: 50%;
-    margin: 7% 30%;
+    width: 55%;
+    margin: 9% 30%;
 }
 
 .edit-container .edit-ttl {
-    padding: 20px;
+    padding: 10px 15px;
     font-size: 18px;
 }
 
 .edit-container .edit-form {
-    padding: 30px 40px;
-    box-shadow: 12px 11px 21px 0px rgb(0 0 0);
+    padding: 20px 40px;
+    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
     background-color: rgba(255, 255, 255, 0.5);
     max-width: 52%;
+    border-radius: 10px;
 }
 
 .edit-container .edit-form label {
@@ -206,26 +169,51 @@
     border-radius: 5px;
 }
 
-.edit-container .edit-form .update-btn {
-    padding: 2px 5px;
-    border-radius: 5px;
-    border-color: #ccc6c0;
-    margin-top: 5px;
+.edit-container .edit-form .button,
+.button-primary {
+    margin-top: 6px;
 }
 
-.edit-container .edit-form .update-btn a {
-    color: #000;
+.edit-container .edit-form .button a,
+.button-primary a {
+    color: #fff;
+}
+
+.laravelExcel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.excelBtn {
+    padding: 5px 20px;
+    border: none;
+    box-shadow: 5px 0px 14px rgb(239 239 239);
+    background: #ff1983;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.excel-input {
+    margin-bottom: 5px;
+    padding: 4px;
+}
+
+.uploadBtn {
+    margin-left: 30%;
+    background: #2eef21;
 }
 
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
     .deletebtn i {
-        font-size: 15px;
+        font-size: 2vw;
     }
 
     .profile-detail img {
-        width: 71px;
-        height: 57px;
+        width: 9.2vw;
+        height: 7.4vw;
     }
 
     /*edit form*/
@@ -235,31 +223,32 @@
     }
 
     .edit-container .edit-ttl {
-        padding: 20px;
-        font-size: 17px;
+        padding: 2.6vw;
+        font-size: 2.2vw;
     }
 
     .edit-container .edit-form {
-        padding: 25px 25px;
+        padding: 3.3vw 3.3vw;
         max-width: 70%;
     }
 
     .edit-container .edit-form label {
-        font-size: 13px;
+        font-size: 1.7vw;
     }
 
     .edit-container .edit-form input {
         width: 100%;
-        margin: 5px 0;
-        padding: 5px;
-        border: 1px solid #888;
-        border-radius: 5px;
+        margin: 0.7vw 0;
+        padding: 0.7vw;
+        border: 0.1vw solid #888;
+        border-radius: 0.7vw;
     }
 }
 
+
 @media screen and (max-width: 767.9px) {
     .deletebtn i {
-        font-size: 12px;
+        font-size: 1.9vw;
     }
 
     .profile-detail {
@@ -267,19 +256,19 @@
     }
 
     .profile-detail img {
-        width: 60px;
-        height: 50px;
+        width: 9.4vw;
+        height: 7.8vw;
     }
 
     .tableinfo {
-        margin-top: 60px;
-        margin-left: 40px;
-        padding-top: 10px;
+        margin-top: 0vw;
+        margin-left: 6.3vw;
+        padding-top: 1.6vw;
     }
 
     .tblttl {
-        margin-bottom: 15px;
-        font-size: 16px;
+        margin-bottom: 0vw;
+        font-size: 2.5vw;
         font-weight: bold;
         text-align: center;
     }
@@ -288,28 +277,28 @@
     /*edit form*/
     .edit-container {
         width: 50%;
-        margin: 8% 28%;
+        margin: 13% 28%;
     }
 
     .edit-container .edit-ttl {
-        padding: 30px;
-        font-size: 16px;
+        padding: 1.6vw;
+        font-size: 2.5vw;
     }
 
     .edit-container .edit-form {
-        padding: 25px 25px;
-        max-width: 70%;
+        padding: 3.9vw 3.9vw;
+        max-width: 83%;
     }
 
     .edit-container .edit-form label {
-        font-size: 13px;
+        font-size: 2vw;
     }
 
     .edit-container .edit-form input {
         width: 100%;
-        margin: 5px 0;
-        padding: 5px;
-        border: 1px solid #888;
-        border-radius: 5px;
+        margin: 0.8vw 0;
+        padding: 0.8vw;
+        border: 0.2vw solid #888;
+        border-radius: 0.8vw;
     }
 }
