@@ -64,7 +64,8 @@ Route::group(['middleware' => ['admin']], function () {
 Route::get('/userlist', [UserController::class, 'index'])->name('user.userlist');
 Route::delete('/userlist/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
-Route::get('/adminProfile/edit', [UserController::class, 'edit'])->name('user.userEdit');
+Route::get('/adminProfile/edit/{id}', [UserController::class, 'edit'])->name('user.userEdit');
+Route::put('/adminUpdate/{id}', [UserController::class, 'update'])->name('user.userUpdate');
 
 //category
 Route::resource('/category', CategoryController::class);

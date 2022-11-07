@@ -85,26 +85,22 @@
 }
 
 .profile-detail div p.name {
-    margin-bottom: 5px;
-    color: #38026a;
-    font-size: 15px;
+    color: #2c2a2d;
+    font-size: 16px;
     font-weight: bold;
-    font-style: italic;
-
 }
 
 .profile-detail div p.email {
     color: #2c2a2d;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    font-style: italic;
+    margin: 10px 0;
 }
 
 .profile-detail div p.address {
     color: #2c2a2d;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    font-style: italic;
 }
 
 .social {

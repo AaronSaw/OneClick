@@ -30,4 +30,5 @@ class OrderController extends Controller
         $this->orderInterface->deleteOrder($id);
         return redirect('/orderlist');
     }
+
 }

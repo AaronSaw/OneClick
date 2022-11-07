@@ -70,7 +70,7 @@
 
             <center>
                 <img src="{{ asset('img/user.png') }}" alt="profile pic"><br>
-                <h4 class="username">user name</h4>
+                <h4 class="username">{{ Auth::user()->name }}</h4>
             </center><br>
             <hr>
             <ul class="sidenav-item">
