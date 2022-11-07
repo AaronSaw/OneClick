@@ -28,11 +28,11 @@
                 <ul class="menu-list">
                     <li class="menu-items">
                         <a href="#" class="link">
-                            <div class="search">    
+                            <div class="search">
                                 <input type="text" name="" placeholder="Search..." class="search-input">
                                 <button type="submit" class="cmn-btn search-btn"><i class="fa fa-search"></i></button>
-                        </div>  
-                        </a>             
+                        </div>
+                        </a>
                     </li>
                     <li class="menu-items"><a href="#" class="link side-arrow">SHOP</a></li>
                     <li class="menu-items">
@@ -48,15 +48,19 @@
                         </div>
                     </li>
                     <li class="menu-items">
-                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a> 
+                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
                     </li>
                     <li class="menu-items btn-login">
-                        <a href="#" class="link login">
+                        <a href="{{route('auth#login')}}" class="link login">
                             LOGIN
                         </a>
                         <span class="login-gap"> | </span>
-                        <a href="#" class="link register">
+                        <a href="{{route('auth#register')}}" class="link register">
                             REGISTER
+                        </a>
+                        <span class="login-gap"> | </span>
+                        <a href="{{route('auth#logout')}}" class="link register">
+                            Logout
                         </a>
                     </li>
                 </ul>
@@ -65,7 +69,7 @@
     </header>
 
     @yield('content')
-   
+
     <footer class="footer">
         <div class="footer-inner">
             <div class="logo-side">
@@ -78,10 +82,10 @@
                 </div>
                 <p class="footer-txt">Stay in touch with our promotions, discounts, sales, and special offers.</p>
                 <div class="footer-search search">
-                    <a href="#"> 
+                    <a href="#">
                             <input type="text" name="" placeholder="Message..." class="search-input email-input">
-                            <button type="submit" class="cmn-btn search-btn"><i class="fa-solid fa-paper-plane"></i></button> 
-                    </a>             
+                            <button type="submit" class="cmn-btn search-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </a>
                 </div>
             </div>
             <span class="bdr-footer"></span>
@@ -115,7 +119,7 @@
                 </ul>
             </nav>
         </div>
-        
+
     </footer>
 
     <script src="{{ asset('user/js/jquery-3.6.0.min.js') }}"></script>

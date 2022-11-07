@@ -66,5 +66,10 @@ class UserController extends Controller
     public function adminProfile() {
         return view('user.adminProfile');
     }
+
+    public function dashboard()
+    {
+        return view ('user.common');
+    }
 }
 
