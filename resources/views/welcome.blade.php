@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,4 +14,4 @@
     <h1>{{ Auth::user() }}</h1>
 </body>
 
-</html>
+</html>--}}

@@ -15,7 +15,8 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <h1 class="logo"><a href="{{ url('/') }}"><img src="{{ asset('user/img/img_logo.png') }}" alt="OneClick"></a></h1>
+            <h1 class="logo"><a href="{{ url('/') }}"><img src="{{ asset('user/img/img_logo.png') }}"
+                        alt="OneClick"></a></h1>
             <div class="mobile-menu js-menu">
                 <div class="menu-line">
                     <span></span>
@@ -27,11 +28,12 @@
                 <ul class="menu-list">
                     <li class="menu-items">
                         <a href="#" class="link">
-                            <div class="search">    
-                                <input type="text" name="" placeholder="Search..." class="search-input" id="show-search">
+                            <div class="search">
+                                <input type="text" name="" placeholder="Search..." class="search-input"
+                                    id="show-search">
                                 <button type="submit" class="cmn-btn search-btn"><i class="fa fa-search"></i></button>
-                        </div>  
-                        </a>             
+                            </div>
+                        </a>
                     </li>
                     <li class="menu-items"><a href="{{ url('/') }}" class="link">SHOP</a></li>
                     <li class="menu-items">
@@ -42,15 +44,19 @@
                         </span>
                     </li>
                     <li class="menu-items">
-                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a> 
+                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
                     </li>
                     <li class="menu-items btn-login">
-                        <a href="#" class="link login">
+                        <a href="{{ route('auth#login') }}" class="link login">
                             LOGIN
                         </a>
                         <span class="login-gap"> | </span>
-                        <a href="#" class="link register">
+                        <a href="{{ route('auth#register') }}" class="link register">
                             REGISTER
+                        </a>
+                        <span class="login-gap"> | </span>
+                        <a href="{{ route('auth#logout') }}" class="link register">
+                            Logout
                         </a>
                     </li>
                 </ul>
@@ -63,7 +69,8 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="logo-side">
-                <h1 class="footer-logo"><a href="#"><img src="{{ asset('user/img/img_logo.png') }}" alt=""></a></h1>
+                <h1 class="footer-logo"><a href="#"><img src="{{ asset('user/img/img_logo.png') }}"
+                            alt=""></a></h1>
                 <div class="social-media">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -72,10 +79,11 @@
                 </div>
                 <p class="footer-txt">Stay in touch with our promotions, discounts, sales, and special offers.</p>
                 <div class="footer-search search">
-                    <a href="#"> 
-                            <input type="text" name="" placeholder="Message..." class="search-input email-input">
-                            <button type="submit" class="cmn-btn search-btn"><i class="fa-solid fa-paper-plane"></i></button> 
-                    </a>             
+                    <a href="#">
+                        <input type="text" name="" placeholder="Message..." class="search-input email-input">
+                        <button type="submit" class="cmn-btn search-btn"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </a>
                 </div>
             </div>
             <span class="bdr-footer"></span>
@@ -109,13 +117,12 @@
                 </ul>
             </nav>
         </div>
-        
+
     </footer>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
-    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/js/all.min.js"></script>
     <script src="{{ asset('user/js/slick.min.js') }}"></script>
     <script src="{{ asset('user/js/main.js') }}"></script>
