@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     <link rel="stylesheet" href="{{ asset('css/category.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/changePassword.css')}}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -124,6 +125,7 @@
     <script src="{{ asset('js/library/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/admin_common.js') }}"></script>
     <script src="{{ asset('js/product.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
     @stack('script')
 </body>
 

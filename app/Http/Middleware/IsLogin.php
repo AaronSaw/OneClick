@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 
 class IsLogin
@@ -21,6 +20,6 @@ class IsLogin
         if (!Auth::user()) {
             return $next($request);
         }
-        return redirect()->route('shop#index');
+        return redirect()->route('user#dashboard');
     }
 }

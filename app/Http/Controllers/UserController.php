@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
 use App\Contracts\Services\User\UserServicesInterface;
 use App\Imports\UsersImport;
 use Illuminate\Http\Request;
-use Illuminate\Database\Query\Builder;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -68,6 +66,11 @@ class UserController extends Controller
     public function adminProfile()
     {
         return view('user.adminProfile');
+    }
+
+    public function dashboard()
+    {
+        return view('user.common');
     }
 
     public function import(Request $request)
