@@ -48,7 +48,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'name'=> 'required',
+            'address'=>'required',
+            'email'=>'required',
+          ]);
+        $this->userInterface->getUpdate($request, $user);
+        return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated Successfully');
     }
 
     /**

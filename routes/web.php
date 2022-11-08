@@ -76,3 +76,20 @@ Route::group(['middleware' => ['admin']], function () {
     //import and export Excel
     Route::post('/import', [UserController::class, 'import'])->name('user.import');
 });
+Route::get('/userlist', [UserController::class, 'index'])->name('user.userlist');
+Route::delete('/userlist/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::get('/adminProfile', [UserController::class, 'adminProfile'])->name('user.adminProfile');
+Route::get('/adminProfile/edit/{id}', [UserController::class, 'edit'])->name('user.userEdit');
+Route::put('/adminUpdate/{id}', [UserController::class, 'update'])->name('user.userUpdate');
+
+//category
+Route::resource('/category', CategoryController::class);
+Route::resource('/product', ProductController::class);
+
+//Api
+Route::apiResource('api/categories', CategoryApiController::class);
+Route::apiResource('/api/products',ProductApiController::class);
+
+//Order
+Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
