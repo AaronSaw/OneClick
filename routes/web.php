@@ -78,3 +78,5 @@ Route::apiResource('/api/products',ProductApiController::class);
 Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
 Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 
+//detail
+Route::get('/detail/{id}', [ProductController::class,'detail'])->name('detail');

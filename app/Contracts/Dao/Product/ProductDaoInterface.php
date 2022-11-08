@@ -13,7 +13,7 @@ interface ProductDaoInterface
      */
     public function getIndex();
 
-     /**
+    /**
      * To get products list
      * @return array $products
      */
@@ -24,9 +24,9 @@ interface ProductDaoInterface
      * @param Request $request request with inputs
      * @return store $product data
      */
-    public function getStore( $request,$newName);
+    public function getStore($request, $newName);
 
-     /**
+    /**
      * To get products list
      * @return array $products
      */
@@ -45,5 +45,17 @@ interface ProductDaoInterface
      * @param product $product
      * @return updata $product datta
      */
-    public function getUpdate($request,$product,$newName);
+    public function getUpdate($request, $product, $newName);
+
+    /**
+     * To get product data
+     * @return array $categories and product
+     */
+    public function getDetail($id);
+
+    /**
+     * To get product data
+     * @return array  conCategories
+     */
+    public function getRelatedDetail($id, $relatedId);
 }

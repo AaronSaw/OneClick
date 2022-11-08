@@ -1,4 +1,4 @@
-//Shop Page 
+//Shop Page
 
 //Select Dropdown
 
@@ -11,13 +11,14 @@ $(document).ready(function () {
         $(".product-list").empty();
         x.map(el => {
             $(".product-list").append(
-                `<section class="carousel">
+                ` <a href="http://127.0.0.1:8000/detail/${el.id}">
+                <section class="carousel">
                 <div class="carousel-container">
                     <div class="carousel-item">
                         <img src="storage/${el.image}" alt="Product Image" class="carousel-item-img">
                         <div class="panel">
                             <div class="inside">
-                                <a href="{{URL::to('detail/${el.id}')}} " class="fa-solid fa-circle-info"></a>
+                                <a href="http://127.0.0.1:8000/detail/${el.id} " class="fa-solid fa-circle-info"></a>
                             </div>
                         </div>
                         <div class="product-info">
@@ -28,18 +29,11 @@ $(document).ready(function () {
                         </div>
                     </div>
                 </div>
-            </section>`
+            </section>
+            </a>`
             );
         });
     }
-    function toShort(str, max = 100) {
-        if (str.length > max) {
-            return str.substring(0, max) + "...."
-        } else {
-            return str;
-        }
-    }
-
     //start
 
     $.get("http://127.0.0.1:8000/api/products", function (data) {
