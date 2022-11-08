@@ -19,5 +19,5 @@ interface UserServicesInterface
      */
     public function deleteUser($id);
 
-    public function getUpdate(Request $request, User $user);
+    public function getUpdate($request, $user);
 }

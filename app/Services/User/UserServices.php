@@ -31,7 +31,7 @@ class UserServices implements UserServicesInterface
         return $this->userDao->deleteUser($id);
     }
 
-    public function getUpdate(Request $request, $user) {
+    public function getUpdate($request, $user) {
         return $this->userDao->getUpdate($request, $user);
     }
 }

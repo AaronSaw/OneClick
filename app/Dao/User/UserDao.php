@@ -24,7 +24,7 @@ class UserDao implements UserDaoInterface
         $user->delete();
     }
 
-    public function getUpdate(Request $request, $id)
+    public function getUpdate($request, $id)
     {
         $user = Auth::user();
         $user->name = $request->input('name');
