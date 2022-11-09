@@ -113,4 +113,29 @@ class ProductDao implements ProductDaoInterface
         $product->image = $newName;
         $product->update();
     }
+
+    /**
+     * To get product data
+     * @return array $categories and product
+     */
+    public function getDetail($id)
+    {
+        $detail = Product::Join('categories', 'categories.id', '=', 'products.category_id')
+            ->Where("products.id", "=", "$id")
+            ->select('products.*', 'categories.ctitle')->get();
+        return $detail;
+    }
+
+    /**
+     * To get product data
+     * @return array  conCategories
+     */
+    public function getRelatedDetail($id, $relatedId)
+    {
+        $relatedCategories = Product::Join('categories', 'categories.id', '=', 'products.category_id')
+            ->Where("products.category_id", "=", "$relatedId")
+            ->Where("products.id", "!=", "$id")
+            ->select('products.*', 'categories.ctitle')->get();
+        return $relatedCategories;
+    }
 }

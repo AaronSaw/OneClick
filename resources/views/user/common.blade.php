@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('user/common_css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/detail.css') }}">
 </head>
 
 <body>
@@ -26,23 +28,28 @@
             </div>
             <nav class="menu-section">
                 <ul class="menu-list">
-                    <li class="menu-items">
-                        <a href="#" class="link">
-                            <div class="search">
-                                <input type="text" name="" placeholder="Search..." class="search-input"
-                                    id="show-search">
-                                <button type="submit" class="cmn-btn search-btn"><i class="fa fa-search"></i></button>
-                            </div>
-                        </a>
-                    </li>
+                    @if (url()->current() == 'http://127.0.0.1:8000')
+                        <li class="menu-items">
+                            <a href="#" class="link">
+                                <div class="search">
+                                    <input type="text" name="" placeholder="Search..." class="search-input"
+                                        id="show-search">
+                                    <button type="submit" class="cmn-btn search-btn"><i
+                                            class="fa fa-search"></i></button>
+                                </div>
+                            </a>
+                        </li>
+                    @endif
                     <li class="menu-items"><a href="{{ url('/') }}" class="link">SHOP</a></li>
-                    <li class="menu-items">
-                        <span class="dropdown-items link side-arrow">
-                            <select name="" id="list-category" class="menu-category link">
-                                <option value="">ALL CATEGORIES</option>
-                            </select>
-                        </span>
-                    </li>
+                    @if (url()->current() == 'http://127.0.0.1:8000')
+                        <li class="menu-items">
+                            <span class="dropdown-items link side-arrow">
+                                <select name="" id="list-category" class="menu-category link">
+                                    <option value="">ALL CATEGORIES</option>
+                                </select>
+                            </span>
+                        </li>
+                    @endif
                     <li class="menu-items">
                         <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
                     </li>
@@ -127,7 +134,8 @@
     <script src="{{ asset('user/js/slick.min.js') }}"></script>
     <script src="{{ asset('user/js/main.js') }}"></script>
     <script src="{{ asset('user/js/shop.js') }}"></script>
-
+    <script src="{{ asset('user/js/detail.js') }}"></script>
+    @stack('script')
 </body>
 
 </html>
