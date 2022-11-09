@@ -18,4 +18,6 @@ interface UserServicesInterface
      * To delete User
      */
     public function deleteUser($id);
+
+    public function getUpdate($request, $user);
 }

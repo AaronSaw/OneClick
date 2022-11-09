@@ -53,6 +53,17 @@ class AuthDao implements AuthDaoInterface
     }
 
     /**
+     * To updatePasswordPost
+     * @param request
+     * @return data
+     */
+    public function updatePasswordPost($request)
+    {
+        $data = User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
+        return $data;
+    }
+
+    /**
      * request data
      * @param request
      * @return Array

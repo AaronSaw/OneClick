@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Contracts\Services\Auth\AuthServiceInterface;
+use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 
@@ -68,7 +69,7 @@ class AuthController extends Controller
             if (Auth::user()->role == 0) {
                 return redirect()->route('admin#dashboard');
             } else if (Auth::user()->role == 1) {
-                return redirect()->route('shop#index');
+                return redirect()->route('user#dashboard');
             }
         } else {
             return back()->with('error', 'Your email and password are incorrect!');
@@ -83,5 +84,25 @@ class AuthController extends Controller
     {
         $this->authInterface->logoutPost();
         return redirect()->route('auth#login');
+    }
+
+    /**
+     * To changePassword
+     * @return view
+     */
+    public function changePassword()
+    {
+        return view('admin.changePassword');
+    }
+
+    /**
+     * To updatePassword
+     * @param request
+     * @return Rediect
+     */
+    public function updatePassword(ChangePasswordRequest $request)
+    {
+        $this->authInterface->updatePasswordPost($request);
+        return redirect()->route('change#password')->with('success_message', 'Password change successfully.');
     }
 }

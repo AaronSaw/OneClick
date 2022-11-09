@@ -28,4 +28,10 @@ interface AuthServiceInterface
      * @return Object
      */
     public function logoutPost();
+
+    /**
+     * To updatePassword
+     * @return Object
+     */
+    public function updatePasswordPost($request);
 }

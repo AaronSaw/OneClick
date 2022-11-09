@@ -54,12 +54,16 @@
                         <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
                     </li>
                     <li class="menu-items btn-login">
-                        <a href="#" class="link login">
+                        <a href="{{ route('auth#login') }}" class="link login">
                             LOGIN
                         </a>
                         <span class="login-gap"> | </span>
-                        <a href="#" class="link register">
+                        <a href="{{ route('auth#register') }}" class="link register">
                             REGISTER
+                        </a>
+                        <span class="login-gap"> | </span>
+                        <a href="{{ route('auth#logout') }}" class="link register">
+                            Logout
                         </a>
                     </li>
                 </ul>

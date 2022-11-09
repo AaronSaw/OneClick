@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
 use App\Contracts\Services\User\UserServicesInterface;
+use App\Imports\UsersImport;
 use Illuminate\Http\Request;
-use Illuminate\Database\Query\Builder;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserController extends Controller
 {
@@ -23,8 +23,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users=$this->userInterface->getIndex();
-        return view('user.index',compact('users'));
+        $users = $this->userInterface->getIndex();
+        return view('user.index', compact('users'));
     }
 
 
@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user.edit',compact('user'));
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -48,7 +48,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'name'=> 'required',
+            'address'=>'required',
+            'email'=>'required',
+          ]);
+        $this->userInterface->getUpdate($request, $user);
+        return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated Successfully');
     }
 
     /**
@@ -59,12 +65,26 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $users=$this->userInterface->deleteUser($id);
+        $users = $this->userInterface->deleteUser($id);
         return redirect('/userlist');
     }
 
-    public function adminProfile() {
+    public function adminProfile()
+    {
         return view('user.adminProfile');
     }
-}
 
+    public function dashboard()
+    {
+        return view('user.common');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx, csv, xls'
+        ]);
+        Excel::import(new UsersImport, $request->file);
+        return redirect()->route('user.userlist')->with('status', 'User Imported Successfully');
+    }
+}

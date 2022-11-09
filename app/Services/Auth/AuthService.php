@@ -53,4 +53,13 @@ class AuthService implements AuthServiceInterface
     {
         return $this->authDao->logoutPost();
     }
+
+    /**
+     * To updatePassword
+     * @return Object
+     */
+    public function updatePasswordPost($request)
+    {
+        return $this->authDao->updatePasswordPost($request);
+    }
 }
