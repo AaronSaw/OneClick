@@ -14,11 +14,11 @@
             </div>
             <form action="{{ route('dashboard.orderlist') }}" method="get">
                 <div class="d-flex mb-3">
-                    <input type="text" class="sinput " value="{{ request('title') }}" placeholder="Search  name"
+                    <input type="text" class="sinput " value="{{ request('name') }}" placeholder="Search  name"
                         name="name">
-                    <input type="text" class="sinput " value="{{ request('price') }}" placeholder="Search  product"
+                    <input type="text" class="sinput " value="{{ request('title') }}" placeholder="Search  product"
                         name="title">
-                    <input type="text" class="sinput " value="{{ request('ctitle') }}" placeholder="Search address"
+                    <input type="text" class="sinput " value="{{ request('address') }}" placeholder="Search address"
                         name="address">
                     <input type="text" class="sinput " value="{{ request('sdate') }}" placeholder="Start date"
                         onfocus="(this.type='date')" name="sdate">
