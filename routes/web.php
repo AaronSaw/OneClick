@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ShopController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductApiController;
@@ -28,7 +27,7 @@ Route::group(['middleware' => ['not-login']], function () {
     Route::get('/login', [AuthController::class, 'login'])->name('auth#login');
 });
 
-Route::get('/',function(){
+Route::get('/', function () {
     return view('shop');
 });
 
@@ -55,6 +54,8 @@ Route::group(['middleware' => ['user']], function () {
     Route::get('/userProfile',[UserController::class,'profile'])->name('user#profile');
     Route::get('/userProfile/edit',[UserController::class,'userEdit'])->name('user#edit');
     Route::post('/userProfile/update{id}',[UserController::class,'userUpdate'])->name('user#update');
+    //detail
+    Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 });
 
 // Admin-side
@@ -81,6 +82,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
     Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 });
-    //Api
-    Route::apiResource('api/categories', CategoryApiController::class);
-    Route::apiResource('/api/products', ProductApiController::class);
+//Api
+Route::apiResource('api/categories', CategoryApiController::class);
+Route::apiResource('/api/products', ProductApiController::class);
