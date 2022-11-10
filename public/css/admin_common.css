@@ -21,7 +21,7 @@
     text-decoration: none;
 }
 
-/*Header Nav Bar*/
+/*Top Nav Bar*/
 .nav {
     position: fixed;
     align-items: center;
@@ -128,8 +128,8 @@
 
 .side-nav {
     position: fixed;
-    z-index: 99;
     float: left;
+    z-index: 99;
     width: 18%;
     height: 100%;
     background-color: #ab7f80;
@@ -403,10 +403,10 @@ select {
 }
 
 .tblttl {
+    padding: 10px;
     color: #000;
     font-size: 20px;
     text-align: center;
-    padding: 10px;
 }
 
 .success {
@@ -421,27 +421,27 @@ select {
 }
 
 .modal {
-    max-width: 20% !important;
     background-color: rgba(255, 255, 255, 0.5);
+    max-width: 20% !important;
 }
 
 .modal-text {
+    margin-bottom: 15px;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
 .modal-footer {
     display: flex;
+    justify-content: center;
     /*float: right;*/
     color: #fff;
-    justify-content: center;
 }
 
 .modal-footer .danger {
     margin-left: 10px;
-    color: #fff;
     background-color: #ff0000;
+    color: #fff;
     font-size: 14px;
     font-weight: normal;
 }
@@ -453,8 +453,8 @@ select {
 .alert {
     margin-bottom: 5px;
     padding: 10px;
-    background-color: #bfffbf;
-    color: #808080;
+    background-color: #fcdcdd;
+    color: #000;
     text-align: center;
     border-radius: 5px;
 }
@@ -476,6 +476,7 @@ select {
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
 
+    /*Top Navigation Bar*/
     .pc {
         display: none;
     }
@@ -541,7 +542,6 @@ select {
         margin-top: 0.7vw;
     }
 
-
     /*Table Design*/
 
     #table {
@@ -557,6 +557,7 @@ select {
 /*Mobile Size*/
 @media screen and (max-width: 767.9px) {
 
+    /*Top Navigation Bar*/
     .pc {
         display: block;
     }

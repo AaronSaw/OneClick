@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Contracts\Services\User\UserServicesInterface;
 use App\Imports\UsersImport;
 use Illuminate\Http\Request;
+use App\Exports\UsersExport;
 
 class UserController extends Controller
 {
@@ -54,7 +55,7 @@ class UserController extends Controller
             'email'=>'required',
           ]);
         $this->userInterface->getUpdate($request, $user);
-        return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated Successfully');
+        return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated successfully');
     }
 
     /**
@@ -66,7 +67,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $users = $this->userInterface->deleteUser($id);
-        return redirect('/userlist');
+        return redirect('/userlist')->with('status',  'Data has been deleted successfully');;
     }
 
     public function adminProfile()
@@ -86,5 +87,19 @@ class UserController extends Controller
         ]);
         Excel::import(new UsersImport, $request->file);
         return redirect()->route('user.userlist')->with('status', 'User Imported Successfully');
+    }
+
+    public function export() {
+        return Excel::download(
+            new UsersExport(),
+            'users.xlsx'
+        );
+//
+//            $items = User::all();
+//            Excel::create('items', function($excel) use($items) {
+//                $excel->sheet('ExportFile', function($sheet) use($items) {
+//                    $sheet->fromArray($items);
+//                });
+//            })->export('xls');
     }
 }
