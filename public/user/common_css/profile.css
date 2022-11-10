@@ -1,0 +1,52 @@
+.profile-blk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 140px 0 40px;
+}
+.profileForm-blk{
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
+    background-color: #fff;
+    border-radius: 20px;
+    width: 320px;
+    position: relative;
+}
+.profile-title{
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #d10b42;
+}
+.profile li{
+    margin-bottom: 15px;
+}
+.social-icon
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.social-icon li{
+    margin-right: 20px;
+}
+.social-icon i{
+    color: #e65770;
+}
+.profileEdit-btn{
+    position: absolute;
+    left: 85%;
+    background-color: #ffafbd;
+    top: 8%;
+    border: none;
+}
+.profileEdit-btn a{
+    color: #fff;
+}
+.icon-btn{
+    position: absolute;
+    right: -10%;
+    top: 10%;
+}

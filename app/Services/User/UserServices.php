@@ -34,4 +34,22 @@ class UserServices implements UserServicesInterface
     public function getUpdate($request, $user) {
         return $this->userDao->getUpdate($request, $user);
     }
+
+    /**
+     * To updatePassword
+     * @return Object
+     */
+    public function updatePasswordPost($request)
+    {
+        return $this->userDao->updatePasswordPost($request);
+    }
+
+    /**
+     * To update profile
+     * @return Object
+     */
+    public function updateProfilePost($request,$id)
+    {
+        return $this->userDao->updateProfilePost($request,$id);
+    }
 }
