@@ -83,4 +83,22 @@ class ProductService implements ProductServiceInterface
         }
         return $this->productDao->getUpdate($request, $product, $newName);
     }
+
+    /**
+     * To get product data
+     * @return array $categories and product
+     */
+    public function getDetail($id)
+    {
+        return $this->productDao->getDetail($id);
+    }
+
+    /**
+     * To get product data
+     * @return array  conCategories
+     */
+    public function getRelatedDetail($id, $relatedId)
+    {
+        return $this->productDao->getRelatedDetail($id, $relatedId);
+    }
 }

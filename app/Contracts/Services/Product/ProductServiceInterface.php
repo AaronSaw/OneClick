@@ -45,5 +45,17 @@ interface ProductServiceInterface
      * @param product $product
      * @return Update $product data
      */
-    public function getUpdate($request,$product);
+    public function getUpdate($request, $product);
+
+    /**
+     * To get product data
+     * @return array  product
+     */
+    public function getDetail($id);
+
+    /**
+     * To get product data
+     * @return array  conCategories
+     */
+    public function getRelatedDetail($id, $relatedId);
 }

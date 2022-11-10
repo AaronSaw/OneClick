@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
-use App\Contracts\Services\User\UserServicesInterface;
 use App\Imports\UsersImport;
 use Illuminate\Http\Request;
 use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\ChangePasswordRequest;
+use App\Contracts\Services\User\UserServicesInterface;
+use App\Http\Requests\UserProfileUpdateRequest;
 
 class UserController extends Controller
 {
@@ -94,12 +96,55 @@ class UserController extends Controller
             new UsersExport(),
             'users.xlsx'
         );
-//
-//            $items = User::all();
-//            Excel::create('items', function($excel) use($items) {
-//                $excel->sheet('ExportFile', function($sheet) use($items) {
-//                    $sheet->fromArray($items);
-//                });
-//            })->export('xls');
+    }
+    /**
+     * To changePassword
+     * @return view
+     */
+    public function changePassword()
+    {
+        return view('changePassword');
+    }
+
+    /**
+     * To updatePassword
+     * @param request
+     * @return Rediect
+     */
+    public function updatePassword(ChangePasswordRequest $request)
+    {
+        $this->userInterface->updatePasswordPost($request);
+        return redirect()->route('user#changePassword')->with('success_message', 'Password change successfully.');
+    }
+
+    /**
+     * To show userProfile
+     * @return view
+     */
+    public function profile()
+    {
+        return view ('profile');
+    }
+
+    /**
+     * To edit userProfile
+     * @return view
+     */
+    public function userEdit()
+    {
+        return view('profileEdit');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function userUpdate(UserProfileUpdateRequest $request,$id)
+    {
+        $this->userInterface->updateProfilePost($request, $id);
+        return redirect()->route('user#profile')->with('status',  'Your information has been updated Successfully');
     }
 }

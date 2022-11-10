@@ -21,14 +21,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders=$this->orderInterface->getIndex();
-        return view('order.index',compact('orders'));
+        $orders = $this->orderInterface->getIndex();
+        return view('order.index', compact('orders'));
     }
 
     public function destroy(Order $order)
     {
-        $this->orderInterface->deleteOrder($id);
-        return redirect('/orderlist');
+        $this->orderInterface->deleteOrder($order);
+        return redirect('/orderlist')->with('status','order is deleted successfully');
     }
-
 }
