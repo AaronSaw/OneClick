@@ -58,4 +58,11 @@ interface ProductDaoInterface
      * @return array  conCategories
      */
     public function getRelatedDetail($id, $relatedId);
+
+    /**
+     * To store data
+     * @param $request
+     * @return array
+     */
+    public function orderStorePost($request, $id);
 }

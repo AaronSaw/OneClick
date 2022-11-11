@@ -64,6 +64,6 @@ class ForgotPasswordController extends Controller
     public function create(ResetPasswordRequest $request)
     {
         $data = $this->forgotInterface->createPost($request);
-        return redirect()->route('auth#login')->with('info', 'Your password has been changed!');
+        return redirect()->route('auth.login')->with('info', 'Your password has been changed!');
     }
 }

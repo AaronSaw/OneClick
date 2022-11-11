@@ -101,4 +101,14 @@ class ProductService implements ProductServiceInterface
     {
         return $this->productDao->getRelatedDetail($id, $relatedId);
     }
+
+    /**
+     * To store data
+     * @param request
+     * @return array
+     */
+    public function orderStorePost($request, $id)
+    {
+        return $this->productDao->orderStorePost($request, $id);
+    }
 }

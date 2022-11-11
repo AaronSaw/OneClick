@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\Services\Product\ProductServiceInterface;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Contracts\Services\Product\ProductServiceInterface;
 
 class ProductController extends Controller
 {
@@ -110,5 +111,28 @@ class ProductController extends Controller
         $relatedId = $detail[0]->category_id;
         $relatedCategories =  $this->productInterface->getRelatedDetail($id, $relatedId);
         return view('detail', compact(['detail', 'relatedCategories']));
+    }
+
+    /**
+     * To show order Page
+     * @param id
+     * @return view
+     */
+    public function orderPage($id)
+    {
+        $order =  $this->productInterface->getDetail($id);
+        return view('orderPage', compact('order'));
+    }
+
+    /**
+     * To store data
+     * @param request
+     * @return redirect
+     */
+    public function orderStore(Request $request, $id)
+    {
+        $this->productInterface->orderStorePost($request, $id);
+        return redirect()->route('user.order', $id)
+            ->with('success_status', 'Your Order Is Confirmed.And Order Mail was sent.');
     }
 }

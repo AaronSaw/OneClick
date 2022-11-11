@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('user/common_css/profileEdit.css')}}">
     <link rel="stylesheet" href="{{ asset('user/common_css/shop.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/orderPage.css')}}">
 </head>
 
 <body>
@@ -141,6 +142,7 @@
     <script src="{{ asset('user/js/shop.js') }}"></script>
     <script src="{{ asset('js/index.js')}}"></script>
     <script src="{{ asset('user/js/detail.js') }}"></script>
+    <script src="{{ asset('user/js/order.js')}}"></script>
     @stack('script')
 </body>
 

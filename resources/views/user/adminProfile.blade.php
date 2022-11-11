@@ -9,7 +9,7 @@
     @endif
     <div class="profile-detail">
         <button class="profile-edit"><a href="{{ route('user.userEdit', Auth::user()) }}" class="success"><i class="fa-solid fa-pen-to-square"></i></a></button>
-        <img src="{{ asset('img/user.png') }}" alt="profile pic"><br>
+        <img src="{{ asset('img/Profile2.png') }}" alt="profile pic"><br>
         <div>
             <p class="name">Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - &nbsp;&nbsp; {{ Auth::user()->name }} </p>
             <p class="email">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - &nbsp;&nbsp; {{ Auth::user()->email }}</p>

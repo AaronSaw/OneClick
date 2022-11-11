@@ -10,7 +10,7 @@
         @endif
         <div class="form-blk">
             <h2 class="title">ChangePassword Form</h2>
-            <form action="{{ route('update#password') }}" method="POST">
+            <form action="{{ route('update.password') }}" method="POST">
                 @csrf
                 <div class="input-gp">
                     <label for="old_password">Current Password:</label><br>
