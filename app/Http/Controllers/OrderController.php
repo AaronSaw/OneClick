@@ -32,7 +32,7 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         $this->orderInterface->deleteOrder($order);
-        return redirect('/orderlist');
+        return redirect('/orderlist')->with('status','Order is deleted successfully');
     }
 
     /**

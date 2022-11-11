@@ -17,14 +17,37 @@ class OrderDao implements OrderDaoInterface
      */
     public function getIndex()
     {
-        $orders = Order::paginate(5);
+        $orders = Order::Join('users', 'users.id', '=', 'orders.user_id')
+            ->Join('products', 'products.id', '=', 'orders.product_id')
+            ->select('orders.*', 'users.name', 'users.email', 'users.address', 'products.title', 'products.price', 'products.category_id')
+            ->when(request('name'), function ($q) {
+                $name = request("name");
+                $q->where("users.name", "like", "%$name%");
+            })
+            ->when(request('title'), function ($q) {
+                $title = request("title");
+                $q->where("products.title", "like", "%$title%");
+            })
+            ->when(request('address'), function ($q) {
+                $address = request("address");
+                $q->where("users.address", "like", "%$address%");
+            })
+            ->when(request('sdate'), function ($p) {
+                $sDate = request("sdate");
+                $p->where("orders.created_at", ">", "$sDate");
+            })
+            ->when(request('edate'), function ($e) {
+                $eDate = request("edate");
+                $e->where("orders.created_at", "<", "$eDate");
+            })
+            ->latest('id')
+            ->paginate(5)->withQueryString();
         return $orders;
     }
 
     public function deleteOrder($id)
     {
-        $order = Order::findOrfail($id);
-        $order->delete();
+        $id->delete();
     }
 
     /**
