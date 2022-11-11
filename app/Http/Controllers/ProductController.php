@@ -105,7 +105,7 @@ class ProductController extends Controller
      * @return $detial and relatedCategories
      */
     public function detail($id)
-    {
+    {  
         $detail =  $this->productInterface->getDetail($id);
         $relatedId = $detail[0]->category_id;
         $relatedCategories =  $this->productInterface->getRelatedDetail($id, $relatedId);

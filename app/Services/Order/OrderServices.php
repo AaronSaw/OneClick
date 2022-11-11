@@ -18,17 +18,61 @@ class OrderServices implements OrderServicesInterface
     {
         $this->orderDao = $OrderDao;
     }
-  /**
-   * To get Order
-   */
-    public function getIndex() {
+    /**
+     * To get Order
+     */
+    public function getIndex()
+    {
         return $this->orderDao->getIndex();
     }
 
     /**
      * To delete Order by id
-    */
-    public function deleteOrder($id) {
+     */
+    public function deleteOrder($id)
+    {
         return $this->orderDao->deleteOrder($id);
+    }
+
+    /**
+     * @param $table and $description
+     * To get count order
+     */
+    public function countOrder($table, $description)
+    {
+        return $this->orderDao->countOrder($table, $description);
+    }
+
+
+    /**
+     * To get countorder
+     */
+    public function countOrderNO()
+    {
+        return $this->orderDao->countOrderNO();
+    }
+
+    /**
+     * To get countcategory
+     */
+    public function countCategory()
+    {
+        return $this->orderDao->countCategory();
+    }
+
+    /**
+     * To get countUser
+     */
+    public function countUser()
+    {
+        return $this->orderDao->countUser();
+    }
+
+    /**
+     * To get countproduct
+     */
+    public function countProduct()
+    {
+        return $this->orderDao->countProduct();
     }
 }
