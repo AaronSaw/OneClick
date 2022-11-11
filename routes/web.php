@@ -41,21 +41,25 @@ Route::post('/forgot', [ForgotPasswordController::class, 'store'])->name('forgot
 Route::get('/reset/{token}', [ForgotPasswordController::class, 'reset'])->name('forgot#reset');
 Route::post('/reset', [ForgotPasswordController::class, 'create'])->name('forgot#create');
 
+
+//detail
+Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
+
 //User-side
 Route::group(['middleware' => ['user']], function () {
     Route::get('/user-dashboard', [UserController::class, 'dashboard'])->name('user#dashboard');
     Route::get('/member', function () {
         return view('user.member');
     });
+    //orderList
+    Route::get('/order', [OrderController::class, 'userOrder'])->name('user.orderlist');
     //change password
     Route::get('/user/changePassword', [UserController::class, 'changePassword'])->name('user#changePassword');
     Route::post('/user/changePassword/update', [UserController::class, 'updatePassword'])->name('user#updatePassword');
     //User Profile
-    Route::get('/userProfile',[UserController::class,'profile'])->name('user#profile');
-    Route::get('/userProfile/edit',[UserController::class,'userEdit'])->name('user#edit');
-    Route::post('/userProfile/update{id}',[UserController::class,'userUpdate'])->name('user#update');
-    //detail
-    Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
+    Route::get('/userProfile', [UserController::class, 'profile'])->name('user#profile');
+    Route::get('/userProfile/edit', [UserController::class, 'userEdit'])->name('user#edit');
+    Route::post('/userProfile/update{id}', [UserController::class, 'userUpdate'])->name('user#update');
 });
 
 // Admin-side

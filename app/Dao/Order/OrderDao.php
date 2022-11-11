@@ -5,6 +5,7 @@ namespace App\Dao\Order;
 use App\Models\Order;
 use App\Contracts\Dao\Order\OrderDaoInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Data accessing object for post
@@ -47,5 +48,20 @@ class OrderDao implements OrderDaoInterface
     public function deleteOrder($id)
     {
         $id->delete();
+    }
+
+    /**
+     * To get userOrder
+     */
+    public function userOrder()
+    {
+        $userId = Auth::user()->id;
+        $userOrder = Order::Join('products', 'products.id', '=', 'orders.product_id')
+            ->where('orders.user_id', '=', "$userId")
+            ->latest('id')
+            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id')
+            ->get();
+
+        return $userOrder;
     }
 }
