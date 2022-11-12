@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Imports\UsersImport;
 use Illuminate\Http\Request;
+use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Contracts\Services\User\UserServicesInterface;
@@ -56,7 +57,7 @@ class UserController extends Controller
             'email'=>'required',
           ]);
         $this->userInterface->getUpdate($request, $user);
-        return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated Successfully');
+        return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated successfully');
     }
 
     /**
@@ -68,7 +69,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $users = $this->userInterface->deleteUser($id);
-        return redirect('/userlist');
+        return redirect('/userlist')->with('status',  'Data has been deleted successfully');;
     }
 
     public function adminProfile()
@@ -90,6 +91,12 @@ class UserController extends Controller
         return redirect()->route('user.userlist')->with('status', 'User Imported Successfully');
     }
 
+    public function export() {
+        return Excel::download(
+            new UsersExport(),
+            'users.xlsx'
+        );
+    }
     /**
      * To changePassword
      * @return view
