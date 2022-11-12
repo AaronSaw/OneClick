@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="{{ asset('user/common_css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('user/common_css/changePassword.css')}}">
-    <link rel="stylesheet" href="{{ asset('user/common_css/profile.css')}}">
-    <link rel="stylesheet" href="{{ asset('user/common_css/profileEdit.css')}}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/changePassword.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/profileEdit.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/shop.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/detail.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/orderPage.css')}}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/order-list.css') }}">
 </head>
 
 <body>
@@ -65,7 +66,11 @@
                             <div class="dropdown-content">
                                 <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
                                     Profile </a>
-                                <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key" aria-hidden="true"></i>
+                                <a href="{{ url('/order') }}"><i class="fa fa-key"
+                                        aria-hidden="true"></i>
+                                    Order List </a>
+                                <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
+                                        aria-hidden="true"></i>
                                     Change Password </a>
                                 <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Logout
                                 </a>
@@ -140,7 +145,7 @@
     <script src="{{ asset('user/js/slick.min.js') }}"></script>
     <script src="{{ asset('user/js/main.js') }}"></script>
     <script src="{{ asset('user/js/shop.js') }}"></script>
-    <script src="{{ asset('js/index.js')}}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
     <script src="{{ asset('user/js/detail.js') }}"></script>
     <script src="{{ asset('user/js/order.js')}}"></script>
     @stack('script')

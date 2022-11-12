@@ -1,7 +1,13 @@
+/*Table Design*/
+
 .tblttl {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+}
+
+#table {
+    width: 100%;
 }
 
 .deletebtn {
@@ -91,10 +97,10 @@
 }
 
 .profile-detail div p.email {
+    margin: 10px 0;
     color: #2c2a2d;
     font-size: 15px;
     font-weight: bold;
-    margin: 10px 0;
 }
 
 .profile-detail div p.address {
@@ -175,6 +181,8 @@
     color: #fff;
 }
 
+
+/*Export and Import*/
 .laravelExcel {
     display: flex;
     justify-content: space-between;
@@ -186,25 +194,48 @@
     padding: 5px 20px;
     border: none;
     box-shadow: 5px 0px 14px rgb(239 239 239);
-    background: #ff1983;
+    background: rgb(154 34 56 / 90%);
     color: #fff;
     border-radius: 10px;
 }
 
 .excel-input {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     padding: 4px;
 }
 
 .uploadBtn {
     margin-left: 30%;
-    background: #2eef21;
+    background: rgb(154 34 56 / 90%);
+}
+
+/*import form*/
+
+.import-modal {
+    width: 100%;
+}
+
+.excel-input {
+    width: 100%;
 }
 
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
+
+    /*Table Design*/
+
+    .tblttl {
+        margin-bottom: 0vw;
+        font-size: 18px;
+    }
+
     .deletebtn i {
         font-size: 2vw;
+    }
+
+    .profile-detail {
+        width: 60%;
+        margin: 10% 20%;
     }
 
     .profile-detail img {
@@ -219,13 +250,13 @@
     }
 
     .edit-container .edit-ttl {
-        padding: 2.6vw;
+        padding: 0vw;
         font-size: 2.2vw;
     }
 
     .edit-container .edit-form {
         padding: 3.3vw 3.3vw;
-        max-width: 70%;
+        max-width: 90%;
     }
 
     .edit-container .edit-form label {
@@ -239,10 +270,17 @@
         border: 0.1vw solid #888;
         border-radius: 0.7vw;
     }
+
+    /*import form*/
+    .import-modal {
+        min-width: 38%;
+    }
 }
 
 
 @media screen and (max-width: 767.9px) {
+
+    /*Table Design*/
     .deletebtn i {
         font-size: 1.9vw;
     }
@@ -265,10 +303,7 @@
     .tblttl {
         margin-bottom: 0vw;
         font-size: 2.5vw;
-        font-weight: bold;
-        text-align: center;
     }
-
 
     /*edit form*/
     .edit-container {
@@ -296,5 +331,20 @@
         padding: 0.8vw;
         border: 0.2vw solid #888;
         border-radius: 0.8vw;
+    }
+
+    /*Export and Import*/
+    .excelBtn {
+        padding: 3px 10px;
+    }
+
+    .excel-input {
+        margin-bottom: 6px;
+        padding: 4px;
+    }
+
+    /*import form*/
+    .import-modal {
+        min-width: 45%;
     }
 }

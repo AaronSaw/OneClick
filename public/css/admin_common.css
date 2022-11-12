@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 
-/*Header Nav Bar*/
+/*Top Nav Bar*/
 .nav {
   position: fixed;
   align-items: center;
@@ -476,9 +476,10 @@ select {
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
 
-  .pc {
-    display: none;
-  }
+    /*Top Navigation Bar*/
+    .pc {
+        display: none;
+    }
 
   .nav {
     padding: 1.4vw 3.9vw;
@@ -541,8 +542,7 @@ select {
     margin-top: 0.7vw;
   }
 
-
-  /*Table Design*/
+    /*Table Design*/
 
   #table {
     font-size: 1.7vw;
@@ -557,9 +557,10 @@ select {
 /*Mobile Size*/
 @media screen and (max-width: 767.9px) {
 
-  .pc {
-    display: block;
-  }
+    /*Top Navigation Bar*/
+    .pc {
+        display: block;
+    }
 
   .nav {
     padding: 0 3.9vw;
