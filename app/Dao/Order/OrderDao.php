@@ -39,7 +39,7 @@ class OrderDao implements OrderDaoInterface
                 $eDate = request("edate");
                 $e->where("orders.created_at", "<", "$eDate");
             })
-            ->latest('id')
+            ->orderBy('confirm', 'ASC')
             ->paginate(5)->withQueryString();
         return $orders;
     }
@@ -47,5 +47,16 @@ class OrderDao implements OrderDaoInterface
     public function deleteOrder($id)
     {
         $id->delete();
+    }
+
+    /**
+     * @param $id
+     * @return  confirm
+     */
+    public function confirm($id)
+    {
+        $order = Order::find($id);
+        $order->confirm = "1";
+        $order->update();
     }
 }

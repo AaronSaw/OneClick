@@ -81,6 +81,7 @@ Route::group(['middleware' => ['admin']], function () {
     //Order
     Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
     Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+    Route::get('/confirm/{id}',[OrderController::class,'confirm'])->name('order.confirm');
 });
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);

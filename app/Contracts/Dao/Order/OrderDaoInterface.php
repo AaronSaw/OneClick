@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Contracts\Dao\Order;
+
 use Illuminate\Http\Request;
 
 /**
@@ -8,15 +9,21 @@ use Illuminate\Http\Request;
  */
 interface OrderDaoInterface
 {
-  /**
-   * To show Order List
-   */
-  public function getIndex();
+    /**
+     * To show Order List
+     */
+    public function getIndex();
 
-  /**
-   * To delete Order by id
-   */
-  public function deleteOrder($id);
+    /**
+     * To delete Order by id
+     */
+    public function deleteOrder($id);
 
-//  public function updateOrder(Request $request, $id);
+    //  public function updateOrder(Request $request, $id);
+
+    /**
+     * @param $id
+     * To get confirm
+     */
+    public function confirm($id);
 }
