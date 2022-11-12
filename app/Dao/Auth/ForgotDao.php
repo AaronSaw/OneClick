@@ -28,7 +28,7 @@ class ForgotDao implements ForgotDaoInterface
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
-        $action_link = route('forgot#reset', ['token' => $token, 'email' => $request->email]);
+        $action_link = route('forgot.reset', ['token' => $token, 'email' => $request->email]);
         $body = "We are recevied a request to reset the password for <b> One click </b> acount associated with <b>" . $request->email .
             "</b> .You can reset your by password clicking the link below. ";
         $mail = Mail::send(
@@ -53,16 +53,18 @@ class ForgotDao implements ForgotDaoInterface
         $updatePassword = DB::table('password_resets')
             ->where([
                 'email' => $request->email,
-                'token' => $request->token
+                'token' => $request->token,
             ])
             ->first();
         if (!$updatePassword) {
-            return back()->withInput()->with('error', 'Invalid token!');
-        }
-        $user = User::where('email', $request->email)
+            //return back()->withInput()->with('error', 'Invalid token!');
+            return false;
+        }else{
+            $user = User::where('email', $request->email)
             ->update(['password' => Hash::make($request->password)]);
-
-        $data = DB::table('password_resets')->where(['email' => $request->email])->delete();
-        return compact('user', 'data');
+        $data = DB::table('password_resets')->where(['email' => $request->email,'token'=>$request->token])->delete();
+        //return compact('user', 'data');
+        return true;
+        }
     }
 }

@@ -27,7 +27,7 @@
                 <input type="hidden" name="token" id="" value={{ $token }}>
                 <div class="input-gp">
                     <label for="email">Email:</label><br>
-                    <input type="text" name="email" id="email" value="{{ $email ?? old('email') }}" disabled>
+                    <input type="text" name="email" id="email" value="{{ $email ?? old('email') }}" readonly>
                     @error('email')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
