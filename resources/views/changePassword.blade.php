@@ -13,9 +13,9 @@
             <form action="{{ route('user.updatePassword') }}" method="POST">
                 @csrf
                 <div class="input-gp">
-                    <label for="old_password">Current Password:</label><br>
-                    <input type="password" name="old_password" id="old_password" placeholder="Enter current password..."
-                        value="">
+                    <label for="current_password">Current Password:</label><br>
+                    <input type="password" name="current_password" id="current_password" placeholder="Enter current password..."
+                        value="{{ old('current_password') }}">
                     @error('old_password')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -23,7 +23,7 @@
                 <div class="input-gp">
                     <label for="new_password">New Password:</label><br>
                     <input type="password" name="new_password" id="new_password" placeholder="Enter new password..."
-                        value="">
+                        value="{{ old('new_password') }}">
                     @error('new_password')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
@@ -31,7 +31,7 @@
                 <div class="input-gp">
                     <label for="confirm_password">Comfirm Password:</label><br>
                     <input type="password" name="confirm_password" id="confirm_password"
-                        placeholder="Enter confirm password..." value="">
+                        placeholder="Enter confirm password..." value="{{ old('confirm_password') }}">
                     @error('confirm_password')
                         <span class="error-message">{{ $message }}</span>
                     @enderror

@@ -18,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
+  position: relative;
 }
 
 .order-img {
@@ -112,6 +113,12 @@
 
 .checkOut:hover {
   background: linear-gradient(to right, rgb(170 221 238 / 88%), rgb(26 157 179 / 75%));
+}
+
+.icon-orderPage{
+    position: absolute;
+    top: 15%;
+    right: 0%;
 }
 
 #modalContainer {

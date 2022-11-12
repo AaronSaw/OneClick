@@ -34,6 +34,7 @@ Route::get('/', function () {
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 
 //Authentication
+Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/login/create', [AuthController::class, 'create'])->name('auth.create');
 Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
 Route::post('/register/store', [AuthController::class, 'store'])->name('auth.store');

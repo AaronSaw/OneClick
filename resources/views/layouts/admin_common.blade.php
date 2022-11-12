@@ -56,6 +56,9 @@
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <a href="{{route('user.dashboard')}}">User_dashboard</a>
+                    </li>
                 </ul>
             </div>
         </nav>

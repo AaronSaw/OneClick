@@ -32,6 +32,13 @@ class isValidPassword implements Rule
     public $uppercasePasses = true;
 
     /**
+     * Determine if the Uppercase Validation Rule passes.
+     *
+     * @var boolean
+     */
+    public $lowercasePasses = true;
+
+    /**
      * Determine if the Numeric Validation Rule passes.
      *
      * @var boolean
@@ -56,6 +63,7 @@ class isValidPassword implements Rule
     {
         $this->lengthPasses = (Str::length($value) >= 8);
         $this->uppercasePasses = (Str::lower($value) !== $value);
+        $this->lowercasePasses = (Str::upper($value) !== $value);
         $this->numericPasses = ((bool) preg_match('/[0-9]/', $value));
         $this->specialCharacterPasses = ((bool) preg_match('/[^A-Za-z0-9]/', $value));
 
@@ -71,34 +79,52 @@ class isValidPassword implements Rule
     {
         switch (true) {
             case !$this->uppercasePasses
+                && !$this->lowercasePasses
                 && $this->numericPasses
                 && $this->specialCharacterPasses:
-                return 'The :attribute must be at least 8 characters and contain at least one uppercase character.';
+                return 'The :attribute must be at least 8 characters and contain at least one uppercase character and one lowercase character.';
 
             case !$this->numericPasses
+                && !$this->lowercasePasses
                 && $this->uppercasePasses
                 && $this->specialCharacterPasses:
-                return 'The :attribute must be at least 8 characters and contain at least one number.';
+                return 'The :attribute must be at least 8 characters and contain at least one number and one lowercase character.';
 
             case !$this->specialCharacterPasses
-                && $this->uppercasePasses
-                && $this->numericPasses:
-                return 'The :attribute must be at least 8 characters and contain at least one special character.';
+                && !$this->uppercasePasses
+                && $this->numericPasses
+                && $this->lowercasePasses:
+                return 'The :attribute must be at least 8 characters and contain at least one uppercase character and one special character.';
+
+            case !$this->specialCharacterPasses
+                && !$this->lowercasePasses
+                && $this->numericPasses
+                && $this->uppercasePasses:
+                return 'The :attribute must be at least 8 characters and contain at least one lowercase character and one special character.';
 
             case !$this->uppercasePasses
                 && !$this->numericPasses
+                && $this->lowercasePasses
                 && $this->specialCharacterPasses:
                 return 'The :attribute must be at least 8 characters and contain at least one uppercase character and one number.';
 
             case !$this->uppercasePasses
                 && !$this->specialCharacterPasses
+                && !$this->lowercasePasses
                 && $this->numericPasses:
-                return 'The :attribute must be at least 8 characters and contain at least one uppercase character and one special character.';
+                return 'The :attribute must be at least 8 characters and contain at least one uppercase character,one lowercase character and one special character.';
 
             case !$this->uppercasePasses
                 && !$this->numericPasses
-                && !$this->specialCharacterPasses:
+                && !$this->specialCharacterPasses
+                && $this->lowercasePasses:
                 return 'The :attribute must be at least 8 characters and contain at least one uppercase character, one number, and one special character.';
+
+            case !$this->lowercasePasses
+                && !$this->numericPasses
+                && !$this->specialCharacterPasses
+                && $this->uppercasePasses:
+                return 'The :attribute must be at least 8 characters and contain at least one lowercase character, one number, and one special character.';
 
             default:
                 return 'The :attribute must be at least 8 characters.';

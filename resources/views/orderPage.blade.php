@@ -11,7 +11,7 @@
         <div class="order-card clearfix">
             <div class="order-header">
                 <h4>Shopping cart <i class="fa-solid fa-cart-shopping"></i></h4>
-                <a href="{{ route('detail', $order[0]->id) }}"><i class="fa-solid fa-xmark icon-order"></i></a>
+                <a href="{{ route('detail', $order[0]->id) }}"><i class="fa-solid fa-xmark icon-orderPage"></i></a>
             </div>
             <div class="order-img">
                 <img src="{{ asset('storage/' . $order[0]->image) }}" alt="detail-img">

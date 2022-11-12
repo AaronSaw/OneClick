@@ -20,7 +20,7 @@ class IsUser
     {
         if (Auth::user()) {
             $user_role = Auth::user()->role;
-            if ($user_role == 1) {
+            if ($user_role == 1 || $user_role == 0) {
                 return $next($request);
             } else {
                 Session::flush();
