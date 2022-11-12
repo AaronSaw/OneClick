@@ -41,21 +41,25 @@ Route::post('/forgot', [ForgotPasswordController::class, 'store'])->name('forgot
 Route::get('/reset/{token}', [ForgotPasswordController::class, 'reset'])->name('forgot#reset');
 Route::post('/reset', [ForgotPasswordController::class, 'create'])->name('forgot#create');
 
+
+//detail
+Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
+
 //User-side
 Route::group(['middleware' => ['user']], function () {
     Route::get('/user-dashboard', [UserController::class, 'dashboard'])->name('user#dashboard');
     Route::get('/member', function () {
         return view('user.member');
     });
+    //orderList
+    Route::get('/order', [OrderController::class, 'userOrder'])->name('user.orderlist');
     //change password
     Route::get('/user/changePassword', [UserController::class, 'changePassword'])->name('user#changePassword');
     Route::post('/user/changePassword/update', [UserController::class, 'updatePassword'])->name('user#updatePassword');
     //User Profile
-    Route::get('/userProfile',[UserController::class,'profile'])->name('user#profile');
-    Route::get('/userProfile/edit',[UserController::class,'userEdit'])->name('user#edit');
-    Route::post('/userProfile/update{id}',[UserController::class,'userUpdate'])->name('user#update');
-    //detail
-    Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
+    Route::get('/userProfile', [UserController::class, 'profile'])->name('user#profile');
+    Route::get('/userProfile/edit', [UserController::class, 'userEdit'])->name('user#edit');
+    Route::post('/userProfile/update{id}', [UserController::class, 'userUpdate'])->name('user#update');
 });
 
 // Admin-side
@@ -64,9 +68,11 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin-dashboard', function () {
         return view('layouts.admin_common');
     })->name('admin#dashboard');
+
     //category
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
+
     //user-list
     Route::get('/userlist', [UserController::class, 'index'])->name('user.userlist');
     Route::delete('/userlist/{user}', [UserController::class, 'destroy'])->name('user.destroy');
@@ -76,13 +82,16 @@ Route::group(['middleware' => ['admin']], function () {
     //change password
     Route::get('/changePassword', [AuthController::class, 'changePassword'])->name('change#password');
     Route::post('/changePassword/update', [AuthController::class, 'updatePassword'])->name('update#password');
+
     //import and export Excel
     Route::post('/import', [UserController::class, 'import'])->name('user.import');
     //Order
     Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
     Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
-    Route::get('/confirm/{id}',[OrderController::class,'confirm'])->name('order.confirm');
+    Route::get('/confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
+    Route::get('/export-users', [UserController::class, 'export'])->name('user.export');
 });
+
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products', ProductApiController::class);

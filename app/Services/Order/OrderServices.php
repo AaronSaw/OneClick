@@ -38,7 +38,16 @@ class OrderServices implements OrderServicesInterface
      * @param $id
      * To get confirm
      */
-    public function confirm($id){
+    public function confirm($id)
+    {
         return $this->orderDao->confirm($id);
+    }
+
+    /**
+     * To get userOrder
+     */
+    public function userOrder()
+    {
+        return $this->orderDao->userOrder();
     }
 }

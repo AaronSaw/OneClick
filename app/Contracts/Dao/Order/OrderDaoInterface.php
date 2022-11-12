@@ -26,4 +26,9 @@ interface OrderDaoInterface
      * To get confirm
      */
     public function confirm($id);
+
+    /**
+     * To get userOrder
+     */
+    public function userOrder();
 }
