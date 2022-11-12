@@ -1,14 +1,13 @@
 .ccard {
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 30px 10px;
-    border-radius: 5px;
+    margin: 30px 20px 30px 10px;
     padding: 10px 10px 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
 }
 
 .category_cform {
     width: 50%;
     margin: 10% 30%;
-
 }
 
 .category_cform .ccard {
@@ -44,14 +43,23 @@
     color: #ffffff;
 }
 
+/*Tablet Size*/
+@media screen and (min-width: 768px) and (max-width: 1160px) {
+    .category_cform {
+        width: 83%;
+        margin: 10% 15%;
+    }
+}
+
 /*Mobile Size*/
 @media screen and (max-width: 767.9px) {
     .category_cform {
-        margin-top: 10%;
         width: 80%;
-    }
-    .category_cform .ccard {
         margin-top: 10%;
+    }
+
+    .category_cform .ccard {
         width: 60%;
+        margin-top: 10%;
     }
 }

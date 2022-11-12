@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Contracts\Services\Order\OrderServicesInterface;
 use App\Models\Category;
-use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -32,7 +31,7 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         $this->orderInterface->deleteOrder($order);
-        return redirect('/orderlist')->with('status','Order is deleted successfully');
+        return redirect('/orderlist')->with('status', 'Order is deleted successfully');
     }
 
     /**
@@ -51,5 +50,22 @@ class OrderController extends Controller
             array_push($countOrderByCategory,  $this->orderInterface->countOrder('orders', $c->id));
         }
         return view('admin.dashbord', compact(['catName', 'countOrderByCategory', 'countProduct', 'countUser', 'countOrder', 'countCategory']));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function userOrder()
+    {
+        $userOrder = $this->orderInterface->userOrder();
+        $prices = 0;
+        $ordersNo = 0;
+        foreach ($userOrder as $key => $value) {
+            $ordersNo++;
+            $prices = $prices + $value->price;
+        }
+        return view('user.order_list', compact(['userOrder', 'prices', 'ordersNo']));
     }
 }

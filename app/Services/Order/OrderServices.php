@@ -75,4 +75,12 @@ class OrderServices implements OrderServicesInterface
     {
         return $this->orderDao->countProduct();
     }
+    
+    /**
+     * To get userOrder
+     */
+    public function userOrder()
+    {
+        return $this->orderDao->userOrder();
+    }
 }

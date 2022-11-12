@@ -20,7 +20,7 @@
             </div>
         </div>
         <hr>
-        <h2 class="relatedCategory">Related Products</h2>
+        <h2 class="relatedCategory">Related Categories</h2>
         <div class="related-card clearfix">
             @foreach ($relatedCategories as $conCategory)
                 <a href="{{ route('detail', $conCategory->id) }}">

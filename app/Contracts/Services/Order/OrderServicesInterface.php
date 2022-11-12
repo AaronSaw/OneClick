@@ -14,7 +14,6 @@ interface OrderServicesInterface
      */
     public function getIndex();
 
-
     /**
      * To delete Order
      */
@@ -44,4 +43,9 @@ interface OrderServicesInterface
      * To get countproduct
      */
     public function countProduct();
+
+    /**
+     * To get userOrder
+     */
+    public function userOrder();
 }

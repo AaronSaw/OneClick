@@ -2,16 +2,20 @@
 @section('content')
     <div class="card-collect">
         <div class="mini-card">
-            {{ $countProduct }}
+            <p class="count-no"> {{ $countProduct }}</p>
+            <span class="count-name"> Product</span>
         </div>
         <div class="mini-card">
-            {{ $countUser }}
+            <p class="count-no">{{ $countUser }}</p>
+            <span class="count-name">User</span>
         </div>
         <div class="mini-card">
-            {{ $countOrder }}
+            <p class="count-no">{{ $countOrder }}</p>
+            <span class="count-name">Order</span>
         </div>
         <div class="mini-card">
-            {{ $countCategory }}
+            <p class="count-no">{{ $countCategory }}</p>
+            <span class="count-name">Category</span>
         </div>
     </div>
     <h2 class="dashboard-title">Orders Count By Categories</h2>
@@ -24,12 +28,12 @@
         integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        jQuery(document).ready(function($) {
-            $('.mini-card').counterUp({
-                delay: 5,
-                time: 500
-            });
-        });
+        //jQuery(document).ready(function($) {
+        //    $('.mini-card').counterUp({
+        //        delay: 5,
+        //        time: 500
+        //    });
+        //});
         let catArr = {!! json_encode($catName) !!};
         let CountPostArr = {!! json_encode($countOrderByCategory) !!};
         let op = document.getElementById('op').getContext('2d');

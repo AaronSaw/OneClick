@@ -45,4 +45,10 @@ interface OrderDaoInterface
      * To get countproduct
      */
     public function countProduct();
+    //  public function updateOrder(Request $request, $id);
+
+    /**
+     * To get userOrder
+     */
+    public function userOrder();
 }
