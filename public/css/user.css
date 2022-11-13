@@ -1,350 +1,345 @@
 /*Table Design*/
 
+.cmn-table-ttl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px;
+  background-color: #d6f6e2;
+}
+
 .tblttl {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+  line-height: 1.5;
+  color: #D10B42;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 #table {
-    width: 100%;
+  width: 100%;
 }
 
 .deletebtn {
-    border: none;
-    text-decoration: none;
+  border: none;
+  text-decoration: none;
 }
 
 .deletebtn i {
-    color: #ff1b1b;
-    font-size: 18px;
-    text-align: center;
+  color: #ff1b1b;
+  font-size: 18px;
+  text-align: center;
 }
 
 /*Restore Form*/
 
 .restorebtn {
-    margin: 10px;
-    padding: 3px 5px;
-    border: 0.1px dotted;
-    background-color: #d6d6b1;
-    font-size: 15px;
-    border-radius: 5px;
+  margin: 10px;
+  padding: 3px 5px;
+  border: 0.1px dotted;
+  background-color: #d6d6b1;
+  font-size: 15px;
+  border-radius: 5px;
 }
 
 .restoreForm {
-    width: 50%;
-    margin: 20%;
-    padding: 40px 10px;
-    border: 1px solid;
-    background-color: #d8e4e4;
-    text-align: center;
-    border-radius: 10px;
+  width: 50%;
+  margin: 20%;
+  padding: 40px 10px;
+  border: 1px solid;
+  background-color: #d8e4e4;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .restoreForm input {
-    padding: 5px;
-    border-radius: 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .restoreForm .restore {
-    padding: 5px;
-    border: 0.1px solid;
-    background-color: rgb(121, 118, 118);
-    font-weight: bold;
-    border-radius: 5px;
+  padding: 5px;
+  border: 0.1px solid;
+  background-color: rgb(121, 118, 118);
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 /*Profile*/
-
-.profile-detail-container {
-    width: 70%;
-    margin: 10% 0 0 30%;
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 140px 0 40px;
 }
 
 .profile-detail {
-    position: relative;
-    width: 32%;
-    margin: 10% 30%;
-    border: 1px dotted #333;
-    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    border-radius: 5px;
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
+  background-color: #fff;
+  border-radius: 20px;
 }
 
 .profile-detail img {
-    width: 80px;
-    height: 70px;
-    margin: 20px 0;
-    text-align: center;
-    border-radius: 50%;
+  display: table;
+  width: 80px;
+  height: 70px;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 50%;
 }
 
-.profile-detail div {
-    margin-left: 10%;
-    text-align: left;
+.profile-content {
+  padding-left: 20px;
+  font-family: sans-serif;
+  font-size: 16px;
 }
 
-.profile-detail div p {
-    padding-bottom: 12px;
-}
-
-.profile-detail div p.name {
-    color: #2c2a2d;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.profile-detail div p.email {
-    margin: 10px 0;
-    color: #2c2a2d;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.profile-detail div p.address {
-    color: #2c2a2d;
-    font-size: 15px;
-    font-weight: bold;
+.profile-content li {
+  margin-bottom: 15px;
 }
 
 .social {
-    display: inline-block;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .social li {
-    float: left;
-    padding: 20px;
+  margin-right: 20px;
 }
 
-.social li a i {
-    padding: 5px;
-    border: 1px solid lightblue;
-    background-color: #dff4f5;
-    color: #00f;
-    border-radius: 50%;
+.social i {
+  color: #e65770;
+}
+
+.profile-edit a {
+  color: #fff;
 }
 
 /*Profile Edit*/
 
 /*edit btn*/
 .profile-edit {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    border: none;
-    text-decoration: none;
-    text-align: right;
+  position: absolute;
+  top: 4%;
+  left: 87%;
+  padding: 3px;
+  border: none;
+  background-color: #ffafbd;
 }
-
 
 /*edit form*/
 .edit-container {
-    width: 55%;
-    margin: 9% 30%;
+  width: 55%;
+  margin: 9% 30%;
 }
 
 .edit-container .edit-ttl {
-    padding: 10px 15px;
-    font-size: 18px;
+  padding: 10px 15px;
+  font-size: 18px;
 }
 
 .edit-container .edit-form {
-    padding: 20px 40px;
-    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    max-width: 52%;
-    border-radius: 10px;
+  padding: 20px 40px;
+  box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 52%;
+  border-radius: 10px;
 }
 
 .edit-container .edit-form label {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .edit-container .edit-form input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 5px;
-    border: 1px solid #888;
-    border-radius: 5px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid #888;
+  border-radius: 5px;
 }
 
 .edit-container .edit-form .button,
 .button-primary {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .edit-container .edit-form .button a,
 .button-primary a {
-    color: #fff;
+  color: #fff;
 }
 
 
 /*Export and Import*/
 .laravelExcel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .excelBtn {
-    padding: 5px 20px;
-    border: none;
-    box-shadow: 5px 0px 14px rgb(239 239 239);
-    background: rgb(154 34 56 / 90%);
-    color: #fff;
-    border-radius: 10px;
+  margin-right: 20px;
+  padding: 8px 20px;
+  border: none;
+  box-shadow: 5px 0px 14px rgb(239 239 239);
+  background-color: #F7A76C;
+  color: #fff;
+  border-radius: 10px;
 }
 
 .excel-input {
-    margin-bottom: 7px;
-    padding: 4px;
+  margin-bottom: 7px;
+  padding: 4px;
 }
 
 .uploadBtn {
-    margin-left: 30%;
-    background: rgb(154 34 56 / 90%);
+  margin-left: 30%;
+  background: rgb(154 34 56 / 90%);
 }
 
 /*import form*/
 
 .import-modal {
-    width: 100%;
+  width: 100%;
 }
 
 .excel-input {
-    width: 100%;
+  width: 100%;
 }
 
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
 
-    /*Table Design*/
+  /*Table Design*/
 
-    .tblttl {
-        margin-bottom: 0vw;
-        font-size: 18px;
-    }
+  .tblttl {
+    margin-bottom: 0vw;
+    font-size: 18px;
+  }
 
-    .deletebtn i {
-        font-size: 2vw;
-    }
+  .deletebtn i {
+    font-size: 2vw;
+  }
 
-    .profile-detail {
-        width: 60%;
-        margin: 10% 20%;
-    }
+  .profile-detail {
+    width: 60%;
+    margin: 10% 20%;
+  }
 
-    .profile-detail img {
-        width: 9.2vw;
-        height: 7.4vw;
-    }
+  .profile-detail img {
+    width: 9.2vw;
+    height: 7.4vw;
+  }
 
-    /*edit form*/
-    .edit-container {
-        width: 50%;
-        margin: 5% 28%;
-    }
+  /*edit form*/
+  .edit-container {
+    width: 50%;
+    margin: 5% 28%;
+  }
 
-    .edit-container .edit-ttl {
-        padding: 0vw;
-        font-size: 2.2vw;
-    }
+  .edit-container .edit-ttl {
+    padding: 0vw;
+    font-size: 2.2vw;
+  }
 
-    .edit-container .edit-form {
-        padding: 3.3vw 3.3vw;
-        max-width: 90%;
-    }
+  .edit-container .edit-form {
+    padding: 3.3vw 3.3vw;
+    max-width: 90%;
+  }
 
-    .edit-container .edit-form label {
-        font-size: 1.7vw;
-    }
+  .edit-container .edit-form label {
+    font-size: 1.7vw;
+  }
 
-    .edit-container .edit-form input {
-        width: 100%;
-        margin: 0.7vw 0;
-        padding: 0.7vw;
-        border: 0.1vw solid #888;
-        border-radius: 0.7vw;
-    }
+  .edit-container .edit-form input {
+    width: 100%;
+    margin: 0.7vw 0;
+    padding: 0.7vw;
+    border: 0.1vw solid #888;
+    border-radius: 0.7vw;
+  }
 
-    /*import form*/
-    .import-modal {
-        min-width: 38%;
-    }
+  /*import form*/
+  .import-modal {
+    min-width: 38%;
+  }
 }
 
 
 @media screen and (max-width: 767.9px) {
 
-    /*Table Design*/
-    .deletebtn i {
-        font-size: 1.9vw;
-    }
+  /*Table Design*/
+  .deletebtn i {
+    font-size: 1.9vw;
+  }
 
-    .profile-detail {
-        width: 40%;
-    }
+  .profile-detail {
+    width: 40%;
+  }
 
-    .profile-detail img {
-        width: 9.4vw;
-        height: 7.8vw;
-    }
+  .profile-detail img {
+    width: 9.4vw;
+    height: 7.8vw;
+  }
 
-    .tableinfo {
-        margin-top: 0vw;
-        margin-left: 6.3vw;
-        padding-top: 1.6vw;
-    }
+  .tableinfo {
+    margin-top: 0vw;
+    margin-left: 6.3vw;
+    padding-top: 1.6vw;
+  }
 
-    .tblttl {
-        margin-bottom: 0vw;
-        font-size: 2.5vw;
-    }
+  .tblttl {
+    margin-bottom: 0vw;
+    font-size: 2.5vw;
+  }
 
-    /*edit form*/
-    .edit-container {
-        width: 50%;
-        margin: 13% 28%;
-    }
+  /*edit form*/
+  .edit-container {
+    width: 50%;
+    margin: 13% 28%;
+  }
 
-    .edit-container .edit-ttl {
-        padding: 1.6vw;
-        font-size: 2.5vw;
-    }
+  .edit-container .edit-ttl {
+    padding: 1.6vw;
+    font-size: 2.5vw;
+  }
 
-    .edit-container .edit-form {
-        padding: 3.9vw 3.9vw;
-        max-width: 83%;
-    }
+  .edit-container .edit-form {
+    padding: 3.9vw 3.9vw;
+    max-width: 83%;
+  }
 
-    .edit-container .edit-form label {
-        font-size: 2vw;
-    }
+  .edit-container .edit-form label {
+    font-size: 2vw;
+  }
 
-    .edit-container .edit-form input {
-        width: 100%;
-        margin: 0.8vw 0;
-        padding: 0.8vw;
-        border: 0.2vw solid #888;
-        border-radius: 0.8vw;
-    }
+  .edit-container .edit-form input {
+    width: 100%;
+    margin: 0.8vw 0;
+    padding: 0.8vw;
+    border: 0.2vw solid #888;
+    border-radius: 0.8vw;
+  }
 
-    /*Export and Import*/
-    .excelBtn {
-        padding: 3px 10px;
-    }
+  /*Export and Import*/
+  .excelBtn {
+    padding: 3px 10px;
+  }
 
-    .excel-input {
-        margin-bottom: 6px;
-        padding: 4px;
-    }
+  .excel-input {
+    margin-bottom: 6px;
+    padding: 4px;
+  }
 
-    /*import form*/
-    .import-modal {
-        min-width: 45%;
-    }
+  /*import form*/
+  .import-modal {
+    min-width: 45%;
+  }
 }

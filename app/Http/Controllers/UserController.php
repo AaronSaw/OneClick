@@ -52,10 +52,10 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name'=> 'required',
-            'address'=>'required',
-            'email'=>'required',
-          ]);
+            'name' => 'required',
+            'address' => 'required',
+            'email' => 'required',
+        ]);
         $this->userInterface->getUpdate($request, $user);
         return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated successfully');
     }
@@ -114,7 +114,7 @@ class UserController extends Controller
     public function updatePassword(ChangePasswordRequest $request)
     {
         $this->userInterface->updatePasswordPost($request);
-        return redirect()->route('user#changePassword')->with('success_message', 'Password change successfully.');
+        return redirect()->route('user.changePassword')->with('success_message', 'Password change successfully.');
     }
 
     /**
@@ -123,7 +123,7 @@ class UserController extends Controller
      */
     public function profile()
     {
-        return view ('profile');
+        return view('profile');
     }
 
     /**
@@ -142,9 +142,9 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function userUpdate(UserProfileUpdateRequest $request,$id)
+    public function userUpdate(UserProfileUpdateRequest $request, $id)
     {
         $this->userInterface->updateProfilePost($request, $id);
-        return redirect()->route('user#profile')->with('status',  'Your information has been updated Successfully');
+        return redirect()->route('user.profile')->with('status',  'Your information has been updated Successfully');
     }
 }

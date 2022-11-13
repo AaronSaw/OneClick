@@ -19,16 +19,15 @@
                         class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif
-        <a href="{{ route('forgot#index') }}"><i class="fa-solid fa-xmark icon-forgot"></i></a>
+        <a href="{{ route('forgot.index') }}"><i class="fa-solid fa-xmark icon-forgot"></i></a>
         <div class="form-blk">
             <h2 class="title">ResetPassword Form</h2>
-            <form action="{{ route('forgot#create') }}" method="POST">
+            <form action="{{ route('forgot.create') }}" method="POST">
                 @csrf
                 <input type="hidden" name="token" id="" value={{ $token }}>
                 <div class="input-gp">
-                    <label for="email">Name or Email:</label><br>
-                    <input type="text" name="email" id="email" placeholder="Enter email or name..."
-                        value="{{ $email ?? old('email') }}">
+                    <label for="email">Email:</label><br>
+                    <input type="text" name="email" id="email" value="{{ $email ?? old('email') }}" readonly>
                     @error('email')
                         <span class="error-message">{{ $message }}</span>
                     @enderror

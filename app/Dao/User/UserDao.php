@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Dao\User;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,15 +13,17 @@ use App\Contracts\Dao\User\UserDaoInterface;
  */
 class UserDao implements UserDaoInterface
 {
-  /**
-   * To show Users list
-   */
-    public function getIndex() {
+    /**
+     * To show Users list
+     */
+    public function getIndex()
+    {
         $users = User::paginate(5);
         return $users;
     }
 
-    public function deleteUser($id) {
+    public function deleteUser($id)
+    {
         $user = User::findOrfail($id);
         $user->delete();
     }
@@ -55,7 +58,7 @@ class UserDao implements UserDaoInterface
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->address = $request->input('address');
-        $data=$user->update();
+        $data = $user->update();
         return $data;
     }
 }
