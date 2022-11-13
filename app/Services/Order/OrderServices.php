@@ -44,6 +44,48 @@ class OrderServices implements OrderServicesInterface
     }
 
     /**
+     * @param $table and $description
+     * To get count order
+     */
+    public function countOrder($table, $description)
+    {
+        return $this->orderDao->countOrder($table, $description);
+    }
+
+
+    /**
+     * To get countorder
+     */
+    public function countOrderNO()
+    {
+        return $this->orderDao->countOrderNO();
+    }
+
+    /**
+     * To get countcategory
+     */
+    public function countCategory()
+    {
+        return $this->orderDao->countCategory();
+    }
+
+    /**
+     * To get countUser
+     */
+    public function countUser()
+    {
+        return $this->orderDao->countUser();
+    }
+
+    /**
+     * To get countproduct
+     */
+    public function countProduct()
+    {
+        return $this->orderDao->countProduct();
+    }
+
+    /**
      * To get userOrder
      */
     public function userOrder()
