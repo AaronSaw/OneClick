@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Services\User;
-
 use App\Models\User;
 use App\Contracts\Services\User\UserServicesInterface;
 use App\Contracts\Dao\User\UserDaoInterface;
@@ -30,5 +29,27 @@ class UserServices implements UserServicesInterface
     */
     public function deleteUser($id) {
         return $this->userDao->deleteUser($id);
+    }
+
+    public function getUpdate($request, $user) {
+        return $this->userDao->getUpdate($request, $user);
+    }
+
+    /**
+     * To updatePassword
+     * @return Object
+     */
+    public function updatePasswordPost($request)
+    {
+        return $this->userDao->updatePasswordPost($request);
+    }
+
+    /**
+     * To update profile
+     * @return Object
+     */
+    public function updateProfilePost($request,$id)
+    {
+        return $this->userDao->updateProfilePost($request,$id);
     }
 }

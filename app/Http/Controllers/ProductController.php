@@ -98,4 +98,17 @@ class ProductController extends Controller
         $this->productInterface->getDelete($product);
         return redirect()->route('product.index')->with('status', "Product is deleted successfully");
     }
+
+    /**
+     *
+     * @param  $id
+     * @return $detial and relatedCategories
+     */
+    public function detail($id)
+    {  
+        $detail =  $this->productInterface->getDetail($id);
+        $relatedId = $detail[0]->category_id;
+        $relatedCategories =  $this->productInterface->getRelatedDetail($id, $relatedId);
+        return view('detail', compact(['detail', 'relatedCategories']));
+    }
 }

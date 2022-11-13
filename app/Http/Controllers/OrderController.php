@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Http\Requests\StoreOrderRequest;
-use App\Http\Requests\UpdateOrderRequest;
+use App\Contracts\Services\Order\OrderServicesInterface;
+use App\Models\Category;
 
 class OrderController extends Controller
 {
+    private $orderInterface;
+    public function __construct(OrderServicesInterface $OrderServicesInterface)
+    {
+        $this->orderInterface = $OrderServicesInterface;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,72 +20,52 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = $this->orderInterface->getIndex();
+        return view('order.index', compact('orders'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreOrderRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreOrderRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateOrderRequest  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateOrderRequest $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
+     * @param  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
     {
-        //
+        $this->orderInterface->deleteOrder($order);
+        return redirect('/orderlist')->with('status', 'Order is deleted successfully');
+    }
+
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function orderCount()
+    {
+        $countOrder = $this->orderInterface->countOrderNO();
+        $countUser = $this->orderInterface->countUser();
+        $countProduct = $this->orderInterface->countProduct();
+        $countCategory = $this->orderInterface->countCategory();
+        $catName = [];
+        $countOrderByCategory = [];
+        foreach (Category::all() as $c) {
+            array_push($catName, $c->ctitle);
+            array_push($countOrderByCategory,  $this->orderInterface->countOrder('orders', $c->id));
+        }
+        return view('admin.dashbord', compact(['catName', 'countOrderByCategory', 'countProduct', 'countUser', 'countOrder', 'countCategory']));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function userOrder()
+    {
+        $userOrder = $this->orderInterface->userOrder();
+        $prices = 0;
+        $ordersNo = 0;
+        foreach ($userOrder as $key => $value) {
+            $ordersNo++;
+            $prices = $prices + $value->price;
+        }
+        return view('user.order_list', compact(['userOrder', 'prices', 'ordersNo']));
     }
 }

@@ -18,4 +18,18 @@ interface UserServicesInterface
      * To delete User
      */
     public function deleteUser($id);
+
+    public function getUpdate($request, $user);
+
+    /**
+     * To updatePassword
+     * @return Object
+     */
+    public function updatePasswordPost($request);
+
+    /**
+     * To update profile
+     * @return Object
+     */
+    public function updateProfilePost($request,$id);
 }

@@ -7,19 +7,31 @@
     </div>
 @endif
 <div class="edit-container">
-    <h3 class="edit-ttl">Edit Your Information</h3>
-    <form action="" method="POST" class="edit-form">
-        <label for="name">Name</label><br>
-        <input type="text" name="name" value=""><br>
-        <label for="email">Email</label><br>
-        <input type="email" name="email" value=""><br>
-        <label for="address">Address</label><br>
-        <input type="text" name="address" value=""><br>
-        <div>
-            <button class="update-btn"><a href="{{ url('adminProfile') }}">Cancel</a></button>
-            <button class="update-btn"><a href="">Update</a></button>
-        </div>
 
+    <form action="{{ route('user.userUpdate', Auth::user()->id ) }}" method="POST" class="edit-form">
+        @csrf
+        @method('put')
+        <h3 class="edit-ttl">Edit Your Information</h3>
+        <hr>
+        <label for="name">Name</label><br>
+        <input type="text" name="name" value="{{ Auth::user()->name }}" class=" @error('name') is-invalid @enderror">
+        @error('name')
+        <div class="error">{{ $message }}</div>
+        @enderror <br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" value="{{ Auth::user()->email }}" class=" @error('email') is-invalid @enderror">
+        @error('email')
+        <div class="error">{{ $message }}</div>
+        @enderror <br>
+        <label for="address">Address</label><br>
+        <input type="text" name="address" value="{{ Auth::user()->address }}" class=" @error('address') is-invalid @enderror">
+        @error('address')
+        <div class="error">{{ $message }}</div>
+        @enderror <br>
+        <div>
+            <button class="button cancel" type="button"><a href="{{ url('adminProfile') }}">Cancel</a></button>
+            <button class="button-primary" type="submit">Update</button>
+        </div>
     </form>
 </div>
 @endsection

@@ -19,4 +19,17 @@ interface UserDaoInterface
   public function deleteUser($id);
 
 //  public function updateUser(Request $request, $id);
+    public function getUpdate($request, $user);
+
+    /**
+     * To updatePassword
+     * @return Object
+     */
+    public function updatePasswordPost($request);
+
+    /**
+     * To update profile
+     * @return Object
+     */
+    public function updateProfilePost($request,$id);
 }

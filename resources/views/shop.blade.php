@@ -19,10 +19,7 @@
     <section class="product-sec ">
         <div class="product-list clearfix">
             <!--card add -->
-        </div>
-        {{--<div class="loadmore-btn">
-            <a href="#" class="button">Load More</a>
-        </div>--}}       
+        </div>     
     </section>
     @endsection
 </body>

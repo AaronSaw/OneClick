@@ -21,10 +21,11 @@
     text-decoration: none;
 }
 
- /*Header Nav Bar*/
+/*Top Nav Bar*/
 .nav {
     position: fixed;
     align-items: center;
+    z-index: 5;
     width: 100%;
     padding: 10px 30px;
     background-color: #fcdcdd;
@@ -73,9 +74,9 @@
 .nav ul li div.profile {
     display: inline-block;
     position: relative;
+    margin-right: 35px;
     border: none;
     text-decoration: none;
-    margin-right: 35px;
 }
 
 .nav ul li .dropbtn {
@@ -100,8 +101,8 @@
     display: block;
     padding: 5px;
     color: black;
-    text-decoration: none;
     font-weight: 100;
+    text-decoration: none;
     font-style: normal;
 }
 
@@ -128,6 +129,7 @@
 .side-nav {
     position: fixed;
     float: left;
+    z-index: 99;
     width: 18%;
     height: 100%;
     background-color: #ab7f80;
@@ -145,15 +147,15 @@
 .side-nav .logo a img {
     width: 100%;
     height: auto;
-    margin-left: 75%;
     margin-top: 5px;
+    margin-left: 75%;
 }
 
 .mv-section {
     float: right;
     width: 82%;
-    margin-top: 60px;
-    margin-left: 18%;
+    margin-top: 57px;
+    /*margin-left: 18%;*/
     background-color: #fcdcdd;
     max-width: 1440px;
     min-height: 1000px;
@@ -177,16 +179,15 @@
     margin: 15px 0;
 }
 
-
 .side-nav .side-dropdown-content {
     display: block;
 }
 
 .sidenav-dropdown .pttl .drop-arrow {
-   position: absolute;
-   right: 0;
-   margin: 10px;
-   transition: 0.3s ease;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    transition: 0.3s ease;
 }
 
 .rotate {
@@ -211,6 +212,7 @@
     font-size: 15px;
     font-weight: bold;
     transition: 0.5s;
+    border-left: 5px solid transparent;
 }
 
 .side-nav .sidenav-item li a i {
@@ -225,6 +227,7 @@
     font-style: italic;
     /*border-radius: 20px 0 0 20px;*/
 }
+
 .side-nav .sidenav-item li.active {
     background-color: #fff;
     color: #000;
@@ -240,15 +243,14 @@
 }
 
 .side-nav .sidenav-item li a:hover {
-    padding-left: 20px;
-    background-color: #f4f6f9;
-    color: #000;
+    color: #fff;
     font-weight: bold;
     font-style: italic;
-    /*border-radius: 20px 0 0 20px;*/
+    border-left: 5px solid #fff;
 }
+
 .side-nav .sidenav-item li a:hover i {
-    color: #000;
+    color: #fff;
 }
 
 .side-nav .sidenav-item li a span {
@@ -270,12 +272,10 @@
 }
 
 .side-nav .sidenav-dropdown a.pttl:hover {
-    padding-left: 20px;
-    background-color: #fff;
     color: #000;
     font-weight: bold;
     font-style: italic;
-    /*border-radius: 20px 0 0 20px;*/
+    border-left: 5px solid #fff;
 }
 
 .nav .icon {
@@ -290,7 +290,7 @@
 /*Table Design*/
 
 #table {
-    width: 90%;
+    width: 100%;
     background-color: #f1e7e7;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -302,6 +302,7 @@
 #table th {
     padding: 8px;
     border: 1px solid #ddd;
+    text-align: center;
 }
 
 #table tr:nth-child(even) {
@@ -317,7 +318,6 @@
     padding-bottom: 12px;
     background-color: #6a6a6a;
     color: white;
-    text-align: left;
 }
 
 .card {
@@ -334,9 +334,9 @@
 }
 
 .button {
-    padding: 5px 20px;
+    padding: 3px 10px;
     border: none;
-    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+    box-shadow: 0 0.5em 0 -0.5em #14a73e98;
     border-radius: 5px;
 }
 
@@ -355,7 +355,7 @@ label {
     background-color: #6200ee;
     color: rgb(255, 255, 255);
     font-family: sans-serif;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     outline: none;
     cursor: pointer;
     border-radius: 4px;
@@ -382,34 +382,37 @@ label {
 }
 
 .danger {
-    margin-left: 5px;
-    background-color: rgb(255, 27, 27) !important;
-    color: #fff;
+    color: #ff1b1b;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 input[type=text],
 select {
     display: inline-block;
-    padding: 10px 20px;
+    margin-bottom: 5px;
+    padding: 6px 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 4px;
 }
 
 .error {
-    color: red;
     margin-top: 5px;
+    color: #ff0000;
 }
 
-h2 {
-    color: #2700ff;
-    font-size: 25px;
+.tblttl {
+    padding: 10px;
+    color: #000;
+    font-size: 20px;
     text-align: center;
 }
 
 .success {
-    background-color: #04AA6D;
-    color: #fff;
+    /*background-color: #6200ee;*/
+    color: #6200ee;
+    font-size: 18px;
 }
 
 .cancel {
@@ -418,32 +421,42 @@ h2 {
 }
 
 .modal {
-    max-width: 350px !important;
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 20% !important;
 }
 
 .modal-text {
-    font-size: 32px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .modal-footer {
     display: flex;
-    float: right;
+    justify-content: center;
+    /*float: right;*/
     color: #fff;
 }
 
+.modal-footer .danger {
+    margin-left: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+}
+
 .form-footerBtn {
-    display: flex;
-    justify-content: space-between;
     margin-top: 12px;
 }
 
 .alert {
     margin-bottom: 5px;
     padding: 10px;
-    background-color: #bfffbf;
-    color: #808080;
-    border-radius: 5px;
+    background-color: #fcdcdd;
+    color: #000;
     text-align: center;
+    border-radius: 5px;
 }
 
 .nav .btn-gnavi {
@@ -463,6 +476,7 @@ h2 {
 /*Tablet Size*/
 @media screen and (min-width: 768px) and (max-width: 1160px) {
 
+    /*Top Navigation Bar*/
     .pc {
         display: none;
     }
@@ -470,11 +484,13 @@ h2 {
     .nav {
         padding: 1.4vw 3.9vw;
     }
+
     .nav ul li i {
         margin-top: 1.3vw;
         color: #0c0c0c;
         font-size: 2.2vw;
     }
+
     /*Side Navigation Bar*/
 
     .side-nav center img {
@@ -524,8 +540,7 @@ h2 {
 
     .sidenav-dropdown .pttl .drop-arrow {
         margin-top: 0.7vw;
-     }
-
+    }
 
     /*Table Design*/
 
@@ -542,6 +557,7 @@ h2 {
 /*Mobile Size*/
 @media screen and (max-width: 767.9px) {
 
+    /*Top Navigation Bar*/
     .pc {
         display: block;
     }
@@ -549,6 +565,7 @@ h2 {
     .nav {
         padding: 0 3.9vw;
     }
+
     .nav .logo {
         float: left;
         width: 13%;
@@ -579,13 +596,13 @@ h2 {
     }
 
     .content .side-nav {
-        top: 9.4vw;
-        right: -120vw;
+        top: 9.1vw;
+        left: -120vw;
         float: none;
         width: 100%;
         background-color: #ab7f80;
         text-align: center;
-        max-height: 75%;
+        max-height: 78%;
     }
 
     .nav .btn-gnavi span {
@@ -638,8 +655,9 @@ h2 {
     .mv-section {
         float: none;
         width: 100%;
-        margin-top: 0;
+        margin-top: -50px;
         margin-left: 0;
+        padding-top: 10%;
     }
 
     /*Side Nav Bar*/
@@ -651,6 +669,7 @@ h2 {
     .side-nav hr {
         display: none;
     }
+
     .side-nav center {
         display: none;
     }
@@ -696,8 +715,7 @@ h2 {
     .sidenav-dropdown .pttl .drop-arrow {
         display: inline-block;
         right: 15.6vw;
-     }
-
+    }
 
     /*Table Design*/
 

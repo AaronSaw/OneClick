@@ -1,4 +1,4 @@
-//Shop Page 
+//Shop Page
 
 //Search Function
 $(document).ready(function () {
@@ -15,7 +15,7 @@ $(document).ready(function () {
                             <img src="storage/${el.image}" alt="Product Image" class="carousel-item-img">
                             <div class="panel">
                                 <div class="inside">
-                                    <a href="{{URL::to('detail/${el.id}')}} " class="fa-solid fa-circle-info"></a>
+                                <a href="http://127.0.0.1:8000/detail/${el.id} " class="fa-solid fa-circle-info"></a>
                                 </div>
                             </div>
                             <div class="product-info">
