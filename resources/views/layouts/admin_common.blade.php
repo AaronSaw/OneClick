@@ -57,7 +57,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="{{route('user.dashboard')}}">User_dashboard</a>
+                        <a href="{{route('user.dashboard')}}" class="user-dashboard">User-Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -73,7 +73,7 @@
             </h1>
 
             <center>
-                <img src="{{ asset('img/Profile2.png') }}" alt="profile pic"><br>
+                <img src="{{ asset('img/userProfile.png') }}" alt="profile pic"><br>
                 <h4 class="username">{{ Auth::user()->name }}</h4>
             </center><br>
             <hr>
@@ -88,8 +88,9 @@
                     <div
                         class="side-dropdown-content {{ Request::is('product/create') || Request::is('product') ? 'show' : '' }}">
                         <a href="{{ url('product') }}"
-                            class="dropdown-menu {{ Request::is('product') ? 'active' : '' }}"><i class="fa fa-eye"
-                                aria-hidden="true"></i><span>Product List</span></a><br>
+                            class="dropdown-menu {{ Request::is('product') ? 'active' : '' }}">
+                            <i class="fa-solid fa-rectangle-list"></i>
+                            <span>Product List</span></a><br>
                         <a href="{{ url('product/create') }}"
                             class="dropdown-menu {{ Request::is('product/create') ? 'active' : '' }}"><i
                                 class="fa fa-plus" aria-hidden="true"></i><span>Add
@@ -103,8 +104,9 @@
                     <div
                         class="side-dropdown-content {{ Request::is('category/create') || Request::is('category') ? 'show' : '' }}">
                         <a href="{{ url('category') }}"
-                            class="dropdown-menu {{ Request::is('category') ? 'active' : '' }}"><i class="fa fa-eye"
-                                aria-hidden="true"></i><span>Category List</span></a><br>
+                            class="dropdown-menu {{ Request::is('category') ? 'active' : '' }}">
+                            <i class="fa-solid fa-rectangle-list"></i>
+                            <span>Category List</span></a><br>
                         <a href="{{ url('category/create') }}"
                             class="dropdown-menu {{ Request::is('category/create') ? 'active' : '' }}"><i
                                 class="fa fa-plus" aria-hidden="true"></i><span>Add
@@ -112,12 +114,14 @@
                     </div>
                 </li>
                 <li class="side-list {{ Request::is('orderlist') ? 'active' : '' }}">
-                    <a href="{{ route('dashboard.orderlist') }}" class="side-menu"><i class="fa fa-eye"
-                            aria-hidden="true"></i><span>Order List</span></a>
+                    <a href="{{ route('dashboard.orderlist') }}" class="side-menu">
+                        <i class="fa-solid fa-rectangle-list"></i>
+                        <span>Order List</span></a>
                 </li>
                 <li class="side-list {{ Request::is('userlist') ? 'active' : '' }}">
-                    <a href="{{ route('user.userlist') }}" class="side-menu"><i class="fa fa-eye"
-                            aria-hidden="true"></i><span>User List</span></a>
+                    <a href="{{ route('user.userlist') }}" class="side-menu">
+                        <i class="fa-solid fa-rectangle-list"></i>
+                        <span>User List</span></a>
                 </li>
             </ul>
         </div>

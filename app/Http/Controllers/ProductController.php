@@ -131,8 +131,12 @@ class ProductController extends Controller
      */
     public function orderStore(Request $request, $id)
     {
-        $this->productInterface->orderStorePost($request, $id);
-        return redirect()->route('user.order', $id)
+        $data=$this->productInterface->orderStorePost($request, $id);
+        if($data){
+            return redirect()->route('user.order', $id)
             ->with('success_status', 'Your Order Is Confirmed.And Order Mail was sent.');
+        }else{
+            return back()->with('error_status','Admin cannot order product.');
+        }
     }
 }

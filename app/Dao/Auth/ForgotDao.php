@@ -57,13 +57,11 @@ class ForgotDao implements ForgotDaoInterface
             ])
             ->first();
         if (!$updatePassword) {
-            //return back()->withInput()->with('error', 'Invalid token!');
             return false;
         }else{
             $user = User::where('email', $request->email)
             ->update(['password' => Hash::make($request->password)]);
         $data = DB::table('password_resets')->where(['email' => $request->email,'token'=>$request->token])->delete();
-        //return compact('user', 'data');
         return true;
         }
     }

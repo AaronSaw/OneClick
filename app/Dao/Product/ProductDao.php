@@ -153,16 +153,20 @@ class ProductDao implements ProductDaoInterface
         $input = Order::create($order_data);
         $header = "<h3> Hi " . Auth::user()->name . " , </h3><h1>Thank you fo your Order!</h1><h4>Order No: #" . $input->id . "</h4>";
         $body = "<h3>Order Summary:</h3><hr><table><tr><th>Product Name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Total Amount</th></tr><tr><td>" . $input->product->title . "</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>" . $input->product->price . "</td></tr></table><br><h3> From One click </h3>";
-        $mail = Mail::send(
-            'orderMail',
-            ['header' => $header, 'body' => $body],
-            function ($message) {
-                $message->from('shoonlaeyeewin1602@gmail.com', 'One Click');
-                $message->to(Auth::user()->email)
-                    ->subject('Order Recepit');
-            }
-        );
-        return compact('input', 'mail');
+        if(!Auth::user()->role == 1){
+            return false;
+        }else{
+            $mail = Mail::send(
+                'orderMail',
+                ['header' => $header, 'body' => $body],
+                function ($message) {
+                    $message->from('shoonlaeyeewin1602@gmail.com', 'One Click');
+                    $message->to(Auth::user()->email)
+                        ->subject('Order Recepit');
+                }
+            );
+            return true;
+        }
     }
 
     /**
