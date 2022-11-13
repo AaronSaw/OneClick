@@ -9,4 +9,8 @@ $(document).ready(function () {
       $(".menu-section").slideDown();
     } else $(".menu-section").slideUp();
   });
+
+   // animation
+  new WOW().init();
+
 });

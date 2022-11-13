@@ -26,9 +26,9 @@ class IsAdmin
             } else {
                 Session::flush();
                 Auth::logout();
-                return redirect()->route('auth#login');
+                return redirect()->route('auth.login');
             }
         }
-        return redirect()->route('auth#login');
+        return redirect()->route('auth.login');
     }
 }

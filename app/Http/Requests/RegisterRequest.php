@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\isValidPassword;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterRequest extends FormRequest
@@ -26,22 +27,9 @@ class RegisterRequest extends FormRequest
         return [
             'name' => 'required|unique:users,name',
             'email' => 'required|unique:users,email',
-            'password' => 'required|min:8|regex:/[A-Z]/|regex:/[a-z]/|regex:/[0-9]/|regex:/[@$!%*#?&]/',
+            'password' => ['required', 'string', new isValidPassword],
             'confirm_password' => 'required|same:password',
             'address' => 'required',
         ];
-    }
-
-    /**
-     * Return Validation Message
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        $message = [
-            'password.regex' => 'Password contains [A-Z],[a-z],[1-9] and [@!$%*#?&].',
-        ];
-        return $message;
     }
 }

@@ -13,16 +13,10 @@
 
 <body>
     <div class="register-form">
-        @if (session('registerSuccess'))
-            <div class="alert-green">
-                <h3 class="message-green">{{ session('registerSuccess') }}<i
-                        class="fa-solid fa-xmark icon-btn js-close"></i></h3>
-            </div>
-        @endif
         <div class="form-blk">
             <h2 class="title">Register Form</h2>
             <div class="form-reg">
-                <form action="{{ route('auth#store') }}" method="POST">
+                <form action="{{ route('auth.store') }}" method="POST">
                     @csrf
                     <div class="input-gp">
                         <label for="name">Name:</label><br>
@@ -66,7 +60,7 @@
                     <div class="input-gp register-blk">
                         <input type="submit" value="Register" class="register-btn">
                         <p class="form-txt">Already have an account?
-                            <a href="{{ route('auth#login') }}">Login Here!</a>
+                            <a href="{{ route('auth.login') }}">Login Here!</a>
                         </p>
                     </div>
                 </form>
