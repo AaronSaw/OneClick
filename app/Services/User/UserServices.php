@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services\User;
+
 use App\Models\User;
 use App\Contracts\Services\User\UserServicesInterface;
 use App\Contracts\Dao\User\UserDaoInterface;
@@ -17,21 +18,24 @@ class UserServices implements UserServicesInterface
     {
         $this->userDao = $UserDao;
     }
-  /**
-   * To get User
-   */
-    public function getIndex() {
+    /**
+     * To get User
+     */
+    public function getIndex()
+    {
         return $this->userDao->getIndex();
     }
 
     /**
      * To delete User by id
-    */
-    public function deleteUser($id) {
+     */
+    public function deleteUser($id)
+    {
         return $this->userDao->deleteUser($id);
     }
 
-    public function getUpdate($request, $user) {
+    public function getUpdate($request, $user)
+    {
         return $this->userDao->getUpdate($request, $user);
     }
 
@@ -48,8 +52,8 @@ class UserServices implements UserServicesInterface
      * To update profile
      * @return Object
      */
-    public function updateProfilePost($request,$id)
+    public function updateProfilePost($request, $id)
     {
-        return $this->userDao->updateProfilePost($request,$id);
+        return $this->userDao->updateProfilePost($request, $id);
     }
 }

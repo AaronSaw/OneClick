@@ -25,13 +25,19 @@
                         class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif
+        @if (session('registerSuccess'))
+            <div class="alert-green">
+                <h3 class="message-green">{{ session('registerSuccess') }}<i
+                        class="fa-solid fa-xmark icon-btn js-close"></i></h3>
+            </div>
+        @endif
         <div class="form-blk">
             <h2 class="title">Login Form</h2>
-            <form action="{{ route('auth#create') }}" method="POST">
+            <form action="{{ route('auth.create') }}" method="POST">
                 @csrf
                 <div class="input-gp">
                     <label for="email">Name or Email:</label><br>
-                    <input type="text" name="email" id="email" placeholder="Enter email or name..."
+                    <input type="text" name="email" id="email" placeholder="Enter name or email.."
                         value="{{ old('email') }}">
                     @error('email')
                         <span class="error-message">{{ $message }}</span>
@@ -48,8 +54,8 @@
                 <div class="input-gp login-blk">
                     <input type="submit" value="Login" class="login-btn">
                     <div class="forgot-pw">
-                        <p><a href="{{ route('forgot#index') }}">Forgot Password?</a></p>
-                        <p>Don't have an account? <a href="{{ route('auth#register') }}">Sign Up Here!</a></p>
+                        <p><a href="{{ route('forgot.index') }}">Forgot Password?</a></p>
+                        <p>Don't have an account? <a href="{{ route('auth.register') }}">Sign Up Here!</a></p>
                     </div>
                 </div>
             </form>

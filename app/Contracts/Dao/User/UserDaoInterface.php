@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Contracts\Dao\User;
+
 use Illuminate\Http\Request;
 
 /**
@@ -8,17 +9,17 @@ use Illuminate\Http\Request;
  */
 interface UserDaoInterface
 {
-  /**
-   * To show User List
-   */
-  public function getIndex();
+    /**
+     * To show User List
+     */
+    public function getIndex();
 
-  /**
-   * To delete User by id
-   */
-  public function deleteUser($id);
+    /**
+     * To delete User by id
+     */
+    public function deleteUser($id);
 
-//  public function updateUser(Request $request, $id);
+    //  public function updateUser(Request $request, $id);
     public function getUpdate($request, $user);
 
     /**
@@ -31,5 +32,5 @@ interface UserDaoInterface
      * To update profile
      * @return Object
      */
-    public function updateProfilePost($request,$id);
+    public function updateProfilePost($request, $id);
 }

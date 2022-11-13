@@ -19,10 +19,10 @@
                         class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif
-        <a href="{{ route('auth#login') }}"><i class="fa-solid fa-xmark icon-forgot"></i></a>
+        <a href="{{ route('auth.login') }}"><i class="fa-solid fa-xmark icon-forgot"></i></a>
         <div class="form-blk">
             <h2 class="title">ForgotPassword Form</h2>
-            <form action="{{ route('forgot#store') }}" method="POST">
+            <form action="{{ route('forgot.store') }}" method="POST">
                 @csrf
                 <div class="input-gp">
                     <label for="email">Email:</label><br>

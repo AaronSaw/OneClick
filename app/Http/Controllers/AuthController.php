@@ -53,7 +53,7 @@ class AuthController extends Controller
     public function store(RegisterRequest $request)
     {
         $this->authInterface->storePost($request);
-        return redirect()->route('auth#register')->with(['registerSuccess' => 'Registration Successful']);
+        return redirect()->route('auth.login')->with(['registerSuccess' => 'Registration Successful']);
     }
 
     /**
@@ -67,9 +67,9 @@ class AuthController extends Controller
             error_log('login user role is');
             error_log(Auth::user()->role);
             if (Auth::user()->role == 0) {
-                return redirect()->route('admin#dashboard');
+                return redirect()->route('admin.dashboard');
             } else if (Auth::user()->role == 1) {
-                return redirect()->route('user#dashboard');
+                return redirect()->route('user.dashboard');
             }
         } else {
             return back()->with('error', 'Your email and password are incorrect!');
@@ -83,7 +83,7 @@ class AuthController extends Controller
     public function logout()
     {
         $this->authInterface->logoutPost();
-        return redirect()->route('auth#login');
+        return redirect()->route('auth.login');
     }
 
     /**
@@ -103,6 +103,6 @@ class AuthController extends Controller
     public function updatePassword(ChangePasswordRequest $request)
     {
         $this->authInterface->updatePasswordPost($request);
-        return redirect()->route('change#password')->with('success_message', 'Password change successfully.');
+        return redirect()->route('change.password')->with('success_message', 'Password change successfully.');
     }
 }

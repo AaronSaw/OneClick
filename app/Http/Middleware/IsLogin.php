@@ -20,6 +20,6 @@ class IsLogin
         if (!Auth::user()) {
             return $next($request);
         }
-        return redirect()->route('user#dashboard');
+        return redirect()->route('user.dashboard');
     }
 }

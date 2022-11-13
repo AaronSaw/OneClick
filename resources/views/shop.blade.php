@@ -12,9 +12,7 @@
 </head>
 
 <body>
-
   @section('content')
-
   <section class="product-sec">
     <div class="product-list clearfix">
       <!--card add -->
