@@ -138,7 +138,7 @@
     }
 
     .member-card .cards .card {
-        width: calc(100% / 2 - 10px);
+        width: calc(100% / 2 - 0.781vw);
         margin-bottom: 10%;
     }
 
@@ -181,13 +181,13 @@
     }
 
     .member-card .cards .card {
-        width: calc(100%/2 - 10px);
+        width: calc(100%/2 - 1.563vw);
         margin-bottom: 10%;
     }
 
     .cards .card .content-card .img-member {
-        width: 100px;
-        height: 100px;
+        width: 15.625vw;
+        height: 15.625vw;
         margin-left: 3%;
     }
 
@@ -203,7 +203,7 @@
     }
 
     .card .content-card .info .detail {
-        font-size: 12px;
+        font-size: 1.875vw;
         text-align: justify;
         max-width: 100%;
     }

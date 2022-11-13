@@ -9,15 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneClick | Shop </title>
     <link rel="stylesheet" href="{{ asset('user/common_css/shop.css') }}">
+    
 </head>
 <body>
     
 
     @section('content')
-    <section class="product-sec">
+    
+    <section class="product-sec ">
         <div class="product-list clearfix">
             <!--card add -->
         </div>
+        {{--<div class="loadmore-btn">
+            <a href="#" class="button">Load More</a>
+        </div>--}}       
     </section>
     @endsection
 </body>

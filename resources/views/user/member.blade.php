@@ -14,8 +14,8 @@
 <body>
     @section('content')
         <section class="member">
-        <h2 class="member-ttl">Our Team</h2>
-        <div class="member-card">
+        <h2 class="member-ttl wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s">Our Team</h2>
+        <div class="member-card wow slideInDown" data-wow-duration="2s">
             <div class="cards">
                 <div class="card">
                     <div class="content-card">
