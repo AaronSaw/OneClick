@@ -82,6 +82,11 @@ class UserController extends Controller
         return view('user.common');
     }
 
+    public function shop()
+    {
+        return view('shop');
+    }
+
     public function import(Request $request)
     {
         $request->validate([

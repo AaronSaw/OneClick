@@ -28,7 +28,7 @@ Route::group(['middleware' => ['not-login']], function () {
 });
 
 Route::get('/', function () {
-    return view('shop');
+    return view('home');
 });
 
 //Authentication
@@ -44,6 +44,7 @@ Route::post('/reset', [ForgotPasswordController::class, 'create'])->name('forgot
 //User-side
 Route::group(['middleware' => ['user']], function () {
     Route::get('/user-dashboard', [UserController::class, 'dashboard'])->name('user#dashboard');
+    Route::get('/shop', [UserController::class, 'shop'])->name('user.shop');
     Route::get('/member', function () {
         return view('user.member');
     });
@@ -91,3 +92,7 @@ Route::group(['middleware' => ['admin']], function () {
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products',ProductApiController::class);
+
+Route::get('/aboutUs', function () {
+    return view('user.aboutUs');
+});
