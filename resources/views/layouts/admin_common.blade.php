@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/category.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/changePassword.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -79,7 +80,7 @@
             <hr>
             <ul class="sidenav-item">
                 <li class="side-list {{ Request::is('admin-dashboard') ? 'active' : '' }}">
-                    <a href="{{ url('admin-dashboard') }}" class="side-menu"><i class="fa fa-home"
+                    <a href="{{ url('/admin-dashboard') }}" class="side-menu"><i class="fa fa-home"
                             aria-hidden="true"></i><span>Home</span></a>
                 </li>
                 <li class="sidenav-dropdown">
@@ -130,6 +131,8 @@
         </div>
     </div>
     <script src="{{ asset('js/library/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/library/way_point/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/library/counter_up/counter_up.js') }}"></script>
     <script src="{{ asset('js/admin_common.js') }}"></script>
     <script src="{{ asset('js/product.js') }}"></script>
     <script src="{{ asset('js/index.js') }}"></script>

@@ -70,10 +70,8 @@ Route::group(['middleware' => ['user']], function () {
 
 // Admin-side
 Route::group(['middleware' => ['admin']], function () {
-    //admin-dashboard
-    Route::get('/admin-dashboard', function () {
-        return view('layouts.admin_common');
-    })->name('admin.dashboard');
+    //dashboard page
+Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admin.dashboard');
     //category
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);

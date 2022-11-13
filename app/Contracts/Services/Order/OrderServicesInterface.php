@@ -20,6 +20,31 @@ interface OrderServicesInterface
     public function deleteOrder($id);
 
     /**
+     * To get CategoryName and countOrder
+     */
+    public function countOrder($table, $description);
+
+    /**
+     * To get countorder
+     */
+    public function countOrderNO();
+
+    /**
+     * To get countcategory
+     */
+    public function countCategory();
+
+    /**
+     * To get countUser
+     */
+    public function countUser();
+
+    /**
+     * To get countproduct
+     */
+    public function countProduct();
+
+    /**
      * To get userOrder
      */
     public function userOrder();
