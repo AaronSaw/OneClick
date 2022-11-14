@@ -79,7 +79,7 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        return view('user.common');
+        return view('home');
     }
 
     public function shop()

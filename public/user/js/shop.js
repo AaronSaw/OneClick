@@ -9,7 +9,7 @@ $(document).ready(function () {
         $(".product-list").empty();
         x.map(el => {
             $(".product-list").append(
-                `<section class="carousel" >
+                ` <a href="http://127.0.0.1:8000/detail/${el.id} "><section class="carousel" >
                     <ul class="carousel-container">
                         <li class="carousel-item reveal">
                             <img src="storage/${el.image}" alt="Product Image" class="carousel-item-img">
@@ -26,10 +26,10 @@ $(document).ready(function () {
                             </div>
                         </li>
                     </ul>
-                </section>`
+                </section></a>`
             );
         });
-        // Scroll Reveal 
+        // Scroll Reveal
         window.sr = ScrollReveal({ reset: true });
         sr.reveal('.reveal', {
             duration: 1000,

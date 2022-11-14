@@ -29,7 +29,7 @@ use App\Http\Controllers\ForgotPasswordController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 //detail
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 
@@ -48,13 +48,18 @@ Route::post('/reset', [ForgotPasswordController::class, 'create'])->name('forgot
 //detail
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 
+//member
+Route::get('/member', function () {
+    return view('user.member');
+});
+
+//shop
+Route::get('/shop', [UserController::class, 'shop'])->name('user.shop');
+
 //User-side
 Route::group(['middleware' => ['user']], function () {
-    Route::get('/shop', [UserController::class, 'shop'])->name('user.shop');
     Route::get('/user-dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-    Route::get('/member', function () {
-        return view('user.member');
-    });
+
     //orderList
     Route::get('/order', [OrderController::class, 'userOrder'])->name('user.orderlist');
     //change password
@@ -72,7 +77,7 @@ Route::group(['middleware' => ['user']], function () {
 // Admin-side
 Route::group(['middleware' => ['admin']], function () {
     //dashboard page
-Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admin.dashboard');
+    Route::get('/admin-dashboard', [OrderController::class, 'orderCount'])->name('admin.dashboard');
     //category
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
@@ -88,16 +93,16 @@ Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admi
     Route::post('/changePassword/update', [AuthController::class, 'updatePassword'])->name('update.password');
     //import and export Excel
     Route::post('/import', [UserController::class, 'import'])->name('user.import');
+    //Order
+    Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+    Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+    Route::get('/confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
     Route::get('/export-users', [UserController::class, 'export'])->name('user.export');
-
-     //Order
-     Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
-     Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 });
 
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
-Route::apiResource('/api/products',ProductApiController::class);
+Route::apiResource('/api/products', ProductApiController::class);
 
 Route::get('/aboutUs', function () {
     return view('user.aboutUs');

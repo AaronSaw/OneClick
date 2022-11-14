@@ -28,12 +28,12 @@
         integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        //jQuery(document).ready(function($) {
-        //    $('.mini-card').counterUp({
-        //        delay: 5,
-        //        time: 500
-        //    });
-        //});
+        jQuery(document).ready(function($) {
+            $('.count-no').counterUp({
+                delay: 5,
+                time: 500
+            });
+        });
         let catArr = {!! json_encode($catName) !!};
         let CountPostArr = {!! json_encode($countOrderByCategory) !!};
         let op = document.getElementById('op').getContext('2d');

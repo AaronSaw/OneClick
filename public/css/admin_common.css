@@ -64,13 +64,13 @@
 }
 
 .nav ul li a span {
-  position: absolute;
-  padding: 2px 3px;
-  border: none;
-  background-color: #fb5757;
-  color: #ffff;
-  font-size: 12px;
-  border-radius: 50px;
+    position: absolute;
+    padding: 2px 3px;
+    border: none;
+    background-color: #fb5757;
+    color: #ffff;
+    font-size: 12px;
+    border-radius: 30%;
 }
 
 .nav ul li div.profile {
@@ -151,6 +151,13 @@
     background-color: #FF9494;
 }
 
+.check{
+    color: #26111b6b;;
+}
+.confirm{
+    background: #63c79957;
+    color: #b1b1b1;
+}
 .side-nav .logo {
   /*float: left;*/
   width: 40%;

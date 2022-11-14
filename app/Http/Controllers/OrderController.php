@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Contracts\Services\Order\OrderServicesInterface;
+use App\Mail\comfirmMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Category;
 
 class OrderController extends Controller
@@ -67,5 +70,13 @@ class OrderController extends Controller
             $prices = $prices + $value->price;
         }
         return view('user.order_list', compact(['userOrder', 'prices', 'ordersNo']));
+    }
+
+    public function confirm($id)
+    {
+        Mail::to(Auth::user()->email)
+            ->send(new ComfirmMail());
+        $this->orderInterface->confirm($id);
+        return redirect()->route('dashboard.orderlist');
     }
 }

@@ -35,6 +35,15 @@ class OrderServices implements OrderServicesInterface
     }
 
     /**
+     * @param $id
+     * To get confirm
+     */
+    public function confirm($id)
+    {
+        return $this->orderDao->confirm($id);
+    }
+
+    /**
      * @param $table and $description
      * To get count order
      */
@@ -75,7 +84,7 @@ class OrderServices implements OrderServicesInterface
     {
         return $this->orderDao->countProduct();
     }
-    
+
     /**
      * To get userOrder
      */
