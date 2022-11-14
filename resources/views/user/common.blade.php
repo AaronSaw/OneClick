@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('user/common_css/profileEdit.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/shop.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/detail.css') }}">
-    <link rel="stylesheet" href="{{ asset('user/common_css/orderPage.css')}}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/orderPage.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/order-list.css') }}">
 </head>
 
@@ -36,7 +36,7 @@
             </div>
             <nav class="menu-section">
                 <ul class="menu-list">
-                    @if (url()->current() == 'http://127.0.0.1:8000')
+                    @if (url()->current() == 'http://127.0.0.1:8000' || url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items">
                             <a href="#" class="link">
                                 <div class="search">
@@ -48,8 +48,11 @@
                             </a>
                         </li>
                     @endif
-                    <li class="menu-items"><a href="{{ url('/') }}" class="link">SHOP</a></li>
-                    @if (url()->current() == 'http://127.0.0.1:8000')
+                    <li class="menu-items">
+                        <a href="{{  route('home') }}" class="link">HOMe</a>
+                    </li>
+                    <li class="menu-items"><a href="{{ url('/shop') }}" class="link">SHOP</a></li>
+                    @if (url()->current() == 'http://127.0.0.1:8000' || url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items">
                             <span class="dropdown-items link side-arrow">
                                 <select name="" id="list-category" class="menu-category link">
@@ -59,27 +62,36 @@
                         </li>
                     @endif
                     <li class="menu-items">
-                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a> 
+                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
                     </li>
-                    <li class="menu-items btn-login">
-                        <div class="profile">
-                            <div class="dropbtn">
-                                <i class="fa fa-user" aria-hidden="true"></i>
+
+                    @if (Auth::user())
+                        <li class="menu-items btn-login">
+                            <div class="profile">
+                                <div class="dropbtn">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
+                                        Profile </a>
+                                    <a href="{{ url('/order') }}"><i class="fa fa-key" aria-hidden="true"></i>
+                                        Order List </a>
+                                    <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
+                                            aria-hidden="true"></i>
+                                        Change Password </a>
+                                    <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
+                                        Logout
+                                    </a>
+                                </div>
                             </div>
-                            <div class="dropdown-content">
-                                <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
-                                    Profile </a>
-                                <a href="{{ url('/order') }}"><i class="fa fa-key"
-                                        aria-hidden="true"></i>
-                                    Order List </a>
-                                <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
-                                        aria-hidden="true"></i>
-                                    Change Password </a>
-                                <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Logout
-                                </a>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    @else
+                        <li class="menu-items">
+                            <a href="{{ route('auth.login') }}" class="login-url">login</a>|
+                            <a href="{{ route('auth.register') }}" class="login-url">Register</a>
+                        </li>
+                    @endif
+
                 </ul>
             </nav>
         </div>
@@ -90,7 +102,8 @@
     <footer class="footer wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
         <div class="footer-inner">
             <div class="logo-side">
-                <h1 class="footer-logo"><a href="{{ url('/') }}"><img src="{{ asset('user/img/img_logo.png') }}" alt=""></a></h1>
+                <h1 class="footer-logo"><a href="{{ url('/') }}"><img src="{{ asset('user/img/img_logo.png') }}"
+                            alt=""></a></h1>
                 <div class="social-media">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -119,19 +132,18 @@
                         </ul>
                     </li>
                     <li class="footer-items">
-                        <a href="#">GOOGLE MAP</a>
+                        <a href="#">Location</a>
                         <div class="map-blk">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.1859998658533!2d96.12852331488139!3d16.817126323427065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1eb3590712cc1%3A0xd1674b74cc622b2f!2sJunction%20Square!5e0!3m2!1sen!2smm!4v1668317119687!5m2!1sen!2smm" class="map"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.1859998658533!2d96.12852331488139!3d16.817126323427065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1eb3590712cc1%3A0xd1674b74cc622b2f!2sJunction%20Square!5e0!3m2!1sen!2smm!4v1668317119687!5m2!1sen!2smm"
+                                class="map" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </li>
                 </ul>
             </nav>
         </div>
-
     </footer>
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/js/all.min.js"></script>
@@ -142,10 +154,12 @@
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     {{-- wow js --}}
     <script src="{{ asset('user/js/wow.min.js') }}"></script>
-    
+
     <script src="{{ asset('js/index.js') }}"></script>
     <script src="{{ asset('user/js/detail.js') }}"></script>
-    <script src="{{ asset('user/js/order.js')}}"></script>
+    <script src="{{ asset('user/js/order.js') }}"></script>
+    <script src="{{ asset('user/js/slider.js') }}"></script>
+    <script src="{{ asset('user/js/tab.js') }}"></script>
     @stack('script')
 </body>
 

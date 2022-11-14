@@ -61,7 +61,7 @@ class OrderDao implements OrderDaoInterface
         $order->confirm = "1";
         $order->update();
     }
-    
+
     /**
      * @param $table and $description
      * To get count order
@@ -130,7 +130,7 @@ class OrderDao implements OrderDaoInterface
         $userOrder = Order::Join('products', 'products.id', '=', 'orders.product_id')
             ->where('orders.user_id', '=', "$userId")
             ->latest('id')
-            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id')
+            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id','orders.confirm')
             ->get();
 
         return $userOrder;

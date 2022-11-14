@@ -33,7 +33,6 @@
 
 .slick-list.dragging {
     cursor: pointer;
-    cursor: hand;
 }
 
 .slick-slider .slick-track,
@@ -112,4 +111,57 @@
 
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.slick-prev {
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: url('../img/product/img_left_arrow.png') no-repeat;
+}
+
+.slick-next {
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: url('../img/product/img_right_arrow.png') no-repeat;
+}
+
+.slick-dots {
+    position: absolute;
+    right: 236px;
+    bottom: -55px;
+    text-align: center;
+}
+
+.slick-dots li {
+    display: inline-block;
+}
+
+.slick-dots button {
+    width: 15px;
+    height: 15px;
+    line-height: 0;
+    margin: 5px;
+    border: 1px solid #354E57;
+    background-color: transparent;
+    font-size: 0;
+    border-radius: 50%;
+
+}
+
+.slick-dots .slick-active button {
+    background-color: #354E57;
 }

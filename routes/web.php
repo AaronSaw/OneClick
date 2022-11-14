@@ -28,8 +28,8 @@ use App\Http\Controllers\ForgotPasswordController;
 //});
 
 Route::get('/', function () {
-    return view('shop');
-});
+    return view('home');
+})->name('home');
 //detail
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 
@@ -48,12 +48,18 @@ Route::post('/reset', [ForgotPasswordController::class, 'create'])->name('forgot
 //detail
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 
+//member
+Route::get('/member', function () {
+    return view('user.member');
+});
+
+//shop
+Route::get('/shop', [UserController::class, 'shop'])->name('user.shop');
+
 //User-side
 Route::group(['middleware' => ['user']], function () {
     Route::get('/user-dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-    Route::get('/member', function () {
-        return view('user.member');
-    });
+
     //orderList
     Route::get('/order', [OrderController::class, 'userOrder'])->name('user.orderlist');
     //change password
@@ -71,7 +77,7 @@ Route::group(['middleware' => ['user']], function () {
 // Admin-side
 Route::group(['middleware' => ['admin']], function () {
     //dashboard page
-Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admin.dashboard');
+    Route::get('/admin-dashboard', [OrderController::class, 'orderCount'])->name('admin.dashboard');
     //category
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
@@ -97,3 +103,7 @@ Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admi
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products', ProductApiController::class);
+
+Route::get('/aboutUs', function () {
+    return view('user.aboutUs');
+});
