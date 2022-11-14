@@ -10,6 +10,11 @@ $(document).ready(function () {
     } else $(".menu-section").slideUp();
   });
 
+    //$('.menu-items .link').on("click", function () {
+    //    $('.menu-items .link').removeClass("active");
+    //    $(this).addClass("active");
+    //});
+
    // animation
   new WOW().init();
 

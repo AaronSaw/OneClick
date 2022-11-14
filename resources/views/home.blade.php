@@ -1,11 +1,9 @@
 @extends('user.common')
 @section('content')
 <div class="l-inner">
-  <div class="home-ttl">
-    <h2 class="pg-ttl">Your OneClick Paradise Is Here</h2>
-    <h2 class="pg-ttl">Your OneClick Paradise Is Here</h2>
+  <div class="home-ttl wow fadeInDown"  data-wow-duration="5s" data-wow-iteration="5">
+    <h2>Your OneClick Paradise Is Here</h2>
   </div>
-
   <div class="slider">
     <ul class="slick-slider clearfix">
       <li class="slick-content">
@@ -33,3 +31,5 @@
   </div>
 </div>
 @endsection
+
+

@@ -36,7 +36,7 @@
             </div>
             <nav class="menu-section">
                 <ul class="menu-list">
-                    @if (url()->current() == 'http://127.0.0.1:8000' || url()->current() == 'http://127.0.0.1:8000/shop')
+                    @if (url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items">
                             <a href="#" class="link">
                                 <div class="search">
@@ -48,51 +48,49 @@
                             </a>
                         </li>
                     @endif
-                    <li class="menu-items">
-                        <a href="{{  route('home') }}" class="link">HOMe</a>
+                    <li class="menu-items active">
+                        <a href="{{  route('home') }}" class="link {{ Request::is('/')|| Request::is('user-dashboard') ? 'active' : '' }}">HOME</a>
                     </li>
-                    <li class="menu-items"><a href="{{ url('/shop') }}" class="link">SHOP</a></li>
-                    @if (url()->current() == 'http://127.0.0.1:8000' || url()->current() == 'http://127.0.0.1:8000/shop')
+                    <li class="menu-items"><a href="{{ url('/shop') }}" class="link {{ Request::is('shop') ? 'active' : '' }}">SHOP</a></li>
+                    @if (url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items">
                             <span class="dropdown-items link side-arrow">
-                                <select name="" id="list-category" class="menu-category link">
+                                <select name="" id="list-category" class="menu-category link ">
                                     <option value="">CATEGORIES</option>
                                 </select>
                             </span>
                         </li>
                     @endif
                     <li class="menu-items">
-                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
+                        <a href="{{ url('/member') }}" class="link {{ Request::is('member') ? 'active' : '' }}">TEAM MEMBER</a>
                     </li>
-
-                    @if (Auth::user())
-                        <li class="menu-items btn-login">
-                            <div class="profile">
-                                <div class="dropbtn">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                </div>
-                                <div class="dropdown-content">
-                                    <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
-                                        Profile </a>
-                                    <a href="{{ url('/order') }}"><i class="fa fa-key" aria-hidden="true"></i>
-                                        Order List </a>
-                                    <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
-                                            aria-hidden="true"></i>
-                                        Change Password </a>
-                                    <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
-                                        Logout
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                    @else
-                        <li class="menu-items">
-                            <a href="{{ route('auth.login') }}" class="login-url">login</a>|
-                            <a href="{{ route('auth.register') }}" class="login-url">Register</a>
-                        </li>
-                    @endif
-
                 </ul>
+                @if (Auth::user())
+                    <li class="menu-items btn-login ">
+                        <div class="profile">
+                            <div class="dropbtn">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
+                                    Profile </a>
+                                <a href="{{ url('/order') }}"><i class="fa fa-key" aria-hidden="true"></i>
+                                    Order List </a>
+                                <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
+                                        aria-hidden="true"></i>
+                                    Change Password </a>
+                                <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                @else
+                    <li class="menu-items left-items">
+                        <a href="{{ route('auth.login') }}" class="login-url">login </a>|
+                        <a href="{{ route('auth.register') }}" class="login-url"> Register</a>
+                    </li>
+                @endif
             </nav>
         </div>
     </header>
@@ -114,7 +112,7 @@
             <span class="bdr-footer"></span>
             <nav class="footer-section">
                 <ul class="footer-list">
-                    <li class="footer-items"><a href="{{ url('/') }}">CATEGORIES</a>
+                    <li class="footer-items"><a href="{{ url('/shop') }}">Coming Soon...</a>
                         <ul class="footer-sublist">
                             <li><a href="#">Electronics</a></li>
                             <li><a href="#">Men's Fashion</a></li>
@@ -124,10 +122,10 @@
                         </ul>
                     </li>
                     <li class="footer-items">
-                        <a href="#">INFORMATION</a>
+                        <a href="#">Information</a>
                         <ul class="footer-sublist">
-                            <li><a href="{{ url('/') }}">Shop</a></li>
-                            <li><a href="{{ url('/') }}">Categories</a></li>
+                            <li><a href="{{ url('/shop') }}">Shop</a></li>
+                            <li><a href="{{ url('/shop') }}">Categories</a></li>
                             <li><a href="{{ url('/member') }}">Team Member</a></li>
                         </ul>
                     </li>
