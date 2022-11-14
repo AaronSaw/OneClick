@@ -28,7 +28,7 @@ use App\Http\Controllers\ForgotPasswordController;
 //});
 
 Route::get('/', function () {
-    return view('shop');
+    return view('home');
 });
 //detail
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
@@ -50,6 +50,7 @@ Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail')
 
 //User-side
 Route::group(['middleware' => ['user']], function () {
+    Route::get('/shop', [UserController::class, 'shop'])->name('user.shop');
     Route::get('/user-dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/member', function () {
         return view('user.member');
@@ -97,3 +98,7 @@ Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admi
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products',ProductApiController::class);
+
+Route::get('/aboutUs', function () {
+    return view('user.aboutUs');
+});
