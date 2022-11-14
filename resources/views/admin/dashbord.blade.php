@@ -1,22 +1,30 @@
 @extends('layouts.admin_common')
 @section('content')
     <div class="card-collect">
-        <div class="mini-card">
-            <p class="count-no"> {{ $countProduct }}</p>
-            <span class="count-name"> Product</span>
-        </div>
-        <div class="mini-card">
-            <p class="count-no">{{ $countUser }}</p>
-            <span class="count-name">User</span>
-        </div>
-        <div class="mini-card">
-            <p class="count-no">{{ $countOrder }}</p>
-            <span class="count-name">Order</span>
-        </div>
-        <div class="mini-card">
-            <p class="count-no">{{ $countCategory }}</p>
-            <span class="count-name">Category</span>
-        </div>
+        <a href="{{ route('product.index') }}">
+            <div class="mini-card">
+                <p class="count-no"> {{ $countProduct }}</p>
+                <span class="count-name"> Product</span>
+            </div>
+        </a>
+        <a href="{{ route('user.userlist') }}">
+            <div class="mini-card">
+                <p class="count-no">{{ $countUser }}</p>
+                <span class="count-name">User</span>
+            </div>
+        </a>
+        <a href="{{ url('orderlist') }}">
+            <div class="mini-card">
+                <p class="count-no">{{ $countOrder }}</p>
+                <span class="count-name">Order</span>
+            </div>
+        </a>
+        <a href="{{ url('category') }}">
+            <div class="mini-card">
+                <p class="count-no">{{ $countCategory }}</p>
+                <span class="count-name">Category</span>
+            </div>
+        </a>
     </div>
     <h2 class="dashboard-title">Orders Count By Categories</h2>
     <div class="chart-card">
@@ -42,6 +50,10 @@
             data: {
                 labels: catArr,
                 datasets: [{
+                    barPercentage: 0.5,
+                    barThickness: 100,
+                    maxBarThickness: 80,
+                    minBarLength: 0,
                     label: 'Orders  Vs Categories',
                     data: CountPostArr,
                     backgroundColor: [
@@ -78,7 +90,7 @@
                     x: {
                         display: true,
                         ticks: {
-                            color: 'black',
+                            color: '#000',
                             font: {
                                 size: 20,
                             }
@@ -92,7 +104,7 @@
                         labels: {
                             usePointStyle: true,
                             backgroundColor: 'rgba(255, 159, 64, 1)',
-                            color: '#ff1983',
+                            color: '#000',
                             font: {
                                 size: 15,
                             },

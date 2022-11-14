@@ -22,11 +22,6 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 
-//// if already login ,cannot go to login page, redirect to -> shop
-//Route::group(['middleware' => ['not-login']], function () {
-//    Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
-//});
-
 Route::get('/', function () {
     return view('shop');
 });
@@ -43,10 +38,6 @@ Route::get('/forgot', [ForgotPasswordController::class, 'forgot'])->name('forgot
 Route::post('/forgot', [ForgotPasswordController::class, 'store'])->name('forgot.store');
 Route::get('/reset/{token}', [ForgotPasswordController::class, 'reset'])->name('forgot.reset');
 Route::post('/reset', [ForgotPasswordController::class, 'create'])->name('forgot.create');
-
-
-//detail
-Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 
 //User-side
 Route::group(['middleware' => ['user']], function () {
@@ -71,7 +62,7 @@ Route::group(['middleware' => ['user']], function () {
 // Admin-side
 Route::group(['middleware' => ['admin']], function () {
     //dashboard page
-Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admin.dashboard');
+    Route::get('/admin-dashboard', [OrderController::class, 'orderCount'])->name('admin.dashboard');
     //category
     Route::resource('/category', CategoryController::class);
     Route::resource('/product', ProductController::class);
@@ -89,11 +80,11 @@ Route::get('/admin-dashboard',[OrderController::class,'orderCount'])->name('admi
     Route::post('/import', [UserController::class, 'import'])->name('user.import');
     Route::get('/export-users', [UserController::class, 'export'])->name('user.export');
 
-     //Order
-     Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
-     Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+    //Order
+    Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+    Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 });
 
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
-Route::apiResource('/api/products',ProductApiController::class);
+Route::apiResource('/api/products', ProductApiController::class);

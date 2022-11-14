@@ -136,7 +136,7 @@
     transform: scale(1.03);
     opacity: 1;
   }
-  
+
 }
 
 
@@ -150,8 +150,8 @@
   .carousel {
     float: left;
     width: 40%;
-    margin-bottom: 1.563vw;
     margin-right: 10%;
+    margin-bottom: 1.563vw;
   }
 
   .carousel-item {
@@ -180,8 +180,3 @@
   }
 
 }
-
-
-
-
-

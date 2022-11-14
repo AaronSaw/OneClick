@@ -1,94 +1,131 @@
 .product_pform {
-    width: 70%;
-    height: 135vh;
-    margin: 5% 0 0 26%;
+  width: 70%;
+  height: 135vh;
+  margin: 5% 0 0 26%;
 }
 
 .product_pform .ccard {
-    padding: 30px 40px;
-    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    max-width: 65%;
-    border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 65%;
+  border-radius: 10px;
 }
 
 .pinput {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .ptitle {
-    margin-bottom: 10px;
-    color: #000000;
-    font-size: 18px;
-    text-align: center;
+  margin-bottom: 15px;
+  color: #D10B42;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
 }
 
 .sinput {
-    width: 180px;
-    margin-bottom: 10px;
+  width: 180px;
+  margin-bottom: 10px;
 }
 
 .sbutton {
-    margin-bottom: 10px;
-    margin-left: 5px;
-    padding: 2.5px 20px;
-    border: 1px solid transparent;
-    background: #eac4fd;
-    outline: none;
-    border-radius: 5px;
+  padding: 5px 7px;
+  border: none;
+  background-color: #f7a76c;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
 }
 
 .search-btngp {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .action-btngroup {
-    text-align: center;
+  text-align: center;
 }
 
 .pimg {
-    width: 70px;
+  width: 70px;
 }
 
 .product-forminput {
-    width: 100%;
-    margin-top: 5px;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #dddddd;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .product-formSelect {
-    width: 100%;
-    margin-top: 5px;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .product-formTextarea {
-    width: 98%;
-    margin-top: 5px;
-    white-space: pre-line;
-
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #dddddd;
+  white-space: pre-line;
+  resize: none;
+  border-radius: 5px;
 }
 
 .product-editImage {
-    width: 100%;
+  width: 100%;
 }
 
 #preview-image {
-    width: 30%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  width: 150px;
+  height: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #dddddd;
+  object-fit: cover;
+  max-width: 100%;
 }
 
 .productform-footerBtn button a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .productform-footerBtn {
-    margin-top: 6px;
-    text-align: center;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/*Tablet Size*/
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .sbutton {
+    padding: 0.391vw 0.547vw;
+    font-size: 1.25vw;
+    border-radius: 0.391vw;
+  }
 }
 
 /*Mobile Size*/
 @media screen and (max-width: 767.9px) {
-    .ccard {
-        margin-top: 12%;
-    }
+  .ccard {
+    margin-top: 0%;
+  }
+
+  .sbutton {
+    padding: 0.781vw 1.094vw;
+    font-size: 2vw;
+    border-radius: 0.781vw;
+  }
+
+  .product_pform {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+  }
+
+  .product_pform .ccard {
+    overflow-y: auto;
+  }
 }

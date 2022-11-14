@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/changePassword.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/all.min.css')}}"> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -23,7 +24,7 @@
 
 <body>
     <div>
-        <nav class="nav clearfix">
+        <nav class="nav">
             <h1 class="logo pc">
                 <a href="#" class="logo-img">
                     <img src="{{ asset('img/oneclick_logo.png') }}" alt="One Click" width="250" height="250">
@@ -58,14 +59,14 @@
                         </div>
                     </li>
                     <li>
-                        <a href="{{route('user.dashboard')}}" class="user-dashboard">User-Dashboard</a>
+                        <a href="{{ route('user.dashboard') }}" class="user-dashboard">User-Dashboard</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    <div class="content clearfix">
+    <div class="content">
         <div class="side-nav" id="side-nav">
             <h1 class="logo">
                 <a href="#" class="logo-img">

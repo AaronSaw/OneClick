@@ -1,54 +1,54 @@
 .user-order {
-    width: 80%;
-    margin: 100px auto 0;
+  width: 80%;
+  margin: 100px auto 0;
 }
 
 .list-name {
-    color: #666666;
-    font-weight: bold;
-    text-transform: uppercase;
+  color: #666666;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .list-order {
-    color: #d73131;
-    font-weight: bold;
-    text-transform: uppercase;
+  color: #d73131;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 #customers {
-    width: 100%;
-    margin-bottom: 40px;
-    border: 2px solid #e759a9;
-    border-collapse: collapse;
-    transition: .5s;
+  width: 100%;
+  margin-bottom: 40px;
+  border: 2px solid #e759a9;
+  border-collapse: collapse;
+  transition: .5s;
 }
 
 #customers td,
 #customers th {
-    padding: 8px;
-    border: 1px solid #3e3232;
+  padding: 8px;
+  border: 1px solid #3e3232;
 }
 
 
 #customers tr:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: #ffb5b5;
-    color: #ff2292;
-    text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #ffb5b5;
+  color: #ff2292;
+  text-align: left;
 }
 
 #customers:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }

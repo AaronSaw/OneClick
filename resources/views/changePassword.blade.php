@@ -14,8 +14,8 @@
                 @csrf
                 <div class="input-gp">
                     <label for="current_password">Current Password:</label><br>
-                    <input type="password" name="current_password" id="current_password" placeholder="Enter current password..."
-                        value="{{ old('current_password') }}">
+                    <input type="password" name="current_password" id="current_password"
+                        placeholder="Enter current password..." value="{{ old('current_password') }}">
                     @error('old_password')
                         <span class="error-message">{{ $message }}</span>
                     @enderror

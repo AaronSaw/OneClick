@@ -282,8 +282,8 @@ img {
 }
 
 .map-blk {
-  max-width: 300px;
   border: 2px solid #FFAFBD;
+  max-width: 300px;
 }
 
 .map {
@@ -663,8 +663,8 @@ img {
   }
 
   .map-blk {
-    max-width: 23.438vw;
     border: 0.156vw solid #FFAFBD;
+    max-width: 23.438vw;
   }
 
   .map {
@@ -680,31 +680,31 @@ img {
   }
 
   /**Profile dropdown function*/
-.dropbtn {
-  font-size: 1.106vw;
-}
+  .dropbtn {
+    font-size: 1.106vw;
+  }
 
-.dropdown-content {
-  box-shadow: 0vw 0.625vw 1.25vw 0vw rgba(0, 0, 0, 0.2);
-  min-width: 10.547vw;
-}
+  .dropdown-content {
+    box-shadow: 0vw 0.625vw 1.25vw 0vw rgba(0, 0, 0, 0.2);
+    min-width: 10.547vw;
+  }
 
-.dropdown-content a {
-  padding: 0.391vw;
-  font-size: 0.859vw;
-  border-radius: 0.781vw;
-}
+  .dropdown-content a {
+    padding: 0.391vw;
+    font-size: 0.859vw;
+    border-radius: 0.781vw;
+  }
 
-.fa-user,
-.fa-key,
-.fa-right-from-bracket {
-  margin-right: 0.781vw;
-  margin-left: 0.391vw;
-}
+  .fa-user,
+  .fa-key,
+  .fa-right-from-bracket {
+    margin-right: 0.781vw;
+    margin-left: 0.391vw;
+  }
 
-.profile:hover .dropdown-content {
-  border-radius: 0.781vw;
-}
+  .profile:hover .dropdown-content {
+    border-radius: 0.781vw;
+  }
 
 }
 
@@ -943,8 +943,8 @@ img {
   }
 
   .map-blk {
-    max-width: 30.875vw;
     border: 0.313vw solid #FFAFBD;
+    max-width: 30.875vw;
   }
 
   .map {
