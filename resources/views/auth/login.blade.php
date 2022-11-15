@@ -20,8 +20,8 @@
             </div>
         @endif
         @if (session('info'))
-            <div class="alert-box">
-                <span class="alert-message">{{ session('info') }}<i
+            <div class="alert-green">
+                <span class="message-green">{{ session('info') }}<i
                         class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif

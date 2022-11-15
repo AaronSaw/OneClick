@@ -21,10 +21,7 @@ $(document).ready(function () {
         } else {
             $(this).addClass('hb-open');
         }
-
-        $('.side-nav').stop().animate({
-            left: leftVal
-        }, 1000);
+        $('.side-nav').toggle(50, "swing");
     });
 
     //Alert
@@ -32,6 +29,3 @@ $(document).ready(function () {
         $('.alert').fadeOut('fast');
     }, 2000); // <-- time in milliseconds
 });
-
-
-

@@ -3,51 +3,50 @@
 @section('content')
     <div class="ccard">
         <div class="tableinfo">
+            @if (session('status'))
+                <div class="alert ">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="tblttl">
                 <p>Order List</p>
-                <hr>
-                @if (session('status'))
-                    <div class="alert ">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                <form action="{{ route('dashboard.orderlist') }}" method="get">
+                    <div class="d-flex mb-3">
+                        <input type="text" class="sinput " value="{{ request('name') }}" placeholder="Search  name"
+                            name="name">
+                        <input type="text" class="sinput " value="{{ request('title') }}" placeholder="Search  product"
+                            name="title">
+                        <input type="text" class="sinput " value="{{ request('address') }}" placeholder="Search address"
+                            name="address">
+                        <input type="text" class="sinput " value="{{ request('sdate') }}" placeholder="Start date"
+                            onfocus="(this.type='date')" name="sdate">
+                        <input type="text" class="sinput" value="{{ request('edate') }}" placeholder="End date"
+                            onfocus="(this.type='date')" name="edate">
+                        <div class="search-btngp">
+                            <button class="sbutton" type="submit">Search</button>
+                            <a href="{{ route('dashboard.orderlist') }}" class="button cancel" type="">Cancel</a>
+                        </div>
+                </form>
             </div>
-            <form action="{{ route('dashboard.orderlist') }}" method="get">
-                <div class="d-flex mb-3">
-                    <input type="text" class="sinput " value="{{ request('name') }}" placeholder="Search  name"
-                        name="name">
-                    <input type="text" class="sinput " value="{{ request('title') }}" placeholder="Search  product"
-                        name="title">
-                    <input type="text" class="sinput " value="{{ request('address') }}" placeholder="Search address"
-                        name="address">
-                    <input type="text" class="sinput " value="{{ request('sdate') }}" placeholder="Start date"
-                        onfocus="(this.type='date')" name="sdate">
-                    <input type="text" class="sinput" value="{{ request('edate') }}" placeholder="End date"
-                        onfocus="(this.type='date')" name="edate">
-                    <div class="search-btngp">
-                        <button class="sbutton" type="submit">Search</button>
-                        <a href="{{ route('dashboard.orderlist') }}" class="button cancel" type="">Cancel</a>
-                    </div>
-            </form>
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Product</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Address</th>
-                        <th>Order Date</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                @forelse ($orders as $order)
-                    @php
-                        $ctitle = \App\Models\Category::find($order->category_id)->ctitle;
-                    @endphp
-                    <tbody>
-                        <tr @if ($order->confirm == '1') class="confirm " @endif>
+            <div class="data-table">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Address</th>
+                            <th>Order Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    @forelse ($orders as $order)
+                        @php
+                            $ctitle = \App\Models\Category::find($order->category_id)->ctitle;
+                        @endphp
+                        <tbody>
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->email }}</td>
                             <td>{{ $order->title }}</td>
@@ -82,15 +81,17 @@
                                 <a href="#ex{{ $order->id }}" rel="modal:open" class="deletebtn"><i
                                         class="fa-regular fa-trash-can"></i></a>
                             </td>
+
+                        </tbody>
                         </tr>
-                    @empty
+                        @empty
                         <tr>
                             <td colspan="8" class="empty">Empty order</td>
                         </tr>
-                @endforelse
-                </tbody>
-            </table>
-            {{ $orders->links('vendor.pagination.custom-pagi') }}
+                    @endforelse
+                </table>
+            </div>
         </div>
     </div>
+    {{ $orders->links('vendor.pagination.custom-pagi') }}
 @endsection
