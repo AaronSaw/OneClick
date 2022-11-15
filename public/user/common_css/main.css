@@ -482,7 +482,6 @@ img {
 @media screen and (min-width: 768px) and (max-width: 1280px) {
 
     /*-------Header-------*/
-
     .header-inner {
         height: 45px;
     }
@@ -679,9 +678,11 @@ img {
         right: 0;
         left: 0;
         width: 100%;
-        height: calc(100vh - 9.375vw);
         margin-left: 0;
+        box-shadow: 0 4px 2px -2px gray;
         background-color: #fff;
+        opacity: 0.92;
+        border-radius: 0 0 2.344vw 2.344vw;
         overflow-y: scroll;
     }
 
@@ -768,12 +769,13 @@ img {
 
     .menu-list .menu-items .link {
         display: flex;
+        justify-content: center;
         align-items: center;
-        height: 8.75vw;
-        padding: 0 3.125vw;
-        background-color: #a6a6a6;
+        height: 6.75vw;
+        background-color: #ff8585;
         color: #fff;
         font-size: 2.188vw;
+        text-align: center;
         letter-spacing: 0.328vw;
     }
 
@@ -794,17 +796,68 @@ img {
         border-right: 0.313vw solid #fff;
     }
 
+    .left-items {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.313vw;
+        padding: 1.00vw;
+        background: #ff8585;
+    }
+
+    .login-url {
+        margin: 0.781vw;
+        color: #ffffff;
+        font-size: 2.263vw;
+    }
+
+    .menu-list .menu-items .link.active {
+        background-color: #fff;
+        color: #e759a9;
+        border-bottom: none;
+    }
+
     .dropdown-items select {
         margin-top: 0vw;
         margin-left: -2.813vw;
+    }
+
+    .search {
+        width: 28.125vw;
+        height: auto;
+        margin-top: -0.781vw;
+        border-radius: 4.688vw;
+    }
+
+    .search-input {
+        height: 4.688vw;
+        padding-left: 1.563vw;
+        border-radius: 4.688vw;
+    }
+
+    .search-btn {
+        top: 0.781vw;
+        right: -0.469vw;
+        width: 7.813vw;
+        font-size: 2.344vw;
     }
 
     .login-gap {
         display: none;
     }
 
+    .search-input::placeholder {
+        font-size: 2.563vw;
+    }
+
     .btn-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.313vw;
         margin-left: 0%;
+        padding: 1.263vw;
+        background: #ff8585;
     }
 
     .login,
@@ -956,6 +1009,10 @@ img {
     /**Profile dropdown function*/
     .dropbtn {
         font-size: 2.813vw;
+    }
+
+    .dropbtn .fa-user {
+        color: #ffffff;
     }
 
     .dropdown-content {
