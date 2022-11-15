@@ -93,3 +93,18 @@ input {
   top: 5%;
   left: 90%;
 }
+
+
+@media screen and (max-width: 767.9px) {
+
+    .profileEdit-blk {
+        margin: 15.6vw 0 6.3vw;
+    }
+    .profileForm-edit {
+        padding: 1.3vw;
+    }
+
+    .input-gp input {
+        width:46.9vw ;
+    }
+}

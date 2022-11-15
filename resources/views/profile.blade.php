@@ -12,7 +12,7 @@
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
             </button>
-            <h2 class="profile-title">User profile Page</h2>
+            <h2 class="profile-title">User Profile</h2>
             <ul class="profile">
                 <li>Name: <b>{{ Auth::user()->name }}</b></li>
                 <li>Email: <b>{{ Auth::user()->email }}</b></li>

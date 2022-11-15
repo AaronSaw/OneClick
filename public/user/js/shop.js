@@ -19,9 +19,9 @@ $(document).ready(function () {
                                 </div>
                             </div>
                             <div class="product-info">
-                                <a href=""><h3><span class="info-name"> Name:</span> ${el.title}</h3> </a>
-                                <strong>
-                                    <span class="price"> Price:  </span>$ ${el.price}
+                                <a href=""><h3 class="info-name"><span> Name:</span> ${el.title}</h3> </a>
+                                <strong class="price">
+                                    <span> Price:  </span>$ ${el.price}
                                 </strong>
                             </div>
                         </li>

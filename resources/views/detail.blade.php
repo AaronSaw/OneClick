@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class= "division">
         <h2 class="relatedCategory">Related Categories</h2>
         <div class="related-card clearfix">
             @foreach ($relatedCategories as $conCategory)

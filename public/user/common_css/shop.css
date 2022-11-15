@@ -136,10 +136,18 @@
         opacity: 1;
     }
 
-  .carousel-container:hover .carousel-item:hover {
-    transform: scale(1.03);
-    opacity: 1;
-  }
+    .carousel-container:hover .carousel-item:hover {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+
+    .info-name {
+        font-size: 1.8vw;
+    }
+
+    .carousel-item .product-info .price {
+        font-size: 1.8vw;
+    }
 
 }
 

@@ -54,7 +54,7 @@
                     </li>
                     <li class="menu-items"><a href="{{ url('/shop') }}" class="link {{ Request::is('shop') ? 'active' : '' }}">SHOP</a></li>
                     @if (url()->current() == 'http://127.0.0.1:8000/shop')
-                        <li class="menu-items">
+                        <li class="menu-items cat">
                             <span class="dropdown-items link side-arrow">
                                 <select name="" id="list-category" class="menu-category link ">
                                     <option value="">CATEGORIES</option>
