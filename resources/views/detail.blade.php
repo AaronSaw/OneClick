@@ -17,7 +17,7 @@
                         class="seemore">seemore</button>
                     <p class="detail-description">{{ $detail[0]->description }}</p><button class="seeless">seeless</button>
                     <a href="{{ route('user.order', $detail[0]->id) }}"><button class="order-btn"><i
-                                class="fa-solid fa-cart-shopping"></i> Order Button</button></a>
+                                class="fa-solid fa-cart-shopping"></i> Order</button></a>
                 </div>
             </div>
         </div>

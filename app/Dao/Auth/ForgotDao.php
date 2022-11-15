@@ -35,7 +35,7 @@ class ForgotDao implements ForgotDaoInterface
             'auth.forget-password-email',
             ['action_link' => $action_link, 'body' => $body],
             function ($message) use ($request) {
-                $message->from('shoonlaeyeewin1602@gmail.com', 'One Click');
+                $message->from('tinhtarwai106330@gmail.com', 'One Click');
                 $message->to($request->email)
                     ->subject('Reset Password confirmation');
             }
