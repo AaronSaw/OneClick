@@ -47,44 +47,45 @@
                             $ctitle = \App\Models\Category::find($order->category_id)->ctitle;
                         @endphp
                         <tbody>
-                            <td>{{ $order->name }}</td>
-                            <td>{{ $order->email }}</td>
-                            <td>{{ $order->title }}</td>
-                            <td>{{ $ctitle }}</td>
-                            <td>{{ $order->price }}</td>
-                            <td>{{ $order->address }}</td>
-                            <td>{{ $order->created_at->format('d M Y') }}</td>
-                            <td>
-                                <a href="{{ route('order.confirm', $order->id) }}" class="check">
-                                    @if ($order->confirm == '1')
-                                        <i class="fa fa-check-square"></i>
-                                    @else
-                                        <i class="fa fa-square"></i>
-                                    @endif
-                                </a>
-                                <div id="ex{{ $order->id }}" class="modal clearfix">
-                                    <p class="modal-text">Are you sure to delete?</p>
-                                    <hr>
-                                    <div class="modal-footer">
-                                        <form action="{{ route('order.destroy', $order->id) }}" class="d-inline-block"
-                                            method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="button  danger">
-                                                Yes
-                                            </button>
-                                            <button type="button" class="button cancel"><a href="#"
-                                                    rel="modal:close">No</a></button>
-                                        </form>
+                            <tr @if ($order->confirm == '1') class="confirm " @endif>
+                                <td>{{ $order->name }}</td>
+                                <td>{{ $order->email }}</td>
+                                <td>{{ $order->title }}</td>
+                                <td>{{ $ctitle }}</td>
+                                <td>{{ $order->price }}</td>
+                                <td>{{ $order->address }}</td>
+                                <td>{{ $order->created_at->format('d M Y') }}</td>
+                                <td>
+                                    <a href="{{ route('order.confirm', $order->id) }}" class="check">
+                                        @if ($order->confirm == '1')
+                                            <i class="fa fa-check-square"></i>
+                                        @else
+                                            <i class="fa fa-square"></i>
+                                        @endif
+                                    </a>
+                                    <div id="ex{{ $order->id }}" class="modal clearfix">
+                                        <p class="modal-text">Are you sure to delete?</p>
+                                        <hr>
+                                        <div class="modal-footer">
+                                            <form action="{{ route('order.destroy', $order->id) }}" class="d-inline-block"
+                                                method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="button  danger">
+                                                    Yes
+                                                </button>
+                                                <button type="button" class="button cancel"><a href="#"
+                                                        rel="modal:close">No</a></button>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                                <a href="#ex{{ $order->id }}" rel="modal:open" class="deletebtn"><i
-                                        class="fa-regular fa-trash-can"></i></a>
-                            </td>
-
+                                    <a href="#ex{{ $order->id }}" rel="modal:open" class="deletebtn"><i
+                                            class="fa-regular fa-trash-can"></i></a>
+                                </td>
+                            </tr>
                         </tbody>
                         </tr>
-                        @empty
+                    @empty
                         <tr>
                             <td colspan="8" class="empty">Empty order</td>
                         </tr>
