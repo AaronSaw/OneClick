@@ -1,2 +1,2 @@
-<h1>I recved Your order</h1>
-<h2>Thank for ordering </h2>
+<h1>I received your order</h1>
+<h2>Thanks for ordering </h2>

@@ -104,6 +104,3 @@ Route::group(['middleware' => ['admin']], function () {
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products', ProductApiController::class);
 
-Route::get('/aboutUs', function () {
-    return view('user.aboutUs');
-});
