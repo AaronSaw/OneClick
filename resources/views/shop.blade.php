@@ -1,6 +1,6 @@
 @extends('user.common')
 
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{ asset('user/common_css/shop.css') }}">
 </head>
 
-<body>
+<body>--}}
   @section('content')
   <section class="product-sec">
     <div class="product-list clearfix">
@@ -19,6 +19,6 @@
     </div>
   </section>
   @endsection
-</body>
+{{--</body>
 
-</html>
+</html>--}}

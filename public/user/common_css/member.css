@@ -1,8 +1,8 @@
 /*Team Member*/
 .member {
     width: 100%;
-    margin-top: 5%;
-    margin-bottom: 100px;
+    margin-top: 7%;
+    margin-bottom: 11%;
     max-width: 1920px;
 }
 
@@ -10,7 +10,7 @@
     margin-bottom: 50px;
     font-size: 40px;
     text-align: center;
-    color: white;
+    color: #ffffff;
     text-shadow: 2px 2px 2px #000000, 4px 4px 2px #982d2d, 6px 6px 4px #fd0202 ;
 }
 
@@ -94,12 +94,24 @@
   font-size: 18px;
 }
 
-.card .content-card .info .detail {
-  width: 100%;
-  padding: 0.5%;
-  color: #666666;
-  font-size: 14px;
-  max-width: 250px;
+.card .content-card .info .detail-info {
+    width: 100%;
+    padding: 0.5%;
+    color: #666666;
+    font-size: 14px;
+    max-width: 250px;
+}
+
+.detail-info .member-info{
+    padding-top: 10px;
+}
+
+.email-info{
+    color: #5692e8;
+}
+
+.add-info{
+    color: #FFAFBD;
 }
 
 .card .content-card .social-media {
@@ -129,24 +141,31 @@
 
 /* Ipad */
 @media screen and (min-width: 768px) and (max-width: 1280px) {
-  .member {
-    margin-top: 7%;
-    margin-bottom: 50%;
-  }
+    .member {
+        margin-top: 10%;
+        margin-bottom: 0vw;
+    }
 
-  .member-card .cards {
-    flex-wrap: wrap;
-    margin-right: 8%;
-  }
+    .member-ttl{
+        font-size: 2.344vw;
+        margin-bottom: 3.125vw;
+     }
 
-  .member-card .cards .card {
-    width: calc(100% / 2 - 0.781vw);
-    margin-bottom: 10%;
-  }
+    .member-card .cards {
+        flex-wrap: wrap;
+        margin-right: 8%;
+    }
 
-  .cards .card .content-card .img-member {
-    margin-left: 5%;
-  }
+    .member-card .cards .card {
+        width: calc(100% / 2 - 4.781vw);
+        margin: 0 2.2% 10%;
+    }
+
+    .cards .card .content-card .img-member {
+        margin: auto;
+        width: 7.813vw;
+        height: 7.813vw;
+    }
 
   .cards .card .content-card {
     display: block;
@@ -154,44 +173,65 @@
     padding: 0 2%;
   }
 
-  .card .content-card .info .name {
-    margin-left: 10%;
-    text-align: left;
-  }
+    .card .content-card .info .name {
+        text-align: center;
+        margin-top: 0.781vw;
+    }
 
-  .card .content-card .info .detail {
-    text-align: justify;
-    max-width: 100%;
-  }
+    .card .content-card .info .detail-info {
+        max-width: 100%;
+    }
 
-  .card .content-card .social-media {
-    margin-left: 10%;
-  }
+    .card .content-card .social-media {
+        margin-left: 27%;
+        margin-top: 2.609vw;
+    }
+
+    .card .content-card .social-media a{
+        width: 3.125vw;
+        height: 3.125vw;
+        line-height: 1.4;
+        margin: 0 0.625vw;
+        border: 0.313vw solid transparent;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 1.875vw;
+    }
 
 }
 
 /* SP */
 @media screen and (max-width: 767.9px) {
-  .member {
-    margin-top: 15%;
-    margin-bottom: 60%;
-  }
+    .member {
+        margin-top: 12%;
+        margin-bottom: 0%;
+    }
 
-  .member-card .cards {
-    flex-wrap: wrap;
-    margin-left: 3%;
-  }
+    .member-ttl{
+        font-size: 3.125vw;
+        margin-bottom: 8.25vw;
+    }
 
-  .member-card .cards .card {
-    width: calc(100%/2 - 1.563vw);
-    margin-bottom: 10%;
-  }
+    .member-card{
+        margin-bottom: 30%;
+    }
 
-  .cards .card .content-card .img-member {
-    width: 15.625vw;
-    height: 15.625vw;
-    margin-left: 3%;
-  }
+    .member-card .cards {
+        flex-wrap: wrap;
+        margin-left: 3%;
+        margin-bottom: 10%;
+    }
+
+    .member-card .cards .card {
+        width: calc(100% / 2 - 12.781vw);
+        margin: 0 5.2% 10%;
+    }
+
+    .cards .card .content-card .img-member {
+        margin: auto;
+        width: 15.625vw;
+        height: 15.625vw;
+    }
 
   .cards .card .content-card {
     display: block;
@@ -199,18 +239,30 @@
     padding: 0 2%;
   }
 
-  .card .content-card .info .name {
-    margin-left: 10%;
-    text-align: left;
-  }
+    .card .content-card .info .name {
+        text-align: center;
+        margin-top: 1.563vw;
+        font-size: 2.188vw;
+    }
 
-  .card .content-card .info .detail {
-    font-size: 1.875vw;
-    text-align: justify;
-    max-width: 100%;
-  }
+    .card .content-card .info .detail-info {
+        max-width: 100%;
+        margin-top: 1.563vw;
+        font-size: 1.563vw;
+    }
 
-  .card .content-card .social-media {
-    margin-left: 10%;
-  }
+    .card .content-card .social-media {
+    margin-top: 2.656vw;
+    }
+
+    .card .content-card .social-media a{
+        width: 3.125vw;
+        height: 3.125vw;
+        line-height: 1.4;
+        margin: 0 0.625vw;
+        border: 0.313vw solid transparent;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 1.875vw;
+    }
 }

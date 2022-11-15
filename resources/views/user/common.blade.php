@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('user/common_css/detail.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/orderPage.css') }}">
     <link rel="stylesheet" href="{{ asset('user/common_css/order-list.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/common_css/member.css') }}">
 </head>
 
 <body>
@@ -97,7 +98,7 @@
 
     @yield('content')
 
-    <footer class="footer wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+    <footer class="footer wow fadeInUp" data-wow-duration="2s">
         <div class="footer-inner">
             <div class="logo-side">
                 <h1 class="footer-logo"><a href="{{ url('/') }}"><img src="{{ asset('user/img/img_logo.png') }}"
@@ -157,7 +158,7 @@
     <script src="{{ asset('user/js/detail.js') }}"></script>
     <script src="{{ asset('user/js/order.js') }}"></script>
     <script src="{{ asset('user/js/slider.js') }}"></script>
-    <script src="{{ asset('user/js/tab.js') }}"></script>
+    {{--<script src="{{ asset('user/js/tab.js') }}"></script>--}}
     @stack('script')
 </body>
 

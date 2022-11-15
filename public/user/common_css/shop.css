@@ -13,7 +13,7 @@
 .carousel {
     float: left;
     width: 25%;
-    margin-bottom: 3px;
+    margin-bottom: 44px;
 }
 
 .carousel-container {
@@ -39,7 +39,6 @@
     margin-right: 0px;
     padding-right: 0px;
 }
-
 
 .carousel-item .panel {
     position: absolute;
@@ -121,7 +120,7 @@
     }
 
     .carousel-item {
-        width: 90%;
+        width: 80%;
     }
 
     .carousel-item-img {
@@ -160,7 +159,13 @@
   }
 
     .carousel-item {
-        width: 93%;
+        /*width: 93%;*/
+        width: 79%;
+        margin: 0 auto;
+    }
+
+    .carousel-item img {
+        height: 23.4vw;
     }
 
     .carousel-item:nth-of-type(2n) {
@@ -184,4 +189,15 @@
         letter-spacing: 0.078vw;
     }
 
+
+    .carousel-item .panel {
+        width: 19.5vw;
+        height: 19.5vw;
+    }
+
+    .carousel-item .panel a {
+        top: 13.4vw;
+        right: 15.3vw;
+        width: 1.6vw;
+    }
 }
