@@ -3,11 +3,10 @@
     <div class="category_cform">
         <div class="ccard">
             <h2>Create New Category</h2>
-            <hr>
             <form action="{{ route('category.store') }}" method="post">
                 @csrf
                 <div class="">
-                    <label for="">Title:</label><br>
+                    <label for="">Title:</label>
                     <input type="text" name="ctitle" value="{{ old('ctitle') }}" class="category-forminput">
                     @error('ctitle')
                         <p class="error">{{ $message }}</p>

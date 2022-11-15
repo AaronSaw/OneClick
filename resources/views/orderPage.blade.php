@@ -8,10 +8,10 @@
         </div>
     @endif
     @if (session('error_status'))
-    <div class="success-box">
-        <span class="success-message">{{ session('error_status') }}<i
-                class="fa-solid fa-xmark icon-order js-close"></i></span>
-    </div>
+        <div class="alert-box">
+            <span class="alert-message">{{ session('error_status') }}<i
+                    class="fa-solid fa-xmark icon-order js-close"></i></span>
+        </div>
     @endif
     <div class="order">
         <div class="order-card clearfix">
@@ -45,7 +45,7 @@
     <div id="modalContainer">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h5 class="order-confirm">Are you sure to order this item.</h5>
+            <h5 class="order-confirm">Are you sure to order this item?</h5>
             <form action="{{ route('user.store', $order[0]->id) }}" method="POST">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">

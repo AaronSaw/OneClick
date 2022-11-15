@@ -1,15 +1,8 @@
 /*Table Design*/
-
-.cmn-table-ttl {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 7px 20px;
-  background-color: #d6f6e2;
-}
-
 .tblttl {
   line-height: 1.5;
+  padding: 15px;
+  background-color: #f6c4c5;
   color: #D10B42;
   font-family: sans-serif;
   font-size: 20px;
@@ -30,6 +23,10 @@
   color: #ff1b1b;
   font-size: 18px;
   text-align: center;
+}
+
+.user-ccard {
+  margin-top: 0 !important;
 }
 
 /*Restore Form*/
@@ -69,6 +66,7 @@
 /*Profile*/
 .profile-container {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   margin: 140px 0 40px;
@@ -78,7 +76,7 @@
   position: relative;
   width: 320px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 30px 30px 20px;
   border: 1px solid #ddd;
   box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
   background-color: #fff;
@@ -95,7 +93,6 @@
 }
 
 .profile-content {
-  padding-left: 20px;
   font-family: sans-serif;
   font-size: 16px;
 }
@@ -107,7 +104,7 @@
 .social {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .social li {
@@ -136,21 +133,27 @@
 
 /*edit form*/
 .edit-container {
-  width: 55%;
-  margin: 9% 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 9% auto;
 }
 
 .edit-container .edit-ttl {
-  padding: 10px 15px;
+  margin-bottom: 15px;
+  color: #D10B42;
+  font-family: 'Arial', sans-serif;
   font-size: 18px;
+  text-align: center;
 }
 
 .edit-container .edit-form {
   padding: 20px 40px;
-  box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  max-width: 52%;
-  border-radius: 10px;
+  box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
+  background-color: #fff;
+  max-width: 100%;
+  border-radius: 20px;
 }
 
 .edit-container .edit-form label {
@@ -161,7 +164,7 @@
   width: 100%;
   margin: 10px 0;
   padding: 5px;
-  border: 1px solid #888;
+  border: 1px solid #dddddd;
   border-radius: 5px;
 }
 
@@ -181,14 +184,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 50px 40px 5px;
 }
 
 .excelBtn {
-  margin-right: 20px;
   padding: 8px 20px;
   border: none;
-  box-shadow: 5px 0px 14px rgb(239 239 239);
   background-color: #F7A76C;
   color: #fff;
   border-radius: 10px;
@@ -289,15 +290,9 @@
     height: 7.8vw;
   }
 
-  .tableinfo {
-    margin-top: 0vw;
-    margin-left: 6.3vw;
-    padding-top: 1.6vw;
-  }
-
   .tblttl {
     margin-bottom: 0vw;
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
 
   /*edit form*/
@@ -328,7 +323,7 @@
     border-radius: 0.8vw;
   }
 
-  /*Export and Import*/
+  /*Export and Importff*/
   .excelBtn {
     padding: 3px 10px;
   }

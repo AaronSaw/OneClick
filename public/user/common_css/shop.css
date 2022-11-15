@@ -136,6 +136,11 @@
         opacity: 1;
     }
 
+  .carousel-container:hover .carousel-item:hover {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+
 }
 
 
@@ -146,12 +151,12 @@
         margin-left: 8%;
     }
 
-    .carousel {
-        float: left;
-        width: 40%;
-        margin-right: 10%;
-        margin-bottom: 1.563vw;
-    }
+  .carousel {
+    float: left;
+    width: 40%;
+    margin-right: 10%;
+    margin-bottom: 1.563vw;
+  }
 
     .carousel-item {
         /*width: 93%;*/

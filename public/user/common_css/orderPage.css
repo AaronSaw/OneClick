@@ -205,6 +205,15 @@
     border-radius: 8px;
 }
 
+.alert-box {
+  border: 2px solid #f38d42;
+  background-color: #FBC5C5;
+}
+
+.alert-message {
+  color: #EB4747;
+}
+
 .icon-order {
     position: absolute;
     top: 15%;

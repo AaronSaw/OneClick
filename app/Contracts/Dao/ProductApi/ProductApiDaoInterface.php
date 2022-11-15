@@ -18,6 +18,4 @@ interface ProductApiDaoInterface
      * @return store $product data
      */
     public function getShow($id);
-
-
 }

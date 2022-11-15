@@ -22,11 +22,6 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 
-//// if already login ,cannot go to login page, redirect to -> shop
-//Route::group(['middleware' => ['not-login']], function () {
-//    Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
-//});
-
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -98,6 +93,10 @@ Route::group(['middleware' => ['admin']], function () {
     Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
     Route::get('/confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
     Route::get('/export-users', [UserController::class, 'export'])->name('user.export');
+
+    //Order
+    Route::get('/orderlist', [OrderController::class, 'index'])->name('dashboard.orderlist');
+    Route::delete('/orderlist/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 });
 
 //Api
