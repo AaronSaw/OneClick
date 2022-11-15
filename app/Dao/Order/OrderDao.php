@@ -76,7 +76,6 @@ class OrderDao implements OrderDaoInterface
         return $count->count_id;
     }
 
-
     /**
      * To get countorder
      */

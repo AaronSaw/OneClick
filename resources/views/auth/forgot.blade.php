@@ -14,8 +14,8 @@
 <body>
     <div class="forgot-form">
         @if (session('message'))
-            <div class="alert-box">
-                <span class="alert-message">{{ session('message') }}<i
+            <div class="alert-green">
+                <span class="message-green">{{ session('message') }}<i
                         class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif

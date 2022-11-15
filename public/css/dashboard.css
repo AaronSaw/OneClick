@@ -1,30 +1,32 @@
 .chart-card {
-    width: 45%;
+    width: 81%;
     margin-top: 2%;
-    margin-left: 28%;
+    margin-left: 10%;
     padding: 10px;
     background: #fff;
     border-radius: 10px;
 }
 
 .dashboard-title {
-    font-size: 40px;
+    margin: 40px auto 15px;
+    font-family: sans-serif;
+    font-size: 30px;
     text-align: center;
 }
 
 .card-collect {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .mini-card {
-    width: 135px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 65px;
-    padding: 24px 0;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: relative;
+    width: 250px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding: 20px 0 60px;
+    border: 5px solid #FF9494;
     background: #fff;
     font-size: 25px;
     font-weight: bold;
@@ -33,13 +35,135 @@
     border-radius: 20px;
 }
 
+.mini-card p {
+    line-height: 1;
+    color: #f6c4c5;
+    font-family: cursive;
+    font-size: 60px;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px #ff6c00, 10px 10px 0px #ddd;
+}
+
 .mini-card:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transform: translateY(-5px);
 }
 
 .count-name {
-    margin-top: 5px;
-    color: #9f9e9e;
-    font-size: 22px;
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    width: 100%;
+    padding: 5px 0;
+    background-color: #F6C4C5;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 20px;
+    transform: translateX(-50%);
+    border-radius: 0px 0px 15px 15px;
+}
+
+/*Tablet Size*/
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .chart-card {
+        padding: 0.781vw;
+        border-radius: 0.781vw;
+    }
+
+    .dashboard-title {
+        margin: 3.125vw auto 1.172vw;
+        font-size: 2.344vw;
+    }
+
+    .mini-card {
+        width: 19.531vw;
+        margin-top: 1.953vw;
+        margin-bottom: 1.563vw;
+        padding: 1.563vw 0 4.688vw;
+        border: 0.391vw solid #FF9494;
+        font-size: 1.953vw;
+        border-radius: 1.563vw;
+    }
+
+    .mini-card p {
+        font-size: 4.688vw;
+        text-shadow: 0.391vw 0.391vw 0vw #ff6c00, 0.781vw 0.781vw 0vw #ddd;
+    }
+
+    .mini-card:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0vw 1.094vw 2.188vw, rgba(0, 0, 0, 0.22) 0vw 0.781vw 0.781vw;
+        transform: translateY(-0.391vw);
+    }
+
+    .count-name {
+        padding: 0.391vw 0;
+        font-size: 1.563vw;
+        border-radius: 0vw 0vw 1.172vw 1.172vw;
+    }
+}
+
+/*Mobile Size*/
+@media screen and (max-width: 767.9px) {
+    .chart-card {
+        width: 45%;
+        margin-top: 2%;
+        margin-left: 28%;
+        padding: 1.563vw;
+        background: #fff;
+        border-radius: 1.563vw;
+    }
+
+    .dashboard-title {
+        margin: 2.25vw auto 2.344vw;
+        font-family: sans-serif;
+        font-size: 3.688vw;
+        text-align: center;
+    }
+
+    .card-collect {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .mini-card {
+        position: relative;
+        width: 20vw;
+        margin-top: 3.906vw;
+        margin-bottom: 3.125vw;
+        padding: 3.125vw 0 7.375vw;
+        border: 0.781vw solid #FF9494;
+        background: #fff;
+        font-size: 3.906vw;
+        font-weight: bold;
+        text-align: center;
+        transition: .5s;
+        border-radius: 3.125vw;
+    }
+
+    .mini-card p {
+        font-size: 6vw;
+        text-shadow: 0.481vw 0.481vw 0vw #ff6c00, 0.981vw 0.981vw 0vw #ddd;
+    }
+
+    .mini-card:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0vw 2.188vw 4.375vw, rgba(0, 0, 0, 0.22) 0vw 1.563vw 1.563vw;
+        transform: translateY(-0.781vw);
+    }
+
+    .count-name {
+        display: block;
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        width: 100%;
+        padding: 0.781vw 0;
+        background-color: #F6C4C5;
+        color: #000;
+        font-family: sans-serif;
+        font-size: 2.5vw;
+        transform: translateX(-50%);
+        border-radius: 0vw 0vw 2.344vw 2.344vw;
+    }
 }

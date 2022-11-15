@@ -6,10 +6,10 @@
 *
 * Date: Nov 26, 2013
 */
-(function( $ ){
+(function ($) {
     "use strict";
 
-    $.fn.counterUp = function( options ) {
+    $.fn.counterUp = function (options) {
 
         // Defaults
         var settings = $.extend({
@@ -17,13 +17,13 @@
             'delay': 10
         }, options);
 
-        return this.each(function(){
+        return this.each(function () {
 
             // Store the object
             var $this = $(this);
             var $settings = settings;
 
-            var counterUpper = function() {
+            var counterUpper = function () {
                 var nums = [];
                 var divisions = $settings.time / $settings.delay;
                 var num = $this.text();
@@ -47,7 +47,7 @@
                     // Preserve commas if input had commas
                     if (isComma) {
                         while (/(\d+)(\d{3})/.test(newNum.toString())) {
-                            newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+                            newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
                         }
                     }
 
@@ -58,7 +58,7 @@
                 $this.text('0');
 
                 // Updates the number until we're done
-                var f = function() {
+                var f = function () {
                     $this.text($this.data('counterup-nums').shift());
                     if ($this.data('counterup-nums').length) {
                         setTimeout($this.data('counterup-func'), $settings.delay);
@@ -80,4 +80,4 @@
 
     };
 
-})( jQuery );
+})(jQuery);

@@ -77,6 +77,6 @@ class OrderController extends Controller
         Mail::to(Auth::user()->email)
             ->send(new ComfirmMail());
         $this->orderInterface->confirm($id);
-        return redirect()->route('dashboard.orderlist');
+        return redirect()->route('dashboard.orderlist')->with('status','Confirm message was sent.');
     }
 }

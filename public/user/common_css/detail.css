@@ -7,100 +7,102 @@
 }
 
 .detail-card {
-    width: 1000px;
-    padding: 10px;
-    box-shadow: 1px 20px 27px rgb(0 0 0 / 42%);
-    border-radius: 10px;
-    position: relative;
+  position: relative;
+  width: 1000px;
+  padding: 10px;
+  box-shadow: 1px 20px 27px rgb(0 0 0 / 42%);
+  background: #fff;
+  border-radius: 10px;
 }
 
 .detail-img {
-    float: left;
-    width: 40%;
+  float: left;
+  width: 40%;
 }
 
 .detail-img img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .detail-status {
-    float: right;
-    width: 56%;
+  float: right;
+  width: 56%;
 }
 
 .detail-title {
-    color: #ff00b1;
-    font-size: 40px;
+  color: #ff00b1;
+  font-size: 40px;
 }
 
 .detail-category {
-    width: 100px;
-    padding: 2px;
-    background: #f3c1c2;
-    text-align: center;
-    border-radius: 30px;
+  width: 100px;
+  padding: 2px;
+  background: #f3c1c2;
+  text-align: center;
+  border-radius: 30px;
 
 }
 
 .detail-description {
-    display: none;
-    color: #b1b1b1;
+  display: none;
+  color: #b1b1b1;
 }
 
 .detail-shortdescription {
-    display: inline;
-    color: #b1b1b1;
+  display: inline;
+  color: #b1b1b1;
 }
 
 .seemore {
-    border: oldlace;
-    background: transparent;
-    color: #a822df;
+  border: oldlace;
+  background: transparent;
+  color: #a822df;
 }
 
 .seeless {
-    display: none;
-    border: oldlace;
-    background: transparent;
-    color: #a822df;
+  display: none;
+  border: oldlace;
+  background: transparent;
+  color: #a822df;
 }
 
 .relatedCategory {
-    color: #dd2624;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
+  color: #dd2624;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .related-card {
-    margin-top: 0%;
-    margin-left: 5%;
-    max-width: 1280px;
+  margin-top: 0%;
+  margin-left: 5%;
+  max-width: 1280px;
 }
 
 .detail-price {
-    color: #2e8bff;
-    font-size: 25px;
-    font-weight: bold;
+  color: #2e8bff;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .pricetitle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.order-btn{
-    position: absolute;
-    right: 2%;
-    bottom: 3%;
-    background-color: #ffafbd;
-    color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 10px;
+.order-btn {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  padding: 5px 10px;
+  border: none;
+  background-color: #ffafbd;
+  color: #eee;
+  border-radius: 10px;
 }
+
 .fa-cart-shopping {
-    color: #ff00b1;
+  color: #ff00b1;
 }

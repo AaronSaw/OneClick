@@ -8,10 +8,10 @@
         </div>
     @endif
     @if (session('error_status'))
-    <div class="success-box">
-        <span class="success-message">{{ session('error_status') }}<i
-                class="fa-solid fa-xmark icon-order js-close"></i></span>
-    </div>
+        <div class="alert-box">
+            <span class="alert-message">{{ session('error_status') }}<i
+                    class="fa-solid fa-xmark icon-order js-close"></i></span>
+        </div>
     @endif
     <div class="order">
         <div class="order-card clearfix">

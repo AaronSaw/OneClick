@@ -20,7 +20,16 @@ class DatabaseSeeder extends Seeder
             'email'=>"sawkyaw@gmail.com",
             'address'=>"Mandalay",
             "password"=>Hash::make("sawkyaw777236"),
-            "role"=>'0'
+            "role"=>'0',
+         ]);
+
+        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            "name"=>"Shoon Lae Yee Win",
+            'email'=>"shoonlae123@gmail.com",
+            'address'=>"Yangon",
+            "password"=>Hash::make("shoonlae123"),
+            "role"=>'0',
          ]);
     }
 }

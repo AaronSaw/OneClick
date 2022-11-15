@@ -15,83 +15,83 @@
 }
 
 .member-card .cards {
-    display: flex;
-    margin-left: 9%;
+  display: flex;
+  margin-left: 9%;
 }
 
 .member-card .cards .card {
-    width: calc(100% /4 - 30px);
-    margin: 0 0.2%;
-    padding: 0.5%;
-    border: 5px solid #DDEFBB;
-    background-color: #fff;
-    transition: 0.5s ease;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  width: calc(100% /4 - 30px);
+  margin: 0 0.2%;
+  padding: 0.5%;
+  border: 5px solid #DDEFBB;
+  background-color: #fff;
+  transition: 0.5s ease;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 .member-card .cards .card:hover {
-    transform: translateY(-25px);
+  transform: translateY(-25px);
 }
 
 .cards .card .content-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10% 0;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10% 0;
+  text-align: center;
 }
 
 .cards .card .content-card .img-member {
-    width: 130px;
-    height: 130px;
-    margin-bottom: 20px;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 20px;
 }
 
 .rotate-bdr {
-    padding: 1px;
-    border-top: 2px solid transparent;
-    border-left: 2px solid transparent;
-    border-right: 2px solid #C9FFBF;
-    border-bottom: 2px solid #C9FFBF;
-    border-radius: 50%;
-    animation: rotatecircle 1s ease infinite;
-    animation-direction: alternate-reverse;
+  padding: 1px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #C9FFBF;
+  border-bottom: 2px solid #C9FFBF;
+  border-radius: 50%;
+  animation: rotatecircle 1s ease infinite;
+  animation-direction: alternate-reverse;
 }
 
 @keyframes rotatecircle {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(90deg);
-    }
+  to {
+    transform: rotate(90deg);
+  }
 }
 
 .card .content-card .img-member img {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #fff;
-    background-color: #fff;
-    object-fit: cover;
-    border-radius: 50%;
-    animation: rotateimg 1s ease infinite;
-    animation-direction: alternate-reverse;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #fff;
+  background-color: #fff;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotateimg 1s ease infinite;
+  animation-direction: alternate-reverse;
 }
 
 @keyframes rotateimg {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(-90deg);
-    }
+  to {
+    transform: rotate(-90deg);
+  }
 }
 
 .card .content-card .info .name {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .card .content-card .info .detail-info {
@@ -115,27 +115,27 @@
 }
 
 .card .content-card .social-media {
-    display: flex;
-    margin-top: 10px;
-    margin-left: 20%;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 20%;
 }
 
 .card .content-card .social-media a {
-    width: 30px;
-    height: 30px;
-    line-height: 1.8;
-    margin: 0 4px;
-    border: 2px solid transparent;
-    background-color: #DDEFBB;
-    color: #FFAFBD;
-    text-align: center;
-    border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 1.8;
+  margin: 0 4px;
+  border: 2px solid transparent;
+  background-color: #DDEFBB;
+  color: #FFAFBD;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .content-card .social-media a:hover {
-    background-color: #fff;
-    transition: 0.5s;
-    border-color: #DDEFBB;
+  background-color: #fff;
+  transition: 0.5s;
+  border-color: #DDEFBB;
 }
 
 
@@ -167,11 +167,11 @@
         height: 7.813vw;
     }
 
-    .cards .card .content-card {
-        display: block;
-        width: 100%;
-        padding: 0 2%;
-    }
+  .cards .card .content-card {
+    display: block;
+    width: 100%;
+    padding: 0 2%;
+  }
 
     .card .content-card .info .name {
         text-align: center;
@@ -184,7 +184,7 @@
 
     .card .content-card .social-media {
         margin-left: 27%;
-        margin-top: 2.609vw;   
+        margin-top: 2.609vw;
     }
 
     .card .content-card .social-media a{
@@ -233,11 +233,11 @@
         height: 15.625vw;
     }
 
-    .cards .card .content-card {
-        display: block;
-        width: 100%;
-        padding: 0 2%;
-    }
+  .cards .card .content-card {
+    display: block;
+    width: 100%;
+    padding: 0 2%;
+  }
 
     .card .content-card .info .name {
         text-align: center;

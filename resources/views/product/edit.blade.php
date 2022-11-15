@@ -35,8 +35,8 @@
                 <div class="pinput">
                     <label for="">product Description</label>
                     <textarea name="description" rows="10" cols="35" class="product-formTextarea">
-            {{ old('description', trim($product->description)) }}
-            </textarea>
+                    {{ old('description', trim($product->description)) }}
+                    </textarea>
                     @error('description')
                         <div class="error">{{ $message }}</div>
                     @enderror
@@ -55,7 +55,8 @@
                     <div class="error">{{ $message }}</div>
                 @enderror
                 <label for="">preview image</label><br>
-                <img id="preview-image" src="{{ asset('storage/' . $product->image) }}"  alt="preview image" style="max-height: 250px;">
+                <img id="preview-image" src="{{ asset('storage/' . $product->image) }}" alt="preview image"
+                    style="max-height: 250px;">
                 <div class="productform-footerBtn">
                     <button class="button cancel" type="reset"><a href="{{ url('product') }}">Cancel<a></button>
                     <button class="button-primary" type="submit">Update</button>
@@ -65,6 +66,5 @@
         command-> php artisan storage:link
             --}}
         </div>
-    </div>
     </div>
 @endsection
