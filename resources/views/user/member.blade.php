@@ -23,12 +23,9 @@
                                 <img src="{{ asset('user/img/img_img1.png') }}" alt="Member Image">
                             </div>
                             <div class="info">
-                                <div class="name">Mary</div>
+                                <div class="name">Saw Kyaw Myint</div>
                                 <div class="detail">
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit
-                                        amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Repellat, cum.</p>
+                                    <p>Second year student from Univerversity of Computer Studies, Loikaw.</p>
                                 </div>
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -45,12 +42,9 @@
                                 <img src="{{ asset('user/img/img_img1.png') }}" alt="Member Image">
                             </div>
                             <div class="info">
-                                <div class="name">Mary</div>
+                                <div class="name">Shoon Lae Yee Win</div>
                                 <div class="detail">
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit
-                                        amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Repellat, cum.</p>
+                                    <p> Final year(EC) student from Technological University(Mandalay)</p>
                                 </div>
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -67,12 +61,9 @@
                                 <img src="{{ asset('user/img/img_img1.png') }}" alt="Member Image">
                             </div>
                             <div class="info">
-                                <div class="name">Mary</div>
+                                <div class="name">Tin Htar Wai</div>
                                 <div class="detail">
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit
-                                        amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Repellat, cum.</p>
+                                    <p>Graduated from University of Computer Studies, Taungoo</p>
                                 </div>
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -89,12 +80,9 @@
                                 <img src="{{ asset('user/img/img_img1.png') }}" alt="Member Image">
                             </div>
                             <div class="info">
-                                <div class="name">Mary</div>
+                                <div class="name">May Thazin</div>
                                 <div class="detail">
-                                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum
-                                        dolor sit amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit
-                                        amet consectetur adipisicing elit. Repellat, cum. Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Repellat, cum.</p>
+                                    <p> Graduated from Technological University(Taunggyi)</p>
                                 </div>
                                 <div class="social-media">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>

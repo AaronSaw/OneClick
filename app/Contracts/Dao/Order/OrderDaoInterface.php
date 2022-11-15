@@ -48,6 +48,12 @@ interface OrderDaoInterface
     //  public function updateOrder(Request $request, $id);
 
     /**
+     * @param $id
+     * To get confirm
+     */
+    public function confirm($id);
+
+    /**
      * To get userOrder
      */
     public function userOrder();

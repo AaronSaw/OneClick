@@ -83,7 +83,7 @@ class AuthController extends Controller
     public function logout()
     {
         $this->authInterface->logoutPost();
-        return redirect()->route('auth.login');
+        return redirect()->route('home');
     }
 
     /**

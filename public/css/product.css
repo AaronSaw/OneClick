@@ -78,13 +78,10 @@
 }
 
 #preview-image {
-  width: 150px;
-  height: 100px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #dddddd;
-  object-fit: cover;
-  max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    object-fit: cover;
+    max-width: 150px;
 }
 
 .productform-footerBtn button a {

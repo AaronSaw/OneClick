@@ -50,7 +50,7 @@
                     </div>
                 @enderror
                 <label for="">preview image</label><br>
-                <img id="preview-image" src="" style="max-height: 250px;">
+                <img id="preview-image" src="" style="max-height: 150px;">
                 <div class="productform-footerBtn">
                     <button class="button cancel" type="reset"><a href="{{ url('product') }}">Cancel<a></button>
                     <button class="button-primary" type="submit">Create</button>

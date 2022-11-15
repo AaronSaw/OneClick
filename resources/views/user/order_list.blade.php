@@ -17,7 +17,7 @@
                     @php
                         $ctitle = \App\Models\Category::find($order->category_id)->ctitle;
                     @endphp
-                    <tr>
+                    <tr @if ($order->confirm == '1') class="confirm " @endif>
                         <td>{{ $order->title }}</td>
                         <td>{{ $ctitle }}</td>
                         <td>{{ $order->created_at->format('d M Y') }}</td>

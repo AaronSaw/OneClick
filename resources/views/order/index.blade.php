@@ -55,6 +55,13 @@
                             <td>{{ $order->address }}</td>
                             <td>{{ $order->created_at->format('d M Y') }}</td>
                             <td>
+                                <a href="{{ route('order.confirm', $order->id) }}" class="check">
+                                    @if ($order->confirm == '1')
+                                        <i class="fa fa-check-square"></i>
+                                    @else
+                                        <i class="fa fa-square"></i>
+                                    @endif
+                                </a>
                                 <div id="ex{{ $order->id }}" class="modal clearfix">
                                     <p class="modal-text">Are you sure to delete?</p>
                                     <hr>
@@ -76,7 +83,8 @@
                             </td>
 
                         </tbody>
-                    @empty
+                        </tr>
+                        @empty
                         <tr>
                             <td colspan="8" class="empty">Empty order</td>
                         </tr>

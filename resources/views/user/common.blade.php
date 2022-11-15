@@ -36,7 +36,7 @@
             </div>
             <nav class="menu-section">
                 <ul class="menu-list">
-                    @if (url()->current() == 'http://127.0.0.1:8000')
+                    @if (url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items">
                             <a href="#" class="link">
                                 <div class="search">
@@ -48,44 +48,49 @@
                             </a>
                         </li>
                     @endif
-                    <li class="menu-items"><a href="{{ url('/') }}" class="link">SHOP</a></li>
-                    @if (url()->current() == 'http://127.0.0.1:8000')
+                    <li class="menu-items active">
+                        <a href="{{  route('home') }}" class="link {{ Request::is('/')|| Request::is('user-dashboard') ? 'active' : '' }}">HOME</a>
+                    </li>
+                    <li class="menu-items"><a href="{{ url('/shop') }}" class="link {{ Request::is('shop') ? 'active' : '' }}">SHOP</a></li>
+                    @if (url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items">
                             <span class="dropdown-items link side-arrow">
-                                <select name="" id="list-category" class="menu-category link">
+                                <select name="" id="list-category" class="menu-category link ">
                                     <option value="">CATEGORIES</option>
                                 </select>
                             </span>
                         </li>
                     @endif
                     <li class="menu-items">
-                        <a href="{{ url('/member') }}" class="link">TEAM MEMBER</a>
-                    </li>
-                    <li class="menu-items btn-login">
-                        @if (Auth::user())
-                            <div class="profile">
-                                <div class="dropbtn">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                </div>
-                                <div class="dropdown-content">
-                                    <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
-                                        Profile </a>
-                                    <a href="{{ url('/order') }}"><i class="fa fa-key" aria-hidden="true"></i>
-                                        Order List </a>
-                                    <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
-                                            aria-hidden="true"></i>
-                                        Change Password </a>
-                                    <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
-                                        Logout
-                                    </a>
-                                </div>
-                            </div>
-                        @else
-                            <button><a href="{{ route('auth.login') }}">Login</a></button>
-                            <button><a href="{{ route('auth.register') }}">Register</a></button>
-                        @endif
+                        <a href="{{ url('/member') }}" class="link {{ Request::is('member') ? 'active' : '' }}">TEAM MEMBER</a>
                     </li>
                 </ul>
+                @if (Auth::user())
+                    <li class="menu-items btn-login ">
+                        <div class="profile">
+                            <div class="dropbtn">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
+                                    Profile </a>
+                                <a href="{{ url('/order') }}"><i class="fa fa-key" aria-hidden="true"></i>
+                                    Order List </a>
+                                <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
+                                        aria-hidden="true"></i>
+                                    Change Password </a>
+                                <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                @else
+                    <li class="menu-items left-items">
+                        <a href="{{ route('auth.login') }}" class="login-url">login </a>|
+                        <a href="{{ route('auth.register') }}" class="login-url"> Register</a>
+                    </li>
+                @endif
             </nav>
         </div>
     </header>
@@ -107,7 +112,7 @@
             <span class="bdr-footer"></span>
             <nav class="footer-section">
                 <ul class="footer-list">
-                    <li class="footer-items"><a href="{{ url('/') }}">CATEGORIES</a>
+                    <li class="footer-items"><a href="{{ url('/shop') }}">Coming Soon...</a>
                         <ul class="footer-sublist">
                             <li><a href="#">Electronics</a></li>
                             <li><a href="#">Men's Fashion</a></li>
@@ -117,15 +122,15 @@
                         </ul>
                     </li>
                     <li class="footer-items">
-                        <a href="#">INFORMATION</a>
+                        <a href="#">Information</a>
                         <ul class="footer-sublist">
-                            <li><a href="{{ url('/') }}">Shop</a></li>
-                            <li><a href="{{ url('/') }}">Categories</a></li>
+                            <li><a href="{{ url('/shop') }}">Shop</a></li>
+                            <li><a href="{{ url('/shop') }}">Categories</a></li>
                             <li><a href="{{ url('/member') }}">Team Member</a></li>
                         </ul>
                     </li>
                     <li class="footer-items">
-                        <a href="#">GOOGLE MAP</a>
+                        <a href="#">Location</a>
                         <div class="map-blk">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.1859998658533!2d96.12852331488139!3d16.817126323427065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1eb3590712cc1%3A0xd1674b74cc622b2f!2sJunction%20Square!5e0!3m2!1sen!2smm!4v1668317119687!5m2!1sen!2smm"
@@ -136,11 +141,7 @@
                 </ul>
             </nav>
         </div>
-
     </footer>
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/js/all.min.js"></script>
@@ -155,6 +156,8 @@
     <script src="{{ asset('js/index.js') }}"></script>
     <script src="{{ asset('user/js/detail.js') }}"></script>
     <script src="{{ asset('user/js/order.js') }}"></script>
+    <script src="{{ asset('user/js/slider.js') }}"></script>
+    <script src="{{ asset('user/js/tab.js') }}"></script>
     @stack('script')
 </body>
 

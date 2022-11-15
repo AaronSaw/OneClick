@@ -20,6 +20,12 @@ interface OrderServicesInterface
     public function deleteOrder($id);
 
     /**
+     * @param 4id
+     * To get confirm
+     */
+    public function confirm($id);
+
+    /**
      * To get CategoryName and countOrder
      */
     public function countOrder($table, $description);

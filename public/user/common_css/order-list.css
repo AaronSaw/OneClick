@@ -36,6 +36,10 @@
   border: 1px solid #3e3232;
 }
 
+.confirm{
+    background: #63c79957;
+    color: #b1b1b1;
+}
 
 #customers tr:hover {
   background-color: #ddd;
