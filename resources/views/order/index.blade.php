@@ -69,7 +69,7 @@
                                         <p class="modal-text">Are you sure to delete?</p>
                                         <hr>
                                         <div class="modal-footer">
-                                            <a href="#" class="button cancel" rel="modal:close">No</a>
+                                            <a href="#" class="button  cancel" rel="modal:close">No</a>
                                             <form action="{{ route('order.destroy', $order->id) }}" class="d-inline-block"
                                                 method="post">
                                                 @csrf
