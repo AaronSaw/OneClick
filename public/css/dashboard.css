@@ -106,9 +106,9 @@
 /*Mobile Size*/
 @media screen and (max-width: 767.9px) {
     .chart-card {
-        width: 45%;
+        width: 80%;
         margin-top: 2%;
-        margin-left: 28%;
+        margin-left: 10%;
         padding: 1.563vw;
         background: #fff;
         border-radius: 1.563vw;

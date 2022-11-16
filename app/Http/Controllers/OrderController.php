@@ -67,7 +67,7 @@ class OrderController extends Controller
         $ordersNo = 0;
         foreach ($userOrder as $key => $value) {
             $ordersNo++;
-            $prices = $prices + $value->price;
+            $prices = $prices + ($value->price*$value->quantity);
         }
         return view('user.order_list', compact(['userOrder', 'prices', 'ordersNo']));
     }

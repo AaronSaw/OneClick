@@ -9,7 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'product_id'];
+    use SoftDeletes;
+
+    protected $table = 'orders';
+    protected $fillable = ['user_id', 'product_id','quantity'];
 
     protected $casts = [
         'email_verified_at' => 'datetime',

@@ -129,7 +129,7 @@ class OrderDao implements OrderDaoInterface
         $userOrder = Order::Join('products', 'products.id', '=', 'orders.product_id')
             ->where('orders.user_id', '=', "$userId")
             ->latest('id')
-            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id','orders.confirm')
+            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id','orders.confirm','orders.quantity')
             ->get();
 
         return $userOrder;

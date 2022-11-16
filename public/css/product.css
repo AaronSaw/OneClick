@@ -108,21 +108,77 @@
     margin-top: 0%;
   }
 
+  .pimg {
+    width: 10.938vw;
+}
   .sbutton {
     padding: 0.781vw 1.094vw;
     font-size: 2vw;
     border-radius: 0.781vw;
   }
 
+label{
+    font-size: 2.344vw;
+}
   .product_pform {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
+    width: 80%;
+    height: 135vh;
+    margin: 5% 0 0 11%;
   }
 
   .product_pform .ccard {
-    overflow-y: auto;
+    padding: 4.688vw 6.25vw;
+    box-shadow: 1.094vw 1.563vw 1.563vw -0.469vw rgb(0 0 0 / 50%);
+    border-radius: 1.563vw;
+    max-width: 100%;
   }
+
+  .pinput {
+    margin-bottom: 1.563vw;
+  }
+
+  .ptitle {
+    margin-bottom: 2.344vw;
+    font-size: 2.813vw;
+  }
+
+  .sinput {
+    width: 28.125vw;
+    margin-bottom: 1.563vw;
+  }
+
+  .search-btngp {
+    margin: 1.563vw 0;
+  }
+
+  .product-forminput {
+    width: 100%;
+    margin-top: 0.781vw;
+    font-size: 2.031vw;
+    border-radius: 0.781vw;
+  }
+
+  .product-formSelect {
+    margin-top: 0.781vw;
+  }
+
+  .product-formTextarea {
+    margin-top: 0.781vw;
+    border-radius: 0.781vw;
+  }
+
+  .product-editImage {
+    width: 100%;
+  }
+
+  #preview-image {
+      margin-top: 0.781vw;
+      margin-bottom: 0.781vw;
+      max-width: 23.438vw;
+  }
+
+  .productform-footerBtn {
+    margin-top: 0.938vw;
+  }
+
 }
