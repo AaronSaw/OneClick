@@ -37,6 +37,7 @@
                             <th>Product</th>
                             <th>Category</th>
                             <th>Price</th>
+                            <th>Quantity</th>
                             <th>Address</th>
                             <th>Order Date</th>
                             <th>Action</th>
@@ -53,6 +54,7 @@
                                 <td>{{ $order->title }}</td>
                                 <td>{{ $ctitle }}</td>
                                 <td>{{ $order->price }}</td>
+                                <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->address }}</td>
                                 <td>{{ $order->created_at->format('d M Y') }}</td>
                                 <td>
@@ -67,6 +69,7 @@
                                         <p class="modal-text">Are you sure to delete?</p>
                                         <hr>
                                         <div class="modal-footer">
+                                            <a href="#" class="button  cancel" rel="modal:close">No</a>
                                             <form action="{{ route('order.destroy', $order->id) }}" class="d-inline-block"
                                                 method="post">
                                                 @csrf
@@ -74,8 +77,6 @@
                                                 <button class="button  danger">
                                                     Yes
                                                 </button>
-                                                <button type="button" class="button cancel"><a href="#"
-                                                        rel="modal:close">No</a></button>
                                             </form>
                                         </div>
                                     </div>
@@ -87,7 +88,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="empty">Empty order</td>
+                            <td colspan="9" class="empty">Empty order</td>
                         </tr>
                     @endforelse
                 </table>

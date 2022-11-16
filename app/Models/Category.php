@@ -15,7 +15,13 @@ class Category extends Model
 
     protected $fillable = ['ctitle'];
 
-    public function product(){
-        return $this->hasMany(Product::class,'category_id','id');
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'category_id', 'id');
+    }
+
+    public function order()
+    {
+        return $this->hasManyThrough(Order::class, product::class);
     }
 }

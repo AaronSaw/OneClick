@@ -39,6 +39,7 @@ class CategoryDao implements CategoryDaoInterface
      */
     public function getDelete($category)
     {
+        $category->order()->delete();
         $category->product()->delete();
         $category->delete();
     }

@@ -10,6 +10,7 @@
                 <th>Product</th>
                 <th>Category</th>
                 <th>Order Date</th>
+                <th>Quantity</th>
                 <th>Price</th>
             </thead>
             <tbody>
@@ -21,13 +22,14 @@
                         <td>{{ $order->title }}</td>
                         <td>{{ $ctitle }}</td>
                         <td>{{ $order->created_at->format('d M Y') }}</td>
+                        <td>{{ $order->quantity }}</td>
                         <td>${{ $order->price }}</td>
                     </tr>
                 @empty
                 @endforelse
                 <tr>
                     <td colspan="2"></td>
-                    <td>Total</td>
+                    <td colspan="2">Total</td>
                     <td>${{ $prices }}</td>
                 </tr>
             </tbody>
