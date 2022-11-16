@@ -36,7 +36,7 @@
                             <div class="info">
                                 <div class="name">Shoon Lae Yee Win</div>
                                 <div class="detail-info">
-                                    <p> Final year(EC) student from Technological University(Mandalay)</p>
+                                    <p> Fifth year(EC) student from Technological University(Mandalay)</p>
                                     <div class="member-info">
                                         <p class="email-info">Email - example@gmail.com</p>
                                         <p class="add-info">Address - Yangon</p>

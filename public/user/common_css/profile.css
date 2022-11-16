@@ -7,7 +7,7 @@
 
 .profileForm-blk {
   position: relative;
-  width: 320px;
+  width: 350px;
   margin: 0 auto;
   padding: 30px;
   border: 1px solid #ddd;
@@ -46,15 +46,42 @@
   top: 8%;
   left: 85%;
   border: none;
-  background-color: #ffafbd;
+  text-decoration: none;
 }
 
 .profileEdit-btn a {
-  color: #fff;
+  color: #000000;
+
 }
 
 .icon-btn {
   position: absolute;
   top: 10%;
   right: -10%;
+}
+
+/* Ipad */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .profile-blk {
+        margin: 13vw 0 5.2vw;
+    }
+}
+
+/* SP */
+@media screen and (max-width: 767.9px) {
+    .profileForm-blk {
+        width: 46.9vw;
+        padding: 2.3vw;
+    }
+    .profile-blk {
+        margin: 15.6vw 0 6.3vw;
+    }
+
+    .profile-title {
+        margin: 2.3vw;
+        font-size: 2.8vw;
+    }
+    .profile li {
+        font-size: 2.3vw;
+    }
 }
