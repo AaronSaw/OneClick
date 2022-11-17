@@ -206,13 +206,25 @@
 }
 
 .alert-box {
-  border: 2px solid #f38d42;
-  background-color: #FBC5C5;
+    border: 2px solid #f38d42;
+    background-color: #FBC5C5;
 }
 
 .alert-message {
-  color: #EB4747;
+    color: #EB4747;
 }
+
+.quantity-box {
+    display: none;
+    position: absolute;
+    top: 85px;
+    left: 500px;
+    margin-top: 1px;
+    padding: 10px 30px;
+    border: 2px solid #f38d42;
+    background-color: #FBC5C5;
+}
+
 
 .icon-order {
     position: absolute;
@@ -220,8 +232,42 @@
     right: -8%;
 }
 
+.quantity-group {
+    display: flex;
+    margin-top: 2px;
+}
+
+.quantity {
+    width: 50px;
+    margin: 0 2px;
+    margin-top: 0;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.quantity-plus {
+    padding: 5px;
+    border: 1px solid #7366ed;
+    background: transparent;
+    color: #3f1dff;
+    border-radius: 5px;
+}
+
+.quantity-minus {
+    padding: 5px;
+    border: 1px solid #7366ed;
+    background: transparent;
+    color: #3f1dff;
+    border-radius: 5px;
+}
+
 /* Ipad */
 @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .order-card {
+        width: 90%;
+        padding: 1.302vw 3.255vw 6.51vw;
+    }
+
     .order-title {
         font-size: 3.3vw;
     }
@@ -257,12 +303,51 @@
         width: 40%;
         padding: 0.7vw 1.3vw;
     }
+
+    .quantity-minus {
+        padding: 0.651vw;
+        font-size: 1.693vw;
+        border-radius: 0.651vw;
+    }
+
+    .quantity {
+        width: 6.51vw;
+        margin: 0 0.26vw;
+        margin-top: 0;
+        padding: 0.911vw;
+        border-radius: 1.042vw;
+    }
+
+    .quantity-plus {
+        padding: 0.651vw;
+        font-size: 1.693vw;
+        border-radius: 0.651vw;
+    }
+
+    .quantity-box {
+        top: 11.068vw;
+        left: 30%;
+        margin-top: 0.13vw;
+        padding: 1.302vw 3.906vw;
+    }
+    .modal-content {
+        width: 40%;
+        padding: 3.255vw;
+    }
 }
 
 /* SP */
 @media screen and (max-width: 767.9px) {
     .order {
         margin-top: 15.6vw;
+    }
+
+    .order-card {
+        width: 75%;
+        margin-top: 5.25vw;
+        padding: 1.563vw 3.906vw 7.813vw;
+        box-shadow: 0.156vw 1.406vw 0.781vw rgb(0 0 0 / 42%);
+        border-radius: 1.563vw;
     }
 
     .order-img {
@@ -291,6 +376,102 @@
 
     .total-blk .order-price,
     .total-title {
-        font-size: 2.5vw;
+        font-size: 3.0vw;
+    }
+
+    .btn-sec button {
+        margin-right: 3.125vw;
+        padding: 0.781vw 3.125vw;
+        font-size: 1.875vw;
+        border-radius: 1.563vw;
+    }
+
+    .success-message {
+        font-size: 2.188vw;
+    }
+
+    .success-box {
+        top: 10.719vw;
+        left: 50%;
+        width: 60.938vw;
+        padding: 1.531vw;
+        font-size: 2.031vw;
+        border-radius: 1.25vw;
+    }
+
+    .order-confirm {
+        margin: 1.563vw 0 4.688vw;
+        font-size: 2.344vw;
+    }
+
+    .alert-box {
+        top: 11.063vw;
+        left: 50%;
+        width: 43.25vw;
+        padding: 0vw 3.125vw;
+    }
+
+    .close {
+        top: 0%;
+        right: 3%;
+        font-size: 4.375vw;
+    }
+
+    .alert-message {
+        font-size: 2.188vw;
+    }
+
+    .quantity-group {
+        margin-top: 0.313vw;
+    }
+
+    .quantity {
+        width: 7.813vw;
+        margin-top: 0;
+        padding: 1.094vw;
+        font-size: 1.875vw;
+        border-radius: 1.25vw;
+    }
+
+    .quantity-plus {
+        padding: 0.781vw;
+        font-size: 2.188vw;
+        border-radius: 0.781vw;
+    }
+
+    .quantity-minus {
+        padding: 0.781vw;
+        font-size: 2.188vw;
+        border-radius: 0.781vw;
+    }
+
+    .order-category {
+        width: 15.625vw;
+        padding: 0.781vw 1.563vw;
+        font-size: 1.875vw;
+        border-radius: 3.125vw;
+    }
+
+    .checkOut {
+        width: 40%;
+        padding: 0.7vw 1.3vw;
+        font-size: 2.344vw;
+    }
+
+    .quantity-box {
+        top: 11.281vw;
+        left: 20.313vw;
+        margin-top: 0.156vw;
+        padding: 1.563vw 4.688vw !important;
+        font-size: 2.188vw;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 45%;
+        margin: 20% auto;
+        padding: 3.906vw;
+        border: 0.156vw solid #888;
+        background-color: #fefefe;
     }
 }

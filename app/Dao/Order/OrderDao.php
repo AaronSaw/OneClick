@@ -70,6 +70,7 @@ class OrderDao implements OrderDaoInterface
     {
         $count =  DB::table("$table")
             ->join("products", "$table.product_id", '=', "products.id")
+            ->whereNull("$table.deleted_at")
             ->select(DB::raw("COUNT($table.id) as count_id"))
             ->whereRaw('category_id = ?', [$description])
             ->first();
@@ -82,6 +83,7 @@ class OrderDao implements OrderDaoInterface
     public function countOrderNO()
     {
         $orders =  DB::table("orders")
+            ->whereNull('orders.deleted_at')
             ->select(DB::raw("COUNT(id) as count_order"))
             ->first();
         return $orders->count_order;
@@ -93,6 +95,7 @@ class OrderDao implements OrderDaoInterface
     public function countCategory()
     {
         $categories =  DB::table("categories")
+            ->whereNull('categories.deleted_at')
             ->select(DB::raw("COUNT(id) as count_category"))
             ->first();
         return $categories->count_category;
@@ -104,6 +107,7 @@ class OrderDao implements OrderDaoInterface
     public function countUser()
     {
         $users =  DB::table("users")
+            ->whereNull('users.deleted_at')
             ->select(DB::raw("COUNT(id) as count_user"))
             ->first();
         return $users->count_user;
@@ -115,6 +119,7 @@ class OrderDao implements OrderDaoInterface
     public function countProduct()
     {
         $products =  DB::table("products")
+            ->whereNull('products.deleted_at')
             ->select(DB::raw("COUNT(id) as count_product"))
             ->first();
         return $products->count_product;
@@ -128,9 +133,10 @@ class OrderDao implements OrderDaoInterface
         $userId = Auth::user()->id;
         $userOrder = Order::Join('products', 'products.id', '=', 'orders.product_id')
             ->where('orders.user_id', '=', "$userId")
+            ->whereNull('orders.deleted_at')
             ->latest('id')
-            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id','orders.confirm','orders.quantity')
-            ->get();
+            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id', 'orders.confirm', 'orders.quantity')
+            ->paginate(5);
 
         return $userOrder;
     }

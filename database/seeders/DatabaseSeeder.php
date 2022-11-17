@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'email'=>"shoonlae123@gmail.com",
             'address'=>"Yangon",
             "password"=>Hash::make("shoonlae123"),
-            "role"=>'0',
+            "role"=>'1',
          ]);
     }
 }
