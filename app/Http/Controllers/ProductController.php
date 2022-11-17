@@ -49,7 +49,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $this->productInterface->getStore($request);
-        return redirect()->route('product.index')->with('status', "Product is add successfully.");
+        return redirect()->route('product.index')->with('status', "Product is added successfully.");
     }
 
     /**
@@ -106,7 +106,7 @@ class ProductController extends Controller
      * @return $detial and relatedCategories
      */
     public function detail($id)
-    {  
+    {
         $detail =  $this->productInterface->getDetail($id);
         $relatedId = $detail[0]->category_id;
         $relatedCategories =  $this->productInterface->getRelatedDetail($id, $relatedId);
@@ -134,7 +134,7 @@ class ProductController extends Controller
         $data=$this->productInterface->orderStorePost($request, $id);
         if($data){
             return redirect()->route('user.order', $id)
-            ->with('success_status', 'Your Order Is Confirmed.And Order Mail was sent.');
+            ->with('success_status', 'Your order is confirmed and order mail was sent.');
         }else{
             return back()->with('error_status','Admin cannot order product.');
         }

@@ -206,12 +206,12 @@
 }
 
 .alert-box {
-  border: 2px solid #f38d42;
-  background-color: #FBC5C5;
+    border: 2px solid #f38d42;
+    background-color: #FBC5C5;
 }
 
 .alert-message {
-  color: #EB4747;
+    color: #EB4747;
 }
 
 .icon-order {
