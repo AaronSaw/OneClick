@@ -16,84 +16,90 @@
 }
 
 .detail-img {
-  float: left;
-  width: 40%;
+    float: left;
+    width: 40%;
 }
 
 .detail-img img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .detail-status {
-  float: right;
-  width: 56%;
+    float: right;
+    width: 56%;
 }
 
 .detail-title {
-  color: #ff00b1;
-  font-size: 40px;
+    color: #ff00b1;
+    font-size: 33px;
 }
 
 .detail-category {
-  width: 100px;
-  padding: 2px;
-  background: #f3c1c2;
-  text-align: center;
-  border-radius: 30px;
+    margin: 15px 0;
+    padding: 5px 10px;
+    background: #f3c1c2;
+    text-align: center;
+    min-width: 100px;
+    border-radius: 30px;
 
 }
 
 .detail-description {
-  display: none;
-  color: #b1b1b1;
+    display: -webkit-box;
+    overflow: hidden;
+    color: #b1b1b1;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
-.detail-shortdescription {
-  display: inline;
-  color: #b1b1b1;
+.detail-description.show {
+    -webkit-line-clamp: initial;
 }
 
 .seemore {
-  border: oldlace;
-  background: transparent;
-  color: #a822df;
+    border: oldlace;
+    background: transparent;
+    color: #a822df;
 }
 
 .seeless {
-  display: none;
-  border: oldlace;
-  background: transparent;
-  color: #a822df;
+    display: none;
+    border: oldlace;
+    background: transparent;
+    color: #a822df;
 }
 
 .division {
     margin: 60px 0;
 }
+
 .relatedCategory {
-  color: #dd2624;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 2px 2px 2px #956262;
+    color: #dd2624;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 2px #956262;
 }
 
 .related-card {
-  margin-top: 0%;
-  margin-left: 5%;
-  max-width: 1280px;
+    margin-top: 0%;
+    margin-left: 5%;
+    max-width: 1280px;
 }
 
 .detail-price {
-  color: #2e8bff;
-  font-size: 25px;
-  font-weight: bold;
+    color: #2e8bff;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .pricetitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .order-btn {
@@ -108,7 +114,7 @@
 }
 
 .fa-cart-shopping {
-  color: #ff00b1;
+    color: #ff00b1;
 }
 
 /* Ipad */
@@ -116,6 +122,7 @@
     .detail-card {
         margin-top: 0;
     }
+
     .detail-status {
         float: right;
         width: 56%;
@@ -130,15 +137,21 @@
 
     }
 
-    .detail-shortdescription {
-        font-size: 1.8vw;
+    .detail-description {
+        font-size: 1.4vw;
     }
 
     .detail-price {
         font-size: 3vw;
     }
 
+    .seemore,
+    .seeless {
+        font-size: 1.4vw;
+    }
+
     .relatedCategory {
+        margin-bottom: 2.6vw;
         font-size: 3.3vw;
     }
 
@@ -157,11 +170,13 @@
 
     .detail-card {
         margin-top: 14.1vw;
+        padding: 0;
     }
 
     .detail-status {
         float: none;
         width: 100%;
+        padding: 1.6vw;
     }
 
     .detail-title {
@@ -173,15 +188,17 @@
 
     }
 
-    .detail-shortdescription {
-        font-size: 2vw;
+    .detail-description {
+        font-size: 1.8vw;
     }
 
     .division {
         margin: 2.3vw 0;
     }
+
     .relatedCategory {
         margin-top: 2.3vw;
+        margin-bottom: 3.1vw;
         font-size: 3.1vw;
     }
 
@@ -193,10 +210,15 @@
         position: relative;
         bottom: 3%;
         float: right;
-        font-size: 11px;
+        font-size: 1.7vw;
     }
 
     .fa-cart-shopping {
-        font-size: 2vw;
+        font-size: 12.8px;
+    }
+
+    .seemore,
+    .seeless {
+        font-size: 1.6vw;
     }
 }
