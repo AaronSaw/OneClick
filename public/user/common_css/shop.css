@@ -115,7 +115,7 @@
     .carousel {
         float: left;
         width: 33%;
-        margin-bottom: 0.781vw;
+        margin-bottom: 1.81vw;
 
     }
 
@@ -159,12 +159,12 @@
         margin-left: 8%;
     }
 
-  .carousel {
-    float: left;
-    width: 40%;
-    margin-right: 10%;
-    margin-bottom: 1.563vw;
-  }
+    .carousel {
+        float: left;
+        width: 40%;
+        margin-right: 10%;
+        margin-bottom: 1.563vw;
+    }
 
     .carousel-item {
         /*width: 93%;*/

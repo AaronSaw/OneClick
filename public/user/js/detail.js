@@ -1,16 +1,14 @@
-$(document).ready(function () {
-    $('.seemore').click(function (e) {
+$(document).ready(function (){
+    $('.seemore').click(function(e){
         e.preventDefault();
-        $('.detail-shortdescription').hide();
-        $('.detail-description').show();
+        $('.detail-description').addClass('show');
+        $(this).css('display', 'none');
         $('.seeless').show();
-        $(this).hide();
     });
-    $('.seeless').click(function (e) {
+    $('.seeless').click(function(e){
         e.preventDefault();
-        $('.detail-shortdescription').show();
-        $('.detail-description').hide();
+        $('.detail-description').removeClass('show');
+        $(this).css('display', 'none');
         $('.seemore').show();
-        $(this).hide();
     });
 });
