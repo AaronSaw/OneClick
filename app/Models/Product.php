@@ -13,4 +13,9 @@ class Product extends Model
 
     protected $table = 'products';
     protected $fillable = ['image','title','description','category_id','price'];
+
+    public function order()
+    {
+        return $this->hasMany(Order::class,'product_id', 'id');
+    }
 }

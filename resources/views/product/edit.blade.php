@@ -34,8 +34,7 @@
                 </div>
                 <div class="pinput">
                     <label for="">product Description</label>
-                    <textarea name="description" rows="10" cols="35" class="product-formTextarea">
-                    {{ old('description', trim($product->description)) }}
+                    <textarea name="description" rows="10" cols="35" class="product-formTextarea">{{ old('description', trim($product->description)) }}
                     </textarea>
                     @error('description')
                         <div class="error">{{ $message }}</div>

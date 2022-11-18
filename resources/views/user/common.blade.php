@@ -50,9 +50,11 @@
                         </li>
                     @endif
                     <li class="menu-items active">
-                        <a href="{{  route('home') }}" class="link {{ Request::is('/')|| Request::is('user-dashboard') ? 'active' : '' }}">HOME</a>
+                        <a href="{{ route('home') }}"
+                            class="link {{ Request::is('/') || Request::is('user-dashboard') ? 'active' : '' }}">HOME</a>
                     </li>
-                    <li class="menu-items"><a href="{{ url('/shop') }}" class="link {{ Request::is('shop') ? 'active' : '' }}">SHOP</a></li>
+                    <li class="menu-items"><a href="{{ url('/shop') }}"
+                            class="link {{ Request::is('shop') ? 'active' : '' }}">SHOP</a></li>
                     @if (url()->current() == 'http://127.0.0.1:8000/shop')
                         <li class="menu-items cat">
                             <span class="dropdown-items link side-arrow">
@@ -63,7 +65,8 @@
                         </li>
                     @endif
                     <li class="menu-items">
-                        <a href="{{ url('/member') }}" class="link {{ Request::is('member') ? 'active' : '' }}">TEAM MEMBER</a>
+                        <a href="{{ url('/member') }}" class="link {{ Request::is('member') ? 'active' : '' }}">TEAM
+                            MEMBER</a>
                     </li>
                 </ul>
                 @if (Auth::user())
@@ -75,11 +78,16 @@
                             <div class="dropdown-content">
                                 <a href="{{ url('/userProfile') }}"><i class="fa fa-user" aria-hidden="true"></i>
                                     Profile </a>
-                                <a href="{{ url('/order') }}"><i class="fa fa-key" aria-hidden="true"></i>
+                                <a href="{{ url('/order') }}"><i class="fa fa-table" aria-hidden="true"></i>
                                     Order List </a>
                                 <a href="{{ url('/user/changePassword') }}"><i class="fa fa-key"
                                         aria-hidden="true"></i>
                                     Change Password </a>
+                                @if (Auth::user()->role == '0')
+                                    <a href="{{ url('/admin-dashboard') }}"><i class="fa-solid fa-landmark"></i>
+                                        Dashboard
+                                    </a>
+                                @endif
                                 <a href="{{ url('/logout') }}"><i class="fa-solid fa-right-from-bracket"></i>
                                     Logout
                                 </a>
@@ -158,7 +166,7 @@
     <script src="{{ asset('user/js/detail.js') }}"></script>
     <script src="{{ asset('user/js/order.js') }}"></script>
     <script src="{{ asset('user/js/slider.js') }}"></script>
-    {{--<script src="{{ asset('user/js/tab.js') }}"></script>--}}
+    {{-- <script src="{{ asset('user/js/tab.js') }}"></script> --}}
     @stack('script')
 </body>
 

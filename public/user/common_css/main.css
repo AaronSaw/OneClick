@@ -364,9 +364,8 @@ img {
     border-radius: 10px;
 }
 
-.fa-user,
-.fa-key,
-.fa-right-from-bracket {
+.dropdown-content a i,
+.dropdown-content a svg{
     margin-right: 10px;
     margin-left: 5px;
     color: #ea319a;

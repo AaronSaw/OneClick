@@ -28,8 +28,7 @@
                 </div>
                 <div class="pinput">
                     <label for="">product Description</label><br>
-                    <textarea name="description" rows="10" class="product-formTextarea">
-                {{ old('description') }}
+                    <textarea name="description" rows="10" class="product-formTextarea">{{ old('description') }}
                 </textarea>
                     @error('description')
                         <div class="error">{{ $message }}</div>
