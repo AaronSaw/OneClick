@@ -1,69 +1,69 @@
 .profile-blk {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 140px 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 140px 0 40px;
 }
 
 .profileForm-blk {
-  position: relative;
-  width: 350px;
-  margin: 0 auto;
-  padding: 30px;
-  border: 1px solid #ddd;
-  box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
-  background-color: #fff;
-  border-radius: 20px;
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 .profile-title {
-  margin: 20px;
-  color: #d10b42;
-  font-size: 20px;
-  text-align: center;
+    margin: 20px;
+    color: #d10b42;
+    font-size: 20px;
+    text-align: center;
 }
 
 .profile li {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .social-icon {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .social-icon li {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .social-icon i {
-  color: #e65770;
+    color: #e65770;
 }
 
 .profileEdit-btn {
-  position: absolute;
-  top: 8%;
-  left: 85%;
-  border: none;
-  text-decoration: none;
+    position: absolute;
+    top: 8%;
+    left: 85%;
+    border: none;
+    text-decoration: none;
 }
 
 .profileEdit-btn a {
-  color: #000000;
+    color: #000000;
 
 }
 
 .icon-btn {
-  position: absolute;
-  top: 10%;
-  right: -10%;
+    position: absolute;
+    top: 10%;
+    right: -10%;
 }
 
 /* Ipad */
 @media screen and (min-width: 768px) and (max-width: 1280px) {
     .profile-blk {
-        margin: 13vw 0 5.2vw;
+        margin: 20vw 0 5.2vw;
     }
 }
 
@@ -73,14 +73,16 @@
         width: 46.9vw;
         padding: 2.3vw;
     }
+
     .profile-blk {
-        margin: 15.6vw 0 6.3vw;
+        margin: 20.6vw 0 6.3vw;
     }
 
     .profile-title {
         margin: 2.3vw;
         font-size: 2.8vw;
     }
+
     .profile li {
         font-size: 2.3vw;
     }

@@ -18,5 +18,4 @@
     <script src="{{ asset('js/library/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/index.js') }}"></script>
 </body>
-
 </html>

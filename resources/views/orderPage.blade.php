@@ -37,11 +37,9 @@
                     </div>
                     <p class="order-price">$ {{ $order[0]->price }}</p>
                 </div>
-                <p class="detail-shortdescription order-shortdescription ">
-                    {{ Str::words($order[0]->description, 15, '.....') }}</p>
-                <button class="seemore">seemore</button>
-                <p class="detail-description order-description">{{ $order[0]->description }}</p>
-                <button class="seeless">seeless</button>
+                <p class="detail-description">{{ $order[0]->description }}</p>
+                <button class="seemore">see more</button>
+                <button class="seeless">see less</button>
                 <hr>
                 <div class="total-blk">
                     <h4 class="total-title">Total -</h4>
