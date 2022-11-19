@@ -2,8 +2,8 @@
 @section('content')
     <div class="profile-blk">
         @if (session('status'))
-            <div class="alert-box">
-                <span class="alert-message">{{ session('status') }}<i class="fa-solid fa-xmark icon-btn js-close"></i></span>
+            <div class="success-box">
+                <span class="success-message">{{ session('status') }}<i class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif
         <div class="profileForm-blk">

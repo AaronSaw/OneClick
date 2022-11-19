@@ -3,10 +3,11 @@
 
 <head>
     <title>One Click</title>
+    <link rel="stylesheet" href="{{ asset('user/common_css/pagi.css') }}">
 </head>
 
 <body>
-    <style>
+    {{--<style>
         .pagi-nav {
             margin-top: 15px display: block;
             font-weight: bold;
@@ -34,7 +35,14 @@
             padding: 5px;
             background-color: #fb5757;
         }
-    </style>
+        /* Ipad */
+        @media screen and (min-width: 768px) and (max-width: 1280px) {
+            .pagi_nav {
+                font-size: 13px;
+                padding: 5px;
+            }
+        }
+    </style>--}}
 </body>
 <!-- resources/views/vendor/pagination/custom.blade.php -->
 

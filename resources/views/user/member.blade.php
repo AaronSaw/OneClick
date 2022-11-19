@@ -13,10 +13,10 @@
                             <div class="info">
                                 <div class="name">Saw Kyaw Myint</div>
                                 <div class="detail-info">
-                                    <p>Second year student from Univerversity of Computer Studies, Loikaw.</p>
+                                    <p>Second year student from University of Computer Studies, Loikaw.</p>
                                     <div class="member-info">
-                                        <p class="email-info">Email - example@gmail.com</p>
-                                        <p class="add-info">Address - Yangon</p>
+                                        <p class="email-info">Email - sawkyaw@gmail.com</p>
+                                        <p class="add-info">Address - Mandalay</p>
                                     </div>
                                 </div>
                                 <div class="social-media">
@@ -38,8 +38,8 @@
                                 <div class="detail-info">
                                     <p> Fifth year(EC) student from Technological University(Mandalay)</p>
                                     <div class="member-info">
-                                        <p class="email-info">Email - example@gmail.com</p>
-                                        <p class="add-info">Address - Yangon</p>
+                                        <p class="email-info">Email - shoon@gmail.com</p>
+                                        <p class="add-info">Address - Mandalay</p>
                                     </div>
                                 </div>
                                 <div class="social-media">
@@ -61,7 +61,7 @@
                                 <div class="detail-info">
                                     <p>Graduated from University of Computer Studies, Taungoo</p>
                                     <div class="member-info">
-                                        <p class="email-info">Email - example@gmail.com</p>
+                                        <p class="email-info">Email - thw@gmail.com</p>
                                         <p class="add-info">Address - Yangon</p>
                                     </div>
                                 </div>
@@ -84,8 +84,8 @@
                                 <div class="detail-info">
                                     <p> Graduated from Technological University(Taunggyi)</p>
                                     <div class="member-info">
-                                        <p class="email-info">Email - example@gmail.com</p>
-                                        <p class="add-info">Address - Yangon</p>
+                                        <p class="email-info">Email - may@gmail.com</p>
+                                        <p class="add-info">Address - Taunggyi</p>
                                     </div>
                                 </div>
                                 <div class="social-media">

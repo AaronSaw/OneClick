@@ -94,7 +94,14 @@ input {
     left: 90%;
 }
 
+/* Ipad */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .profileEdit-blk {
+        margin: 12.6vw 0 6.3vw;
+    }
+}
 
+/* SP */
 @media screen and (max-width: 767.9px) {
 
     .profileEdit-blk {
@@ -107,8 +114,8 @@ input {
     }
 
     .profileForm-edit {
-        padding: 2.3vw;
         width: 62.5vw;
+        padding: 2.3vw;
     }
 
     .input-gp input {
@@ -130,6 +137,7 @@ input {
     label {
         font-size: 2.188vw;
     }
+
     .input-gp {
         padding-bottom: 3.125vw;
     }
