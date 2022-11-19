@@ -23,14 +23,14 @@
                         <td>{{ $ctitle }}</td>
                         <td>{{ $order->created_at->format('d M Y') }}</td>
                         <td>{{ $order->quantity }}</td>
-                        <td>${{ $order->price }}</td>
+                        <td>{{ number_format($order->price) }} MMK</td>
                     </tr>
                 @empty
                 @endforelse
                 <tr>
                     <td colspan="2"></td>
                     <td colspan="2">Total</td>
-                    <td>${{ $prices }}</td>
+                    <td>{{ number_format($prices) }} MMK</td>
                 </tr>
             </tbody>
         </table>

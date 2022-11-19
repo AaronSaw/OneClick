@@ -3,7 +3,7 @@
     <div class="ccard">
         <h2 class="tblttl">Category Lists</h2>
         @if (session('status'))
-            <div class="alert ">
+            <div class="alert category-alert">
                 {{ session('status') }}
             </div>
         @endif

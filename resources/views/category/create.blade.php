@@ -13,7 +13,7 @@
                     @enderror
                     <div class="form-footerBtn">
                         <button class="button cancel" type="reset"><a href="{{ url('category') }}">Cancel<a></button>
-                        <button class="button-primary" type="submit">Create</button>
+                        <button class="button-primary btn-create" type="submit">Create</button>
                     </div>
                 </div>
             </form>

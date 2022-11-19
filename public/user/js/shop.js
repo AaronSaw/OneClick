@@ -21,7 +21,7 @@ $(document).ready(function () {
                             <div class="product-info">
                                 <a href=""><h3 class="info-name"><span> Name:</span> ${el.title}</h3> </a>
                                 <strong class="price">
-                                    <span> Price:  </span>$ ${el.price}
+                                    <span> Price:  </span> ${ el.price.toLocaleString()} MMK
                                 </strong>
                             </div>
                         </li>

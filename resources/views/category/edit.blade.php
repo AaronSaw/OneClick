@@ -2,8 +2,7 @@
 @section('content')
     <div class="category_cform">
         <div class="ccard ">
-            <h2 class="tblttl">Edit Category</h2>
-            <hr>
+            <h2 class="tblttl edit-ttl">Edit Category</h2>
             <form action="{{ route('category.update', $category->id) }}" method="post">
                 @csrf
                 @method('put')

@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             "name"=>"Shoon Lae Yee Win",
             'email'=>"shoonlae123@gmail.com",
             'address'=>"Yangon",
-            "password"=>Hash::make("shoonlae123"),
+            "password"=>Hash::make("Shoonlae123@"),
             "role"=>'0',
          ]);
     }

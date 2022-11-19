@@ -28,9 +28,7 @@
                 </div>
                 <div class="pinput">
                     <label for="">product Description</label><br>
-                    <textarea name="description" rows="10" class="product-formTextarea">
-                {{ old('description') }}
-                </textarea>
+                    <textarea name="description" rows="10" class="product-formTextarea">{{ old('description') }}</textarea>
                     @error('description')
                         <div class="error">{{ $message }}</div>
                     @enderror
@@ -53,7 +51,7 @@
                 <img id="preview-image" src="" style="max-height: 150px;">
                 <div class="productform-footerBtn">
                     <button class="button cancel" type="reset"><a href="{{ url('product') }}">Cancel<a></button>
-                    <button class="button-primary" type="submit">Create</button>
+                    <button class="button-primary btn-create" type="submit">Create</button>
                 </div>
             </form>
         </div>

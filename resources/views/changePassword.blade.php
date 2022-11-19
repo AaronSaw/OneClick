@@ -2,8 +2,8 @@
 @section('content')
     <div class="changePassword">
         @if (session('success_message'))
-            <div class="alert-box">
-                <span class="alert-message">{{ session('success_message') }}<i
+            <div class="change-success">
+                <span class="change-message">{{ session('success_message') }}<i
                         class="fa-solid fa-xmark icon-btn js-close"></i></span>
             </div>
         @endif
@@ -16,7 +16,7 @@
                     <label for="current_password">Current Password:</label><br>
                     <input type="password" name="current_password" id="current_password"
                         placeholder="Enter current password..." value="{{ old('current_password') }}">
-                    @error('old_password')
+                    @error('current_password')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>

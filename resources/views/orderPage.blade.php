@@ -26,7 +26,7 @@
                 <h2 class="order-title">{{ $order[0]->title }}</h2>
                 <div class="order-priceTitle">
                     <h4 class="order-category">{{ $order[0]->ctitle }}</h4>
-                    <p class="order-price">$ {{ $order[0]->price }}</p>
+                    <p class="order-price"> {{ number_format($order[0]->price) }} MMK</p>
                 </div>
                 <p class="detail-shortdescription order-shortdescription ">
                     {{ Str::words($order[0]->description, 15, '.....') }}</p>
@@ -36,7 +36,7 @@
                 <hr>
                 <div class="total-blk">
                     <h4 class="total-title">Total -</h4>
-                    <p class="order-price">$ {{ $order[0]->price }}</p>
+                    <p class="order-price"> {{ number_format($order[0]->price) }} MMK</p>
                 </div>
                 <button class="checkOut"><a href="#">Check Out</a></button>
             </div>

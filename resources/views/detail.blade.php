@@ -11,7 +11,7 @@
                     <h2 class="detail-title">{{ $detail[0]->title }}</h2>
                     <div class="pricetitle">
                         <h4 class="detail-category">{{ $detail[0]->ctitle }}</h4>
-                        <p class="detail-price">$ {{ $detail[0]->price }}</p>
+                        <p class="detail-price"> {{ number_format($detail[0]->price) }} MMK</p>
                     </div>
                     <p class="detail-shortdescription">{{ Str::words($detail[0]->description, 15, '.....') }}</p><button
                         class="seemore">seemore</button>

@@ -2,10 +2,9 @@
 
 namespace App\Rules;
 
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Validation\Rule;
 
-class MatchOldPassword implements Rule
+class CustomEmailValidation implements Rule
 {
     /**
      * Create a new rule instance.
@@ -26,9 +25,18 @@ class MatchOldPassword implements Rule
      */
     public function passes($attribute, $value)
     {
-        return Hash::check($value, auth()->user()->password);
-    }
+        $domainPart = explode('@', $value)[1] ?? null;
 
+        if (!$domainPart) {
+            return false;
+        }
+
+        if ($domainPart != 'gmail.com') {
+            return false;
+        }
+
+        return true;
+    }
     /**
      * Get the validation error message.
      *
@@ -36,6 +44,6 @@ class MatchOldPassword implements Rule
      */
     public function message()
     {
-        return 'The :attribute does not match.';
+        return 'The :attribute must be a @gmail.com address.';
     }
 }
