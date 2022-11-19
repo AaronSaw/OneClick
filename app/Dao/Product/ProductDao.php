@@ -98,6 +98,7 @@ class ProductDao implements ProductDaoInterface
     public function getDelete($product)
     {
         Storage::delete("public/" . $product->image);
+        $product->order()->delete();
         $product->delete();
     }
 
@@ -154,7 +155,7 @@ class ProductDao implements ProductDaoInterface
             return false;
         }else{
             $input = Order::create($order_data);
-            $header = "<h3> Hi " . Auth::user()->name . " , </h3><h1>Thank you fo your Order!</h1><h4>Order No: #" . $input->id . "</h4>";
+            $header = "<h3> Hi " . Auth::user()->name . " , </h3><h1>Thank you for your Order!</h1><h4>Order No: #" . $input->id . "</h4>";
             $body = "<h3>Order Summary:</h3><hr><table><tr><th>Product Name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Total Amount</th></tr><tr><td>" . $input->product->title . "</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>" . $input->product->price . "</td></tr></table><br><h3> From One click </h3>";
             $mail = Mail::send(
                 'orderMail',
@@ -179,6 +180,7 @@ class ProductDao implements ProductDaoInterface
         return [
             'user_id' => $request->user_id,
             'product_id' => $request->product_id,
+            'quantity'=>$request->quantity,
         ];
     }
 }

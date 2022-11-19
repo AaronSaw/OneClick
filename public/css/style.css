@@ -1,78 +1,80 @@
 * {
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('../img/pc-bg-02.jpg') no-repeat center/100% 100%;
+    background: url('../img/pc-bg-02.jpg') no-repeat;
     background-color: #F5EDDC;
+    background-size: cover;
+    background-position: center;
     font-family: 'Arial', sans-serif;
     font-size: 14px;
-  }
+}
 
-  .login-form,
-  .register-form,
-  .forgot-form,
-  .reset-form {
+.login-form,
+.register-form,
+.forgot-form,
+.reset-form {
     position: relative;
-  }
+}
 
-  .form-blk {
+.form-blk {
     margin: 0 auto;
     padding: 30px;
     border: 1px solid #ddd;
     box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
     background-color: #fff;
     border-radius: 20px;
-  }
+}
 
-  .title {
+.title {
     margin-bottom: 20px;
     font-size: 20px;
     text-align: center;
-  }
+}
 
 
-  .input-gp {
+.input-gp {
     padding-bottom: 20px;
-  }
+}
 
-  .login-form .input-gp:nth-of-type(2) {
+.login-form .input-gp:nth-of-type(2) {
     padding-bottom: 24px;
-  }
+}
 
-  ::placeholder {
+::placeholder {
     font-size: 14px;
-  }
+}
 
-  .login-btn,
-  .register-btn,
-  .forgot-btn,
-  .reset-btn {
+.login-btn,
+.register-btn,
+.forgot-btn,
+.reset-btn {
     width: 300px;
     margin-bottom: 15px;
     border: none;
     box-shadow: 6px 6px 3px rgb(250 112 112 / 80%);
-    background-color: #ECB390;
+    background-color: #f7a979;
     color: #fff;
     font-size: 16px;
-  }
+}
 
-  .login-btn:hover,
-  .register-btn:hover,
-  .forgot-btn:hover,
-  .reset-btn:hover {
+.login-btn:hover,
+.register-btn:hover,
+.forgot-btn:hover,
+.reset-btn:hover {
     box-shadow: none;
-    background: #F7A76C;
+    background: #f18f47;
     transform: translate(0, 0.375em);
     transition: all 0.3s;
-  }
+}
 
-  input,
-  textarea {
+input,
+textarea {
     width: 320px;
     margin-top: 5px;
     padding: 10px 10px;
@@ -80,38 +82,38 @@
     font-family: 'Arial', sans-serif;
     font-size: 14px;
     border-radius: 10px;
-  }
+}
 
-  .forgot-pw {
+.forgot-pw {
     margin-bottom: 5px;
     text-align: center;
-  }
+}
 
-  .forgot-pw p {
+.forgot-pw p {
     margin-bottom: 5px;
-  }
+}
 
-  .forgot-pw p a {
+.forgot-pw p a {
     color: #6E85B7;
-  }
+}
 
-  .error-message {
+.error-message {
     display: block;
     width: 320px;
     margin-top: 4px;
     color: #EB4747;
     font-size: 14px;
-  }
+}
 
-  .alert-message,
-  .message-green {
+.alert-message,
+.message-green {
     position: relative;
     color: #EB4747;
     font-size: 14px;
-  }
+}
 
-  .alert-box,
-  .alert-green {
+.alert-box,
+.alert-green {
     display: table;
     position: absolute;
     top: -60px;
@@ -123,83 +125,412 @@
     text-align: center;
     transform: translateX(-50%);
     border-radius: 8px;
-  }
+}
 
-  .icon-btn {
+.icon-btn {
     position: absolute;
     right: -25%;
-  }
+}
 
-  /**Register Form**/
-  .register-form .form-blk {
+/**Register Form**/
+.register-form .form-blk {
     height: max-content;
     padding: 30px 8px;
-  }
+}
 
-  .form-reg {
+.form-reg {
     display: flex;
     justify-content: center;
     width: 400px;
     overflow: auto;
     max-height: 500px;
-  }
+}
 
-  textarea {
+textarea {
     resize: none;
-  }
+}
 
-  .register-blk,
-  .login-blk,
-  .forgot-blk,
-  .reset-blk {
+.register-blk,
+.login-blk,
+.forgot-blk,
+.reset-blk {
     text-align: center;
-  }
+}
 
-  .form-txt a {
+.form-txt a {
     color: #6E85B7;
-  }
+}
 
-  .register-form .form-reg::-webkit-scrollbar {
+.register-form .form-reg::-webkit-scrollbar {
     width: 0.3rem;
-  }
+}
 
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgb(76 103 147 / 30%);
-  }
+}
 
-  .alert-green {
+.alert-green {
     width: 420px;
     margin-top: 8px;
     border: 2px solid #11e134;
     background-color: #ddefbb;
-  }
+}
 
-  .message-green {
+.message-green {
     color: #666;
-  }
+}
 
-  .message-green .icon-btn {
+.message-green .icon-btn {
     position: absolute;
     right: 0;
-  }
+}
 
-  /**Forgot Password**/
-  .forgot-form .icon-btn {
+/**Forgot Password**/
+.forgot-form .icon-btn {
     right: -18%;
-  }
+}
 
-  .icon-forgot {
+.icon-forgot {
     position: absolute;
     top: 5%;
     right: 6%;
     color: #000;
     font-size: 16px;
-  }
+}
 
-  .forgot-form .form-blk,
-  .reset-form .form-blk {
+.forgot-form .form-blk,
+.reset-form .form-blk {
     padding: 40px 30px 30px;
-  }
+}
+
+/**Reset Password**/
+.reset-form .icon-forgot {
+    top: 3%;
+    right: 7%;
+}
+
+/**Animation **/
+#background-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@keyframes animateBubble {
+    0% {
+        margin-top: 500px;
+    }
+
+    100% {
+        margin-top: -100%;
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 50px;
+    }
+}
+
+.bubble {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+    border-radius: 50%;
+}
+
+.bubble:after {
+    position: absolute;
+    left: 10px;
+    width: 180px;
+    height: 180px;
+    box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    /* Opera 12+ */
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    content: "";
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    border-radius: 50%;
+}
+
+.x1 {
+    top: 5%;
+    left: -5%;
+    transform: scale(0.6);
+    animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+
+.x2 {
+    top: 80%;
+    left: 5%;
+    transform: scale(0.4);
+    animation: animateBubble 10s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x3 {
+    top: 40%;
+    left: 10%;
+    transform: scale(0.7);
+    animation: animateBubble 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+
+.x4 {
+    top: 10%;
+    left: 80%;
+    transform: scale(0.3);
+    animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+}
+
+.x5 {
+    top: 50%;
+    left: 90%;
+    transform: scale(0.6);
+    animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x6 {
+    top: 80%;
+    left: 80%;
+    transform: scale(0.3);
+    animation: animateBubble 22s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+
+/*----------------------------------------
+ Ipad
+-----------------------------------------*/
+@media only screen and (min-width:768px) and (max-width:1280px) {
+    body {
+        font-size: 1.094vw;
+    }
+
+    .form-blk {
+        padding: 2.344vw;
+        border: 0.078vw solid #ddd;
+        box-shadow: 0.625vw 0.625vw 0.313vw rgb(255 4 4 / 30%);
+        border-radius: 1.563vw;
+    }
+
+    .title {
+        margin-bottom: 1.563vw;
+        font-size: 1.563vw;
+    }
+
+    .input-gp {
+        padding-bottom: 1.563vw;
+    }
+
+    .login-form .input-gp:nth-of-type(2) {
+        padding-bottom: 1.875vw;
+    }
+
+    ::placeholder {
+        font-size: 1.094vw;
+    }
+
+    .login-btn,
+    .register-btn,
+    .forgot-btn,
+    .reset-btn {
+        width: 23.438vw;
+        margin-bottom: 1.172vw;
+        box-shadow: 0.469vw 0.469vw 0.234vw rgb(250 112 112 / 80%);
+        font-size: 1.25vw;
+    }
+
+    input,
+    textarea {
+        width: 25vw;
+        margin-top: 0.391vw;
+        padding: 0.781vw 0.781vw;
+        border: 0.156vw solid #B7C4CF;
+        font-size: 1.094vw;
+        border-radius: 0.781vw;
+    }
+
+    .forgot-pw {
+        margin-bottom: 0.391vw;
+    }
+
+    .forgot-pw p {
+        margin-bottom: 0.391vw;
+    }
+
+    .error-message {
+        margin-top: 0.313vw;
+        font-size: 1.094vw;
+    }
+
+    .alert-message,
+    .message-green {
+        font-size: 1.094vw;
+    }
+
+    .alert-box,
+    .alert-green {
+        top: -4.688vw;
+        left: 50%;
+        width: 30.469vw;
+        padding: 1.016vw;
+        border: 0.156vw solid #f38d42;
+        border-radius: 0.625vw;
+    }
+
+    /**Register Form**/
+    .register-form .form-blk {
+        padding: 2.344vw 0.625vw;
+    }
+
+    .form-reg {
+        width: 31.25vw;
+        max-height: 39.063vw;
+    }
+
+    .alert-green {
+        width: 32.469vw;
+        margin-top: 0.625vw;
+        border: 0.156vw solid #ffbec0;
+    }
+
+    /**Forgot Password**/
+    .icon-forgot {
+        font-size: 1.25vw;
+    }
+
+    .forgot-form .form-blk,
+    .reset-form .form-blk {
+        padding: 3.125vw 2.344vw 2.344vw;
+    }
+}
+
+/*----------------------------------------
+ SP
+-----------------------------------------*/
+@media all and (max-width:767.9px) {
+    body {
+        background: url('../img/mobile-bg-01.jpg') no-repeat center/cover;
+        font-size: 1.875vw;
+    }
+
+    .form-blk {
+        padding: 4.5vw 4.5vw 1.5vw;
+        border: 0.157vw solid #ddd;
+        box-shadow: 0.75vw 0.75vw 0.625vw rgb(255 4 4 / 30%), -0.7vw -0.7vw 0.6vw rgb(221 221 221 / 50%);
+        border-radius: 3.125vw;
+    }
+
+    .title {
+        margin-bottom: 3.125vw;
+        font-size: 3.125vw;
+    }
+
+
+    .input-gp {
+        padding-bottom: 2.344vw;
+    }
+
+    .login-form .input-gp:nth-of-type(2) {
+        padding-bottom: 3.75vw;
+    }
+
+    ::placeholder {
+        font-size: 1.875vw;
+    }
+
+    .login-btn,
+    .register-btn,
+    .forgot-btn,
+    .reset-btn {
+        width: 35.375vw;
+        margin-bottom: 2.344vw;
+        box-shadow: 0.938vw 0.938vw 0.469vw rgb(250 112 112 / 80%);
+        font-size: 2.188vw;
+    }
+
+    input,
+    textarea {
+        width: 35.375vw;
+        margin-top: 0.782vw;
+        padding: 1.563vw 1.563vw;
+        border: 0.313vw solid #B7C4CF;
+        font-size: 1.875vw;
+        border-radius: 1.563vw;
+    }
+
+    .forgot-pw {
+        margin-bottom: 0.782vw;
+    }
+
+    .forgot-pw p {
+        margin-bottom: 0.782vw;
+    }
+
+    .error-message {
+        margin-top: 0.625vw;
+        font-size: 1.875vw;
+        max-width: 34vw;
+    }
+
+    .alert-message,
+    .message-green {
+        font-size: 1.875vw;
+    }
+
+    .alert-box,
+    .alert-green {
+        top: -6.875vw;
+        width: 45vw;
+        padding: 0.782vw;
+        border: 0.313vw solid #f38d42;
+        border-radius: 1.25vw;
+    }
+
+    .alert-green {
+        width: 46vw;
+        margin-top: 1.25vw;
+        border: 0.313vw solid #ffbec0;
+    }
+
+    .icon-btn {
+        right: -11%;
+    }
+
+    /**Register Form**/
+    .register-form .form-blk {
+        height: 83vw;
+        padding: 4.688vw 1.25vw;
+        border: 0.157vw solid #ddd;
+        border-radius: 3.125vw;
+    }
+
+    .form-reg {
+        width: 43.5vw;
+        height: 72vw;
+    }
+
+    .register-btn {
+        margin-bottom: 1.75vw;
+    }
+
+    /**Forgot Password**/
+
+    .icon-forgot {
+        font-size: 2.5vw;
+    }
+
+    .forgot-form .form-blk,
+    .reset-form .form-blk {
+        padding: 6.25vw 4.688vw 4.688vw;
+    }
 
   /**Reset Password**/
   .reset-form .icon-forgot {
@@ -302,232 +633,4 @@
     transform: scale(0.3);
     animation: animateBubble 22s linear infinite, sideWays 2s ease-in-out infinite alternate;
   }
-
-  /*----------------------------------------
-   Ipad
-  -----------------------------------------*/
-  @media only screen and (min-width:768px) and (max-width:1280px) {
-    body {
-      font-size: 1.094vw;
-    }
-
-    .form-blk {
-      padding: 2.344vw;
-      border: 0.078vw solid #ddd;
-      box-shadow: 0.625vw 0.625vw 0.313vw rgb(255 4 4 / 30%);
-      border-radius: 1.563vw;
-    }
-
-    .title {
-      margin-bottom: 1.563vw;
-      font-size: 1.563vw;
-    }
-
-    .input-gp {
-      padding-bottom: 1.563vw;
-    }
-
-    .login-form .input-gp:nth-of-type(2) {
-      padding-bottom: 1.875vw;
-    }
-
-    ::placeholder {
-      font-size: 1.094vw;
-    }
-
-    .login-btn,
-    .register-btn,
-    .forgot-btn,
-    .reset-btn {
-      width: 23.438vw;
-      margin-bottom: 1.172vw;
-      box-shadow: 0.469vw 0.469vw 0.234vw rgb(250 112 112 / 80%);
-      font-size: 1.25vw;
-    }
-
-    input,
-    textarea {
-      width: 25vw;
-      margin-top: 0.391vw;
-      padding: 0.781vw 0.781vw;
-      border: 0.156vw solid #B7C4CF;
-      font-size: 1.094vw;
-      border-radius: 0.781vw;
-    }
-
-    .forgot-pw {
-      margin-bottom: 0.391vw;
-    }
-
-    .forgot-pw p {
-      margin-bottom: 0.391vw;
-    }
-
-    .error-message {
-      margin-top: 0.313vw;
-      font-size: 1.094vw;
-    }
-
-    .alert-message,
-    .message-green {
-      font-size: 1.094vw;
-    }
-
-    .alert-box,
-    .alert-green {
-      top: -4.688vw;
-      left: 50%;
-      width: 30.469vw;
-      padding: 1.016vw;
-      border: 0.156vw solid #f38d42;
-      border-radius: 0.625vw;
-    }
-
-    /**Register Form**/
-    .register-form .form-blk {
-      padding: 2.344vw 0.625vw;
-    }
-
-    .form-reg {
-      width: 31.25vw;
-      max-height: 39.063vw;
-    }
-
-    .alert-green {
-      width: 32.469vw;
-      margin-top: 0.625vw;
-      border: 0.156vw solid #ffbec0;
-    }
-
-    /**Forgot Password**/
-    .icon-forgot {
-      font-size: 1.25vw;
-    }
-
-    .forgot-form .form-blk,
-    .reset-form .form-blk {
-      padding: 3.125vw 2.344vw 2.344vw;
-    }
-  }
-
-  /*----------------------------------------
-   SP
-  -----------------------------------------*/
-  @media all and (max-width:767.9px) {
-    body {
-      background: url('../img/mobile-bg-01.jpg') no-repeat center/cover;
-      font-size: 1.875vw;
-    }
-
-    .form-blk {
-      padding: 4.5vw 4.5vw 1.5vw;
-      border: 0.157vw solid #ddd;
-      box-shadow: 0.75vw 0.75vw 0.625vw rgb(255 4 4 / 30%), -0.7vw -0.7vw 0.6vw rgb(221 221 221 / 50%);
-      border-radius: 3.125vw;
-    }
-
-    .title {
-      margin-bottom: 3.125vw;
-      font-size: 3.125vw;
-    }
-
-
-    .input-gp {
-      padding-bottom: 2.344vw;
-    }
-
-    .login-form .input-gp:nth-of-type(2) {
-      padding-bottom: 3.75vw;
-    }
-
-    ::placeholder {
-      font-size: 1.875vw;
-    }
-
-    .login-btn,
-    .register-btn,
-    .forgot-btn,
-    .reset-btn {
-      width: 35.375vw;
-      margin-bottom: 2.344vw;
-      box-shadow: 0.938vw 0.938vw 0.469vw rgb(250 112 112 / 80%);
-      font-size: 2.188vw;
-    }
-
-    input,
-    textarea {
-      width: 35.375vw;
-      margin-top: 0.782vw;
-      padding: 1.563vw 1.563vw;
-      border: 0.313vw solid #B7C4CF;
-      font-size: 1.875vw;
-      border-radius: 1.563vw;
-    }
-
-    .forgot-pw {
-      margin-bottom: 0.782vw;
-    }
-
-    .forgot-pw p {
-      margin-bottom: 0.782vw;
-    }
-
-    .error-message {
-      margin-top: 0.625vw;
-      font-size: 1.875vw;
-      max-width: 34vw;
-    }
-
-    .alert-message,
-    .message-green {
-      font-size: 1.875vw;
-    }
-
-    .alert-box,
-    .alert-green {
-      top: -6.875vw;
-      width: 45vw;
-      padding: 0.782vw;
-      border: 0.313vw solid #f38d42;
-      border-radius: 1.25vw;
-    }
-
-    .alert-green {
-      width: 46vw;
-      margin-top: 1.25vw;
-      border: 0.313vw solid #ffbec0;
-    }
-
-    .icon-btn {
-      right: -11%;
-    }
-
-    /**Register Form**/
-    .register-form .form-blk {
-      height: 83vw;
-      padding: 4.688vw 1.25vw;
-      border: 0.157vw solid #ddd;
-      border-radius: 3.125vw;
-    }
-
-    .form-reg {
-      width: 43.5vw;
-      height: 72vw;
-    }
-
-    .register-btn {
-      margin-bottom: 1.75vw;
-    }
-
-    /**Forgot Password**/
-
-    .icon-forgot {
-      font-size: 2.5vw;
-    }
-
-    .forgot-form .form-blk,
-    .reset-form .form-blk {
-      padding: 6.25vw 4.688vw 4.688vw;
-    }
-
-  }
+}

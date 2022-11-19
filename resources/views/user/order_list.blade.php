@@ -26,6 +26,9 @@
                         <td>{{ number_format($order->price) }} MMK</td>
                     </tr>
                 @empty
+             <tr>
+                <td colspan="5" class="empty">Empty Order</td>
+             </tr>
                 @endforelse
                 <tr>
                     <td colspan="2"></td>
@@ -34,6 +37,8 @@
                 </tr>
             </tbody>
         </table>
-
+        <div class="">
+            {{ $userOrder->links('vendor.pagination.custom-pagi') }}
+        </div>
     </div>
 @endsection

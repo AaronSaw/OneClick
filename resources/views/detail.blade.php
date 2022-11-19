@@ -42,7 +42,7 @@
                                         <h3><span class="info-name"> Name:</span> {{ $conCategory->title }}</h3>
                                     </a>
                                     <strong>
-                                        <span class="price"> Price: </span>$ {{ $conCategory->price }}
+                                        <span class="price"> Price: </span> {{ number_format($conCategory->price) }} MMK
                                     </strong>
                                 </div>
                             </div>

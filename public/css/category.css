@@ -52,15 +52,16 @@
   .category-alert{
     display: table;
     position: absolute;
-    top: 5.07vw;
-    left: 62%;
-    width: 30.421vw;
-    padding: 1.014vw;
-    border: 0.156vw solid #11e134;
+    top: 65px;
+    left: 60%;
+    width: 390px;
+    padding: 13px;
+    border: 2px solid #11e134;
     background-color: #ddefbb;
     text-align: center;
     transform: translateX(-50%);
-    border-radius: 0.624vw;
+    z-index: 99;
+    border-radius: 8px;
   }
   /*Tablet Size*/
   @media screen and (min-width: 768px) and (max-width: 1160px) {
@@ -106,5 +107,6 @@
         padding: 2vw;
         border: 0.313vw solid #11e134;
         border-radius: 1.25vw;
+        font-size: 2.5vw;
     }
   }

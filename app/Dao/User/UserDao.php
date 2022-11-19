@@ -25,6 +25,7 @@ class UserDao implements UserDaoInterface
     public function deleteUser($id)
     {
         $user = User::findOrfail($id);
+        $user->order()->delete();
         $user->delete();
     }
 

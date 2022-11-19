@@ -111,6 +111,12 @@
     z-index: 99;
     border-radius: 8px;
   }
+
+  .empty{
+    color: #d10b42;
+    font-size: 16px;
+    font-weight: bold;
+  }
   /*Tablet Size*/
   @media screen and (min-width: 768px) and (max-width: 1280px) {
     .sbutton {
@@ -129,6 +135,9 @@
     }
     .product_pform .ccard{
         margin-top: 0;
+    }
+    .empty{
+        font-size: 1.5vw;
     }
   }
 
@@ -224,4 +233,7 @@
         font-size: 2.5vw;
     }
 
+    .product_pform .empty{
+        font-size: 1.5vw;
+    }
   }

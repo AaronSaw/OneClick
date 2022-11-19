@@ -1,39 +1,46 @@
 .user-order {
-  width: 80%;
-  margin: 100px auto 0;
+    width: 80%;
+    margin: 100px auto 0;
 }
 
 .list-name {
-  color: #666666;
-  font-weight: bold;
-  text-transform: uppercase;
+    color: #666666;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .list-order {
-  color: #d73131;
-  font-weight: bold;
-  text-transform: uppercase;
+    color: #d73131;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .list-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.empty {
+    color: #666666;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #customers {
-  width: 100%;
-  margin-bottom: 40px;
-  border: 2px solid #e759a9;
-  border-collapse: collapse;
-  transition: .5s;
+    width: 100%;
+    margin-bottom: 40px;
+    border: 2px solid #e759a9;
+    border-collapse: collapse;
+    transition: .5s;
 }
 
 #customers td,
 #customers th {
-  padding: 8px;
-  border: 1px solid #3e3232;
+    padding: 8px;
+    border: 1px solid #3e3232;
 }
 
 .confirm {
@@ -42,25 +49,25 @@
 }
 
 #customers tr:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-color: #ffb5b5;
-  color: #ff2292;
-  text-align: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #ffb5b5;
+    color: #ff2292;
+    text-align: left;
 }
 
 #customers:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1160px) {
     .user-order {
         width: 80%;
-        margin: 15.625vw auto 0;
+        margin: 12.625vw auto 0;
     }
 
     .list-name {
@@ -94,22 +101,31 @@
     #customers:hover {
         transform: translateY(-0.313vw);
     }
+
+    .empty {
+        font-size: 2.204vw;
+    }
+
 }
 
-@media screen and (max-width: 767.9px)  {
+@media screen and (max-width: 767.9px) {
     .user-order {
         width: 80%;
         margin: 15.625vw auto 0;
     }
-    h2{
+
+    h2 {
         font-size: 2.344vw;
     }
-    th{
-  font-size: 2.344vw;
+
+    th {
+        font-size: 2.344vw;
     }
-    td{
-        font-size:2.344vw;
+
+    td {
+        font-size: 2.344vw;
     }
+
     .list-name {
         font-size: 2.813vw;
     }
@@ -140,5 +156,9 @@
 
     #customers:hover {
         transform: translateY(-0.313vw);
+    }
+
+    .empty {
+        font-size: 1.804vw;
     }
 }

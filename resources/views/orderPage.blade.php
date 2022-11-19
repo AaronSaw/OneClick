@@ -13,6 +13,9 @@
                     class="fa-solid fa-xmark icon-order js-close"></i></span>
         </div>
     @endif
+    <div class="quantity-box">
+        <span class="alert-message">Quantity must be at leat one and please fill quantity.
+    </div>
     <div class="order">
         <div class="order-card clearfix">
             <div class="order-header">
@@ -26,17 +29,21 @@
                 <h2 class="order-title">{{ $order[0]->title }}</h2>
                 <div class="order-priceTitle">
                     <h4 class="order-category">{{ $order[0]->ctitle }}</h4>
+                    <div class="quantity-group">
+                        <a class="quantity-minus" href=""><i class="fas fa-minus"></i></a>
+                        <input type="number" class="quantity" value="1" min="1"
+                            Unit-price={{ $order[0]->price }}>
+                        <a class=" quantity-plus" href=""> <i class="fas fa-plus"></i></a>
+                    </div>
                     <p class="order-price"> {{ number_format($order[0]->price) }} MMK</p>
                 </div>
-                <p class="detail-shortdescription order-shortdescription ">
-                    {{ Str::words($order[0]->description, 15, '.....') }}</p>
-                <button class="seemore">seemore</button>
-                <p class="detail-description order-description">{{ $order[0]->description }}</p>
-                <button class="seeless">seeless</button>
+                <p class="detail-description">{{ $order[0]->description }}</p>
+                <button class="seemore">see more</button>
+                <button class="seeless">see less</button>
                 <hr>
                 <div class="total-blk">
                     <h4 class="total-title">Total -</h4>
-                    <p class="order-price"> {{ number_format($order[0]->price) }} MMK</p>
+                    <p class="order-price"><span class="total-price">{{  number_format($order[0]->price) }}</span> <span>MMk</span></p>
                 </div>
                 <button class="checkOut"><a href="#">Check Out</a></button>
             </div>
@@ -50,12 +57,12 @@
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="product_id" value="{{ $order[0]->id }}">
+                <input type="hidden" class="order_quantity" name="quantity" value="1">
                 <div class="btn-sec">
                     <button class="order-cancel"><a href="{{ route('user.order', $order[0]->id) }}">Cancel</a></button>
                     <button type="submit">Yes</button>
                 </div>
             </form>
         </div>
-
     </div>
 @endsection
