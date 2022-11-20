@@ -35,7 +35,7 @@
                             Unit-price={{ $order[0]->price }}>
                         <a class=" quantity-plus" href=""> <i class="fas fa-plus"></i></a>
                     </div>
-                    <p class="order-price">$ {{ $order[0]->price }}</p>
+                    <p class="order-price"> {{ number_format($order[0]->price) }} MMK</p>
                 </div>
                 <p class="detail-description">{{ $order[0]->description }}</p>
                 <button class="seemore">see more</button>
@@ -43,7 +43,7 @@
                 <hr>
                 <div class="total-blk">
                     <h4 class="total-title">Total -</h4>
-                    <p class="order-price">$<span class="total-price">{{ $order[0]->price }}</span></p></span>
+                    <p class="order-price"><span class="total-price">{{  number_format($order[0]->price) }}</span> <span>MMk</span></p>
                 </div>
                 <button class="checkOut"><a href="#">Check Out</a></button>
             </div>

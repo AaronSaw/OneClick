@@ -2,8 +2,7 @@
 @section('content')
     <div class="product_pform">
         <div class="ccard">
-            <h2 class="tblttl">Edit product</h2>
-            <hr>
+            <h2 class="tblttl edit-ttl">Edit product</h2>
             <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
@@ -34,8 +33,7 @@
                 </div>
                 <div class="pinput">
                     <label for="">product Description</label>
-                    <textarea name="description" rows="10" cols="35" class="product-formTextarea">{{ old('description', trim($product->description)) }}
-                    </textarea>
+                    <textarea name="description" rows="10" cols="35" class="product-formTextarea">{{ old('description', trim($product->description)) }}</textarea>
                     @error('description')
                         <div class="error">{{ $message }}</div>
                     @enderror
@@ -45,7 +43,7 @@
                     <input type="text" value="{{ old('price', $product->price) }}" name="price"
                         class="product-forminput">
                     @error('price')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                        <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
                 <label for="">Product Image</label>

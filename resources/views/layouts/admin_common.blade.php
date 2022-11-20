@@ -38,11 +38,6 @@
             <div class="top-nav">
                 <ul class="nav-item">
                     <li>
-                        <a href="mailto:{{ Auth::user()->email }}"><i class="fa fa-envelope"></i>
-                            <span>  {{ notification() }}</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="{{ route('dashboard.orderlist') }}"><i class="fa fa-bell"></i>
                             <span>  {{ notification() }}</span>
                         </a>

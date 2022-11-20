@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\isValidPassword;
+use App\Rules\CustomEmailValidation;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
@@ -24,8 +26,8 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
-            'password' => 'required',
+            'email' => ['required',new CustomEmailValidation()],
+            'password' => ['required', 'string', new isValidPassword],
         ];
     }
 }

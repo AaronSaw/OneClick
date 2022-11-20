@@ -49,13 +49,8 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserProfileUpdateRequest $request, User $user)
     {
-        $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'email' => 'required',
-        ]);
         $this->userInterface->getUpdate($request, $user);
         return redirect()->route('user.adminProfile')->with('status',  'Your information has been updated successfully');
     }

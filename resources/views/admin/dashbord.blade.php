@@ -28,7 +28,7 @@
     </div>
     <h2 class="dashboard-title">Orders Count By Categories</h2>
     <div class="chart-card">
-        <canvas id="op" width="100%" height="100%"></canvas>
+        <canvas id="op"></canvas>
     </div>
 @endsection
 @push('script')

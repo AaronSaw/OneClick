@@ -102,4 +102,3 @@ Route::group(['middleware' => ['admin']], function () {
 //Api
 Route::apiResource('api/categories', CategoryApiController::class);
 Route::apiResource('/api/products', ProductApiController::class);
-

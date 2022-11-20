@@ -4,7 +4,7 @@
     <div class="ccard">
         <div class="tableinfo">
             @if (session('status'))
-                <div class="alert ">
+                <div class="alert order-alert">
                     {{ session('status') }}
                 </div>
             @endif
@@ -53,7 +53,7 @@
                                 <td>{{ $order->email }}</td>
                                 <td>{{ $order->title }}</td>
                                 <td>{{ $ctitle }}</td>
-                                <td>{{ $order->price }}</td>
+                                <td>{{ number_format($order->price) }} MMK</td>
                                 <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->address }}</td>
                                 <td>{{ $order->created_at->format('d M Y') }}</td>

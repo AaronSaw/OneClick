@@ -15,17 +15,17 @@
     <input type="text" name="name" value="{{ Auth::user()->name }}" class=" @error('name') is-invalid @enderror">
     @error('name')
     <div class="error">{{ $message }}</div>
-    @enderror <br>
+    @enderror
     <label for="email">Email</label><br>
     <input type="email" name="email" value="{{ Auth::user()->email }}" class=" @error('email') is-invalid @enderror">
     @error('email')
     <div class="error">{{ $message }}</div>
-    @enderror <br>
+    @enderror
     <label for="address">Address</label><br>
     <input type="text" name="address" value="{{ Auth::user()->address }}" class=" @error('address') is-invalid @enderror">
     @error('address')
     <div class="error">{{ $message }}</div>
-    @enderror <br>
+    @enderror 
     <div>
       <button class="button cancel" type="button"><a href="{{ url('adminProfile') }}">Cancel</a></button>
       <button class="button-primary" type="submit">Update</button>

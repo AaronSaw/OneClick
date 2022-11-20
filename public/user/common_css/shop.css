@@ -167,13 +167,14 @@
     }
 
     .carousel-item {
-        /*width: 93%;*/
-        width: 79%;
-        margin: 0 auto;
+    width: 79%;
+    border-radius: 2vw;
+    margin: 0 auto;
     }
 
     .carousel-item img {
         height: 23.4vw;
+        border-radius: 0vw;
     }
 
     .carousel-item:nth-of-type(2n) {

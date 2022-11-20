@@ -5,7 +5,7 @@ $(document).ready(function () {
         let p = $(this).siblings(".quantity").attr("Unit-price");
         let newQ = Number(q) + 1;
         let newCost = newQ * p;
-        let newTotal = newCost.toFixed('2');
+        let newTotal = newCost.toLocaleString();
         $(this).siblings(".quantity").val(newQ);
         $('.order_quantity').val(newQ);
         $(this).parent().parent().siblings('.total-blk').find('.total-price').html(newTotal);
@@ -18,7 +18,7 @@ $(document).ready(function () {
         if (q > 1) {
             let newQ = Number(q) - 1;
             let newCost = newQ * p;
-            let newTotal = newCost.toFixed('2');
+            let newTotal = newCost.toLocaleString();
             $(this).siblings(".quantity").val(newQ);
             $('.order_quantity').val(newQ);
             $(this).parent().parent().siblings('.total-blk').find('.total-price').html(newTotal);
@@ -32,7 +32,7 @@ $(document).ready(function () {
             let newQ = Number(q);
             let newCost = newQ * p;
             $('.order_quantity').val(newQ);
-            $(this).parent().parent().siblings(".total-blk").find(".total-price").html(newCost.toFixed(2));
+            $(this).parent().parent().siblings(".total-blk").find(".total-price").html(newCost.toLocaleString());
         } else {
             //$(this).val(null);
             $('.order_quantity').val(0);

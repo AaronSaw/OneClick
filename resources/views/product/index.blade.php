@@ -22,7 +22,7 @@
             </form>
         </h2>
         @if (session('status'))
-            <div class="alert ">
+            <div class="alert product-alert">
                 {{ session('status') }}
             </div>
         @endif
@@ -57,7 +57,7 @@
                             <td>
                                 {{ Str::words($product->description, 5, '...') }}
                             </td>
-                            <td>${{ $product->price }}</td>
+                            <td>{{ number_format($product->price) }} MMK</td>
                             <td>
                                 {{ $product->created_at->format('d M Y') }}
                             </td>

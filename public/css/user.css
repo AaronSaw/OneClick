@@ -10,6 +10,11 @@
     text-align: center;
 }
 
+.edit-ttl{
+    background-color: transparent;
+    padding: 0;
+}
+
 #table {
     width: 100%;
 }
@@ -27,6 +32,20 @@
 
 .user-ccard {
     margin-top: 0 !important;
+}
+
+.user-alert{
+    display: table;
+    position: absolute;
+    top: 65px;
+    left: 60%;
+    width: 390px;
+    padding: 13px;
+    border: 2px solid #11e134;
+    background-color: #ddefbb;
+    text-align: center;
+    transform: translateX(-50%);
+    border-radius: 8px;
 }
 
 /*Restore Form*/
@@ -178,6 +197,13 @@
     color: #fff;
 }
 
+.edit-container .error{
+    margin-top: -7px;
+    color: #ff0000;
+    width: 190px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 
 /*Export and Import*/
 .laravelExcel {
@@ -238,6 +264,50 @@
         width: 9.2vw;
         height: 7.4vw;
     }
+/*Profile*/
+.profile-container {
+   margin-top: 7vw;
+}
+
+.profile-detail {
+    width: 30vw;
+    margin: 0 auto;
+    padding: 0px 2.488vw 2vw;
+    border: 0.156vw solid #ddd;
+    box-shadow: 1.25vw 1.25vw 0.625vw rgb(255 4 4 / 30%);
+    background-color: #fff;
+    border-radius: 3.125vw;
+}
+
+.profile-detail img {
+    width: 8.5vw;
+    height: 7.938vw;
+    margin: 3.125vw auto;
+}
+
+.profile-content {
+    font-size: 2.5vw;
+}
+
+.profile-content li {
+    margin-bottom: 2.344vw;
+    font-size: 1.5vw;
+}
+
+.social {
+    margin-top: 2.5vw;
+}
+
+.social li {
+    margin-right: 3.125vw;
+}
+
+/*Profile Edit*/
+
+/*edit btn*/
+.profile-edit {
+    padding: 0.469vw;
+}
 
     /*edit form*/
     .edit-container {
@@ -267,9 +337,29 @@
         border-radius: 0.7vw;
     }
 
+    .edit-container .error {
+        margin-top: -0.494vw;
+        width: 22.288vw;
+        font-size: 1.388vw;
+    }
+
     /*import form*/
     .import-modal {
         min-width: 38%;
+    }
+
+    .user-alert{
+        display: table;
+        position: absolute;
+        top: 5.07vw;
+        left: 60%;
+        width: 30.421vw;
+        padding: 1.014vw;
+        border: 0.156vw solid #11e134;
+        background-color: #ddefbb;
+        text-align: center;
+        transform: translateX(-50%);
+        border-radius: 0.624vw;
     }
 }
 
@@ -293,22 +383,68 @@
     .tblttl {
         margin-bottom: 0vw;
         font-size: 3vw;
+        padding: 2vw 2vw 0;
     }
+
+    /*Profile*/
+.profile-container {
+    margin: 21.875vw 0 6.25vw;
+}
+
+.profile-detail {
+    width: 50vw;
+    padding: 4.688vw 4.688vw 3.125vw;
+    border: 0.156vw solid #ddd;
+    box-shadow: 1.25vw 1.25vw 0.625vw rgb(255 4 4 / 30%);
+    border-radius: 3.125vw;
+}
+
+.profile-detail img {
+    width: 12.5vw;
+    height: 10.938vw;
+    margin: 3.125vw auto 4vw;
+}
+
+.profile-content {
+    font-size: 2.5vw;
+}
+
+.profile-content li {
+    margin-bottom: 2.344vw;
+}
+
+.social {
+    margin-top: 4.688vw;
+    font-size: 4vw;
+}
+
+.social li {
+    margin-right: 3.125vw;
+}
+
+/*Profile Edit*/
+
+/*edit btn*/
+.profile-edit {
+    padding: 0.469vw;
+    font-size: 3vw;
+}
 
     /*edit form*/
     .edit-container {
-        width: 50%;
-        margin: 13% 28%;
+        margin: 0 auto;
     }
 
     .edit-container .edit-ttl {
-        padding: 1.6vw;
         font-size: 2.5vw;
+        margin-bottom: 1vw;
     }
 
     .edit-container .edit-form {
         padding: 3.9vw 3.9vw;
-        max-width: 83%;
+        max-width: 100%;
+        width: 35%;
+        border-radius: 2vw;
     }
 
     .edit-container .edit-form label {
@@ -321,6 +457,14 @@
         padding: 0.8vw;
         border: 0.2vw solid #888;
         border-radius: 0.8vw;
+        font-size: 1.7vw;
+    }
+
+    .edit-container .error {
+        margin-top: -0.094vw;
+        width: 28.688vw;
+        font-size: 1.688vw;
+        margin-bottom: 1vw;
     }
 
     /*Export and Importff*/
@@ -341,5 +485,15 @@
     /*import form*/
     .import-modal {
         min-width: 45%;
+    }
+
+    .user-alert{
+        top: 10.156vw;
+        left: 50%;
+        width: 60.938vw;
+        padding: 2.031vw;
+        border: 0.313vw solid #11e134;
+        border-radius: 1.25vw;
+        font-size: 2.5vw;
     }
 }

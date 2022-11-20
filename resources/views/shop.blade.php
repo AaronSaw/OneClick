@@ -7,4 +7,3 @@
     </div>
   </section>
   @endsection
-

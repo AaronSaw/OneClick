@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Rules\isValidPassword;
+use App\Rules\CustomEmailValidation;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterRequest extends FormRequest
@@ -26,7 +27,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:users,name',
-            'email' => 'required|unique:users,email',
+            'email' => ['required','unique:users,email',new CustomEmailValidation()],
             'password' => ['required', 'string', new isValidPassword],
             'confirm_password' => 'required|same:password',
             'address' => 'required',
