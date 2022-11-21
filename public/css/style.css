@@ -184,6 +184,10 @@ textarea {
     position: absolute;
 }
 
+.message-green .re-btn {
+    right: 15px !important;
+}
+
 /**Forgot Password**/
 .forgot-form .icon-btn {
     right: -18%;
@@ -435,6 +439,7 @@ textarea {
             margin-left: 50px;
         }
     }
+
     body {
         background: url('../img/mobile-bg-01.jpg') no-repeat center/cover;
         font-size: 1.875vw;

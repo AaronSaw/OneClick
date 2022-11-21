@@ -51,6 +51,7 @@
 }
 
 .detail-description {
+    display: none;
     white-space: pre-line;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
@@ -144,7 +145,7 @@
     }
 
     .detail-img img {
-        height: 39.063vw;
+        height: 43.063vw;
     }
 
     .detail-short-description {

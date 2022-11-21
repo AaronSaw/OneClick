@@ -147,16 +147,12 @@
   <script src="{{ asset('user/js/slick.min.js') }}"></script>
   <script src="{{ asset('user/js/main.js') }}"></script>
   <script src="{{ asset('user/js/shop.js') }}"></script>
-  {{-- scrollreveal js --}}
-  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   {{-- wow js --}}
   <script src="{{ asset('user/js/wow.min.js') }}"></script>
-
   <script src="{{ asset('js/index.js') }}"></script>
   <script src="{{ asset('user/js/detail.js') }}"></script>
   <script src="{{ asset('user/js/order.js') }}"></script>
   <script src="{{ asset('user/js/slider.js') }}"></script>
-  {{-- <script src="{{ asset('user/js/tab.js') }}"></script> --}}
   @stack('script')
 </body>
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <div class="detail">
+        <div class="detail wow slideInDown" data-wow-delay=".7s">
             <div class="detail-card clearfix">
                 <div class="detail-img">
                     <img src="{{ asset('storage/' . $detail[0]->image) }}" alt="detail-img">
@@ -25,7 +25,7 @@
         <div class="related-card clearfix">
             @foreach ($relatedCategories as $conCategory)
                 <a href="{{ route('detail', $conCategory->id) }}">
-                    <div class="carousel">
+                    <div class="carousel wow animate__bounceInUp" data-wow-delay="1s">
                         <div class="carousel-container">
                             <div class="carousel-item">
                                 <img src="{{ asset('storage/' . $conCategory->image) }}" alt="Product Image"
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="product-info">
                                     <a href="">
-                                        <h3><span class="info-name"> Name:</span> {{ $conCategory->title }}</h3>
+                                        <h3><span class="info-name"> Name:</span> {{ Str::words( $conCategory->title,2, '..') }}</h3>
                                     </a>
                                     <strong>
                                         <span class="price"> Price: </span> {{ number_format($conCategory->price) }} MMK

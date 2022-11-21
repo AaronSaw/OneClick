@@ -16,7 +16,7 @@
     <div class="quantity-box">
         <span class="alert-message">Quantity must be at leat one and please fill quantity.
     </div>
-    <div class="order">
+    <div class="order wow animate__fadeInDown">
         <div class="order-card clearfix">
             <div class="order-header">
                 <h4>Shopping cart <i class="fa-solid fa-cart-shopping"></i></h4>

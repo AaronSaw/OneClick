@@ -11,7 +11,7 @@ $(document).ready(function () {
             $(".product-list").append(
                 ` <a href="http://127.0.0.1:8000/detail/${el.id} "><section class="carousel" >
                     <ul class="carousel-container">
-                        <li class="carousel-item reveal">
+                        <li class="carousel-item wow animate__jackInTheBox">
                             <img src="storage/${el.image}" alt="Product Image" class="carousel-item-img">
                             <div class="panel">
                                 <div class="inside">
@@ -19,7 +19,7 @@ $(document).ready(function () {
                                 </div>
                             </div>
                             <div class="product-info">
-                                <a href=""><h3 class="info-name"><span> Name:</span> ${el.title}</h3> </a>
+                                <a href=""><h3 class="info-name"><span> Name:</span> ${toShort(el.title)}</h3> </a>
                                 <strong class="price">
                                     <span> Price:  </span> ${ el.price.toLocaleString()} MMK
                                 </strong>
@@ -28,38 +28,14 @@ $(document).ready(function () {
                     </ul>
                 </section></a>`
             );
+            function toShort(str, max = 16) {
+                if (str.length > max) {
+                    return str.substring(0, max) + ".."
+                } else {
+                    return str;
+                }
+            }
         });
-        // Scroll Reveal
-        window.sr = ScrollReveal({ reset: true });
-        sr.reveal('.reveal', {
-            duration: 1000,
-            origin: "bottom",
-            distance: "1px",
-            easing: "cubic-bezier(.37,.01,.74,1)",
-            opacity: 0.7,
-            scale: 0.7,
-            reset: true,
-            viewFactor: 1,
-            afterReveal: revealInfo,
-        });
-        var revealInfo = sr.reveal('.product-info', {
-            duration: 1000,
-            delay: 300,
-            scale: 1,
-            distance: '10px',
-            origin: 'bottom',
-            reset: true,
-            easing: 'ease-out',
-            viewFactor: 1,
-        });
-    }
-
-    function toShort(str, max = 100) {
-        if (str.length > max) {
-            return str.substring(0, max) + "...."
-        } else {
-            return str;
-        }
     }
 
     //start

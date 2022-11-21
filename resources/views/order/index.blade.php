@@ -91,7 +91,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="9" class="empty">Empty order</td>
+                                <td colspan="10" class="empty">Empty order</td>
                             </tr>
                         @endforelse
                     </tbody>

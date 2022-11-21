@@ -29,7 +29,7 @@
                     </tr>
                 @empty
              <tr>
-                <td colspan="5" class="empty">Empty Order</td>
+                <td colspan="6" class="empty">Empty Order</td>
              </tr>
                 @endforelse
                 <tr>

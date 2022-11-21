@@ -74,8 +74,10 @@
                                     </form>
                                 </div>
                             </div>
+                            @if ($user->name!=Auth::user()->name)
                             <a href="#ex{{ $user->id }}" rel="modal:open" class="deletebtn"><i
-                                    class="fa-regular fa-trash-can"></i></a>
+                                class="fa-regular fa-trash-can"></i></a>
+                            @endif
                         </td>
                     </tbody>
                 @endforeach

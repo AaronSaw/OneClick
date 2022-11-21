@@ -28,7 +28,7 @@
         @if (session('registerSuccess'))
             <div class="alert-green">
                 <h3 class="message-green">{{ session('registerSuccess') }}<i
-                        class="fa-solid fa-xmark icon-btn js-close"></i></h3>
+                        class="fa-solid fa-xmark icon-btn re-btn js-close"></i></h3>
             </div>
         @endif
         <div class="form-blk">
