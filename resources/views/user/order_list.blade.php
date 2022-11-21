@@ -12,6 +12,7 @@
                 <th>Order Date</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                <th>Order price</th>
             </thead>
             <tbody>
                 @forelse ($userOrder as $order)
@@ -24,6 +25,7 @@
                         <td>{{ $order->created_at->format('d M Y') }}</td>
                         <td>{{ $order->quantity }}</td>
                         <td>{{ number_format($order->price) }} MMK</td>
+                        <td>{{ number_format(($order->quantity)*($order->price)) }} MMK</td>
                     </tr>
                 @empty
              <tr>
@@ -31,7 +33,7 @@
              </tr>
                 @endforelse
                 <tr>
-                    <td colspan="2"></td>
+                    <td colspan="3"></td>
                     <td colspan="2">Total</td>
                     <td>{{ number_format($prices) }} MMK</td>
                 </tr>

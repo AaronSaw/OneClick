@@ -58,7 +58,7 @@
     background-color: #fff;
     border-radius: 5px;
     font-family: 'Arial',sans-serif;
-    font-size: 14px;
+    font-size: 13px !important;
   }
 
   .product-formSelect {
@@ -100,6 +100,7 @@
   .product-alert{
     display: table;
     position: absolute;
+    z-index: -1;
     top: 65px;
     left: 60%;
     width: 390px;
@@ -135,9 +136,22 @@
     }
     .product_pform .ccard{
         margin-top: 0;
+        max-width: 70%;
+        padding: 2.5vw;
     }
     .empty{
         font-size: 1.5vw;
+    }
+    .product-forminput {
+        width: 100%;
+        margin-top: 0.651vw;
+        padding: .5vw;
+        font-size: 1.042vw !important;
+      }
+      #preview-image {
+        margin-top: 0.651vw;
+        margin-bottom: 0.651vw;
+        max-width: 14.531vw;
     }
   }
 
@@ -194,7 +208,8 @@
     .product-forminput {
       width: 100%;
       margin-top: 0.781vw;
-      font-size: 2.031vw;
+      padding: 1vw;
+      font-size: 2.031vw !important;
       border-radius: 0.781vw;
     }
 

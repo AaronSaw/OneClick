@@ -157,7 +157,7 @@
 }
 
 .check {
-    color: #26111b6b;
+    color: #14a73e;
     ;
 }
 
@@ -386,13 +386,13 @@ label {
     margin-bottom: 10px;
     color: #000;
     font-size: 16px;
-    font-family: 'Arial',sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: 500;
     text-transform: capitalize;
 }
 
-.btn-create{
-        background-color: #05aa34 !important;
+.btn-create {
+    background-color: #05aa34 !important;
 }
 
 .button-primary {
@@ -438,7 +438,7 @@ select {
     box-sizing: border-box;
     border-radius: 4px;
     font-size: 14px;
-    font-family: 'Arial',sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 .error {
@@ -509,7 +509,7 @@ select {
     border-radius: 8px;
 }
 
-.order-alert{
+.order-alert {
     display: table;
     position: absolute;
     top: 65px;
@@ -522,6 +522,7 @@ select {
     transform: translateX(-50%);
     border-radius: 8px;
 }
+
 .nav .btn-gnavi {
     display: none;
     position: fixed;
@@ -781,7 +782,7 @@ select {
         padding: 0.55vw 0.781vw;
     }
 
-    .modal-footer .cancel{
+    .modal-footer .cancel {
         font-size: 1.25vw;
         padding: 0.25vw 1vw;
     }
@@ -821,12 +822,13 @@ select {
         width: 2.344vw;
         height: 1.875vw;
     }
-    .check{
+
+    .check {
         color: #14a73e;
         font-size: 2vw;
     }
 
-    .order-alert{
+    .order-alert {
         display: table;
         position: absolute;
         top: 5.07vw;
@@ -858,6 +860,13 @@ select {
         padding: 2.344vw 4.688vw !important;
         max-width: 45% !important;
         font-size: 2.5vw;
+    }
+
+    .modal a.close-modal {
+        top: -1.628vw !important;
+        right: -1.628vw !important;
+        width: 3.906vw !important;
+        height: 3.906vw !important;
     }
 
     .nav .top-nav {
@@ -1184,7 +1193,7 @@ select {
         border-radius: 0.781vw;
     }
 
-    .check{
+    .check {
         color: #14a73e;
         font-size: 2vw;
     }
@@ -1206,6 +1215,7 @@ select {
     .alert {
         top: -9.375vw;
         width: 60.938vw;
+        font-size: 2.3vw;
         padding: 2.031vw;
         border: 0.313vw solid #11e134;
         border-radius: 1.25vw;
@@ -1216,7 +1226,7 @@ select {
         left: 3.125vw;
     }
 
-    .pagi-nav{
+    .pagi-nav {
         height: 7.813vw !important;
     }
 
@@ -1225,7 +1235,7 @@ select {
         font-size: 2.4vw;
     }
 
-    .order-alert{
+    .order-alert {
         top: 9.719vw;
         left: 50%;
         width: 60.938vw;

@@ -92,4 +92,12 @@ class OrderServices implements OrderServicesInterface
     {
         return $this->orderDao->userOrder();
     }
+
+    /**
+     * To get userOrder
+     */
+    public function totaluserOrder()
+    {
+        return $this->orderDao->totaluserOrder();
+    }
 }

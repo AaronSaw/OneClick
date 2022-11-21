@@ -65,9 +65,10 @@ class OrderController extends Controller
         $userOrder = $this->orderInterface->userOrder();
         $prices = 0;
         $ordersNo = 0;
-        foreach ($userOrder as $key => $value) {
+        $totaluserOrder = $this->orderInterface->totaluserOrder();
+        foreach ($totaluserOrder as $key => $value) {
             $ordersNo++;
-            $prices = $prices + ($value->price*$value->quantity);
+            $prices = $prices + ($value->price * $value->quantity);
         }
         return view('user.order_list', compact(['userOrder', 'prices', 'ordersNo']));
     }
@@ -77,6 +78,6 @@ class OrderController extends Controller
         Mail::to(Auth::user()->email)
             ->send(new ComfirmMail());
         $this->orderInterface->confirm($id);
-        return redirect()->route('dashboard.orderlist')->with('status','Confirm message was sent.');
+        return redirect()->route('dashboard.orderlist')->with('status', 'Confirm message was sent.');
     }
 }

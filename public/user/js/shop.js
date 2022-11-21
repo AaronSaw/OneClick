@@ -73,7 +73,7 @@ $(document).ready(function () {
         var keyword = $(this).val().toLowerCase();
         if (keyword.trim().length) {
             let filterProduct = products.filter(product => {
-                if (product.title.toLowerCase().indexOf(keyword) > -1 || product.description.toLowerCase().indexOf(keyword) > -1 || product.price == keyword) {
+                if (product.title.toLowerCase().indexOf(keyword) > -1  || product.price == keyword) {
                     return product;
                 }
             });

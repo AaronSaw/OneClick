@@ -36,25 +36,28 @@
                             <th>Email</th>
                             <th>Product</th>
                             <th>Category</th>
-                            <th>Price</th>
                             <th>Quantity</th>
+                            <th>Price</th>
+                            <th>order price</th>
                             <th>Address</th>
                             <th>Order Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    @forelse ($orders as $order)
-                        @php
-                            $ctitle = \App\Models\Category::find($order->category_id)->ctitle;
-                        @endphp
-                        <tbody>
+                    <tbody>
+                        @forelse ($orders as $order)
+                            @php
+                                $ctitle = \App\Models\Category::find($order->category_id)->ctitle;
+                            @endphp
+
                             <tr @if ($order->confirm == '1') class="confirm " @endif>
                                 <td>{{ $order->name }}</td>
                                 <td>{{ $order->email }}</td>
                                 <td>{{ $order->title }}</td>
                                 <td>{{ $ctitle }}</td>
-                                <td>{{ number_format($order->price) }} MMK</td>
                                 <td>{{ $order->quantity }}</td>
+                                <td>{{ number_format($order->price) }} MMK</td>
+                                <td>{{ number_format($order->price * $order->quantity) }} MMK</td>
                                 <td>{{ $order->address }}</td>
                                 <td>{{ $order->created_at->format('d M Y') }}</td>
                                 <td>
@@ -84,13 +87,14 @@
                                             class="fa-regular fa-trash-can"></i></a>
                                 </td>
                             </tr>
-                        </tbody>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="9" class="empty">Empty order</td>
-                        </tr>
-                    @endforelse
+
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="9" class="empty">Empty order</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
                 </table>
             </div>
         </div>

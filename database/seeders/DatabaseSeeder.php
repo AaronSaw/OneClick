@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
             "name"=>"saw kyaw myint",
             'email'=>"sawkyaw@gmail.com",
             'address'=>"Mandalay",
-            "password"=>Hash::make("sawkyaw777236"),
-            "role"=>'0',
+            "password"=>Hash::make("Sawkyaw@777236"),
+            "role"=>'1',
          ]);
-
+         
         // \App\Models\User::factory(10)->create();
         \App\Models\User::factory()->create([
             "name"=>"Shoon Lae Yee Win",

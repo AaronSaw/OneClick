@@ -83,7 +83,7 @@
                         ticks: {
                             color: 'black',
                             font: {
-                                size: 15,
+                                //size: 15,
                             }
                         }
                     },
@@ -92,7 +92,7 @@
                         ticks: {
                             color: '#000',
                             font: {
-                                size: 20,
+                                //size: 20,
                             }
                         }
                     }
@@ -106,7 +106,7 @@
                             backgroundColor: 'rgba(255, 159, 64, 1)',
                             color: '#000',
                             font: {
-                                size: 15,
+                                //size: 15,
                             },
                         }
                     }

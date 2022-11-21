@@ -13,11 +13,10 @@
                         <h4 class="detail-category">{{ $detail[0]->ctitle }}</h4>
                         <p class="detail-price"> {{ number_format($detail[0]->price) }} MMK</p>
                     </div>
-                    <p class="detail-shortdescription">{{ Str::words($detail[0]->description, 15, '.....') }}</p><button
-                        class="seemore">seemore</button>
-                    <p class="detail-description">{{ $detail[0]->description }}</p><button class="seeless">seeless</button>
-                    <a href="{{ route('user.order', $detail[0]->id) }}"><button class="order-btn"><i
-                                class="fa-solid fa-cart-shopping"></i> Order</button></a>
+                    <p class="detail-short-description">{{ Str::words($detail[0]->description, 15, "...seemore") }}</p>
+                    <p class="detail-description">{{ $detail[0]->description }}</p>
+                    <a href="{{ route('user.order', $detail[0]->id) }}"><button class="order-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Order</button></a>
                 </div>
             </div>
         </div>

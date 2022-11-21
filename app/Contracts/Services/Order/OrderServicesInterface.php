@@ -54,4 +54,9 @@ interface OrderServicesInterface
      * To get userOrder
      */
     public function userOrder();
+
+     /**
+     * To get userOrder
+     */
+    public function totaluserOrder();
 }

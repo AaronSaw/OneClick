@@ -1,14 +1,16 @@
-$(document).ready(function (){
-    $('.seemore').click(function(e){
+$(document).ready(function () {
+    $('.detail-description').hide();
+    let words = $('.detail-short-description').val().length;
+    $('.detail-short-description').click(function(e){
         e.preventDefault();
-        $('.detail-description').addClass('show');
+        $('.detail-short-description').hide();
+        $('.detail-description').show();
         $(this).css('display', 'none');
-        $('.seeless').show();
     });
-    $('.seeless').click(function(e){
+    $('.detail-description').click(function(e){
         e.preventDefault();
-        $('.detail-description').removeClass('show');
+        $('.detail-short-description').show();
+        $('.detail-description').hide();
         $(this).css('display', 'none');
-        $('.seemore').show();
     });
 });

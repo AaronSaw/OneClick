@@ -37,9 +37,8 @@
                     </div>
                     <p class="order-price"> {{ number_format($order[0]->price) }} MMK</p>
                 </div>
+                <p class="detail-short-description">{{ Str::words($order[0]->description, 15, '.....seemore') }}</p>
                 <p class="detail-description">{{ $order[0]->description }}</p>
-                <button class="seemore">see more</button>
-                <button class="seeless">see less</button>
                 <hr>
                 <div class="total-blk">
                     <h4 class="total-title">Total -</h4>

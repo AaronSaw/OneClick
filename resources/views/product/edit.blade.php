@@ -10,9 +10,6 @@
                     <label for="">product Title</label><br>
                     <input type="text" value="{{ old('title', $product->title) }}" name="title"
                         class="product-forminput">
-                    @error('image')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
                     @error('title')
                         <div class="error">{{ $message }}</div>
                     @enderror

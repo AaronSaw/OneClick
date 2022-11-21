@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\isValidPassword;
 use App\Rules\MatchOldPassword;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,7 +27,7 @@ class ChangePasswordRequest extends FormRequest
     {
         return [
             'current_password' => ['required', new MatchOldPassword],
-            'new_password' => ['required', 'different:current_password'],
+            'new_password' => ['required', 'different:current_password',new isValidPassword()],
             'confirm_password' => ['required', 'same:new_password'],
         ];
     }

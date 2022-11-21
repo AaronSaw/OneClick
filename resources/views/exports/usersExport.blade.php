@@ -1,4 +1,3 @@
-<h3>User List</h3>
 <table>
     <thead>
         <tr>
@@ -15,9 +14,9 @@
                 <td>{{ $user->name }}</td>
                 <td>
                     @if ($user->role == 1)
-                        User
+                        user
                     @else
-                        Admin
+                        admin
                     @endif
                 </td>
                 <td>{{ $user->email }}</td>

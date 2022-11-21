@@ -140,4 +140,20 @@ class OrderDao implements OrderDaoInterface
 
         return $userOrder;
     }
+
+    /**
+     * To get userOrder
+     */
+    public function totaluserOrder()
+    {
+        $userId = Auth::user()->id;
+        $totaluserOrder = Order::Join('products', 'products.id', '=', 'orders.product_id')
+            ->where('orders.user_id', '=', "$userId")
+            ->whereNull('orders.deleted_at')
+            ->latest('id')
+            ->select('products.title', 'products.price', 'orders.created_at', 'products.category_id', 'orders.id', 'orders.confirm', 'orders.quantity')
+            ->get();
+
+        return $totaluserOrder;
+    }
 }

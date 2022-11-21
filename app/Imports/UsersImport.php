@@ -17,7 +17,7 @@ class UsersImport implements ToModel, WithValidation
      */
     public function model(array $row)
     {
-        if ($row['4'] == 'admin') {
+        if ($row['2'] == 'admin') {
             $kind = '0';
         } else {
             $kind = '1';
@@ -25,9 +25,9 @@ class UsersImport implements ToModel, WithValidation
         //dd($role);
         $data = User::create([
             "name" => $row['0'],
-            "email" => $row['1'],
-            "address" => $row['2'],
-            "password" => Hash::make($row['3']),
+            "email" => $row['2'],
+            "address" => $row['3'],
+            "password" => Hash::make($row['4']),
             "role" => $kind,
         ]);
         //User::create($data);
@@ -36,19 +36,22 @@ class UsersImport implements ToModel, WithValidation
     {
         return [
             '0' => 'required',
-            '1' => 'required|unique:users,email',
-            '2' => 'required',
+            '1' => 'required',
+            '2' => 'required|unique:users,email',
             '3' => 'required',
+            '4' => 'required',
+
         ];
     }
     public function customValidationMessages()
     {
         return [
             '0.required' => 'This name  is empty.',
-            '1.required' => 'This email  is empty.',
-            '1.unique' => 'This email is already exit',
-            '2.required' => 'This address  is empty.',
-            '3.required' => 'This password  is empty.',
+            '1.required' => 'This role  is empty.',
+            '2.unique' => 'This email is already exit',
+            '2.required' => 'This email  is empty.',
+            '3.required' => 'This addres  is empty.',
+            '4.required' => 'This password  is empty.',
         ];
     }
 }

@@ -18,7 +18,7 @@
                 </form>
             </div>
             <!-- Link to open the modal -->
-            <p><a href="#ex7" rel="modal:open" class="excelBtn"><i class="fa fa-upload"></i> upload</a></p>
+            <p><a href="#ex7" rel="modal:open" class="excelBtn"><i class="fa fa-upload"></i> Upload</a></p>
         </div>
         <!-- Modal HTML embedded directly into document -->
     </div>

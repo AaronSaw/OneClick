@@ -201,12 +201,15 @@
 
     .carousel-item .panel {
         width: 19.5vw;
+        right: -11.813vw;
+        top: -11.115vw;
         height: 19.5vw;
     }
 
     .carousel-item .panel a {
         top: 13.4vw;
-        right: 15.3vw;
+        right: 14.8vw;
+        font-size: 2.734vw;
         width: 1.6vw;
     }
 }
