@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Contracts\Services\Order\OrderServicesInterface;
-use App\Mail\comfirmMail;
+use App\Mail\confirmMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Category;
+use App\Models\User;
 
 class OrderController extends Controller
 {
@@ -75,8 +76,10 @@ class OrderController extends Controller
 
     public function confirm($id)
     {
-        Mail::to(Auth::user()->email)
-            ->send(new ComfirmMail());
+        $conOrder = Order::find($id);
+        $userOrder = User::find($conOrder->user_id);
+        Mail::to($userOrder->email)
+            ->send(new ConfirmMail());
         $this->orderInterface->confirm($id);
         return redirect()->route('dashboard.orderlist')->with('status', 'Confirm message was sent.');
     }

@@ -17,7 +17,7 @@ class CategoryDao implements CategoryDaoInterface
      */
     public function getIndex()
     {
-        $categories = Category::latest('id')->paginate(2)->withQueryString();
+        $categories = Category::latest('id')->paginate(4)->withQueryString();
         return $categories;
     }
 
