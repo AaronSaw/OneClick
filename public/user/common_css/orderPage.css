@@ -1,0 +1,494 @@
+.order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0 70px;
+}
+
+.order-card {
+    width: 75%;
+    padding: 10px 25px 50px;
+    box-shadow: 1px 9px 5px rgb(0 0 0 / 42%);
+    background: #fff;
+    border-radius: 10px;
+}
+
+.order-header,
+.total-blk {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.order-img {
+    float: left;
+    width: 40%;
+}
+
+.order-img img {
+    width: 100%;
+    height: 350px;
+}
+
+.order-status {
+    position: relative;
+    float: right;
+    width: 56%;
+}
+
+.order-title {
+    color: #666666;
+    font-size: 33px;
+}
+
+.order-priceTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-price {
+    color: #666666;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.order-category {
+    margin: 15px 0;
+    /*width: 100px;*/
+    padding: 5px 10px;
+    background: #ffafbd;
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.order-description,
+.order-shortdescription {
+    display: inline;
+    color: #b1b1b1;
+    font-size: 12px;
+}
+
+.order-description {
+    display: none;
+}
+
+.seemore,
+.seeless {
+    border: oldlace;
+    background: transparent;
+    color: #f56ad9;
+}
+
+.seeless {
+    display: none;
+}
+
+.total-blk {
+    margin-bottom: 25px;
+}
+
+.total-blk .order-price,
+.total-title {
+    color: #666666;
+    font-size: 23px;
+}
+
+.checkOut {
+    position: absolute;
+    right: 0%;
+    /*bottom: -10%;*/
+    /*width: 120px;*/
+    padding: 5px 20px;
+    border: none;
+    background-color: #83b7c9;
+    border-radius: 15px;
+}
+
+.checkOut a {
+    color: #fff;
+}
+
+.checkOut:hover {
+    background: linear-gradient(to right, rgb(170 221 238 / 88%), rgb(26 157 179 / 75%));
+}
+
+.icon-orderPage {
+    position: absolute;
+    top: 15%;
+    right: 0%;
+}
+
+#modalContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    width: 35%;
+    margin: 20% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    background-color: #fefefe;
+}
+
+.close {
+    position: absolute;
+    top: 0%;
+    right: 3%;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.order-confirm {
+    margin: 10px 0 30px;
+    text-align: center;
+}
+
+.btn-sec {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-sec button {
+    margin-right: 20px;
+    padding: 5px 20px;
+    border: none;
+    background-color: #83b7c9;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.btn-sec .order-cancel {
+    background-color: #ff0000;
+}
+
+.btn-sec .order-cancel a {
+    color: #fff;
+}
+
+.success-message {
+    position: relative;
+    color: #666;
+    font-size: 14px;
+}
+
+.success-box {
+    display: table;
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    width: 390px;
+    padding: 13px;
+    border: 2px solid #11e134;
+    background-color: #ddefbb;
+    text-align: center;
+    transform: translateX(-50%);
+    border-radius: 8px;
+}
+
+.alert-box {
+    border: 2px solid #f38d42;
+    background-color: #FBC5C5;
+}
+
+.alert-message {
+    color: #EB4747;
+}
+
+.quantity-box {
+    display: none;
+    position: absolute;
+    top: 85px;
+    left: 500px;
+    margin-top: 1px;
+    padding: 10px 30px;
+    border: 2px solid #f38d42;
+    background-color: #FBC5C5;
+}
+
+
+.icon-order {
+    position: absolute;
+    top: 15%;
+    right: -8%;
+}
+
+.quantity-group {
+    display: flex;
+    margin-top: 2px;
+}
+
+.quantity {
+    width: 50px;
+    margin: 0 2px;
+    margin-top: 0;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.quantity-plus {
+    padding: 5px;
+    border: 1px solid #7366ed;
+    background: transparent;
+    color: #3f1dff;
+    border-radius: 5px;
+}
+
+.quantity-minus {
+    padding: 5px;
+    border: 1px solid #7366ed;
+    background: transparent;
+    color: #3f1dff;
+    border-radius: 5px;
+}
+
+/* Ipad */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .order-card {
+        width: 90%;
+        padding: 1.302vw 3.255vw 6.51vw;
+    }
+
+    .order-title {
+        font-size: 3.3vw;
+    }
+
+    .order-price {
+        color: #666666;
+        font-size: 2.3vw;
+        font-weight: bold;
+    }
+
+    .order-category {
+        width: 15.6vw;
+        padding: 0.7vw 1.3vw;
+        font-size: 1.6vw;
+        border-radius: 2.6vw;
+    }
+
+    .order-description,
+    .order-shortdescription {
+        font-size: 1.6vw;
+    }
+
+    .total-blk {
+        margin-bottom: 3.3vw;
+    }
+
+    .total-blk .order-price,
+    .total-title {
+        font-size: 2.3vw;
+    }
+
+    .checkOut {
+        /*width: 40%;*/
+        padding: 0.7vw 1.3vw;
+    }
+
+    .quantity-minus {
+        padding: 0.651vw;
+        font-size: 1.693vw;
+        border-radius: 0.651vw;
+    }
+
+    .quantity {
+        width: 6.51vw;
+        margin: 0 0.26vw;
+        margin-top: 0;
+        padding: 0.911vw;
+        border-radius: 1.042vw;
+    }
+
+    .order-img {
+        width: 40%;
+    }
+
+    .order-img img {
+        width: 100%;
+        height: 39.063vw;
+    }
+
+    .quantity-plus {
+        padding: 0.651vw;
+        font-size: 1.693vw;
+        border-radius: 0.651vw;
+    }
+
+    .quantity-box {
+        top: 11.068vw;
+        left: 30%;
+        margin-top: 0.13vw;
+        padding: 1.302vw 3.906vw;
+    }
+
+    .modal-content {
+        width: 40%;
+        padding: 3.255vw;
+    }
+}
+
+/* SP */
+@media screen and (max-width: 767.9px) {
+    .order {
+        margin-top: 15.6vw;
+    }
+
+    .order-card {
+        width: 75%;
+        margin-top: 5.25vw;
+        padding: 1.563vw 3.906vw 7.813vw;
+        box-shadow: 0.156vw 1.406vw 0.781vw rgb(0 0 0 / 42%);
+        border-radius: 1.563vw;
+    }
+
+    .order-img {
+        float: none;
+        width: 100%;
+    }
+
+    .order-img img {
+        width: 100%;
+        height: 39.063vw;
+    }
+
+    .order-status {
+        float: none;
+        width: 100%;
+    }
+
+    .order-title {
+        font-size: 3.1vw;
+    }
+
+    .order-price {
+        font-size: 2.8vw;
+        font-weight: bold;
+    }
+
+
+    .total-blk {
+        margin-top: 1.6vw;
+        margin-bottom: 3.9vw;
+    }
+
+    .total-blk .order-price,
+    .total-title {
+        font-size: 3.0vw;
+    }
+
+    .btn-sec button {
+        margin-right: 3.125vw;
+        padding: 0.781vw 3.125vw;
+        font-size: 1.875vw;
+        border-radius: 1.563vw;
+    }
+
+    .success-message {
+        font-size: 2.188vw;
+    }
+
+    .success-box {
+        top: 10.719vw;
+        left: 50%;
+        width: 60.938vw;
+        padding: 1.531vw;
+        font-size: 2.031vw;
+        border-radius: 1.25vw;
+    }
+
+    .order-confirm {
+        margin: 1.563vw 0 4.688vw;
+        font-size: 2.344vw;
+    }
+
+    .alert-box {
+        top: 11.063vw;
+        left: 50%;
+        width: 43.25vw;
+        padding: 0vw 3.125vw;
+    }
+
+    .close {
+        top: 0%;
+        right: 3%;
+        font-size: 4.375vw;
+    }
+
+    .alert-message {
+        font-size: 2.188vw;
+    }
+
+    .quantity-group {
+        margin-top: 0.313vw;
+    }
+
+    .quantity {
+        width: 7.813vw;
+        margin-top: 0;
+        padding: 1.094vw;
+        font-size: 1.875vw;
+        border-radius: 1.25vw;
+    }
+
+    .quantity-plus {
+        padding: 0.781vw;
+        font-size: 2.188vw;
+        border-radius: 0.781vw;
+    }
+
+    .quantity-minus {
+        padding: 0.781vw;
+        font-size: 2.188vw;
+        border-radius: 0.781vw;
+    }
+
+    .order-category {
+        padding: 0.781vw 1.563vw;
+        font-size: 1.875vw;
+        border-radius: 3.125vw;
+    }
+
+    .checkOut {
+        /*width: 40%;*/
+        padding: 0.7vw 2vw;
+        font-size: 1.944vw;
+    }
+
+    .quantity-box {
+        top: 11.281vw;
+        left: 20.313vw;
+        margin-top: 0.156vw;
+        padding: 1.563vw 4.688vw !important;
+        font-size: 2.188vw;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 45%;
+        margin: 20% auto;
+        padding: 3.906vw;
+        border: 0.156vw solid #888;
+        background-color: #fefefe;
+    }
+}

@@ -1,0 +1,215 @@
+.product-sec {
+    margin-top: 5%;
+    margin-left: 7%;
+    max-width: 1280px;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.carousel {
+    float: left;
+    width: 25%;
+    margin-bottom: 44px;
+}
+
+.carousel-container {
+    margin: 40px 0 10px;
+    padding-bottom: 10px;
+}
+
+.carousel-item {
+    position: relative;
+    width: 250px;
+    height: auto;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: #fff;
+    cursor: pointer;
+    transform-origin: center left;
+    transition: 0.45s all;
+    border-radius: 20px;
+}
+
+.carousel-item:nth-of-type(4n) {
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+.carousel-item .panel {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    align-items: center;
+    z-index: 9;
+    width: 140px;
+    height: 140px;
+    background-color: #666666;
+    opacity: 0.8;
+    border-radius: 0px 0px 200px 200px;
+}
+
+.carousel-item .panel a {
+    position: absolute;
+    top: 95px;
+    right: 90px;
+    color: #fff;
+    font-size: 20px;
+    opacity: 1;
+}
+
+.carousel-item .panel a:hover {
+    color: #FFAFBD;
+}
+
+.carousel-item .product-info {
+    line-height: 1.5;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.carousel-item .product-info h3 {
+    color: #000;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.info-name {
+    color: #5629e8;
+}
+
+.carousel-item .product-info .price {
+    color: #f6506c;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.carousel-item~.carousel-item {
+    transform: translate3d(20px, 0, 0);
+}
+
+.carousel-container:hover .carousel-item:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.carousel-item-img {
+    width: 100%;
+    height: 250px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.26);
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/*  Ipad  */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .product-sec {
+        margin-top: 5%;
+        margin-left: 3%;
+    }
+
+    .carousel {
+        float: left;
+        width: 33%;
+        margin-bottom: 1.81vw;
+
+    }
+
+    .carousel-item {
+        width: 80%;
+    }
+
+    .carousel-item-img {
+        height: 23.438vw;
+    }
+
+    .carousel-item:nth-of-type(3n) {
+        margin-right: 0vw;
+    }
+
+    .carousel-container:hover .carousel-item:hover {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+
+    .carousel-container:hover .carousel-item:hover {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+
+    .info-name {
+        font-size: 1.8vw;
+    }
+
+    .carousel-item .product-info .price {
+        font-size: 1.8vw;
+    }
+
+}
+
+
+/*SP*/
+@media screen and (max-width: 767.9px) {
+    .product-sec {
+        margin-top: 5%;
+        margin-left: 8%;
+    }
+
+    .carousel {
+        float: left;
+        width: 40%;
+        margin-right: 10%;
+        margin-bottom: 1.563vw;
+    }
+
+    .carousel-item {
+    width: 79%;
+    border-radius: 2vw;
+    margin: 0 auto;
+    }
+
+    .carousel-item img {
+        height: 23.4vw;
+        border-radius: 0vw;
+    }
+
+    .carousel-item:nth-of-type(2n) {
+        margin-right: 0vw;
+    }
+
+    .carousel-container:hover .carousel-item:hover {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+
+    .carousel-item .product-info {
+        line-height: 1.5;
+        margin: 1.563vw 0;
+        padding-left: 3.125vw;
+        font-size: 1.563vw;
+    }
+
+    .carousel-item .product-info .price {
+        font-size: 1.563vw;
+        letter-spacing: 0.078vw;
+    }
+
+
+    .carousel-item .panel {
+        width: 19.5vw;
+        right: -11.813vw;
+        top: -11.115vw;
+        height: 19.5vw;
+    }
+
+    .carousel-item .panel a {
+        top: 13.4vw;
+        right: 14.8vw;
+        font-size: 2.734vw;
+        width: 1.6vw;
+    }
+}

@@ -1,0 +1,507 @@
+/*Table Design*/
+.tblttl {
+    line-height: 1.5;
+    padding: 15px;
+    background-color: #f6c4c5;
+    color: #D10B42;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.edit-ttl {
+    padding: 0;
+    background-color: transparent;
+}
+
+#table {
+    width: 100%;
+}
+
+.deletebtn {
+    border: none;
+    text-decoration: none;
+}
+
+.deletebtn i {
+    color: #ff1b1b;
+    font-size: 18px;
+    text-align: center;
+}
+
+.user-ccard {
+    margin-top: 0 !important;
+}
+
+.user-alert {
+    display: table;
+    position: absolute;
+    top: 65px;
+    left: 60%;
+    width: 390px;
+    padding: 13px;
+    border: 2px solid #11e134;
+    background-color: #ddefbb;
+    text-align: center;
+    transform: translateX(-50%);
+    border-radius: 8px;
+}
+
+/*Restore Form*/
+
+.restorebtn {
+    margin: 10px;
+    padding: 3px 5px;
+    border: 0.1px dotted;
+    background-color: #d6d6b1;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.restoreForm {
+    width: 50%;
+    margin: 20%;
+    padding: 40px 10px;
+    border: 1px solid;
+    background-color: #d8e4e4;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.restoreForm input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.restoreForm .restore {
+    padding: 5px;
+    border: 0.1px solid;
+    background-color: rgb(121, 118, 118);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/*Profile*/
+.profile-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 140px 0 40px;
+}
+
+.profile-detail {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    padding: 30px 30px 20px;
+    border: 1px solid #ddd;
+    box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.profile-detail img {
+    display: table;
+    width: 80px;
+    height: 70px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.profile-content {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.profile-content li {
+    margin-bottom: 15px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social li {
+    margin-right: 20px;
+}
+
+.social i {
+    color: #e65770;
+}
+
+.profile-edit a {
+    color: #fff;
+}
+
+/*Profile Edit*/
+
+/*edit btn*/
+.profile-edit {
+    position: absolute;
+    top: 4%;
+    left: 87%;
+    padding: 3px;
+    border: none;
+    background-color: #ffafbd;
+}
+
+/*edit form*/
+.edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 9% auto;
+}
+
+.edit-container .edit-ttl {
+    margin-bottom: 15px;
+    color: #D10B42;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.edit-container .edit-form {
+    padding: 20px 40px;
+    box-shadow: 8px 8px 4px rgb(255 4 4 / 30%);
+    background-color: #fff;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.edit-container .edit-form label {
+    font-size: 15px;
+}
+
+.edit-container .edit-form input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.edit-container .edit-form .button,
+.button-primary {
+    margin-top: 6px;
+}
+
+.edit-container .edit-form .button a,
+.button-primary a {
+    color: #fff;
+}
+
+.edit-container .error {
+    width: 190px;
+    margin-top: -7px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-size: 14px;
+}
+
+/*Export and Import*/
+.laravelExcel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 40px 5px;
+}
+
+.excelBtn {
+    padding: 8px 20px;
+    border: none;
+    background-color: #F7A76C;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.excel-input {
+    margin-bottom: 7px;
+    padding: 4px;
+}
+
+.uploadBtn {
+    margin-left: 30%;
+    background: rgb(154 34 56 / 90%);
+}
+
+/*import form*/
+
+.import-modal {
+    width: 100%;
+}
+
+.excel-input {
+    width: 100%;
+}
+
+/*Tablet Size*/
+@media screen and (min-width: 768px) and (max-width: 1160px) {
+
+    /*Table Design*/
+
+    .tblttl {
+        overflow: scroll;
+        margin-bottom: 0vw;
+        font-size: 18px;
+    }
+
+    .deletebtn i {
+        font-size: 2vw;
+    }
+
+    .profile-detail {
+        width: 60%;
+        margin: 10% 20%;
+    }
+
+    .profile-detail img {
+        width: 9.2vw;
+        height: 7.4vw;
+    }
+
+    /*Profile*/
+    .profile-container {
+        margin-top: 7vw;
+    }
+
+    .excelBtn {
+        padding: 1.042vw 2.604vw;
+        font-size: 1.4vw;
+        border-radius: 1.302vw;
+    }
+
+    .profile-detail {
+        width: 30vw;
+        margin: 0 auto;
+        padding: 0px 2.488vw 2vw;
+        border: 0.156vw solid #ddd;
+        box-shadow: 1.25vw 1.25vw 0.625vw rgb(255 4 4 / 30%);
+        background-color: #fff;
+        border-radius: 3.125vw;
+    }
+
+    .profile-detail img {
+        width: 8.5vw;
+        height: 7.938vw;
+        margin: 3.125vw auto;
+    }
+
+    .profile-content {
+        font-size: 2.5vw;
+    }
+
+    .profile-content li {
+        margin-bottom: 2.344vw;
+        font-size: 1.5vw;
+    }
+
+    .social {
+        margin-top: 2.5vw;
+    }
+
+    .social li {
+        margin-right: 3.125vw;
+    }
+
+    /*Profile Edit*/
+
+    /*edit btn*/
+    .profile-edit {
+        padding: 0.469vw;
+    }
+
+    /*edit form*/
+    .edit-container {
+        width: 50%;
+        margin: 5% 28%;
+    }
+
+    .edit-container .edit-ttl {
+        padding: 0vw;
+        font-size: 2.2vw;
+    }
+
+    .edit-container .edit-form {
+        padding: 3.3vw 3.3vw;
+        max-width: 90%;
+    }
+
+    .edit-container .edit-form label {
+        font-size: 1.7vw;
+    }
+
+    .edit-container .edit-form input {
+        width: 100%;
+        margin: 0.7vw 0;
+        padding: 0.7vw;
+        border: 0.1vw solid #888;
+        border-radius: 0.7vw;
+    }
+
+    .edit-container .error {
+        width: 22.288vw;
+        margin-top: -0.494vw;
+        font-size: 1.388vw;
+    }
+
+    /*import form*/
+    .import-modal {
+        min-width: 38%;
+    }
+
+    .user-alert {
+        display: table;
+        position: absolute;
+        top: 5.07vw;
+        left: 60%;
+        width: 30.421vw;
+        padding: 1.014vw;
+        border: 0.156vw solid #11e134;
+        background-color: #ddefbb;
+        text-align: center;
+        transform: translateX(-50%);
+        border-radius: 0.624vw;
+    }
+}
+
+
+@media screen and (max-width: 767.9px) {
+
+    /*Table Design*/
+    .deletebtn i {
+        font-size: 1.9vw;
+    }
+
+    .profile-detail {
+        width: 40%;
+    }
+
+    .profile-detail img {
+        width: 9.4vw;
+        height: 7.8vw;
+    }
+
+    .tblttl {
+        margin-bottom: 0vw;
+        padding: 2vw 2vw 0;
+        font-size: 3vw;
+    }
+
+    /*Profile*/
+    .profile-container {
+        margin: 21.875vw 0 6.25vw;
+    }
+
+    .profile-detail {
+        width: 50vw;
+        padding: 4.688vw 4.688vw 3.125vw;
+        border: 0.156vw solid #ddd;
+        box-shadow: 1.25vw 1.25vw 0.625vw rgb(255 4 4 / 30%);
+        border-radius: 3.125vw;
+    }
+
+    .profile-detail img {
+        width: 12.5vw;
+        height: 10.938vw;
+        margin: 3.125vw auto 4vw;
+    }
+
+    .profile-content {
+        font-size: 2.5vw;
+    }
+
+    .profile-content li {
+        margin-bottom: 2.344vw;
+    }
+
+    .social {
+        margin-top: 4.688vw;
+        font-size: 4vw;
+    }
+
+    .social li {
+        margin-right: 3.125vw;
+    }
+
+    /*Profile Edit*/
+
+    /*edit btn*/
+    .profile-edit {
+        padding: 0.469vw;
+        font-size: 3vw;
+    }
+
+    /*edit form*/
+    .edit-container {
+        margin: 0 auto;
+    }
+
+    .edit-container .edit-ttl {
+        margin-bottom: 1vw;
+        font-size: 2.5vw;
+    }
+
+    .edit-container .edit-form {
+        width: 35%;
+        padding: 3.9vw 3.9vw;
+        max-width: 100%;
+        border-radius: 2vw;
+    }
+
+    .edit-container .edit-form label {
+        font-size: 2vw;
+    }
+
+    .edit-container .edit-form input {
+        width: 100%;
+        margin: 0.8vw 0;
+        padding: 0.8vw;
+        border: 0.2vw solid #888;
+        font-size: 1.7vw;
+        border-radius: 0.8vw;
+    }
+
+    .edit-container .error {
+        width: 28.688vw;
+        margin-top: -0.094vw;
+        margin-bottom: 1vw;
+        font-size: 1.688vw;
+    }
+
+    /*Export and Importff*/
+    .excelBtn {
+        padding: 0.469vw 1.563vw;
+        font-size: 2.275vw;
+    }
+
+    .excelBtn i {
+        font-size: 1.975vw;
+    }
+
+    .excel-input {
+        margin-bottom: 0.938vw;
+        padding: 0.625vw;
+    }
+
+    /*import form*/
+    .import-modal {
+        min-width: 45%;
+    }
+
+    .user-alert {
+        top: 10.156vw;
+        left: 50%;
+        width: 60.938vw;
+        padding: 2.031vw;
+        border: 0.313vw solid #11e134;
+        font-size: 2.5vw;
+        border-radius: 1.25vw;
+    }
+}

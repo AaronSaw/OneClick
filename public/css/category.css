@@ -1,0 +1,112 @@
+.ccard {
+    overflow: hidden;
+    margin: 72px 30px 30px;
+    border: 3px solid #f78c8c;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .category_cform {
+    width: 50%;
+    margin: 10% 30%;
+  }
+
+  .category_cform .ccard {
+    padding: 30px 40px;
+    box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 52%;
+    border-radius: 10px;
+  }
+
+  .category_cform .ccard h2 {
+    margin-bottom: 15px;
+    color: #D10B42;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .category-forminput {
+    width: 100%;
+    margin-top: 10px;
+    padding: 2px;
+  }
+
+  .form-footerBtn {
+    text-align: center;
+  }
+
+  .form-footerBtn .button,
+  .button-primary {
+    margin-top: 6px;
+    padding: 5px 7px;
+  }
+
+  .form-footerBtn button a {
+    color: #ffffff;
+  }
+
+  .category-alert{
+    display: table;
+    position: absolute;
+    top: 65px;
+    left: 60%;
+    width: 390px;
+    padding: 13px;
+    border: 2px solid #11e134;
+    background-color: #ddefbb;
+    text-align: center;
+    transform: translateX(-50%);
+    z-index: 99;
+    border-radius: 8px;
+  }
+  /*Tablet Size*/
+  @media screen and (min-width: 768px) and (max-width: 1160px) {
+    .category_cform {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .category_cform .ccard {
+        padding: 30px 40px;
+        box-shadow: 7px 10px 10px -3px rgb(0 0 0 / 50%);
+        background-color: rgba(255, 255, 255, 0.5);
+        max-width: 52%;
+        border-radius: 10px;
+        margin: 72px auto 30px;
+      }
+  }
+
+  /*Mobile Size*/
+  @media screen and (max-width: 767.9px) {
+    .category_cform {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      margin: 10% auto 0;
+    }
+
+    .category_cform .ccard {
+      width: 50%;
+      padding: 4.688vw 6.25vw;
+      margin-top: 10%;
+    }
+
+    .category_cform .ccard h2 {
+      margin-bottom: 2.344vw;
+      font-size: 2.5vw;
+    }
+
+    .category-alert{
+        top: 9.719vw;
+        left: 50%;
+        width: 60.938vw;
+        padding: 2vw;
+        border: 0.313vw solid #11e134;
+        border-radius: 1.25vw;
+        font-size: 2.5vw;
+    }
+  }

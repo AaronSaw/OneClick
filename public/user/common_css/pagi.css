@@ -1,0 +1,47 @@
+.pagi-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #F6C4C5;
+    font-size: 15px;
+    /*margin-top: 15px;*/
+    font-weight: bold;
+}
+
+.pagi-nav .pagination {
+    display: block;
+}
+
+.pagi-nav .pagination .page-item {
+    float: left;
+    padding: 3px 7px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page-item.active {
+    padding: 5px;
+    background-color: #fb5757;
+    border-bottom: 1px solid gray;
+}
+
+/* Ipad */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    .pagi-nav {
+        height: 4.7vw;
+        font-size: 2vw;
+    }
+}
+
+/* SP */
+@media screen and (max-width: 767.9px) {
+    .pagi-nav {
+        height: 4.7vw;
+        font-size: 1.7vw;
+    }
+
+    .pagi-nav .pagination .page-item {
+        padding: 0vw 0.8vw;
+    }
+}
